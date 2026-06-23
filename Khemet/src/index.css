@@ -20,7 +20,11 @@ main{
   height: 600px;
   width: 100%;
 }
-.hero a{
+.linkat {
+  display: inline;
+  gap: 30px;
+}
+.hero Link{
   position: absolute;
   left: 12%;
   top: 84%;
