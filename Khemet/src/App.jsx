@@ -9,6 +9,7 @@ import TripPlanner from "./pages/TripPlanner";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import About from "./pages/About";
 import "./App.css"
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="map" element={<Map />} />
             <Route path="feed" element={<Feed />} />
-  
+            <Route path="about" element={<About />} />
             <Route
               path="trip-plan"
               element={
