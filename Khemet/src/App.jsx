@@ -10,7 +10,9 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
+import Favorites from "./pages/Favorites";
 import "./App.css"
+
 
 function App() {
   return (
