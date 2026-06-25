@@ -11,7 +11,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import PlaceDetails from "./pages/PlaceDetails";
 import About from "./pages/About";
+import Contributions from "./pages/Contributions";
+import SavedTrips from "./pages/Savedtrips";
+import Favorites from "./pages/Favorites";
 import "./App.css"
+
 
 function App() {
   return (
@@ -46,14 +50,25 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="place/:id"
-              element={
-                <ProtectedRoute>
-                  <PlaceDetails />
-                </ProtectedRoute>
-              }
-            />
+
+            <Route path="contributions" element={
+              <ProtectedRoute>
+                <Contributions/>
+               </ProtectedRoute>
+             } />
+            
+            <Route path="savedtrips" element={
+              <ProtectedRoute>
+                <SavedTrips/>
+               </ProtectedRoute>
+             } />
+            
+            <Route path="favorites" element={
+              <ProtectedRoute>
+               <Favorites/>
+               </ProtectedRoute>
+             } />
+            
 
           </Route>
 
