@@ -9,6 +9,7 @@ import TripPlanner from "./pages/TripPlanner";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import PlaceDetails from "./pages/PlaceDetails";
 import About from "./pages/About";
 import "./App.css"
 
@@ -45,7 +46,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            
+            <Route
+              path="place/:id"
+              element={
+                <ProtectedRoute>
+                  <PlaceDetails />
+                </ProtectedRoute>
+              }
+            />
 
           </Route>
 
