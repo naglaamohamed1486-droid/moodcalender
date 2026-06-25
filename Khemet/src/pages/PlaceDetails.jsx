@@ -8,8 +8,11 @@ function PlaceDetails() {
   const { id } = useParams();
   const [place, setPlace] = useState(null);
   const [relatedPlaces, setRelatedPlaces] = useState([]);
-
   useEffect(() => {
+     window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     const found = placesData.find((p) => p.id === parseInt(id));
     setPlace(found);
 
@@ -97,7 +100,7 @@ function PlaceDetails() {
     <button className="btn-secondary">♡ Saved </button>
   </div>
   <br />
-  
+
     <h3>LOCATION</h3>  
     <p className="location-name">{place.city}</p>
     <div className="location-map">
