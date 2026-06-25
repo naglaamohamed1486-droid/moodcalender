@@ -132,9 +132,13 @@
   border-radius: 14px;
 
   cursor: pointer;
+
+  transition: transform 0.2s ease;
 }
 
 .preview-btn:hover{
+    transform: translateY(-2px);
+
     
 }
 
@@ -152,7 +156,16 @@
   cursor: pointer;
 
   font-weight: bold;
+
+  transition: transform 0.2s ease;
 }
+
+.select-btn:hover{
+    transform: translateY(-2px);
+    
+    
+}
+
 .title-row {
   display: flex;
   align-items: center;
