@@ -38,7 +38,7 @@ export default function Profile() {
       </div>
       <div className="pf-link">
         <div className="pf-link-cont">
-          <Link  to="/" className="pf-linkat">
+          <Link  to="/favorites" className="pf-linkat">
             <div className="pf-linkat-data">
               <div className="pf-linkat-svg"></div>
             <div className="pf-linkat-det">
