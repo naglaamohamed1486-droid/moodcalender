@@ -9,27 +9,67 @@ function TripPlanner() {
   const [plans, setPlans] = useState([]);
 
   const interests = [
-    {
-      id: "historical",
-      title: "History",
-      desc: "Pyramids, temples and tombs",
-    },
-    {
-      id: "adventure",
-      title: "Adventure",
-      desc: "Diving, desert and trekking",
-    },
-    {
-      id: "cultural",
-      title: "Culture",
-      desc: "Bazaars, food and craft",
-    },
-    {
-      id: "nature",
-      title: "Nature",
-      desc: "Oases, coasts and stars",
-    },
-  ];
+  {
+    id: "historical",
+    title: "History",
+    desc: "Pyramids, temples and ancient sites",
+  },
+  {
+    id: "adventure",
+    title: "Adventure",
+    desc: "Deserts, diving and exploration",
+  },
+  {
+    id: "cultural",
+    title: "Culture",
+    desc: "Markets, traditions and heritage",
+  },
+  {
+    id: "nature",
+    title: "Nature",
+    desc: "Oases, lakes and scenic views",
+  },
+  {
+    id: "beach",
+    title: "Beach",
+    desc: "Sea, resorts and relaxation",
+  },
+  {
+    id: "food",
+    title: "Food",
+    desc: "Local dishes and cafés",
+  },
+  {
+    id: "photography",
+    title: "Photography",
+    desc: "Instagram-worthy locations",
+  },
+  {
+    id: "romantic",
+    title: "Romantic",
+    desc: "Sunsets and peaceful spots",
+  },
+  {
+    id: "modern",
+    title: "Modern",
+    desc: "Contemporary attractions",
+  },
+  {
+  id: "diving",
+  title: "Diving",
+  desc: "Coral reefs and underwater adventures",
+},
+{
+  id: "mysterious",
+  title: "Mystery",
+  desc: "Ancient secrets, tombs and legends",
+},
+  {
+    id: "hidden",
+    title: "Hidden Gems",
+    desc: "Less crowded unique places",
+  },
+];
 
   const toggleInterest = (interest) => {
     setSelectedInterests((prev) =>
