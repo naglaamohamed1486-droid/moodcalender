@@ -10,6 +10,8 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
+import Contributions from "./pages/Contributions";
+import SavedTrips from "./pages/Savedtrips";
 import "./App.css"
 
 function App() {
@@ -45,6 +47,18 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route path="contributions" element={
+              <ProtectedRoute>
+                <Contributions/>
+               </ProtectedRoute>
+             } />
+            
+            <Route path="savedtrips" element={
+              <ProtectedRoute>
+                <SavedTrips/>
+               </ProtectedRoute>
+             } />
             
 
           </Route>

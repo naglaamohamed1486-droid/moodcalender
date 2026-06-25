@@ -46,14 +46,10 @@ export default function Login() {
       return;
     }
 
-    login({
-      name: foundUser.name,
-      email: foundUser.email,
-    });
+    login(foundUser);
 
-    localStorage.setItem("user", JSON.stringify(foundUser));
 
-    navigate("/search");
+    navigate("/");
   };
 
   return (

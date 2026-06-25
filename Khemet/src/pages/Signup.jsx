@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import '../css/signup.css';
 
 export default function Signup() {
   const navigate = useNavigate();
-
+ const { login } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,14 +44,27 @@ export default function Signup() {
       return;
     }
 
-    const newUser = { name, email, password};
+    const newUser = {
+  name,
+  email,
+  password,
+
+  location: "",
+  bio: "",
+  profilePic: "",   
+  contributions: [],
+  savedTrips: [],
+  favorites: [],
+
+  createdAt: Date.now()
+};
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    localStorage.setItem("user", JSON.stringify(newUser));
+    login(newUser);
 
     alert("Account created successfully");
-    navigate("/search");
+    navigate("/");
   };
 
   return (
