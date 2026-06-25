@@ -11,6 +11,13 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(27, 79, 107, 0.10);
+  border-color: rgba(201, 168, 76, 0.2);
 }
 
 .plan-image-wrapper {
@@ -23,6 +30,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.plan-card:hover .plan-image-wrapper img {
+  transform: scale(1.03);
 }
 
 .plan-content {
