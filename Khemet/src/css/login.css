@@ -19,8 +19,12 @@
 html { scroll-behavior: smooth; }
 
 .main-login {
-  padding: 40px 24px;
-  padding-bottom: 100px;
+  padding: 80px;
+  padding-top: 130px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 /* ── Container card ── */
 .container {
@@ -75,17 +79,18 @@ html { scroll-behavior: smooth; }
 .section-log h1 a {
   display: block;
   position: relative;
-  top: -150px;
-  right: -70px;
+  top: -250px;
   width: 200px;
   height: 80px;
+  text-align: center;
+  width: 100%;
   text-decoration: none;
-  color: #c5940e;
+  color: #be9832;
   font-family: 'Cinzel', serif;
   font-size: 40px;
 }
 
-.section-log a:hover { text-shadow: #E8D5A3 2px 3px 10px; }
+.section-log a:hover { text-shadow: #E8D5A3 0.5px 0.53px 10px; }
 
 .section-log h2 {
   font-family: 'Cinzel', serif;
@@ -121,7 +126,7 @@ html { scroll-behavior: smooth; }
 
 .Log h2 {
   font-family: 'Cinzel', serif;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 500;
   color: var(--sand);
   background-color: var(--nile-deep);
@@ -146,6 +151,7 @@ html { scroll-behavior: smooth; }
 .field {
   position: relative;
   margin-bottom: 20px;
+  
 }
 
 .field label {
@@ -164,6 +170,7 @@ html { scroll-behavior: smooth; }
 
 .field input {
   width: 100%;
+  color: #0A2A3A;
   background: hsl(196, 61%, 79%, 0.2);
   border: 1px solid rgba(27,79,107,0.2);
   border-radius: var(--radius-md);
@@ -171,9 +178,9 @@ html { scroll-behavior: smooth; }
   padding: 0 14px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--text-dark);
   outline: none;
   transition: var(--transition);
+   color: #1B4F6B;
 }
 
 .field input::placeholder { color: transparent; }
@@ -184,7 +191,7 @@ html { scroll-behavior: smooth; }
 .field input:not(:placeholder-shown) + label {
   top: 0;
   font-size: 11px;
-  color: var(--nile-deep);
+  color: #1B4F6B;
   background: hsl(40, 79%, 96%, 0.7);
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -225,6 +232,7 @@ html { scroll-behavior: smooth; }
   border-bottom: 1px solid transparent;
   transition: var(--transition);
   cursor: pointer;
+  margin-left: 2px;
 }
 
 .form-body > p a:hover { border-bottom-color: var(--terra); }

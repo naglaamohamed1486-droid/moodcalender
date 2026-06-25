@@ -77,7 +77,7 @@ export default function Signup() {
 
         <div className="form-body">
 
-          <div className="field">
+          <div className="signup-field">
             <input
               type="text"
               name="name"
@@ -89,7 +89,7 @@ export default function Signup() {
             <label htmlFor="signName">Username</label>
           </div>
 
-          <div className="field">
+          <div className="signup-field">
             <input
               type="email"
               name="email"
@@ -101,7 +101,7 @@ export default function Signup() {
             <label htmlFor="signEmail">Email</label>
           </div>
 
-          <div className="field">
+          <div className="signup-field">
             <input
               type="password"
               name="password"
@@ -113,7 +113,7 @@ export default function Signup() {
             <label htmlFor="signPass">Password</label>
           </div>
 
-          <div className="field">
+          <div className="signup-field">
             <input
               type="password"
               name="confirm"

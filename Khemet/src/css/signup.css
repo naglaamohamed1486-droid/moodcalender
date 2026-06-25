@@ -32,40 +32,14 @@ body {
 }
 
 .signup-main{
-  padding: 40px 24px;
-  padding-bottom: 100px;
-}
-
-/* ── Toggle pill ── */
-.toggle-pill {
+  padding: 80px;
+  padding-top: 130px;
   display: flex;
-  background: rgba(255,255,255,0.55);
-  border: 1px solid hsl(44, 54%, 54%, 0.3);
-  border-radius: 30px;
-  padding: 4px;
-  width: fit-content;
-  margin: 0 auto 24px;
-  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.toggle-pill button {
-  background: transparent;
-  border: none;
-  color: #1B4F6B;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 8px 36px;
-  border-radius: 26px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  letter-spacing: 0.04em;
-  transition: var(--transition);
-}
-
-.toggle-pill button.active:hover { border: #C9A84C 0.5px solid; }
-.toggle-pill button:hover         { color: #987413; }
-.toggle-pill button.active        { background: var(--nile-deep); color: var(--sand); }
 
 /* ── Container card ── */
 .container {
@@ -88,7 +62,7 @@ body {
 
 /* ── Image section (Signup) ── */
 .section-sign {
-  background-image: url("../assets/Cairo Tower At Night, Cairo, Egypt.jpg");
+  background-image: url("../assets/signup.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -119,12 +93,12 @@ body {
 .section-sign h1 a {
   display: block;
   position: relative;
-  top: -210px;
-  right: -90px;
-  width: 200px;
+  top: -250px;
+  width:100%;
   height: 80px;
   text-decoration: none;
-  color: #c5940e;
+  text-align: center;
+  color: #e3bc4f;
   font-family: 'Cinzel', serif;
   font-size: 40px;
 }
@@ -185,12 +159,13 @@ body {
 }
 
 /* ── Floating label fields ── */
-.field {
+.signup-field {
   position: relative;
   margin-bottom: 20px;
+  
 }
 
-.field label {
+.signup-field label {
   position: absolute;
   top: 50%;
   left: 14px;
@@ -204,8 +179,9 @@ body {
   letter-spacing: 0.03em;
 }
 
-.field input {
+.signup-field input {
   width: 100%;
+  color: #0A2A3A;
   background: hsl(196, 61%, 79%, 0.2);
   border: 1px solid rgba(27,79,107,0.2);
   border-radius: var(--radius-md);
@@ -213,24 +189,25 @@ body {
   padding: 0 14px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--text-dark);
   outline: none;
   transition: var(--transition);
+   color: #1B4F6B;
 }
 
-.field input::placeholder { color: transparent; }
+.signup-field input::placeholder { color: transparent; }
 
-.field input:focus { border-color: #C9A84C; background: #f8fcff; }
+.signup-field input:focus { border-color: #C9A84C; background: #f8fcff; }
 
-.field input:focus + label,
-.field input:not(:placeholder-shown) + label {
+.signup-field input:focus + label,
+.signup-field input:not(:placeholder-shown) + label {
   top: 0;
   font-size: 11px;
-  color: var(--nile-deep);
+  color: #1B4F6B;
   background: hsl(40, 79%, 96%, 0.7);
   font-weight: 500;
   letter-spacing: 0.06em;
 }
+
 
 
 /* ── Submit button ── */
@@ -268,6 +245,7 @@ body {
   border-bottom: 1px solid transparent;
   transition: var(--transition);
   cursor: pointer;
+  margin-left: 2px;
 }
 
 .form-body > p a:hover { border-bottom-color: var(--terra); }
