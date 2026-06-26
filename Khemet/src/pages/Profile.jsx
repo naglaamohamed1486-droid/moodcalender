@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import PlaceCard from "../components/AddPlaceCard";
 import '../css/profile.css'
 
+
 export default function Profile() {
   const { user, logout, updateUser } = useAuth();
   if (!user) {

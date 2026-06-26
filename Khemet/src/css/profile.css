@@ -745,9 +745,28 @@ background-color: hsl(201, 60%, 26%,0.2);
   justify-content: flex-start;
   margin: 5px; 
 }
+.pf-cards-grid .contrib-card-actions-right{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-.pf-cards-grid .contrib-card-actions-right {
-  display: none; 
+.pf-cards-grid .contrib-btn-edit {
+  background-color: transparent;
+  border: 1px solid #1B4F6B;
+  color: #1B4F6B;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.pf-cards-grid .contrib-btn-edit:hover {
+  background-color: #1B4F6B;
+  color: #FDF8EE;
 }
 
 /* ══════════════════════════════════════════════════════════════
