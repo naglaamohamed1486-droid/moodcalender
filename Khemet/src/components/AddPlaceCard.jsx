@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { getPlaceImages } from "../components/PicCache"; 
 import "../css/Card.css";
 
-export default function PlaceCard({ place, onEdit, onDelete }) {
+function PlaceCard({ place, onEdit, onDelete }) {
   const { user, toggleFavorite, isFavorite } = useAuth();
   const [images, setImages] = useState({ coverImage: "", gallery: [] });
 
@@ -26,7 +26,7 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
         {images.coverImage ? (
           <img src={images.coverImage} alt={place.title} />
         ) : (
-          <span className="contrib-thumb-placeholder"></span>
+          <span className="contrib-thumb-placeholder">✦</span>
         )}
 
         <span className="card-category">
@@ -61,3 +61,4 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
   );
 }
 
+export default PlaceCard;
