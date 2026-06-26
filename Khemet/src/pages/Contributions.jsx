@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { getPlaceImages } from "../components/PicCache";
-import ContribCard from "../components/AddPlaceCard";
+import { deletePlaceImages, getPlaceImages } from "../components/PicCache";
+import PlaceCard from "../components/AddPlaceCard";
 import "../css/contribution.css";
 
 const CATEGORIES = [
@@ -144,8 +144,8 @@ export default function Contributions() {
   };
 
   /* ── delete ── */
-  const handleDelete = (id) => {
-  deletePlaceImages(id);
+ const handleDelete = async (id) => {
+  await deletePlaceImages(id);
   updateUser({ contributions: contributions.filter((p) => p.id !== id) });
   setDeleteConfirm(null);
 };
@@ -186,91 +186,16 @@ export default function Contributions() {
         )}
 
         {/* ── list ── */}
-        <div className="contributions-list">
+       <div className="contributions-list">
           {contributions.map((place) => (
-            <div key={place.id} className="contrib-card">
-              {(() => {
-                const [images, setImages] = useState({ coverImage: "", gallery: [] });
-                useEffect(() => {
-                    getPlaceImages(place.id).then(setImages);
-                  }, [place.id]);
-                
-                  const handleSave = (e) => {
-                    e.preventDefault();
-                    if (!user) return;
-                    toggleFavorite(place);
-                  };
-                return images.coverImage ? (
-                  <div className="contrib-card-thumb">
-                     <img src={images.coverImage} alt={place.title} />
-                  </div>
-                ) : (
-                  <div className="contrib-card-thumb contrib-card-thumb--empty">
-                    <span>✦</span>
-                  </div>
-                );
-              })()}
-
-        <div className="contrib-card-body">
-          <div className="contrib-card-top">
-            <div>
-              <h4 className="contrib-card-name">{place.title}</h4>
-              <p className="contrib-card-desc">{place.description}</p>
-            </div>
-
-            {place.rating && (
-              <span className="contrib-card-rating">★ {place.rating}</span>
-            )}
+            <PlaceCard
+              key={place.id}
+              place={place}
+              onEdit={openEdit}
+              onDelete={(id) => setDeleteConfirm(id)}
+            />
+          ))}
           </div>
-
-          <div className="contrib-card-meta">
-            <span className="contrib-meta-pill contrib-meta-location">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-              </svg>
-              {place.city}
-              {place.governorate && place.city !== place.governorate
-                ? `, ${place.governorate}`
-                : ""}
-            </span>
-
-            <span className="contrib-meta-pill contrib-meta-category">
-              {categoryLabel(place.category)}
-            </span>
-
-            {place.tags?.slice(0, 3).map((tag) => (
-              <span key={tag} className="contrib-meta-pill contrib-meta-tag">
-                #{tag}
-              </span>
-            ))}
-
-            {place.tags?.length > 3 && (
-              <span className="contrib-meta-pill contrib-meta-more">
-                +{place.tags.length - 3}
-              </span>
-            )}
-          </div>
-
-          <div className="contrib-card-actions">
-            <button
-              className="contrib-btn-edit"
-              onClick={() => openEdit(place)}
-            >
-              Edit
-            </button>
-
-            <button
-              className="contrib-btn-delete"
-              onClick={() => setDeleteConfirm(place.id)}
-            >
-              Delete
-            </button>
-          </div>
-        </div>
-      </div>
-                ))}
-              </div>
             </div>
 
       {/* ═══════════════════════════════════════════

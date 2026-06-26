@@ -718,6 +718,32 @@ background-color: hsl(201, 60%, 26%,0.2);
   display: flex;
 }
 
+/* override contrib-card horizontal layout when used inside profile grid */
+.pf-cards-grid .contrib-card {
+  flex-direction: column;
+}
+
+.pf-cards-grid .contrib-card-thumb {
+  width: 100%;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.pf-cards-grid .contrib-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pf-cards-grid .contrib-card-thumb--empty {
+  width: 100%;
+  height: 180px;
+}
+
+.pf-cards-grid .contrib-card-actions {
+  display: none;
+}
+
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE
