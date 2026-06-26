@@ -3,11 +3,19 @@ import { useState, useEffect } from "react";
 import placesData from "../places.json";
 import Card from "../components/Card";
 import "../css/PlaceDetails.css";
+import { useAuth } from "../context/AuthContext";
 
 function PlaceDetails() {
   const { id } = useParams();
+
+  const { user, toggleFavorite, isFavorite } = useAuth();
+
   const [place, setPlace] = useState(null);
   const [relatedPlaces, setRelatedPlaces] = useState([]);
+
+  const saved = place ? isFavorite(place.id) : false;
+
+
   useEffect(() => {
      window.scrollTo({
       top: 0,
@@ -97,7 +105,12 @@ function PlaceDetails() {
   <div className="location-block">
     <div className="actions">
     <button className="btn-primary">+ Add to trip</button>
-    <button className="btn-secondary">♡ Saved </button>
+    <button
+    className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
+    onClick={() => user && toggleFavorite(place)}
+  >
+    {saved ? "♥ Saved" : "♡ Save"}
+  </button>
   </div>
   <br />
 

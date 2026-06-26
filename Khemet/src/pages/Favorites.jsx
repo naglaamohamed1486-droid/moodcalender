@@ -1,76 +1,45 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import Card from "../components/Card";
+import "../css/Favorites.css";
+
 
 function Favorites() {
-  const [favorites, setFavorites] =
-    useState([]);
+  const { user, favorites } = useAuth();
 
-  useEffect(() => {
-    const saved =
-      JSON.parse(
-        localStorage.getItem("favorites")
-      ) || [];
-
-    setFavorites(saved);
-  }, []);
-
-  const removeFavorite = (id) => {
-    const updated = favorites.filter(
-      (place) => place.id !== id
+  if (!user) {
+    return (
+       <div className="fav-empty">
+        <p>Please sign in to see your saved places.</p>
+        <Link to="/login" className="fav-explore-btn">Sign In</Link>
+      </div>
     );
+  }
 
-    setFavorites(updated);
-
-    localStorage.setItem(
-      "favorites",
-      JSON.stringify(updated)
-    );
-  };
+  
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Favorite Places ❤️</h1>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fit,minmax(300px,1fr))",
-          gap: "20px",
-        }}
-      >
-        {favorites.map((place) => (
-          <div
-            key={place.id}
-            style={{
-              border: "1px solid #ddd",
-              padding: "15px",
-              borderRadius: "10px",
-            }}
-          >
-            <img
-              src={place.coverImage}
-              alt={place.title}
-              style={{
-                width: "100%",
-                height: "200px",
-                objectFit: "cover",
-              }}
-            />
-
-            <h3>{place.title}</h3>
-
-            <p>{place.description}</p>
-
-            <button
-              onClick={() =>
-                removeFavorite(place.id)
-              }
-            >
-              Remove
-            </button>
-          </div>
-        ))}
+    <div className="fav-page">
+      <div className="fav-header">
+        <small>YOUR COLLECTION</small>
+        <h1>Saved Places</h1>
+        <p>{favorites.length} place{favorites.length !== 1 ? "s" : ""} saved</p>
       </div>
+
+      {favorites.length === 0 ? (
+        <div className="fav-empty">
+          <p>You haven't saved any places yet.</p>
+          <Link to="/feed" className="fav-explore-btn">
+            Start Exploring →
+          </Link>
+        </div>
+      ) : (
+        <div className="fav-grid">
+          {favorites.map((place) => (
+            <Card key={place.id} place={place} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

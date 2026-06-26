@@ -1,0 +1,62 @@
+.fav-page {
+  min-height: 100vh;
+  background: #F5EDD7;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 60px 50px;
+}
+
+.fav-header small {
+  color: #C9A84C;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.fav-header h1 {
+  margin-top: 10px;
+  font-size: 34px;
+  font-weight: 400;
+  color: #1B4F6B;
+  font-family: Georgia, serif;
+}
+
+.fav-header p {
+  margin-top: 6px;
+  color: #6f6659;
+  font-size: 14px;
+}
+
+.fav-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.fav-empty {
+  margin-top: 80px;
+  text-align: center;
+  color: #6f6659;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fav-explore-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #d9a632;
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.fav-explore-btn:hover {
+  opacity: 0.85;
+}

@@ -201,3 +201,7 @@
     padding: 8px;
   }
 }
+
+.saved-btn--active {
+  color: #d9a632;
+}
