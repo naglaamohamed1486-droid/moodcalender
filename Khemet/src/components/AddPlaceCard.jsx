@@ -99,12 +99,8 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
             <span className="reviews">({place.reviews || 0})</span>
           </span>
 
-          <Link to={`/place/${place.id}`} className="card-btn">
-            View details →
-          </Link>
-
           <div className="contrib-card-actions-right">
-            <button className="contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
+            <button className="x-contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
             <button className="contrib-btn-delete" onClick={() => onDelete(place.id)}>Delete</button>
             <Link to={`/place/${place.id}`} className="card-btn">
               View details →

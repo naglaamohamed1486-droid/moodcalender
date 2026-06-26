@@ -63,7 +63,7 @@ function Card({ place, onEdit }) {
           </div>
           <div className="contrib-card-actions-right">
             {onEdit && (
-              <button className="contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
+              <button className="x-contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
             )}
             <Link to={`/place/${place.id}`} className="card-btn">
               View details →
