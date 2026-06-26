@@ -58,3 +58,181 @@ padding: 5px;
   color:#7A6040 ;
   text-align: center;
 }
+
+/* ================= STORY ================= */
+
+.story{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-top: 80px;
+}
+
+.story-text{
+    flex: 1;
+}
+
+.story-text h2{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.story-text p{
+    color: #7A6040;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.story-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.story-image img{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 18px;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    margin-top: 90px;
+}
+
+.stat{
+    background: #FDF8EE;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.stat h2{
+    color: #C9A84C;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.stat p{
+    color: #7A6040;
+}
+
+/* ================= TEAM ================= */
+
+.team{
+    margin-top: 90px;
+}
+
+.team h2{
+    margin-bottom: 40px;
+}
+
+.team-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.member{
+    width: 250px;
+    background: #FDF8EE;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+}
+
+.member img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.member h4{
+    color: #0A1F35;
+    margin-bottom: 10px;
+    font-family: 'Cinzel';
+}
+
+.member p{
+    color: #7A6040;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    margin-top: 100px;
+    text-align: center;
+    background: #0A1F35;
+    color: white;
+    padding: 70px 30px;
+    border-radius: 20px;
+}
+
+.cta h2{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta p{
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.cta button{
+    padding: 14px 35px;
+    border: none;
+    border-radius: 10px;
+    background: #C9A84C;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cta button:hover{
+    transform: translateY(-3px);
+    background: #b99638;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:900px){
+
+    .why{
+        grid-template-columns:1fr;
+    }
+
+    .story{
+        flex-direction: column;
+    }
+
+    .stats{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:600px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .c{
+        width:100%;
+    }
+
+    .member{
+        width:100%;
+    }
+
+}

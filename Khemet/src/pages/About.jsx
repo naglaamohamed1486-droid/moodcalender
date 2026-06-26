@@ -43,6 +43,93 @@ export default function About() {
         </div>
       </div>
 
+      <section className="story">
+  <div className="story-text">
+    <h2>Our Story</h2>
+
+    <p>
+      KHEMET was created with one goal: to make discovering Egypt simple,
+      enjoyable, and inspiring. We believe Egypt has far more to offer than
+      the well-known tourist attractions.
+    </p>
+
+    <p>
+      From ancient temples to hidden beaches and breathtaking deserts,
+      our platform helps travelers create unforgettable experiences with
+      personalized recommendations and smart trip planning.
+    </p>
+  </div>
+
+  <div className="story-image">
+    <img
+      src="/images/about.jpg"
+      alt="Egypt"
+    />
+  </div>
+</section>
+
+<section className="stats">
+
+  <div className="stat">
+    <h2>500+</h2>
+    <p>Tourist Attractions</p>
+  </div>
+
+  <div className="stat">
+    <h2>27</h2>
+    <p>Governorates</p>
+  </div>
+
+  <div className="stat">
+    <h2>100+</h2>
+    <p>Travel Plans</p>
+  </div>
+
+  <div className="stat">
+    <h2>100%</h2>
+    <p>Made with Passion</p>
+  </div>
+
+</section>
+
+<section className="team">
+
+<h2>Meet Our Team</h2>
+
+<div className="team-container">
+
+<div className="member">
+<img src="/images/person1.jpg" alt="" />
+<h4>Menna</h4>
+
+</div>
+
+<div className="member">
+<img src="/images/person2.jpg" alt="" />
+<h4>Naglaa</h4>
+
+</div>
+
+<div className="member">
+<img src="/images/person3.jpg" alt="" />
+<h4>Habiba</h4>
+
+</div>
+
+<div className="member">
+<img src="/images/person3.jpg" alt="" />
+<h4>Sandra</h4>
+
+</div>
+
+</div>
+
+</section>
+
+
+
     </div>
+
+    
   );
 }
