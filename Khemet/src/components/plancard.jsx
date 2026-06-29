@@ -4,6 +4,7 @@ function PlanCard({
   days,
   buildItinerary,
   onPreview,
+  onSelect
 }) {
   return (
     <div className="plan-card">
@@ -65,7 +66,7 @@ function PlanCard({
   Preview
 </button>
 
-          <button className="select-btn">
+          <button className="select-btn" onClick={() => onSelect(plan)}>
             Select →
           </button>
 

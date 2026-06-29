@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import places from "../places.json";
 import "../css/TripPlanner.css";
 import PlanCard from "../components/PlanCard";
 import TripPreviewModal from "../components/TripPreviewModal";
+import TripOrganizer from "../components/TripOrganizer";
 
 function TripPlanner() {
   const [selectedInterests, setSelectedInterests] = useState([]);
@@ -11,9 +12,33 @@ function TripPlanner() {
   const [plans, setPlans] = useState([]);
   const [showPreview, setShowPreview] =
   useState(false);
-
+  const [editingTrip, setEditingTrip] = useState(null);
 const [selectedPlan, setSelectedPlan] =
   useState(null);
+const organizerRef = useRef(null);
+const [savedTrips, setSavedTrips] = useState([]);
+
+const saveTrip = () => {
+  setSavedTrips((prev) => [...prev, editingTrip]);
+
+  setEditingTrip(null);
+};
+
+
+  const handleSelect = (plan) => {
+
+  setEditingTrip({
+    ...plan,
+    itinerary: buildItinerary(plan.places),
+  });
+
+  setTimeout(() => {
+    organizerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 100);
+};
 
   const handlePreview = (plan) => {
   setSelectedPlan(plan);
@@ -276,7 +301,7 @@ const [selectedPlan, setSelectedPlan] =
         </div>
       </div>
 
-      {plans.length > 0 && (
+      {plans.length > 0 && !editingTrip && (
   <>
     <div className="plans-header">
       <div className="plans-step">
@@ -311,6 +336,7 @@ const [selectedPlan, setSelectedPlan] =
       days={days}
       buildItinerary={buildItinerary}
       onPreview={handlePreview}
+      onSelect={handleSelect}
     />
   ))}
 </div>
@@ -321,11 +347,22 @@ const [selectedPlan, setSelectedPlan] =
   <TripPreviewModal
     plan={selectedPlan}
     buildItinerary={buildItinerary}
-    onClose={() =>
-      setShowPreview(false)
-    }
+    onClose={() =>setShowPreview(false) }
+    onSelect={handleSelect}
   />
+  
 )}
+
+<div ref={organizerRef}>
+  {editingTrip && (
+    <TripOrganizer
+    trip={editingTrip}
+    setTrip={setEditingTrip}
+    saveTrip={saveTrip}
+/>
+  )}
+</div>
+
     </div>
   );
 }

@@ -4,6 +4,7 @@ function TripPreviewModal({
   plan,
   buildItinerary,
   onClose,
+  onSelect
 }) {
   if (!plan) return null;
 
@@ -100,9 +101,15 @@ function TripPreviewModal({
             Close
           </button>
 
-          <button className="preview-select">
-            Select this plan →
-          </button>
+          <button
+  className="preview-select"
+  onClick={() => {
+    onSelect(plan);
+    onClose();
+  }}
+>
+  Select this plan →
+</button>
 
         </div>
 
