@@ -33,7 +33,7 @@ function TripOrganizer({
       itinerary: updated,
     });
   };
-
+  
   // ===========================
   // Add Place
   // ===========================
