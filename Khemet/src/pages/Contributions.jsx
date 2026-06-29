@@ -564,7 +564,7 @@ const showToast = (type) => {
             <p className="contributions-subtitle">
               {contributions.length === 0
                 ? "You haven't added any places yet."
-                : `${contributions.length} place${contributions.length !== 1 ? "s" : ""} added`}
+                : `${contributions.length} place${contributions.length !== 1 ? "s" : ""} Total`}
             </p>
           </div>
           <Link className="contributions-add-btn" to="/addplace">

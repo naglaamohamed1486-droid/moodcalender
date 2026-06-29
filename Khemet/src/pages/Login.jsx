@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
+import { useState,useRef } from "react";
+import Toast from "../components/Toast";
 import'../css/login.css'
 
 export default function Login() {
@@ -11,6 +12,17 @@ export default function Login() {
     email: "",
     password: "",
   });
+
+   const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const toastTimeout = useRef(null);
+
+  const showToast = (type, message) => {
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    setToast({ visible: true, type, message });
+    toastTimeout.current = setTimeout(() => {
+      setToast((t) => ({ ...t, visible: false }));
+    }, 3000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +37,7 @@ export default function Login() {
     e.preventDefault();
 
     if (!formData.email || !formData.password) {
-      alert("Please fill all fields");
+       showToast("error", "Please fill in all fields");
       return;
     }
 
@@ -36,24 +48,24 @@ export default function Login() {
     );
 
     if (!foundUser) {
-      alert("User not found. Please sign up first.");
-      navigate("/signup");
+      showToast("error", "No account found — please sign up first");
+      setTimeout(() => navigate("/signup"), 1800);
       return;
     }
 
     if (foundUser.password !== formData.password) {
-      alert("Incorrect password");
+     showToast("error", "Incorrect password");
       return;
     }
 
     login(foundUser);
-
-
+    showToast("success", "Welcome back!");
     navigate("/");
   };
 
   return (
     <main className="main-login">
+       <Toast message={toast.message} visible={toast.visible} type={toast.type} />
     <div className="LogIn container active" id="login">
       <form className="Log" onSubmit={handleLogin}>
         <h2>Welcome Back</h2>

@@ -3,14 +3,12 @@ import { useAuth } from "../context/AuthContext";
 import { useState, useRef } from "react";
 import Card from "../components/Card";
 import PlaceCard from "../components/AddPlaceCard";
+import Toast from "../components/Toast";
 import '../css/profile.css'
 
 
 export default function Profile() {
   const { user, logout, updateUser } = useAuth();
-  if (!user) {
-  return <h2>Please login first</h2>;
-  }
   const [showEditModal, setShowEditModal] = useState(false);
   const [formData, setFormData] = useState({
     name: user.name || "",
@@ -18,12 +16,29 @@ export default function Profile() {
     location: user.location || "",
     bio: user.bio || "",
   });
-  const handleChange = (e) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
+  const fileInputRef = useRef(null);
+  const [activeTab, setActiveTab] = useState("info");
+  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const toastTimeout = useRef(null);
+  const showToast = (type, message) => {
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    setToast({ visible: true, type, message });
+    toastTimeout.current = setTimeout(() => {
+      setToast((t) => ({ ...t, visible: false }));
+    }, 3000);
   };
 
-  const fileInputRef = useRef(null);
+  if (!user) {
+  return <h2>Please login first</h2>;
+  }
 
+   const formatDate = (ts) => {
+    if (!ts) return "—";
+    return new Date(ts).toLocaleDateString("en-US", {
+        year: "numeric", month: "long", day: "numeric"
+    });
+  };
+  
   const handlePicChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -39,28 +54,39 @@ export default function Profile() {
     };
     reader.readAsDataURL(file);
   };
+  
+  const handleOpenEdit = () => {
+    setFormData({
+      name: user.name || "",
+      email: user.email || "",
+      location: user.location || "",
+      bio: user.bio || "",
+    });
+    setShowEditModal(true);
+  };
+  
+  const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSave = () => {
     updateUser(formData);
     setShowEditModal(false);
 };
-  const [activeTab, setActiveTab] = useState("info");
-  const formatDate = (ts) => {
-    if (!ts) return "—";
-    return new Date(ts).toLocaleDateString("en-US", {
-        year: "numeric", month: "long", day: "numeric"
-    });
-};
+  
+ 
 
   return (
     <main className="profile-main" >
+       <Toast message={toast.message} visible={toast.visible} type={toast.type} />
+
       <div className="profile-hero">
         <div className="profile-hero-cont">
         <div className="profile-data">
           <div className="profile-pic-wrapper" onClick={() => fileInputRef.current.click()}>
-  {user.profilePic ? (
-    <img className="profile-pic" src={user.profilePic} alt="profile" />
-  ) : (
+        {user.profilePic ? (
+        <img className="profile-pic" src={user.profilePic} alt="profile" />
+      ) : (
     <div className="placeholder-pic">
       <svg
         className="placeholder-pic-svg"
@@ -277,7 +303,7 @@ export default function Profile() {
       <div className="profile-content">
         {activeTab === "info" &&
           <div className="info-section">
-             <button className="info-sec-btn" onClick={() => setShowEditModal(true)}>Edit Profile</button>
+             <button className="info-sec-btn" onClick={handleOpenEdit}>Edit Profile</button>
             <div className="info-cont">
               <div className="info-sec">
                 <h3 className="info-sec-tit">BIO</h3>
@@ -359,7 +385,7 @@ export default function Profile() {
 
               <div className="edit-modal-footer">
                 <button className="edit-cancel-btn" onClick={() => setShowEditModal(false)}>Cancel</button>
-                <button className="edit-save-btn" onClick={handleSave}>Save Changes</button>
+                <button className="edit-save-btn"onClick={handleSave}>Save Changes</button>
               </div>
             </div>
           </div>
