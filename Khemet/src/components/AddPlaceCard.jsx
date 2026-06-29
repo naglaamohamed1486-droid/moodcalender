@@ -49,7 +49,6 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
       ) : (
         <div className="contrib-card-thumb contrib-card-thumb--empty">
           <span>✦</span>
-          <span className="contrib-card-category-overlay">{categoryLabel(place.category)}</span>
         </div>
       )}
       <div className="contrib-card-body">
