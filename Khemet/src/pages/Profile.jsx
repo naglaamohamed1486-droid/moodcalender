@@ -29,15 +29,6 @@ export default function Profile() {
       setToast((t) => ({ ...t, visible: false }));
     }, 3000);
   };
-
-  useEffect(() => {
-  if (user?.email && !user.profilePic) {
-    getUserProfilePic(user.email).then((pic) => {
-      if (pic) updateUser({ profilePic: pic });
-    });
-  }
-}, [user?.email]);
-
   if (!user) {
   return <h2>Please login first</h2>;
   }

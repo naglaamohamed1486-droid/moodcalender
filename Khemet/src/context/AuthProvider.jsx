@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
+import { setUserProfilePic , getUserProfilePic } from "../components/PicCache";
 
 function stripImages(place) {
   const { coverImage, gallery, ...rest } = place;
@@ -18,8 +19,17 @@ export function syncUserInStorage(updatedUser) {
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
-    return stored ? JSON.parse(stored) : null;
+    return stored ? JSON.parse(stored) : null; 
   });
+
+ 
+  useEffect(() => {
+    if (user?.email && !user.profilePic) {
+      getUserProfilePic(user.email).then((pic) => {
+        if (pic) setUser((prev) => ({ ...prev, profilePic: pic }));
+      });
+    }
+  }, []);
 
   const [favorites, setFavorites] = useState([]);
 
@@ -31,11 +41,16 @@ export function AuthProvider({ children }) {
   }, [user]);
 
 
-  const login = (userData) => {
-    setUser(userData);
-    setFavorites(userData.favorites || []);
-    localStorage.setItem("user", JSON.stringify(userData));
-  };
+ const login = async (userData) => {
+  const pic = await getUserProfilePic(userData.email);
+  const fullUser = { ...userData, profilePic: pic || null };
+
+  const { profilePic, ...safeForStorage } = fullUser;
+  localStorage.setItem("user", JSON.stringify(safeForStorage)); 
+
+  setUser(fullUser);       
+  setFavorites(userData.favorites || []);
+};
 
   const logout = () => {
     setUser(null);
@@ -47,10 +62,11 @@ export function AuthProvider({ children }) {
   const updateUser = (newData) => {
     if (!user) return;
     const updated = { ...user, ...newData };
+    const { profilePic, ...safeUser } = updated;
     const safeForStorage = {
-      ...updated,
-      contributions: (updated.contributions || []).map(stripImages),
-    };
+    ...safeUser,
+    contributions: (safeUser.contributions || []).map(stripImages),
+  };
     setUser(updated);
     localStorage.setItem("user", JSON.stringify(safeForStorage));
     syncUserInStorage(safeForStorage);
