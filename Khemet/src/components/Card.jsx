@@ -10,7 +10,7 @@ function Card({ place, onEdit }) {
   const [coverImage, setCoverImage] = useState(place.coverImage);
 
   useEffect(() => {
-    if (place.id > 50) {
+    if (place.id > 200) {
       getPlaceImages(place.id).then((cached) => {
         if (cached?.coverImage) {
           setCoverImage(cached.coverImage);
