@@ -4,6 +4,7 @@ function TripOrganizer({
   trip,
   setTrip,
   saveTrip,
+  closeTrip
 }) {
   // ===========================
   // Add New Day
@@ -135,11 +136,67 @@ function TripOrganizer({
       itinerary: updated,
     });
   };
+  const moveDayUp = (dayIndex) => {
+  if (dayIndex === 0) return;
+
+  const updated = [...trip.itinerary];
+
+  [updated[dayIndex - 1], updated[dayIndex]] = [
+    updated[dayIndex],
+    updated[dayIndex - 1],
+  ];
+
+  setTrip({
+    ...trip,
+    itinerary: updated,
+  });
+};
+
+const moveDayDown = (dayIndex) => {
+  if (dayIndex === trip.itinerary.length - 1) return;
+
+  const updated = [...trip.itinerary];
+
+  [updated[dayIndex + 1], updated[dayIndex]] = [
+    updated[dayIndex],
+    updated[dayIndex + 1],
+  ];
+
+  setTrip({
+    ...trip,
+    itinerary: updated,
+  });
+};
 
   return (
     <section className="organizer-section">
-      <div className="plans-header">
+      
+
+      <div className="generator-card">
+        <div className="organizer-header">
+        <div className="organizer-header-top">
+            <div>
         <div className="plans-step">
+            <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="#C9A84C"
+              strokeWidth="2"
+            />
+
+            <path
+              d="M15.5 8.5L13.5 13.5L8.5 15.5L10.5 10.5L15.5 8.5Z"
+              fill="#C9A84C"
+            />
+          </svg>
+
           <span>
             STEP 3 — ORGANIZE
           </span>
@@ -152,12 +209,61 @@ function TripOrganizer({
           destinations and personalize
           your trip.
         </p>
-      </div>
 
-      <div className="generator-card">
+        </div>
+
+        {/* <button
+            className="close-organizer"
+            onClick={closeTrip}
+            >
+            ✕ Close
+        </button> */}
+        </div>
+      </div>
         <div className="generator-top">
           <h2>{trip.name}</h2>
         </div>
+        <div className="generator-middle">
+             <div className="editing-info">
+                <span className="editing-label">
+                    EDITING TRIP
+                </span>
+
+                <h3>
+                    {trip.name}
+                </h3>
+
+                <p>
+                    {trip.itinerary.length} days
+                </p>
+              </div>
+
+               <div className="editing-actions">
+
+                    <button
+                        className="secondary-btn"
+                        // onClick={duplicateTrip}
+                    >
+                        📄 Duplicate
+                    </button>
+
+                    <button
+                        className="danger-btn"
+                        // onClick={deleteTrip}
+                    >
+                        🗑 Delete
+                    </button>
+
+                    <button
+                        className="secondary-btn"
+                        onClick={closeTrip}
+                    >
+                        ✕ Close
+                    </button>
+
+                </div>
+        </div>
+
 
         <div className="generator-body">
           <div className="organizer-days">
@@ -194,6 +300,21 @@ function TripOrganizer({
                     </div>
 
                     <div className="day-actions">
+                       <button
+                        className="icon-btn"
+                        onClick={() => moveDayUp(dayIndex)}
+                        title="Move day up"
+                        >
+                        ⬆
+                        </button>
+
+                        <button
+                        className="icon-btn"
+                        onClick={() => moveDayDown(dayIndex)}
+                        title="Move day down"
+                        >
+                        ⬇
+                        </button>
                       <select
                         defaultValue=""
                         onChange={(e) =>
@@ -238,6 +359,7 @@ function TripOrganizer({
                       >
                         ✕
                       </button>
+                      
                     </div>
                   </div>
 
@@ -328,6 +450,7 @@ function TripOrganizer({
                 </div>
               )
             )}
+            
           </div>
 
           {/* FOOTER */}

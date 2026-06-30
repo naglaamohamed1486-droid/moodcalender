@@ -266,6 +266,11 @@ function TripPlanner() {
     setSavedTrips((prev) => [...prev, editingTrip]);
     setEditingTrip(null);
   };
+  const deleteTrip = (index) => {
+  setSavedTrips((prev) =>
+    prev.filter((_, i) => i !== index)
+  );
+};
 
   const handleSelect = (plan) => {
   const built = buildItinerary(plan.places, selectedInterests, days, pace);
@@ -311,6 +316,8 @@ function TripPlanner() {
   };
 
   const generate = () => {
+    setEditingTrip(null);     // اقفلي الـ Organizer
+    setShowPreview(false);    // لو الـ Preview مفتوح
   const generated = generatePlans(places, selectedInterests, days, pace);
   setPlans(generated);
 };
@@ -389,6 +396,7 @@ function TripPlanner() {
             trip={editingTrip}
             setTrip={setEditingTrip}
             saveTrip={saveTrip}
+            closeTrip={() => setEditingTrip(null)}
           />
         )}
       </div>

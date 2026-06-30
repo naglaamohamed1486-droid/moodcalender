@@ -52,9 +52,152 @@
 ========================= */
 
 .organizer-section{
-    margin-top:70px;
+    margin-top:20px;
+}
+.organizer-header{
+    padding: 30px 30px 15px;
+    /* border-bottom: 1px solid #e3d7bd; */
 }
 
+.organizer-header h2{
+  margin:8px 0;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #1B4F6B;
+  font-family: Georgia, serif;
+}
+
+.organizer-header p{
+  margin:0px;
+  max-width: 600px;
+  color: #6f6659;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.organizer-header .plans-step{
+    margin-bottom: 6px;
+}
+.organizer-header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.organizer-header-top > div{
+    flex:1;
+}
+
+.close-organizer{
+
+    padding:10px 18px;
+
+    background:#fbf4e8;
+
+    border:1px solid #decfb8;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    color:#6f6659;
+
+    transition:.25s;
+}
+
+.close-organizer:hover{
+
+    background:#f1e4c4;
+}
+.generator-middle{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 30px;
+
+    /* border-top:1px solid #e3d7bd; */
+    border-bottom:1px solid #e3d7bd;
+
+    margin-top:0px;
+}
+
+.generator-middle .editing-info h3{
+    margin:6px 0 2px;
+    color:#234d67;
+    font-size:22px;
+    font-family:Georgia, serif;
+}
+
+.generator-middle .editing-info p{
+    margin:0;
+    color:#6f6659;
+    font-size:14px;
+}
+
+.editing-label{
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    color:#C9A84C;
+
+    font-weight:600;
+}
+
+.editing-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.secondary-btn,
+.danger-btn{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    height:34px;
+    padding:0 14px;
+
+    border:1px solid #e3d7bd;
+
+    background:#fff;
+
+    border-radius:8px;
+
+    font-size:13px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:all .2s ease;
+}
+
+.secondary-btn{
+    color:#5f584d;
+}
+
+.secondary-btn:hover{
+    background:#fbf4e8;
+    border-color:#C9A84C;
+    color:#234d67;
+}
+
+.danger-btn{
+    color:#b24b45;
+    border-color:#efd7d4;
+}
+
+.danger-btn:hover{
+    background:#fff3f2;
+    border-color:#d98d86;
+}
 .organizer-days{
     display:flex;
     flex-direction:column;
@@ -231,6 +374,7 @@
     color:#6f6659;
 
     transition:.2s;
+
 }
 
 .icon-btn:hover{
