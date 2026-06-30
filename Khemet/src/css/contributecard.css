@@ -1,0 +1,254 @@
+/* ── Base contrib card ── */
+.contrib-card {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 18px;
+  display: flex;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+.contrib-card:hover {
+  box-shadow: 0 4px 20px rgba(27, 79, 107, 0.08);
+}
+
+.contrib-card-thumb {
+  width: 110px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.contrib-card-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.contrib-card-thumb--empty {
+  background-color: #EFE4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A84C;
+  font-size: 22px;
+}
+
+.contrib-card-body {
+  flex: 1;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.contrib-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contrib-card-name {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 19px;
+  color: #1B4F6B;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.contrib-card-desc {
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  color: #7A6040;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.contrib-card-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #1B4F6B;
+  color: #FDF8EE;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.contrib-card-rating .stars { color: #F4D35E; font-size: 12px; }
+.contrib-card-rating .reviews { color: rgba(253, 248, 238, 0.65); font-weight: 400; }
+
+/* ── Meta pills ── */
+.contrib-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+}
+.contrib-meta-pill {
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.contrib-meta-location {
+  background-color: rgba(27, 79, 107, 0.09);
+  color: #1B4F6B;
+}
+.contrib-meta-category {
+  background-color: rgba(201, 168, 76, 0.15);
+  color: #7A5E10;
+  letter-spacing: 0.5px;
+}
+.contrib-meta-tag {
+  background-color: #EFE4C4;
+  color: #7A6040;
+}
+.contrib-meta-more {
+  background-color: transparent;
+  color: #C9A84C;
+  font-size: 11px;
+  padding: 0;
+}
+
+/* ── Actions row ── */
+.contrib-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 4px;
+}
+.contrib-card-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.x-contrib-btn-edit {
+  background-color: transparent;
+  border: 1px solid #1B4F6B;
+  color: #1B4F6B;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.x-contrib-btn-edit:hover {
+  background-color: #1B4F6B;
+  color: #FDF8EE;
+}
+
+.contrib-btn-delete {
+  background-color: transparent;
+  border: 1px solid rgba(184, 92, 26, 0.4);
+  color: #B85C1A;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.contrib-btn-delete:hover {
+  background-color: #B85C1A;
+  color: #FDF8EE;
+}
+
+/* ── Profile grid overrides ── */
+.pf-cards-grid .contrib-card {
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+.pf-cards-grid .contrib-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(27, 79, 107, 0.10);
+  border-color: rgba(201, 168, 76, 0.2);
+}
+.pf-cards-grid .contrib-card-thumb {
+  position: relative;
+}
+.pf-cards-grid .contrib-card-thumb img {
+  transition: transform 0.5s ease;
+}
+.pf-cards-grid .contrib-card:hover .contrib-card-thumb img {
+  transform: scale(1.03);
+}
+.pf-cards-grid .contrib-card-category-overlay {
+  display: inline-flex;
+  position: absolute;
+  top: 14px; left: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.pf-cards-grid .contrib-card-meta .contrib-meta-category { display: none; }
+.pf-cards-grid .contrib-meta-location {
+  background: none;
+  padding: 0;
+  color: rgba(42, 26, 8, 0.45);
+  font-size: 0.8rem;
+}
+.pf-cards-grid .contrib-meta-location svg { display: none; }
+.pf-cards-grid .contrib-meta-tag {
+  background-color: #1B4F6B;
+  color: #E8D5A3;
+  border: 1px solid rgba(74, 143, 170, 0.2);
+  transition: all 0.2s ease;
+}
+.pf-cards-grid .contrib-meta-tag:hover {
+  background-color: #1a4560;
+  border-color: #4A8FAA;
+}
+.pf-cards-grid .contrib-card-rating { display: none; }
+.pf-cards-grid .contrib-card-rating-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #7A6040;
+}
+.pf-cards-grid .contrib-card-rating-footer .stars { color: #C9A84C; font-size: 0.95rem; }
+.pf-cards-grid .contrib-card-rating-footer .reviews { color: rgba(42, 26, 8, 0.35); font-size: 0.75rem; }
+.pf-cards-grid .contrib-card-actions {
+  padding-top: 12px;
+  border-top: 1px solid rgba(42, 26, 8, 0.06);
+  margin-top: auto;
+}
+.pf-cards-grid .contrib-btn-edit {
+  border: 1px solid rgba(42, 26, 8, 0.15);
+  color: #7A6040;
+  background: transparent;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+}
+.pf-cards-grid .contrib-btn-edit:hover {
+  background: rgba(42, 26, 8, 0.06);
+}
+.pf-cards-grid .contrib-btn-delete { display: none; }
+
+@media (max-width: 768px) {
+  .contrib-card-thumb { width: 90px; }
+}
