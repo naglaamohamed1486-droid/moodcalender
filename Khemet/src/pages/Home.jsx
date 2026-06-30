@@ -13,15 +13,52 @@ export default function Home() {
   const { user } = useAuth();
   const [featuredPlaces, setFeaturedPlaces] = useState([]);
 
-  useEffect(() => {
+const INITIAL_COUNT = 3;
+function getVisibleCount() {
+  const grid = document.querySelector(".places");
+  if (!grid) return INITIAL_COUNT;
+  const cols = window
+    .getComputedStyle(grid)
+    .gridTemplateColumns
+    .split(" ").length;
+
+  let count = INITIAL_COUNT;
+  while (
+    count % cols !== 0 &&
+    count < placesData.length
+  ) {
+    count++;
+  }
+  return count;
+}
+
+const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+
+useEffect(() => {
+  const updateVisibleCount = () => {
+    setVisibleCount(getVisibleCount());
+  };
+  updateVisibleCount();
+
+  window.addEventListener("resize", updateVisibleCount);
+
+  return () =>
+    window.removeEventListener("resize", updateVisibleCount);
+}, []);
+
+useEffect(() => {
   const sortedPlaces = [...placesData].sort((a, b) => {
     if (b.rating !== a.rating) {
       return b.rating - a.rating;
-    }    return b.reviews - a.reviews;
-  });
-  setFeaturedPlaces(sortedPlaces.slice(0, 3));
-}, []);
+    }
 
+    return b.reviews - a.reviews;
+  });
+
+  setFeaturedPlaces(
+    sortedPlaces.slice(0, visibleCount)
+  );
+}, [visibleCount]);
   return (
     <main className="home">
       <section className="hero">
