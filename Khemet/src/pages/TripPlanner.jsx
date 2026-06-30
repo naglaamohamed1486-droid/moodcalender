@@ -50,11 +50,11 @@ const CITY_CLUSTERS = [
   },
   {
     name: "Nile Valley",
-    cities: ["Luxor", "Aswan"],
+    cities: ["Luxor","Qena", "Aswan"],
   },
   {
     name: "Red Sea & Sinai",
-    cities: ["Sharm El Sheikh", "Dahab", "Hurghada"],
+    cities: ["Sharm El Sheikh", "Dahab", "Hurghada", "Marsa Alam"],
   },
   {
     name: "Western Desert",
