@@ -253,12 +253,12 @@ const moveDayDown = (dayIndex) => {
                         📄 Duplicate
                     </button> */}
 
-                    <button
+                    {/* <button
                         className="danger-btn"
                         onClick={deleteTrip}
                     >
                         🗑 Delete
-                    </button>
+                    </button> */}
 
                     <button
                         className="secondary-btn"
