@@ -1,0 +1,53 @@
+/* ── Toast ── */
+.add-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(100% + 32px));
+  color: #FDF8EE;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* visible: slide up and fade in */
+.add-toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* hide: slide back down cleanly */
+.add-toast:not(.add-toast-visible) {
+  transition:
+    opacity 0.25s cubic-bezier(0.4, 0, 1, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* ── Variants ── */
+.add-toast--success {
+  background: linear-gradient(135deg, #1aab5a 0%, #15944e 100%);
+  box-shadow: 0 8px 28px rgba(21, 148, 78, 0.35);
+}
+
+.add-toast--delete {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  box-shadow: 0 8px 28px rgba(197, 48, 48, 0.35);
+}
+
+.add-toast--update {
+  background: linear-gradient(135deg, #1B4F6B 0%, #154260 100%);
+  box-shadow: 0 8px 28px rgba(27, 79, 107, 0.35);
+}

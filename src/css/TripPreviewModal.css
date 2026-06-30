@@ -1,0 +1,254 @@
+.preview-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  padding: 30px;
+}
+
+.preview-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 650px;
+  height: 80vh;
+
+  background: #fcf2df;
+  border-radius: 16px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #e6dcc7;
+  border-radius: 50%;
+
+  background: #fef8e9;
+  color: #234d67;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+.close-btn:hover {
+  background: #f0e3c0;
+  border-color: #d9a632;
+}
+
+
+.preview-title {
+  color: #234d67;
+
+  font-size: 22px;
+
+  font-family: Georgia, serif;
+
+  margin-bottom: 4px;
+}
+
+.preview-subtitle {
+  color: #7c7568;
+
+  margin-bottom: 30px;
+
+  font-size: 13px;
+}
+
+.preview-days {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 12px;
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding-right: 8px;
+}
+
+.preview-day-card {
+  background: #f1e8c4;  
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: none; 
+  min-height: auto; 
+}
+
+
+.preview-day-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 70px;
+  margin-bottom: 12;
+}
+
+.preview-day-number {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: #234d67;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+
+  font-size: 12px;
+}
+
+.preview-day-header h3 {
+  color: #234d67;
+
+  font-size: 14px;
+
+  font-family: Georgia, serif;
+}
+
+.preview-place {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 2px 0;
+  font-size: 13px;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+
+  flex-shrink: 0;
+}
+
+.preview-actions {
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 15px;
+}
+
+.preview-close {
+  padding: 12px 24px;
+
+  border-radius: 12px;
+
+  border: 1px solid #d8d8d8;
+
+  background: #fef8e9;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.preview-close:hover{
+  
+  background: #f0e3c0;
+  border-color: #d9a632;
+}
+
+.preview-select {
+  padding: 12px 24px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  background: #d9a632;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+.preview-select:hover {
+  opacity: 0.9;
+}
+
+.preview-days::-webkit-scrollbar {
+  width: 7px;
+}
+
+.preview-days::-webkit-scrollbar-thumb {
+  background: #b5b2ac;
+  border-radius: 999px;
+}
+
+.preview-days::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.energy-badge {
+  color: #c8881a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.place-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-title {
+  color: #4E342E;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.place-city {
+  font-size: 10px;
+  color: #8a8174;
+
+  margin-top: 1px;
+}
+
+.day-places {
+  flex: 1;
+  margin-left: 42px;
+}

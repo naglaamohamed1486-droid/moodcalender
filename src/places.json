@@ -1,0 +1,1133 @@
+[
+  {
+    "id": 1,
+    "title": "El Fishawy Cafe",
+    "description": "Historic cafe in Khan El Khalili, always full of life and local energy.",
+    "longdescription": "El Fishawy Cafe is one of the oldest and most famous cafes in Cairo, located in the heart of the bustling Khan El Khalili market. Established in 1773, it has been a gathering place for locals, tourists, and intellectuals for centuries. The cafe is known for its traditional Egyptian coffee, mint tea, and shisha (hookah). Its interior is adorned with vintage decor, creating a nostalgic atmosphere that transports visitors back in time. Despite its popularity, the cafe maintains a cozy and welcoming vibe, making it a must-visit spot for anyone exploring Cairo's rich cultural heritage.",
+    "lat": 30.0478,
+    "lng": 31.2625,
+    "tags": [
+      "cafe",
+      "historical",
+      "busy",
+      "cheap"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 1240,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/359b9f67-a3f1-471d-baea-fbe63f6095dc/1-fishawy.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/359b9f67-a3f1-471d-baea-fbe63f6095dc/1-fishawy.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5676d3ad-e473-44aa-b4bb-d765fd71e475/1-fishawy-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/42f69077-75f5-476d-9b40-750450230bab/1-fishawy-c.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Al-Azhar Park",
+    "description": "Green escape with panoramic views over historic Cairo.",
+    "longdescription": "Al-Azhar Park is a beautifully landscaped public park located in the heart of Cairo, offering a serene escape from the bustling city. Opened in 2005, the park was developed on the site of a historic garbage dump and has since transformed into a lush oasis with gardens, fountains, and walking paths. Visitors can enjoy panoramic views of the city, including the historic mosques and minarets of Islamic Cairo. The park also features restaurants and cafes where guests can relax and take in the scenery. Al-Azhar Park is a popular destination for both locals and tourists seeking tranquility, nature, and cultural experiences in Cairo.",
+    "lat": 30.0406,
+    "lng": 31.2622,
+    "tags": [
+      "nature",
+      "viewpoint",
+      "romantic",
+      "calm"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 2150,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/a4819435-748e-4272-802e-c175e6da965f/2-azhar.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/a4819435-748e-4272-802e-c175e6da965f/2-azhar.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6fadfc1c-aca2-445e-8a37-68d75335f645/2-azhar-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5b33e20f-d911-4493-9861-632f3156ab6b/2-azhar-c.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Khan El Khalili",
+    "description": "Historic market filled with crafts, spices, and street life.",
+    "longdescription": "Khan El Khalili is a vibrant and historic bazaar located in the heart of Cairo, Egypt. Established in the 14th century, it has been a bustling center of commerce for centuries, attracting locals and tourists alike. The market is famous for its narrow alleyways lined with shops selling a wide array of goods, including traditional crafts, jewelry, spices, perfumes, textiles, and souvenirs. Visitors can immerse themselves in the lively atmosphere, haggle with shopkeepers, and experience the rich cultural heritage of Cairo. Khan El Khalili is not only a shopping destination but also a place to enjoy traditional Egyptian cuisine at its many cafes and restaurants. The market's unique charm and historical significance make it a must-visit location for anyone exploring the city.",
+    "lat": 30.0475,
+    "lng": 31.262,
+    "tags": [
+      "market",
+      "historical",
+      "busy",
+      "touristic"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 3890,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/9e9b8ef3-84bc-4919-9900-f3c9d5bc8e00/3-khan.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/9e9b8ef3-84bc-4919-9900-f3c9d5bc8e00/3-khan.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e1def3ca-cb53-4705-934f-f141b29e4ab0/3-khan-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/b650a368-d046-4251-9ed2-bde987c0c046/3-khan-c.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Zamalek District Streets",
+    "description": "Quiet island district with cafes, trees, and artistic vibes.",
+    "longdescription": "Zamalek is a trendy district in Cairo known for its European-style architecture, tree-lined streets, and vibrant cultural scene. The area is home to numerous cafes, restaurants, and art galleries, making it a popular destination for both locals and tourists. Visitors can stroll through the charming neighborhoods, enjoy a cup of coffee at a local cafe, or explore the many shops and boutiques that line the streets. The district offers a peaceful retreat from the bustling city life while still providing easy access to Cairo's main attractions.",
+    "lat": 30.0619,
+    "lng": 31.2197,
+    "tags": [
+      "street",
+      "cafe",
+      "calm",
+      "romantic"
+    ],
+    "city": "Cairo",
+    "rating": 4.4,
+    "reviews": 870,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/61c7892c-4730-4998-ae4c-886a8773e72b/4-zamalek.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/61c7892c-4730-4998-ae4c-886a8773e72b/4-zamalek.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/21060de3-a68b-4ac5-b72e-d45cbcd4775e/4-zamalek-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/08705d29-f6b7-4634-baaa-2c5b043e7c11/4-zamalek-c.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Cairo Tower",
+    "description": "Iconic tower with panoramic views of the city and Nile.",
+    "longdescription": "The Cairo Tower is a prominent landmark in Cairo, Egypt, standing at 187 meters (614 feet) tall. It was completed in 1961 and offers visitors breathtaking panoramic views of the city and the Nile River from its observation deck. The tower's unique design resembles a lotus flower, symbolizing ancient Egyptian culture. Visitors can take an elevator to the top, where they can enjoy a 360-degree view of Cairo's skyline, including historic sites such as the Pyramids of Giza and the Citadel. The tower also features a revolving restaurant, allowing guests to dine while taking in the stunning vistas. The Cairo Tower is a must-visit attraction for those looking to experience the beauty and history of Egypt from above.",
+    "lat": 30.0459,
+    "lng": 31.2243,
+    "tags": [
+      "viewpoint",
+      "touristic",
+      "romantic"
+    ],
+    "city": "Cairo",
+    "rating": 4.3,
+    "reviews": 4200,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6688ccee-3e4f-4f3b-a4a2-bf9e369cb980/5-tower.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6688ccee-3e4f-4f3b-a4a2-bf9e369cb980/5-tower.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/1c5d105d-dbe4-42d5-ab94-c8ed9a53556c/5-tower-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/1fd58ad9-7ee3-4bc3-86d3-880c899343fb/5-tower-c.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Koshary Abou Tarek",
+    "description": "Famous Egyptian street food spot loved by locals.",
+    "longdescription": "Koshary Abou Tarek is a renowned eatery in Cairo, famous for serving the traditional Egyptian dish known as koshary. This popular street food consists of a hearty mix of rice, lentils, pasta, chickpeas, and a tangy tomato sauce, topped with crispy fried onions. Established in the mid-20th century, Koshary Abou Tarek has become a beloved institution among locals and tourists alike. The restaurant is often bustling with customers eager to enjoy this iconic dish at an affordable price. Its casual atmosphere and quick service make it an ideal spot for a satisfying meal while exploring the city.",
+    "lat": 30.0511,
+    "lng": 31.2387,
+    "tags": [
+      "food",
+      "cheap",
+      "local",
+      "busy"
+    ],
+    "city": "Cairo",
+    "rating": 4.8,
+    "reviews": 5600,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/31e1f417-2080-4038-8915-580e29c883ca/6-koshary.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/31e1f417-2080-4038-8915-580e29c883ca/6-koshary.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/758c33ca-33cf-4d5e-bb15-e53204349c1a/6-koshary-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/0eca282f-c023-4577-83f4-18b97ccf38aa/6-koshary-c.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Downtown Cairo Streets",
+    "description": "European-style architecture mixed with chaotic street life.",
+    "longdescription": "Downtown Cairo Streets are characterized by their European-style architecture, which contrasts with the more traditional buildings found elsewhere in the city. The area is known for its bustling street life, with vendors selling everything from fresh produce to souvenirs. Visitors can explore the narrow alleyways and experience the vibrant energy of this dynamic district.",
+    "lat": 30.0527,
+    "lng": 31.2421,
+    "tags": [
+      "street",
+      "urban",
+      "busy",
+      "historical"
+    ],
+    "city": "Cairo",
+    "rating": 4.1,
+    "reviews": 650,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/87b96554-a75d-4809-ba24-84daf7166555/7-downtown.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/87b96554-a75d-4809-ba24-84daf7166555/7-downtown.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/7e6a1803-e9a6-4f8d-afbb-a211a02d060b/7-downtown-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e877089f-2251-4176-a318-6dc76cb95583/7-downtown-c.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Wadi Degla Protectorate",
+    "description": "Desert canyon perfect for hiking and escaping the city.",
+    "longdescription": "Wadi Degla Protectorate is a natural reserve located on the outskirts of Cairo, offering a unique desert landscape with rugged canyons and diverse wildlife. The area is popular among hikers, nature enthusiasts, and those looking to escape the hustle and bustle of the city. Visitors can explore the various trails that wind through the rocky terrain, providing opportunities for bird watching and photography. The protectorate is also home to several species of plants and animals, making it an important ecological site. Wadi Degla offers a peaceful retreat for those seeking adventure and a connection with nature.",
+    "lat": 29.9983,
+    "lng": 31.3189,
+    "tags": [
+      "nature",
+      "adventure",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 920,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/7bce7619-4c0d-490e-8003-abcbf5a2c77d/8-wadi.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/7bce7619-4c0d-490e-8003-abcbf5a2c77d/8-wadi.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/b7d9e3d4-fb92-4485-9281-c716e1d17c2d/8-wadi-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/4a3d01bb-d31f-4af9-a40e-317bd656742a/8-wadi-c.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "The Greek Campus",
+    "description": "Modern creative hub with startups and cafes.",
+    "longdescription": "The Greek Campus is a modern creative hub located in the heart of Cairo, Egypt. It serves as a co-working space and innovation center for startups, entrepreneurs, and tech enthusiasts. The campus is housed in a historic building that has been renovated to provide a contemporary environment for collaboration and creativity. Visitors can find a variety of cafes, restaurants, and event spaces within the campus, making it a vibrant destination for networking and socializing. The Greek Campus hosts workshops, seminars, and events that foster innovation and support the growth of the local startup ecosystem.",
+    "lat": 30.0444,
+    "lng": 31.2367,
+    "tags": [
+      "modern",
+      "work",
+      "cafe",
+      "calm"
+    ],
+    "city": "Cairo",
+    "rating": 4.3,
+    "reviews": 430,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/f658ef52-b844-4345-89b1-afc1d707dcab/9-greek.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/f658ef52-b844-4345-89b1-afc1d707dcab/9-greek.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/0e1fe471-82b2-4449-825b-6eca7ede8302/9-greek-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e0d22067-2724-4ffc-b958-da6929ebe629/9-greek-c.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Bayt Al-Suhaymi",
+    "description": "Beautiful Ottoman-era house in Islamic Cairo.",
+    "longdescription": "Bayt Al-Suhaymi is a historic Ottoman-era house located in the heart of Islamic Cairo. Built in the 17th century, it is one of the finest examples of traditional Egyptian architecture, featuring intricate wooden latticework, ornate decorations, and a central courtyard. The house has been preserved as a museum, allowing visitors to explore its beautifully restored rooms and learn about the lifestyle of wealthy Egyptian families during that period. Bayt Al-Suhaymi offers a glimpse into Cairo's rich cultural heritage and provides a peaceful retreat from the bustling streets of the city.",
+    "lat": 30.052,
+    "lng": 31.2626,
+    "tags": [
+      "historical",
+      "hidden",
+      "cultural"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 380,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5f8e7f91-75c2-4346-9ecf-52dbcbcdb183/10-suhaymi.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5f8e7f91-75c2-4346-9ecf-52dbcbcdb183/10-suhaymi.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/d58f8ee1-3b5f-49d6-b167-1bbe7757225e/10-suhaymi-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/2752f968-27d3-4960-93a3-aff1be0ae0aa/10-suhaymi-c.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Bibliotheca Alexandrina",
+    "longdescription": "Bibliotheca Alexandrina is a modern library and cultural landmark situated on the Mediterranean coast of Alexandria, Egypt. It serves as a center for knowledge, research, and cultural exchange, housing an extensive collection of books, manuscripts, and digital resources. The building itself is a striking example of contemporary architecture, featuring a distinctive design that blends seamlessly with the surrounding landscape. Visitors can explore the various exhibition spaces, attend lectures and workshops, and enjoy the serene atmosphere that makes it a popular destination for both locals and tourists.",
+    "description": "Modern library and cultural landmark on the Mediterranean coast.",
+    "lat": 31.2089,
+    "lng": 29.9092,
+    "tags": [
+      "cultural",
+      "modern",
+      "viewpoint",
+      "calm"
+    ],
+    "city": "Alexandria",
+    "rating": 4.7,
+    "reviews": 3100,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/355ab382-ce36-4efa-866f-623ea4bb228f/11-biblio.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/355ab382-ce36-4efa-866f-623ea4bb228f/11-biblio.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5c595357-0a08-4a41-8812-8fdcc1895b01/11-biblio-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/c62c4345-2415-45b9-a818-b32f28c2e9a9/11-biblio-c.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Qaitbay Citadel",
+    "description": "Historic fortress overlooking the Mediterranean Sea.",
+    "longdescription": "Qaitbay Citadel is a historic fortress located on the Mediterranean coast of Alexandria, Egypt. Built in the 15th century by the Mamluk Sultan Qaitbay, the citadel stands as a testament to the region's rich history and architectural heritage. The fortress offers stunning views of the sea and the surrounding landscape, making it a popular destination for tourists and history enthusiasts. Visitors can explore the various towers, courtyards, and historical structures that showcase the military engineering of the time.",
+    "lat": 31.2135,
+    "lng": 29.8851,
+    "tags": [
+      "historical",
+      "viewpoint",
+      "touristic"
+    ],
+    "city": "Alexandria",
+    "rating": 4.5,
+    "reviews": 2700,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/84be81cb-8de7-4fc9-8f5b-bf1cd3f4bbaa/12-qaitbay.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/84be81cb-8de7-4fc9-8f5b-bf1cd3f4bbaa/12-qaitbay.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/840c6c30-d47a-457f-ab6d-21fabfa51bc3/12-qaitbay-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6466623f-5729-47b6-901c-c278f1e6e75d/12-qaitbay-c.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Stanley Bridge",
+    "description": "Iconic bridge with sunset views over the sea.",
+    "lat": 31.2456,
+    "lng": 29.9707,
+    "tags": [
+      "viewpoint",
+      "romantic",
+      "photography"
+    ],
+    "city": "Alexandria",
+    "rating": 4.4,
+    "reviews": 1850,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/071537e3-b25b-49fd-9dc8-596d60be288e/13-stanley.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/071537e3-b25b-49fd-9dc8-596d60be288e/13-stanley.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/726520e3-9d57-40a5-bc16-a1b0bea1103f/13-stanley-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/35d3fe32-4fe0-4f42-b099-841f36adb377/13-stanley-c.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Montaza Palace Gardens",
+    "description": "Royal gardens with sea views and green landscapes.",
+    "longdescription": "Montaza Palace Gardens are a series of beautifully landscaped gardens located within the Montaza Palace complex in Alexandria, Egypt. The gardens feature a mix of native and exotic plants, creating a tranquil oasis amidst the bustling city. Visitors can stroll through the well-maintained pathways, enjoy the scenic views of the Mediterranean Sea, and relax in the various seating areas throughout the gardens. The site is particularly popular during the spring and autumn seasons when the flora is in full bloom.",
+    "lat": 31.2887,
+    "lng": 30.0175,
+    "tags": [
+      "nature",
+      "romantic",
+      "calm",
+      "viewpoint"
+    ],
+    "city": "Alexandria",
+    "rating": 4.6,
+    "reviews": 2300,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5d5ecfbf-9ffc-49c6-b2f7-c81ab0d81840/14-montaza.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/5d5ecfbf-9ffc-49c6-b2f7-c81ab0d81840/14-montaza.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/bf023baf-317a-4b35-8b41-3a47ad7879c6/14-montaza-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/1e5d0fc9-38cb-4a4d-87fc-9a645e90b0f1/14-montaza-c.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "El Raml Station Area",
+    "description": "Historic downtown Alexandria with old city vibes.",
+    "longdescription": "El Raml Station Area is a vibrant district in downtown Alexandria, known for its rich history and lively atmosphere. The area is characterized by its bustling streets, historic architecture, and diverse range of shops, restaurants, and cafes. Visitors can experience the authentic charm of the old city while enjoying modern amenities and cultural attractions.",
+    "lat": 31.2001,
+    "lng": 29.9052,
+    "tags": [
+      "street",
+      "urban",
+      "historical",
+      "busy"
+    ],
+    "city": "Alexandria",
+    "rating": 4,
+    "reviews": 560,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6f2eb652-663d-4e3f-80a5-3a1952a58071/15-raml.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/6f2eb652-663d-4e3f-80a5-3a1952a58071/15-raml.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/8657ada6-6d4a-4806-8c4b-40eacf6b4bbf/15-raml-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/de148202-8cf7-4b24-b961-c4323c6b8e58/15-raml-c.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Giza Pyramids Plateau",
+    "description": "One of the world's most iconic ancient wonders.",
+    "longdescription": "The Giza Pyramids Plateau is home to the famous Great Pyramid of Giza, along with the Sphinx and other ancient structures. This UNESCO World Heritage site attracts millions of visitors annually, drawn by the mystery and grandeur of these ancient monuments. The plateau offers a unique opportunity to explore the history and engineering prowess of the ancient Egyptians.",
+    "lat": 29.9792,
+    "lng": 31.1342,
+    "tags": [
+      "historical",
+      "touristic",
+      "adventure",
+      "viewpoint"
+    ],
+    "city": "Giza",
+    "rating": 4.9,
+    "reviews": 28500,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/d97d7559-db5b-45c1-9d79-4eafb427531e/16-giza.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/d97d7559-db5b-45c1-9d79-4eafb427531e/16-giza.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/ef35d255-823d-43a4-a6bf-e711688c6f45/16-giza-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/f0f3cc99-ae57-4409-a7a0-e9b11c071c9c/16-giza-c.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Great Sphinx of Giza",
+    "description": "Mystical guardian statue beside the pyramids.",
+    "longdescription": "The Great Sphinx of Giza is a colossal limestone statue with the body of a lion and the head of a human, believed to represent Pharaoh Khafre. It is one of the most iconic symbols of ancient Egypt and stands on the Giza Plateau near the pyramids. The Sphinx has fascinated historians, archaeologists, and tourists for centuries due to its enigmatic expression and historical significance. Visitors can marvel at its grandeur, learn about its history, and explore the surrounding archaeological sites.",
+    "lat": 29.9753,
+    "lng": 31.1376,
+    "tags": [
+      "historical",
+      "touristic",
+      "mysterious"
+    ],
+    "city": "Giza",
+    "rating": 4.8,
+    "reviews": 19200,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e2217923-87c8-4881-b2e3-4b4906baf86c/17-sphinx.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e2217923-87c8-4881-b2e3-4b4906baf86c/17-sphinx.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/907ddd17-0c14-4a80-b7fc-1bb6996e0036/17-sphinx-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/2f8169d3-83c7-495a-960e-e67dcdd7fee3/17-sphinx-c.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Saqqara Step Pyramid",
+    "description": "Ancient step pyramid and archaeological complex.",
+    "longdescription": "The Saqqara Step Pyramid is the oldest known pyramid in Egypt, built during the 27th century BC for Pharaoh Djoser. It is part of a larger complex that includes temples, tombs, and other structures, making it a significant archaeological site. The pyramid's unique step design represents an early stage in the evolution of pyramid construction and provides valuable insights into ancient Egyptian architecture and religious practices. Visitors can explore the site, learn about its history, and appreciate the ingenuity of ancient Egyptian engineering.",
+    "lat": 29.8711,
+    "lng": 31.2164,
+    "tags": [
+      "historical",
+      "adventure",
+      "hidden"
+    ],
+    "city": "Giza",
+    "rating": 4.5,
+    "reviews": 3400,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/411a1a64-c31c-4884-9603-c28fd133e657/18-saqqara.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/411a1a64-c31c-4884-9603-c28fd133e657/18-saqqara.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/2d32c7ff-9b15-4438-a723-ef8732d726b1/18-saqqara-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/fe6e3d65-1355-4f4b-9567-55ac214ff6da/18-saqqara-c.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Luxor Temple",
+    "longdescription": "Luxor Temple is a massive ancient temple located in the heart of Luxor city, Egypt. Built during the New Kingdom period, it served as a center for religious ceremonies and was dedicated to the god Amun. The temple features impressive columns, intricate reliefs, and stunning architecture that showcase the artistic and engineering skills of the ancient Egyptians. Visitors can explore the various halls, courtyards, and sanctuaries to learn about its rich history and cultural significance.",
+    "description": "Ancient temple in the heart of Luxor city.",
+    "lat": 25.6993,
+    "lng": 32.6396,
+    "tags": [
+      "historical",
+      "touristic",
+      "cultural"
+    ],
+    "city": "Luxor",
+    "rating": 4.8,
+    "reviews": 11700,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e66176dd-ef33-45d6-9a37-8657661d2b66/19-luxor.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/e66176dd-ef33-45d6-9a37-8657661d2b66/19-luxor.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/d456bb2c-a8d7-401b-b658-61cabd62fb99/19-luxor-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/99d7d24a-ce88-4c59-8316-8f6025592594/19-luxor-c.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Karnak Temple Complex",
+    "description": "Massive temple complex with towering columns.",
+    "longdescription": "The Karnak Temple Complex is one of the largest and most impressive religious sites in the world, located in Luxor, Egypt. It was built over a period of 2,000 years and dedicated to the Theban triad of gods: Amun, Mut, and Khonsu. The complex features a vast array of temples, chapels, pylons, and obelisks, with the Great Hypostyle Hall being one of its most famous attractions. Visitors can marvel at the colossal statues, intricate hieroglyphics, and monumental architecture that reflect the grandeur of ancient Egyptian civilization. The Karnak Temple Complex is a must-visit destination for history enthusiasts and travelers seeking to explore Egypt's rich cultural heritage.",
+    "lat": 25.7188,
+    "lng": 32.6573,
+    "tags": [
+      "historical",
+      "adventure",
+      "touristic"
+    ],
+    "city": "Luxor",
+    "rating": 4.9,
+    "reviews": 15800,
+    "coverImage": "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/02ebf7fe-c2a0-49bf-a7be-b50ed5dd05c8/20-karnak.jpg",
+    "gallery": [
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/02ebf7fe-c2a0-49bf-a7be-b50ed5dd05c8/20-karnak.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/31d57440-2c9d-4d79-9819-e80da8bf6671/20-karnak-b.jpg",
+      "https://id-preview--af40247e-199c-42a5-84bb-333b085daf4c.lovable.app/__l5e/assets-v1/87b5f919-610a-47d2-84d4-1d92fdad3e46/20-karnak-c.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Valley of the Kings",
+    "description": "Royal tombs carved deep into the desert mountains.",
+    "longdescription": "The Valley of the Kings is a renowned archaeological site located on the west bank of the Nile River in Luxor, Egypt. It served as the burial ground for pharaohs and powerful nobles of the New Kingdom period. The valley is home to over 60 tombs, including the famous tomb of Tutankhamun, and is known for its elaborate wall paintings and hieroglyphics that depict ancient Egyptian beliefs about the afterlife. Visitors can explore the tombs, learn about the history of ancient Egypt, and marvel at the artistry and craftsmanship that went into creating these final resting places for some of history's most influential figures.",
+    "lat": 25.7402,
+    "lng": 32.6014,
+    "tags": [
+      "historical",
+      "adventure",
+      "mysterious",
+      "touristic"
+    ],
+    "city": "Luxor",
+    "rating": 4.9,
+    "reviews": 20200,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1322f40b-c475-4502-b913-3275e5cc180b/21-valley-of-the-kings.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1322f40b-c475-4502-b913-3275e5cc180b/21-valley-of-the-kings.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/0cd877b5-60b6-4c73-8c19-eadb4ba26c0d/21-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/79305a0a-9500-46ec-b108-00cdb52cb2bf/21-c.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Nile Corniche Luxor",
+    "description": "Peaceful riverside walk with sunset views over the Nile.",
+    "longdescription": "The Nile Corniche in Luxor is a serene riverside promenade that offers stunning sunset views over the Nile River. It's a perfect spot for a leisurely walk, enjoying the gentle breeze and the picturesque scenery. The area is lined with cafes and benches, making it an ideal place to relax and soak in the beauty of Luxor.",
+    "lat": 25.6872,
+    "lng": 32.639,
+    "tags": [
+      "viewpoint",
+      "calm",
+      "romantic",
+      "nature"
+    ],
+    "city": "Luxor",
+    "rating": 4,
+    "reviews": 11700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/16481eb4-fb18-418d-b2e8-604aafb03b69/22-nile-corniche-luxor.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/16481eb4-fb18-418d-b2e8-604aafb03b69/22-nile-corniche-luxor.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/0b9ca534-3b14-490d-a5db-4712e1a5e958/22-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/574124e0-0145-4e24-9d11-814ea25e9ff6/22-c.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Philae Temple",
+    "description": "Beautiful island temple dedicated to the goddess Isis.",
+    "longdescription": "Philae Temple is an ancient Egyptian temple complex located on Agilkia Island in the reservoir of the Aswan Low Dam. It was originally located on Philae Island, but was relocated to Agilkia Island to save it from flooding caused by the construction of the Aswan High Dam. The temple is dedicated to the goddess Isis and is known for its beautiful architecture and intricate carvings.",
+    "lat": 24.013,
+    "lng": 32.8789,
+    "tags": [
+      "historical",
+      "adventure",
+      "viewpoint",
+      "cultural"
+    ],
+    "city": "Aswan",
+    "rating": 4.7,
+    "reviews": 28500,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/f40bff50-81b0-476d-9581-2b1c01024877/23-philae-temple.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/f40bff50-81b0-476d-9581-2b1c01024877/23-philae-temple.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/9bf2e674-5c90-48a6-b14a-dc8a9e4bc7e6/23-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/12acad1a-bfaa-41a9-95b2-614c57ccbc69/23-c.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Aswan High Dam",
+    "description": "Modern engineering landmark controlling the Nile River.",
+    "longdescription": "The Aswan High Dam is a significant modern engineering project that was completed in 1970. It controls the flow of the Nile River, providing water for irrigation, hydroelectric power, and flood control. The dam has transformed the region's agriculture and economy, making it a vital part of Egypt's infrastructure.",
+    "lat": 23.9707,
+    "lng": 32.8777,
+    "tags": [
+      "modern",
+      "historical",
+      "viewpoint"
+    ],
+    "city": "Aswan",
+    "rating": 4.6,
+    "reviews": 3100,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/8430623c-c880-4b30-85bb-1036dd87b0c1/24-aswan-high-dam.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/8430623c-c880-4b30-85bb-1036dd87b0c1/24-aswan-high-dam.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/7cbde382-3a5c-4a82-b7c9-f1362bfdc0de/24-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b1885358-e5a4-47db-901f-b22c5ce689f0/24-c.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Nubian Village",
+    "description": "Colorful riverside village rich in culture and traditions.",
+    "longdescription": "The Nubian Village in Aswan is a vibrant community known for its colorful houses, traditional crafts, and warm hospitality. Visitors can explore the village, interact with locals, and learn about Nubian culture and history. The village is also famous for its beautiful riverside views and serene atmosphere.",
+    "lat": 24.0889,
+    "lng": 32.8998,
+    "tags": [
+      "cultural",
+      "colorful",
+      "calm",
+      "local"
+    ],
+    "city": "Aswan",
+    "rating": 4.7,
+    "reviews": 2150,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/78b173bd-fb1a-47de-bc94-0f7379c1f611/25-nubian-village.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/78b173bd-fb1a-47de-bc94-0f7379c1f611/25-nubian-village.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/21e27c70-848a-4267-96d7-d0eec399671d/25-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/87adc40a-f050-43b0-86b2-da4fd68b6bc5/25-c.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Elephantine Island",
+    "description": "Peaceful island in the Nile with ancient ruins.",
+    "longdescription": "Elephantine Island is a serene island located in the Nile River, near Aswan. It is known for its ancient ruins, including temples and artifacts from the Pharaonic era. The island offers a tranquil escape from the bustling city, with beautiful gardens and scenic views of the river.",
+    "lat": 24.0895,
+    "lng": 32.8911,
+    "tags": [
+      "nature",
+      "calm",
+      "hidden",
+      "historical"
+    ],
+    "city": "Aswan",
+    "rating": 4.8,
+    "reviews": 2150,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b7c46a93-b1e9-4b71-80db-19827dd34435/26-elephantine-island.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b7c46a93-b1e9-4b71-80db-19827dd34435/26-elephantine-island.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/bc383c18-4d82-455b-93a4-e735d31beb68/26-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/f4ed30e5-fddd-4d72-8e30-c05c8e9b70b0/26-c.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Sharm El Sheikh Beach",
+    "description": "Crystal clear waters and coral reefs of the Red Sea.",
+    "longdescription": "Sharm El Sheikh is a world-renowned destination for beach lovers and diving enthusiasts. The area boasts crystal clear waters, vibrant coral reefs, and a variety of marine life. Visitors can enjoy snorkeling, scuba diving, and relaxing on the pristine beaches. The city also offers luxury resorts, fine dining, and a lively nightlife scene.",
+    "lat": 27.9158,
+    "lng": 34.3299,
+    "tags": [
+      "beach",
+      "adventure",
+      "luxury",
+      "diving"
+    ],
+    "city": "Sharm El Sheikh",
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/dc780278-2c42-4b0a-b1b4-70fc7321725e/27-sharm-el-sheikh-beach.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/dc780278-2c42-4b0a-b1b4-70fc7321725e/27-sharm-el-sheikh-beach.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/ece1dd0a-b0dd-4f07-97ec-f7a9fb0890fc/27-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/dc780278-2c42-4b0a-b1b4-70fc7321725e/27-sharm-el-sheikh-beach.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Naama Bay",
+    "description": "Lively beach area with nightlife and resorts.",
+    "longdescription": "Naama Bay is a vibrant area in Sharm El Sheikh, known for its beautiful beaches, lively nightlife, and numerous resorts. It's a popular destination for tourists looking to enjoy the sun, sea, and entertainment.",
+    "lat": 27.9133,
+    "lng": 34.3299,
+    "tags": [
+      "beach",
+      "nightlife",
+      "touristic",
+      "busy"
+    ],
+    "city": "Sharm El Sheikh",
+    "rating": 4.5,
+    "reviews": 1850,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/e650e5a2-c47a-45e7-912b-7ec6c84f844d/28-naama-bay.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/e650e5a2-c47a-45e7-912b-7ec6c84f844d/28-naama-bay.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1fc45200-179b-403b-969f-05fb78222d70/28-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/92f07bfb-1df3-4b56-b7c3-9d7c95cbd337/28-c.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Dahab Blue Hole",
+    "description": "World-famous diving site with deep blue waters.",
+    "longdescription": "The Blue Hole is a natural underwater sinkhole located in Dahab, Egypt. It is renowned for its deep blue waters and is a popular destination for divers from around the world. The site features a vertical drop that reaches depths of over 100 meters, making it one of the most challenging and thrilling dive spots. Divers can explore the unique marine life and geological formations within the hole, while also enjoying the stunning views of the surrounding desert landscape. Safety precautions are essential due to the depth and potential hazards, but for experienced divers, the Blue Hole offers an unforgettable adventure.",
+    "lat": 28.5711,
+    "lng": 34.5449,
+    "tags": [
+      "beach",
+      "adventure",
+      "diving",
+      "mysterious"
+    ],
+    "city": "Dahab",
+    "rating": 4.8,
+    "reviews": 1200,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/e8449eb3-eab0-4d48-8cb8-c400785c6faa/29-dahab-blue-hole.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/e8449eb3-eab0-4d48-8cb8-c400785c6faa/29-dahab-blue-hole.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/c4254905-c2a9-4967-8190-200621a61ec6/29-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/a6a91710-48c2-422c-a8f4-fab91c16ddf0/29-c.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Dahab Corniche",
+    "description": "Relaxed seaside walk with cafes and chill vibes.",
+    "longdescription": "The Dahab Corniche is a picturesque seaside promenade that stretches along the coast of Dahab, Egypt. It offers a relaxed atmosphere where visitors can enjoy leisurely walks while taking in the stunning views of the Red Sea. The Corniche is lined with charming cafes, restaurants, and shops, making it an ideal spot for both locals and tourists to unwind. Whether you're looking to sip a coffee while watching the sunset or explore the local culture, the Dahab Corniche provides a perfect blend of natural beauty and vibrant community life.",
+    "lat": 28.4958,
+    "lng": 34.5136,
+    "tags": [
+      "beach",
+      "calm",
+      "cafe",
+      "romantic"
+    ],
+    "city": "Dahab",
+    "rating": 4.5,
+    "reviews": 8000,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/58e26863-667c-45e8-96c8-6a3264663ce4/30-dahab-corniche.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/58e26863-667c-45e8-96c8-6a3264663ce4/30-dahab-corniche.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/aedf4058-33fc-44ac-a617-0b57b47daea2/30-b.jpg",
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/91d0d651-50f4-402d-8dfa-dda601b353e3/30-c.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Siwa Salt Lakes",
+    "description": "Bright turquoise salt lakes surrounded by desert landscapes.",
+    "longdescription": "The Siwa Salt Lakes are a stunning natural wonder located in the Siwa Oasis. The lakes are known for their vibrant turquoise color, which contrasts beautifully with the surrounding desert landscape. Visitors can enjoy the serene beauty of the lakes, take photographs, and even float in the salty waters. The area is also rich in history and culture, with nearby ancient ruins and traditional Siwan villages to explore.",
+    "lat": 29.2036,
+    "lng": 25.5197,
+    "tags": [
+      "nature",
+      "hidden",
+      "calm",
+      "photography"
+    ],
+    "city": "Siwa",
+    "rating": 4.7,
+    "reviews": 1240,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/f2632293-3fd7-46bc-a376-394b67c4117a/31-siwa-salt-lakes.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/f2632293-3fd7-46bc-a376-394b67c4117a/31-siwa-salt-lakes.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/5d883f87-3c1e-47d3-b4dc-7dd9e86533e5/31-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/d9ff61ad-8729-4b60-bf84-568840bf2a38/31-2.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Cleopatra Spring",
+    "description": "Natural spring in Siwa where Cleopatra is said to have swum.",
+    "longdescription": "Cleopatra Spring is a natural spring located in the Siwa Oasis of Egypt. It is famous for its crystal-clear waters and historical significance, as it is believed that Cleopatra herself swam in these waters. The spring is surrounded by lush greenery and palm trees, making it a serene and picturesque location. Visitors can enjoy swimming in the refreshing waters and exploring the surrounding area, which is rich in history and culture.",
+    "lat": 29.2045,
+    "lng": 25.5178,
+    "tags": [
+      "nature",
+      "historical",
+      "calm",
+      "romantic"
+    ],
+    "city": "Siwa",
+    "rating": 4.9,
+    "reviews": 2700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1ee32200-28aa-4108-8840-9338bcf2a499/32-cleopatra-spring.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1ee32200-28aa-4108-8840-9338bcf2a499/32-cleopatra-spring.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8ba71df2-759e-40a1-a9d9-89df3bd50dbc/32-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/24f7684d-7d3c-46a0-91ee-7a7a8fa05700/32-2.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Fayoum Magic Lake",
+    "description": "Lake that changes colors throughout the day in Fayoum desert.",
+    "longdescription": "Fayoum Magic Lake is a unique natural phenomenon located in the Fayoum desert. The lake's water changes colors throughout the day due to the varying mineral content and sunlight reflection. It is a popular destination for photographers and nature enthusiasts who want to capture its mesmerizing beauty. The surrounding area is also home to diverse wildlife, making it an ideal spot for bird watching and nature walks.",
+    "lat": 29.35,
+    "lng": 30.3,
+    "tags": [
+      "nature",
+      "photography",
+      "calm",
+      "hidden"
+    ],
+    "city": "Fayoum",
+    "rating": 4.9,
+    "reviews": 2700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/09f5fa95-c93a-4792-a6e2-02d4195f7299/33-fayoum-magic-lake.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/09f5fa95-c93a-4792-a6e2-02d4195f7299/33-fayoum-magic-lake.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8be98a88-c721-4f6d-ab72-5f085b53e425/33-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8abc9e14-918f-486b-927e-d62919f8fd34/33-2.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Fayoum Waterfalls (Wadi El Rayan)",
+    "description": "Rare waterfalls in the middle of the Egyptian desert.",
+    "longdescription": "Wadi El Rayan is a protected area in the Fayoum Governorate of Egypt, known for its unique desert waterfalls. These waterfalls are a rare natural phenomenon, as they are formed by the overflow of water from the Wadi El Rayan lakes. The area is also home to diverse wildlife and offers opportunities for photography, hiking, and nature exploration.",
+    "lat": 29.2667,
+    "lng": 30.4167,
+    "tags": [
+      "nature",
+      "adventure",
+      "photography"
+    ],
+    "city": "Fayoum",
+    "rating": 4.6,
+    "reviews": 2800,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/491d0fd3-d6be-4692-9438-52408e936737/34-fayoum-waterfalls-wadi-el-raya.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/491d0fd3-d6be-4692-9438-52408e936737/34-fayoum-waterfalls-wadi-el-raya.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/c49d4af3-fc92-4d15-a1c1-37b934640b01/34-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/c23c27f2-4874-4dac-a439-1d01f5919b24/34-2.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Tunis Village Fayoum",
+    "description": "Artistic pottery village overlooking the desert lake.",
+    "longdescription": "Tunis Village is a charming village in the Fayoum Governorate of Egypt, renowned for its artistic pottery and traditional crafts. The village is situated on the edge of a desert lake, providing stunning views and a serene atmosphere. Visitors can explore the local workshops, watch artisans at work, and purchase unique handmade pottery pieces. The village also hosts cultural events and festivals that celebrate the rich heritage of the region.",
+    "lat": 29.5333,
+    "lng": 30.65,
+    "tags": [
+      "art",
+      "cultural",
+      "calm",
+      "hidden"
+    ],
+    "city": "Fayoum",
+    "rating": 4.9,
+    "reviews": 2600,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/3d6e0230-6cf1-4a15-9f86-e4050e557946/35-tunis-village-fayoum.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/3d6e0230-6cf1-4a15-9f86-e4050e557946/35-tunis-village-fayoum.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8c5ccefe-a11a-4912-9dbe-6b2f46d0bcee/35-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8f3198d2-6b16-434d-b2c7-06151b61251e/35-2.jpg"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Ain Sokhna Beach",
+    "description": "Popular Red Sea escape close to Cairo.",
+    "longdescription": "Ain Sokhna is a popular beach destination located on the western shore of the Red Sea, just a short drive from Cairo. Known for its clear waters, sandy beaches, and warm climate, it attracts both locals and tourists looking for a quick getaway. The area offers various resorts, water sports activities, and opportunities for relaxation. Visitors can enjoy swimming, snorkeling, and sunbathing while taking in the stunning views of the Red Sea.",
+    "lat": 29.6,
+    "lng": 32.35,
+    "tags": [
+      "beach",
+      "calm",
+      "weekend",
+      "relax"
+    ],
+    "city": "Ain Sokhna",
+    "rating": 4.9,
+    "reviews": 2600,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/a30c4a1a-951a-4a28-a3ab-d4d50827641d/36-ain-sokhna-beach.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/a30c4a1a-951a-4a28-a3ab-d4d50827641d/36-ain-sokhna-beach.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/66ef8748-5cdf-4ae8-b9e5-54ef72ccec38/36-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/771f96dc-50a2-4ab7-a29b-ca1ce0a2041a/36-2.jpg"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Port Said Lighthouse Area",
+    "description": "Quiet coastal lighthouse zone with strong local identity.",
+    "longdescription": "The Port Said Lighthouse Area is a serene coastal location that offers visitors a chance to experience the local maritime culture. The lighthouse itself is a historic landmark, and the surrounding area is perfect for leisurely walks, photography, and enjoying the sea breeze. The area is known for its calm atmosphere and is a favorite spot for both locals and tourists seeking a peaceful retreat.",
+    "lat": 31.2653,
+    "lng": 32.3019,
+    "tags": [
+      "viewpoint",
+      "calm",
+      "local",
+      "street"
+    ],
+    "city": "Port Said",
+    "rating": 4.8,
+    "reviews": 2500,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/9fb23186-604a-4483-bd72-eda31abd0094/37-port-said-lighthouse-area.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/9fb23186-604a-4483-bd72-eda31abd0094/37-port-said-lighthouse-area.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/748ddd70-1550-42a8-b3d5-1a1c28aeffa8/37-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/8dae41dd-ced3-4940-ad3f-e9fdcb4c17cf/37-2.jpg"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Ismailia Green Park",
+    "description": "Lush green park area beside the Suez Canal.",
+    "longdescription": "Ismailia Green Park is a beautiful and serene park located in the city of Ismailia, Egypt. It offers a peaceful escape from the hustle and bustle of city life, with its well-maintained gardens, walking paths, and recreational areas. Visitors can enjoy picnics, leisurely strolls, and various outdoor activities while taking in the scenic views of the Suez Canal.",
+    "lat": 30.5965,
+    "lng": 32.2715,
+    "tags": [
+      "nature",
+      "calm",
+      "family",
+      "romantic"
+    ],
+    "city": "Ismailia",
+    "rating": 4.9,
+    "reviews": 2700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b0a2058e-823c-4703-8ed0-1726b7fa3e94/38-ismailia-green-park.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b0a2058e-823c-4703-8ed0-1726b7fa3e94/38-ismailia-green-park.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/c55475c0-c24b-40cf-8205-bcf6565d5a45/38-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/b784816e-6b25-4793-a22a-6721b9edbcae/38-2.jpg"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "El Gouna Marina",
+    "description": "Luxury marina with cafes, yachts, and nightlife.",
+    "longdescription": "El Gouna Marina is a luxurious destination known for its vibrant nightlife, upscale cafes, and stunning yachts. Visitors can enjoy a variety of water sports, fine dining, and entertainment options in a picturesque setting.",
+    "lat": 27.397,
+    "lng": 33.681,
+    "tags": [
+      "luxury",
+      "nightlife",
+      "cafe",
+      "modern"
+    ],
+    "city": "Hurghada",
+    "rating": 4.9,
+    "reviews": 2400,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b37998c8-d233-4b0c-805d-5ba88716e782/39-el-gouna-marina.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/b37998c8-d233-4b0c-805d-5ba88716e782/39-el-gouna-marina.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/fc6caa9a-a8a1-4c58-8a02-1909418d3aa1/39-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/c514029a-edcb-4485-9d91-49ec2d6cddf5/39-2.jpg"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Ras Mohammed Cliff View",
+    "description": "Dramatic cliff views over the Red Sea.",
+    "longdescription": "Ras Mohammed National Park is a protected area located at the southern tip of the Sinai Peninsula in Egypt. The park is renowned for its stunning natural beauty, including dramatic cliffs that offer breathtaking views over the Red Sea. Visitors can enjoy panoramic vistas of the turquoise waters, coral reefs, and diverse marine life from the cliffside viewpoints. The park is also home to unique desert landscapes, mangroves, and a variety of wildlife, making it a must-visit destination for nature lovers and adventure seekers.",
+    "lat": 27.73,
+    "lng": 34.25,
+    "tags": [
+      "viewpoint",
+      "nature",
+      "adventure"
+    ],
+    "city": "Sharm El Sheikh",
+    "rating": 4.9,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/ae56571f-f964-4569-bbd6-9c0bec43cd76/40-ras-mohammed-cliff-view.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/ae56571f-f964-4569-bbd6-9c0bec43cd76/40-ras-mohammed-cliff-view.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/feff2ede-b48d-48e5-af2c-53b473c83ae4/40-1.jpg",
+      "https://id-preview--94391f48-15e6-4417-8059-c275586a5c52.lovable.app/__l5e/assets-v1/711c35b5-99e8-4030-a6d2-34dfc18a8aaf/40-2.jpg"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "El Moez Street",
+    "description": "One of the most beautiful Islamic streets in Cairo full of history and architecture.",
+    "longdescription": "El Moez Street is a historic street in Cairo, Egypt, known for its stunning Islamic architecture and rich history. It is lined with mosques, madrasas, and other historical buildings that date back to the Fatimid era. The street is a popular destination for tourists and locals alike, offering a glimpse into Cairo's past and its cultural heritage.",
+    "lat": 30.052,
+    "lng": 31.2626,
+    "tags": [
+      "historical",
+      "street",
+      "photography",
+      "busy"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 4700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/766a9e26-6ea9-4c3e-9cd4-b8578cce27d2/41-el-moez-street.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/766a9e26-6ea9-4c3e-9cd4-b8578cce27d2/41-el-moez-street.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/b1360bc0-9951-4f88-8442-436452e6c3e8/41a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/d6af4a43-7189-4ee5-8087-d2dabcc303be/41b.jpg"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Al Azhar Mosque",
+    "description": "Historic mosque and one of the oldest Islamic universities.",
+    "longdescription": "Al Azhar Mosque, located in Cairo, Egypt, is a historic mosque that also serves as one of the oldest Islamic universities in the world. Founded in 970 AD, it has been a center for Islamic learning and scholarship for over a millennium. The mosque is renowned for its stunning architecture, intricate designs, and its role in the development of Islamic education. It continues to be a significant religious and educational institution, attracting scholars and visitors from around the globe.",
+    "lat": 30.0459,
+    "lng": 31.262,
+    "tags": [
+      "historical",
+      "cultural",
+      "spiritual"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 3800,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/c0d93423-21e4-4cff-a81f-a7779af40348/42-al-azhar-mosque.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/c0d93423-21e4-4cff-a81f-a7779af40348/42-al-azhar-mosque.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/ba4f87e0-ce3f-4241-9851-facae6e3886a/42a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/4fba4180-fc5b-4dae-b81e-b8a7ec2e6f82/42b.jpg"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Opera House Cairo",
+    "description": "Cultural hub for music, ballet, and performances.",
+    "longdescription": "The Cairo Opera House, located in the heart of Cairo, Egypt, is a premier cultural venue that hosts a wide range of performances including music concerts, ballet, opera, and theatrical productions. Established in 1988, it serves as a hub for the arts and has become an iconic landmark in the city. The Opera House features state-of-the-art facilities and has played a significant role in promoting cultural exchange and artistic expression in Egypt. It attracts both local and international artists, making it a vibrant center for cultural activities.",
+    "lat": 30.0422,
+    "lng": 31.2245,
+    "tags": [
+      "modern",
+      "cultural",
+      "art"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 5000,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/a7ed3332-b712-4bcb-980b-a83cd5428538/43-opera-house-cairo.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/a7ed3332-b712-4bcb-980b-a83cd5428538/43-opera-house-cairo.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/204811d6-4b6d-404c-876e-76142237de4f/43a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/8c747e97-1cab-4137-8eaf-4858a57b288e/43b.jpg"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Maadi Corniche",
+    "description": "Peaceful Nile-side walkway with cafes and greenery.",
+    "longdescription": "Maadi Corniche is a serene walkway along the Nile River in Cairo, lined with cafes and lush greenery. It's a perfect spot for a leisurely stroll, enjoying the river views, and relaxing in a calm environment away from the city's hustle and bustle.",
+    "lat": 29.9602,
+    "lng": 31.2569,
+    "tags": [
+      "calm",
+      "cafe",
+      "romantic",
+      "viewpoint"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/c27f9711-3e23-4cff-881b-16c5c0e98c87/44-maadi-corniche.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/c27f9711-3e23-4cff-881b-16c5c0e98c87/44-maadi-corniche.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/f3cb6ac7-92ff-4f53-9879-b93f53cfa8b1/44a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/0e771c78-3787-4995-af26-3cb6e8f96fe4/44b.jpg"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "City Stars Mall",
+    "description": "One of Egypt's largest shopping malls.",
+    "longdescription": "City Stars Mall is a premier shopping destination in Cairo, offering a wide range of international and local brands, dining options, and entertainment facilities. It is known for its modern architecture and vibrant atmosphere.",
+    "lat": 30.0726,
+    "lng": 31.3461,
+    "tags": [
+      "shopping",
+      "modern",
+      "busy"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/aff56f17-9820-48d2-a1a2-c58051e08b32/45-city-stars-mall.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/aff56f17-9820-48d2-a1a2-c58051e08b32/45-city-stars-mall.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/c1d69eb6-82d8-49fc-bb66-6aa8237e3e97/45a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/11bbc016-634b-4ff3-96d4-a30d377d64db/45b.jpg"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Alexandria Library Gardens",
+    "description": "Open modern cultural space beside the famous library.",
+    "longdescription": "The Alexandria Library Gardens are a serene and modern cultural space located adjacent to the renowned Bibliotheca Alexandrina. Visitors can enjoy beautifully landscaped gardens, outdoor art installations, and peaceful walking paths. The gardens provide a perfect setting for relaxation, reflection, and cultural events, making it a must-visit destination for both locals and tourists.",
+    "lat": 31.2089,
+    "lng": 29.909,
+    "tags": [
+      "cultural",
+      "calm",
+      "modern"
+    ],
+    "city": "Alexandria",
+    "rating": 4.9,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/50d9793d-34b0-43d1-bcbb-6b7f3ce3be2c/46-alexandria-library-gardens.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/50d9793d-34b0-43d1-bcbb-6b7f3ce3be2c/46-alexandria-library-gardens.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/ef9231ed-6a46-433a-baf2-fbafed412cdc/46a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/e36b1b05-7e5a-4e0f-a61e-a20c209548a2/46b.jpg"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Abu Simbel Temples",
+    "description": "Massive ancient temples carved into rock near the Sudan border.",
+    "longdescription": "The Abu Simbel temples are two massive rock temples in southern Egypt, near the border with Sudan. They were originally carved out of the mountainside during the reign of Pharaoh Ramesses II in the 13th century BC, as a lasting monument to himself and his queen Nefertari. The complex is part of the UNESCO World Heritage Site known as the 'Nubian Monuments,' which run from Abu Simbel downriver to Philae (near Aswan). The temples are famous for their colossal statues of Ramesses II and intricate carvings that depict various scenes from his reign.",
+    "lat": 22.3372,
+    "lng": 31.6258,
+    "tags": [
+      "historical",
+      "adventure",
+      "touristic",
+      "mysterious"
+    ],
+    "city": "Aswan",
+    "rating": 4.5,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1c69fe07-2c4e-48ce-ba76-65f002c42dcb/47-abu-simbel-temples.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/1c69fe07-2c4e-48ce-ba76-65f002c42dcb/47-abu-simbel-temples.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/415fd306-cb6b-4ea4-8f9e-94286aa4c667/47a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/3ec7ae9b-bd35-49bc-9c94-5a95115de492/47b.jpg"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "El Gouna Downtown",
+    "description": "Modern planned town with canals, cafes, and relaxed vibes.",
+    "longdescription": "El Gouna Downtown is a modern planned town located on the Red Sea coast of Egypt. Known for its picturesque canals, vibrant cafes, and relaxed atmosphere, it offers a unique blend of contemporary architecture and traditional Egyptian charm. Visitors can enjoy leisurely strolls along the waterfront, dine at various international restaurants, and explore boutique shops. The town is also a hub for water sports and recreational activities, making it a popular destination for both tourists and locals seeking a serene escape.",
+    "lat": 27.397,
+    "lng": 33.681,
+    "tags": [
+      "luxury",
+      "modern",
+      "cafe",
+      "calm"
+    ],
+    "city": "Hurghada",
+    "rating": 4.6,
+    "reviews": 3700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/345e0685-8388-452a-8cf5-bc7502c80b33/48-el-gouna-downtown.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/345e0685-8388-452a-8cf5-bc7502c80b33/48-el-gouna-downtown.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/7c297b7c-c4b5-4111-8357-7dfc27f2f8f1/48a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/d17acd3a-7576-4b4f-9483-e94e2937ae96/48b.jpg"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Dahab Lighthouse",
+    "description": "Relaxed seaside area with cafes and sunset views.",
+    "longdescription": "Dahab Lighthouse is a serene coastal spot known for its calm waters, perfect for swimming and snorkeling. The area is dotted with charming cafes and offers stunning sunset views, making it a romantic destination for couples. Visitors can enjoy leisurely walks along the beach or simply unwind while taking in the picturesque scenery.",
+    "lat": 28.4923,
+    "lng": 34.5132,
+    "tags": [
+      "beach",
+      "calm",
+      "romantic",
+      "cafe"
+    ],
+    "city": "Dahab",
+    "rating": 4.8,
+    "reviews": 4700,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/047b3292-6286-4ed9-9b98-311129489f47/49-dahab-lighthouse.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/047b3292-6286-4ed9-9b98-311129489f47/49-dahab-lighthouse.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/5ee1f2ce-2cb8-4cf4-9b1a-15582152acce/49a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/0fe88b00-721d-43ff-a3c7-fdbfa4cbd2cc/49b.jpg"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "White Desert National Park",
+    "description": "Surreal white rock formations in the middle of the desert.",
+    "longdescription": "The White Desert National Park is a unique natural reserve in Egypt, known for its stunning white chalk rock formations that have been shaped by wind and sand over thousands of years. Visitors can explore the park's otherworldly landscapes, camp under the stars, and witness breathtaking sunsets. The park is also home to various wildlife species and offers opportunities for photography and adventure.",
+    "lat": 27.35,
+    "lng": 28.2,
+    "tags": [
+      "nature",
+      "adventure",
+      "photography",
+      "hidden"
+    ],
+    "city": "Farafra",
+    "rating": 4.9,
+    "reviews": 3800,
+    "coverImage": "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/d12b9738-2f70-4671-8726-f49c503195d2/50-white-desert-national-park.jpg",
+    "gallery": [
+      "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/d12b9738-2f70-4671-8726-f49c503195d2/50-white-desert-national-park.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/261dbdd8-873a-4132-837a-47d570e8896b/50a.jpg",
+      "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/8c37baf5-c312-4e38-b31a-74a29dd80fed/50b.jpg"
+    ]
+  }
+]

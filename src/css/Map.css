@@ -1,0 +1,131 @@
+.map-page{
+    min-height:100vh;
+    background:linear-gradient(to bottom,#f8f2e8,#f5eee3);
+}
+
+.map-container{
+    max-width:1550px;
+    margin:auto;
+    padding:24px 35px 40px;
+}
+
+.hero-section{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.hero-subtitle{
+    color:#b38b47;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:14px;
+}
+
+.hero-title{
+    margin:10px 0;
+    font-size:56px;
+    font-family:Georgia;
+    color:#4b321d;
+    font-weight:700;
+}
+
+.hero-description{
+    max-width:760px;
+    margin:auto;
+    color:#756454;
+    font-size:19px;
+    line-height:1.7;
+}
+
+.search-box{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#fff;
+    border-radius:24px;
+    padding:18px;
+    margin-bottom:30px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.search-input{
+    flex:1;
+}
+
+.places-counter{
+    background:#4c3723;
+    color:#fff;
+    padding:13px 22px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.content-layout{
+    display:grid;
+    grid-template-columns:1.55fr 1fr;
+    gap:26px;
+    align-items:start;
+}
+
+.map-column{
+    position:sticky;
+    top:25px;
+}
+
+.cards-column{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    height:86vh;
+    overflow-y:auto;
+    padding-right:6px;
+}
+
+.cards-column::-webkit-scrollbar{
+    width:8px;
+}
+
+.cards-column::-webkit-scrollbar-thumb{
+    background:#c7b49b;
+    border-radius:20px;
+}
+
+.cards-column::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+@media(max-width:1200px){
+
+    .content-layout{
+        grid-template-columns:1fr;
+    }
+
+    .map-column{
+        position:relative;
+        top:0;
+    }
+
+    .cards-column{
+        height:auto;
+        overflow:visible;
+    }
+}
+
+@media(max-width:768px){
+
+    .search-box{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .hero-title{
+        font-size:42px;
+    }
+
+    .hero-description{
+        font-size:17px;
+    }
+}
