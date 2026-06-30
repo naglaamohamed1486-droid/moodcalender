@@ -459,7 +459,7 @@ cityCoords: {
   },
 ];
 
-const FALLBACK_LAST_ID = 50;
+const FALLBACK_LAST_ID = 200;
 
 function getNextId(storedPlaces) {
   const ids = [

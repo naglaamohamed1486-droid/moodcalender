@@ -2212,6 +2212,1939 @@
     "/images/luxor/corniche2.jpg",
     "/images/luxor/corniche3.jpg"
   ]
-}
-
+},
+  {
+    "id": 111,
+    "title": "Koshary El Tahrir",
+    "description": "Legendary Cairo street food spot for authentic koshary.",
+    "longdescription": "Koshary El Tahrir is one of downtown Cairo's most beloved food institutions, serving the quintessential Egyptian dish of koshary at a fast pace and incredibly low price. Founded decades ago near Tahrir Square, it has become a rite of passage for anyone visiting Cairo. The combination of rice, lentils, pasta, chickpeas, tomato sauce and crispy onions is served in a bustling open dining room where waiters shout orders and laddle bowls at impressive speed. Go at lunch for the full experience.",
+    "lat": 30.0465,
+    "lng": 31.2357,
+    "tags": ["food", "cheap", "local", "busy", "cultural"],
+    "city": "Cairo",
+    "rating": 4.8,
+    "reviews": 6400,
+    "coverImage": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800"
+    ]
+  },
+  {
+    "id": 112,
+    "title": "Farahat Grills",
+    "description": "Famous old-school Cairo grill house beloved for decades.",
+    "longdescription": "Farahat is a Cairo institution hidden in a side street near Ataba Square, famous for charcoal-grilled kofta, kebabs and grilled offal served on simple tables with fresh bread and tahini. It has been operating since the 1950s and remains completely unchanged in character. The smoke rising from the open charcoal grill, the noise of the street and the incredibly affordable prices make it the definitive experience of old Cairo street dining.",
+    "lat": 30.0537,
+    "lng": 31.2457,
+    "tags": ["food", "cheap", "local", "hidden", "cultural"],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 3200,
+    "coverImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 113,
+    "title": "Kafe Shawarma",
+    "description": "Popular modern shawarma spot with long queues and bold flavors.",
+    "longdescription": "Kafe is one of Cairo's most talked-about new-generation shawarma restaurants, known for its incredibly juicy chicken and meat shawarma stuffed into freshly baked bread with garlic sauce and pickles. The queues outside at peak hours are legendary. Multiple branches have opened across the city but the original retains the most loyal following. An essential stop for anyone exploring Cairo's evolving street food scene.",
+    "lat": 30.0635,
+    "lng": 31.2232,
+    "tags": ["food", "cheap", "local", "busy", "modern"],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 5100,
+    "coverImage": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 114,
+    "title": "Naguib Mahfouz Museum",
+    "description": "Apartment museum honoring Egypt's Nobel Prize-winning novelist.",
+    "longdescription": "The Naguib Mahfouz Museum is tucked inside a building in the Al-Gamaliyya district of Islamic Cairo, near the alleys that inspired his famous Cairo Trilogy novels. The apartment has been preserved and converted into a small museum displaying manuscripts, photographs, personal belongings and first editions of his works. For literary enthusiasts, walking the nearby alleyways with his novels in mind is one of Cairo's most rewarding experiences.",
+    "lat": 30.0501,
+    "lng": 31.2612,
+    "tags": ["cultural", "historical", "hidden"],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 480,
+    "coverImage": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800"
+    ]
+  },
+  {
+    "id": 115,
+    "title": "Mokattam Mountain Viewpoint",
+    "description": "Dramatic hilltop overlooking Cairo's sprawling skyline.",
+    "longdescription": "The Mokattam escarpment rises sharply above the eastern edge of Cairo, offering one of the most dramatic panoramic views of the city. At sunset, the entire skyline glows amber and the minarets of a thousand mosques pierce the horizon. A popular local destination for an evening drive or a walk, it also sits near the Cave Church (Saint Samaan Monastery), one of Cairo's most extraordinary religious sites carved entirely into the cliffside rock.",
+    "lat": 30.0136,
+    "lng": 31.2718,
+    "tags": ["viewpoint", "photography", "nature", "hidden"],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 1870,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Cave Church (Saint Samaan Monastery)",
+    "description": "Massive church carved into the cliffs of Mokattam.",
+    "longdescription": "The Cave Church, officially Saint Samaan the Tanner Monastery, is an extraordinary complex of churches carved directly into the Mokattam limestone cliffs on the outskirts of Cairo. The largest church can seat over 20,000 people, making it one of the largest in the Middle East. The walls feature enormous rock-carved reliefs depicting biblical scenes. The setting, dramatically embedded in the cliff face above a vast informal neighborhood, is truly unlike anything else in Egypt.",
+    "lat": 30.0098,
+    "lng": 31.2699,
+    "tags": ["historical", "cultural", "mysterious", "hidden", "photography"],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 2340,
+    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+    ]
+  },
+  {
+    "id": 117,
+    "title": "Abdeen Palace Museum",
+    "description": "Opulent royal palace turned museum in downtown Cairo.",
+    "longdescription": "Abdeen Palace was the primary royal residence of Egypt's ruling family for over a century, completed in 1874. It now houses several museums within its ornate halls, including a weapons museum, a silver museum and presidential gifts collections. The palace's lavish European-style interiors — gilded ceilings, crystal chandeliers, marble floors and grand staircases — offer a fascinating window into Egypt's royal past. It remains one of downtown Cairo's most underrated attractions.",
+    "lat": 30.0444,
+    "lng": 31.2468,
+    "tags": ["historical", "cultural", "modern", "hidden"],
+    "city": "Cairo",
+    "rating": 4.4,
+    "reviews": 1120,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+    ]
+  },
+  {
+    "id": 118,
+    "title": "Pottery Market — Fustat",
+    "description": "Traditional pottery workshops in Old Cairo's artisan quarter.",
+    "longdescription": "The Fustat pottery district is one of Cairo's oldest craft neighborhoods, where artisans still produce hand-thrown terracotta pottery using traditional techniques passed down through generations. Visitors can watch potters work, browse workshops and buy unique pieces directly from the makers. The area sits near the ancient city of Fustat, Egypt's first Islamic capital, adding a rich historical layer to the visit. An ideal destination for craft lovers and those seeking authentic local culture.",
+    "lat": 30.0027,
+    "lng": 31.2344,
+    "tags": ["cultural", "art", "hidden", "local"],
+    "city": "Cairo",
+    "rating": 4.4,
+    "reviews": 560,
+    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800"
+    ]
+  },
+  {
+    "id": 119,
+    "title": "Bread Street (Haret Al Aish)",
+    "description": "Famous alley where Cairo's best traditional baladi bread is baked.",
+    "longdescription": "Haret Al Aish in the Bab El Sha'riyya neighborhood is where traditional Egyptian baladi bread has been baked in wood-fired ovens for generations. Early each morning, bakers pull enormous stacks of flat, slightly charred loaves from the ovens and stack them in the narrow alley. Locals queue with cloth bags to carry home the day's supply. For photographers and food lovers, the early morning light, the steam rising from fresh bread and the pace of neighborhood life make this one of Cairo's most atmospheric hidden spots.",
+    "lat": 30.0563,
+    "lng": 31.2492,
+    "tags": ["food", "hidden", "photography", "cultural", "local"],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 340,
+    "coverImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+    ]
+  },
+  {
+    "id": 120,
+    "title": "Agouza Fish Market",
+    "description": "Lively riverside fish market and restaurant strip.",
+    "longdescription": "The stretch of riverside restaurants and fish stalls along the Nile in Agouza is one of Cairo's most authentic dining experiences. Visitors pick their fish from the iced displays — sea bass, shrimp, calamari, red mullet — and hand them to one of the adjacent grills where they are prepared to order with Egyptian spices, served with tahini and fresh bread. Best experienced in the evening when families fill the outdoor tables and the river catches the last light. Unpretentious, lively and delicious.",
+    "lat": 30.0573,
+    "lng": 31.2155,
+    "tags": ["food", "local", "romantic", "viewpoint"],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 2100,
+    "coverImage": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+    ]
+  },
+  {
+    "id": 121,
+    "title": "El Max Fishing Village",
+    "description": "Atmospheric old fishing village on Alexandria's western edge.",
+    "longdescription": "El Max is a traditional fishing village on the western outskirts of Alexandria, where brightly painted wooden fishing boats crowd the harbor and fishermen mend nets by hand on the breakwaters. It is largely unknown to tourists and completely unchanged in character, offering a window into a working Mediterranean fishing community that has remained the same for generations. The waterfront is ideal for photography in the early morning when boats return from night fishing, and several simple seafood restaurants serve the day's catch.",
+    "lat": 31.1437,
+    "lng": 29.8033,
+    "tags": ["hidden", "photography", "local", "cultural", "food"],
+    "city": "Alexandria",
+    "rating": 4.5,
+    "reviews": 420,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 122,
+    "title": "Sidi Bishr Beach",
+    "description": "Popular local Alexandria beach with a lively summer atmosphere.",
+    "longdescription": "Sidi Bishr is one of Alexandria's most beloved public beaches, lined with cafes, shisha spots and food vendors during the summer months when Cairenes and Alexandrians alike flock to the Mediterranean. The beach is wide, the waves gentle, and the promenade behind it is perfect for an evening walk. Street food vendors sell corn, sweet potatoes, and lupin beans as the sun sets. It captures the authentic spirit of Alexandrian summer life better than any resort beach.",
+    "lat": 31.2494,
+    "lng": 29.9811,
+    "tags": ["beach", "local", "food", "busy"],
+    "city": "Alexandria",
+    "rating": 4.3,
+    "reviews": 2800,
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 123,
+    "title": "Mohamed Ali Street",
+    "description": "Historic musical instrument street in the heart of Cairo.",
+    "longdescription": "Mohamed Ali Street in old Cairo has been the center of Egypt's musical instrument trade for over a century, lined with workshops and shops selling ouds, violins, qanuns, tabla drums and traditional instruments. Musicians from across Egypt still come here to buy, repair or commission instruments. Walking down the street, you hear fragments of music drifting from workshop doorways. It is also the traditional home of Cairo's entertainment industry and wedding performers, giving it a wonderfully theatrical character.",
+    "lat": 30.0374,
+    "lng": 31.2517,
+    "tags": ["cultural", "historical", "hidden", "local", "photography"],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 720,
+    "coverImage": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800"
+    ]
+  },
+  {
+    "id": 124,
+    "title": "Gezira Sporting Club",
+    "description": "Historic 19th-century sporting and social club in Zamalek.",
+    "longdescription": "The Gezira Sporting Club, founded by the British in 1882, occupies a vast green oasis in the heart of Zamalek island on the Nile. Today it serves as one of Cairo's most exclusive social clubs, with tennis courts, a golf course, a swimming pool and a racetrack visible from the bridge overhead. The grounds feature enormous old trees and a peaceful atmosphere that feels entirely removed from Cairo's intensity. For those with access, it offers a fascinating glimpse into the city's colonial leisure heritage.",
+    "lat": 30.0534,
+    "lng": 31.2229,
+    "tags": ["modern", "calm", "hidden", "historical"],
+    "city": "Cairo",
+    "rating": 4.4,
+    "reviews": 1100,
+    "coverImage": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800"
+    ]
+  },
+  {
+    "id": 125,
+    "title": "Dahab Bedouin Dinner in the Desert",
+    "description": "Authentic Bedouin dinner experience under the stars.",
+    "longdescription": "Several Bedouin families in the desert around Dahab offer intimate dinner experiences where guests sit on rugs around a fire, eat slow-cooked lamb from the ground oven, drink sweet tea and listen to traditional music under an impossibly star-filled sky. Arranged through local guides, these evenings offer genuine contact with Sinai's Bedouin culture away from tourist circuits. The combination of desert silence, firelight and traditional food creates an unforgettable memory of Sinai.",
+    "lat": 28.5001,
+    "lng": 34.4832,
+    "tags": ["cultural", "food", "romantic", "hidden", "adventure"],
+    "city": "Dahab",
+    "rating": 4.9,
+    "reviews": 870,
+    "coverImage": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+    ]
+  },
+  {
+    "id": 126,
+    "title": "Sinai Safari",
+    "description": "Jeep and camel safari through the dramatic Sinai interior.",
+    "longdescription": "The interior of the Sinai Peninsula is a dramatic landscape of granite mountains, dry wadis, ancient acacia trees and Bedouin pathways. Jeep and camel safaris departing from Dahab or Sharm El Sheikh take visitors deep into this wilderness, visiting hidden oases, Bedouin encampments and mountain viewpoints rarely seen by tourists. Some multi-day itineraries combine camel trekking with nights sleeping in the open desert. It remains one of Egypt's most authentic and physically immersive travel experiences.",
+    "lat": 28.6501,
+    "lng": 34.2833,
+    "tags": ["adventure", "nature", "cultural", "hidden", "photography"],
+    "city": "Saint Catherine",
+    "rating": 4.8,
+    "reviews": 1340,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+    ]
+  },
+  {
+    "id": 127,
+    "title": "Hatshepsut Temple",
+    "description": "Spectacular mortuary temple carved into the cliffs of Luxor.",
+    "longdescription": "The Mortuary Temple of Hatshepsut at Deir el-Bahari is one of ancient Egypt's most architecturally daring achievements, rising in three colonnaded terraces against the towering limestone cliffs of the West Bank. Built for Egypt's most famous female pharaoh over 3,500 years ago, it features painted reliefs depicting Hatshepsut's divine birth and famous expedition to the land of Punt. The dramatic setting, surrounded by sheer cliffs that glow amber at sunset, makes it one of the most photographically spectacular sites in all of Egypt.",
+    "lat": 25.7381,
+    "lng": 32.6071,
+    "tags": ["historical", "photography", "mysterious", "touristic"],
+    "city": "Luxor",
+    "rating": 4.9,
+    "reviews": 12400,
+    "coverImage": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ]
+  },
+  {
+    "id": 128,
+    "title": "Aswan Sunset Cruise",
+    "description": "Felucca or motor boat sunset cruise between the Nile islands.",
+    "longdescription": "A sunset cruise from Aswan's corniche weaves between the golden sand dunes of the west bank, the lush gardens of Kitchener's Island and the ancient ruins of Elephantine as the sky turns shades of rose and amber. Local operators offer both traditional felucca sailboats and motor launches. It is arguably the finest hour of any visit to Aswan — the river at its most beautiful, the temperature finally cooling, and the pace of the Nile feeling entirely removed from the modern world.",
+    "lat": 24.0870,
+    "lng": 32.8891,
+    "tags": ["romantic", "nature", "photography", "calm"],
+    "city": "Aswan",
+    "rating": 4.9,
+    "reviews": 4200,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 129,
+    "title": "Siwa Desert Safari",
+    "description": "4WD dune-bashing and sunset watching in the Great Sand Sea.",
+    "longdescription": "The Great Sand Sea that borders Siwa Oasis is one of the world's largest sand deserts, stretching south for hundreds of kilometers. Local guides take visitors by 4WD through towering dunes for sand-boarding, swimming in hidden freshwater springs buried in the desert, and watching the sun sink behind waves of golden sand. Overnight camps under stars completely free of light pollution make this one of Egypt's most extraordinary natural experiences.",
+    "lat": 29.1001,
+    "lng": 25.3501,
+    "tags": ["adventure", "nature", "photography", "romantic", "hidden"],
+    "city": "Siwa",
+    "rating": 4.9,
+    "reviews": 2100,
+    "coverImage": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+    ]
+  },
+  {
+    "id": 130,
+    "title": "Amun Hotel Garden Siwa",
+    "description": "Eco mud-brick hotel with a stunning palm garden and spring pool.",
+    "longdescription": "The Amun Hotel in Siwa is one of Egypt's most celebrated eco-lodges, built entirely from kershef (salt clay) in traditional Siwan style. Its central garden is shaded by date palms and centered around a natural spring pool where guests swim in cool, clear water surrounded by desert stillness. The terrace at sunset, with views of the palm forest and the distant dunes, is one of Siwa's most peaceful moments. Even for non-guests, the garden café is a wonderful stop.",
+    "lat": 29.2033,
+    "lng": 25.5221,
+    "tags": ["romantic", "nature", "calm", "hidden", "photography"],
+    "city": "Siwa",
+    "rating": 4.8,
+    "reviews": 870,
+    "coverImage": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800"
+    ]
+  },
+  {
+    "id": 131,
+    "title": "Black Desert",
+    "description": "Volcanic plateau of black-topped hills near the White Desert.",
+    "longdescription": "The Black Desert is an otherworldly volcanic landscape near the oasis town of Bahariya, where dark basalt-covered hills rise from the golden desert floor creating a striking contrast. Formed by ancient volcanic activity, the plateau stretches for miles and is typically visited en route to the White Desert. Walking among the black-capped hills at sunset or sunrise, with the sky turning shades of orange and purple, is one of Egypt's most surreal natural experiences and a photographer's dream.",
+    "lat": 28.0001,
+    "lng": 28.6001,
+    "tags": ["nature", "adventure", "photography", "hidden", "mysterious"],
+    "city": "Farafra",
+    "rating": 4.8,
+    "reviews": 1560,
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+    ]
+  },
+  {
+    "id": 132,
+    "title": "Crystal Mountain",
+    "description": "Rare desert rock formation encrusted with quartz crystals.",
+    "longdescription": "Crystal Mountain, located between the Black and White Deserts in Egypt's Western Desert, is a small rocky outcrop whose surface is entirely encrusted with sparkling quartz crystals. It stands alone on the flat desert floor and catches the morning light in a dazzling display. A roadside stop on the route between the Bahariya Oasis and Farafra, it is easy to overlook but unforgettable up close. Photographers and geology enthusiasts particularly love the way the crystals shimmer at golden hour.",
+    "lat": 27.6501,
+    "lng": 28.3501,
+    "tags": ["nature", "photography", "hidden", "mysterious", "adventure"],
+    "city": "Farafra",
+    "rating": 4.7,
+    "reviews": 890,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 133,
+    "title": "Bahariya Oasis",
+    "description": "Desert oasis with hot springs, black mountains and ancient tombs.",
+    "longdescription": "Bahariya Oasis, four hours drive from Cairo, is the gateway to Egypt's Western Desert adventures and a destination in its own right. The oasis town of Bawiti offers hot sulfur springs for bathing, the remarkable Valley of the Golden Mummies (an enormous Greco-Roman cemetery discovered in 1996), ancient temples and a deeply relaxed pace of life under date palms and olive trees. Local Bedouin guides lead safari trips into the surrounding desert landscapes.",
+    "lat": 28.3468,
+    "lng": 28.8634,
+    "tags": ["nature", "historical", "adventure", "hidden", "mysterious"],
+    "city": "Bahariya",
+    "rating": 4.7,
+    "reviews": 1870,
+    "coverImage": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+    ]
+  },
+  {
+    "id": 134,
+    "title": "Hurghada Aquarium",
+    "description": "Popular family aquarium showcasing Red Sea marine life.",
+    "longdescription": "The Hurghada Grand Aquarium is one of the largest aquariums in the Middle East, offering a remarkable window into the Red Sea's extraordinary biodiversity. Tunnel walkways pass through tanks filled with sharks, rays, sea turtles, lionfish, clownfish and colorful coral reef ecosystems. An excellent introduction to the underwater world for those who cannot dive, and particularly popular with families. The facility is well maintained and the displays are genuinely impressive.",
+    "lat": 27.2012,
+    "lng": 33.8444,
+    "tags": ["modern", "nature", "diving", "family"],
+    "city": "Hurghada",
+    "rating": 4.5,
+    "reviews": 6800,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ]
+  },
+  {
+    "id": 135,
+    "title": "Nuweiba Tarabin Beach",
+    "description": "Legendary Sinai beach famous for its relaxed Bedouin camp culture.",
+    "longdescription": "Tarabin is the northern beach district of Nuweiba, known for its long stretches of golden sand, simple Bedouin camp guesthouses and a wonderfully unhurried pace of life. The beach faces the Gulf of Aqaba with views of the Saudi Arabian mountains across the water, and the sunrises are among the most spectacular in Sinai. Snorkeling directly from the beach reveals healthy coral and tropical fish. Visitors often arrive for a few days and stay for weeks.",
+    "lat": 29.0117,
+    "lng": 34.6598,
+    "tags": ["beach", "hidden", "calm", "nature", "diving"],
+    "city": "Nuweiba",
+    "rating": 4.7,
+    "reviews": 1430,
+    "coverImage": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 136,
+    "title": "Marsa Alam Town",
+    "description": "Authentic Red Sea fishing town largely untouched by mass tourism.",
+    "longdescription": "While the resort complexes north and south of Marsa Alam have developed rapidly, the town itself remains a small, authentic fishing community on the Red Sea with a strong local character. A corniche lined with palm trees, simple seafood restaurants, a weekly market and the constant presence of fishing boats give it a charm entirely different from Hurghada or Sharm. It serves as a base for accessing some of the Red Sea's finest dive sites and most pristine beaches, many of which can only be reached from here.",
+    "lat": 25.0659,
+    "lng": 34.8893,
+    "tags": ["beach", "local", "hidden", "food", "diving"],
+    "city": "Marsa Alam",
+    "rating": 4.5,
+    "reviews": 980,
+    "coverImage": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800"
+    ]
+  },
+  {
+    "id": 137,
+    "title": "Dakhla Oasis",
+    "description": "Remote western desert oasis with hot springs and ancient villages.",
+    "longdescription": "Dakhla Oasis lies deep in Egypt's Western Desert, a world of green gardens, mud-brick villages, hot spring baths and remarkable archaeological sites including the medieval Islamic town of Al-Qasr and the ancient necropolis of Muzzawaka. Far fewer visitors reach Dakhla than the more accessible desert destinations, giving it a wonderfully undiscovered quality. The hot spring pools, surrounded by desert and open sky, offer one of Egypt's most remote and memorable bathing experiences.",
+    "lat": 25.4886,
+    "lng": 28.9773,
+    "tags": ["hidden", "nature", "historical", "adventure", "mysterious"],
+    "city": "Dakhla",
+    "rating": 4.8,
+    "reviews": 620,
+    "coverImage": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800"
+    ]
+  },
+  {
+    "id": 138,
+    "title": "Kharga Oasis",
+    "description": "Egypt's largest oasis with Greco-Roman temples and desert landscapes.",
+    "longdescription": "Kharga is the largest of Egypt's Western Desert oases and the most accessible from Luxor via the Desert Road. It contains the remarkable Temple of Hibis, one of the best-preserved temples of the Late Period, a large Coptic necropolis at Bagawat, and the Kharga Museum which displays outstanding artifacts from the surrounding desert. The oasis itself is a working agricultural community surrounded by dramatic escarpments, sand dunes and ancient caravan routes.",
+    "lat": 25.4470,
+    "lng": 30.5562,
+    "tags": ["historical", "mysterious", "hidden", "adventure", "cultural"],
+    "city": "Kharga",
+    "rating": 4.6,
+    "reviews": 740,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 139,
+    "title": "Suez Canal Observation Deck",
+    "description": "Watch massive container ships pass through the famous canal.",
+    "longdescription": "Standing along the Suez Canal embankment in Ismailia or Port Said and watching an enormous container ship glide silently past at close range is one of Egypt's most surreal experiences. The ships appear impossibly large against the flat desert horizon, moving through the 193-kilometer canal that connects the Mediterranean to the Red Sea. The observation areas along the canal offer clear views of passing vessels, particularly at Ismailia where the canal widens slightly. A remarkable piece of living engineering history.",
+    "lat": 30.5965,
+    "lng": 32.2773,
+    "tags": ["modern", "photography", "hidden", "viewpoint"],
+    "city": "Ismailia",
+    "rating": 4.6,
+    "reviews": 1340,
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+    ]
+  },
+  {
+    "id": 140,
+    "title": "Manial Palace Museum",
+    "description": "Stunning 20th-century royal palace on Rhoda Island in the Nile.",
+    "longdescription": "Manial Palace Museum on Rhoda Island is one of Cairo's most beautiful and undervisited attractions, built for Prince Mohamed Ali Tewfik in the early 20th century in a dazzling blend of Ottoman, Mamluk, Persian and European styles. The complex includes a throne hall, a private mosque, a hunting museum and lush gardens filled with rare trees and plants. Each room is extravagantly decorated with hand-painted tiles, carved stucco, stained glass and intricate woodwork. An absolute hidden gem for lovers of architecture and royal history.",
+    "lat": 30.0186,
+    "lng": 31.2271,
+    "tags": ["historical", "hidden", "cultural", "photography", "mysterious"],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 1560,
+    "coverImage": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 141,
+    "title": "Sequoia Restaurant Cairo",
+    "description": "Iconic Nile-side restaurant with stunning open-air views.",
+    "longdescription": "Sequoia is one of Cairo's most beloved open-air restaurants, perched at the northern tip of Zamalek island with sweeping views of the Nile. The restaurant offers a diverse menu ranging from Egyptian classics to international cuisine. As the sun sets over the water, Sequoia transforms into a magical dining experience, with fairy lights reflecting off the river. It's a top spot for romantic dinners, celebrations, and evening gatherings. Reservations are highly recommended, especially on weekends.",
+    "lat": 30.0701,
+    "lng": 31.2177,
+    "tags": [
+      "food",
+      "romantic",
+      "viewpoint",
+      "modern"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 3200,
+    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+    ]
+  },
+  {
+    "id": 142,
+    "title": "Cafe Riche",
+    "description": "Historic downtown cafe with literary and revolutionary heritage.",
+    "longdescription": "Cafe Riche is one of Cairo's oldest and most storied cafes, located in the heart of downtown. Opened in 1908, it became a gathering place for Egyptian intellectuals, artists, and political figures throughout the 20th century. The cafe's walls are lined with photographs and memorabilia that tell the story of modern Egypt. Its old-world charm, dark wood interiors, and classic Egyptian coffee make it a must-visit for history lovers and anyone curious about Cairo's cultural past.",
+    "lat": 30.0453,
+    "lng": 31.2395,
+    "tags": [
+      "cafe",
+      "historical",
+      "cultural",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.3,
+    "reviews": 980,
+    "coverImage": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+      "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800",
+      "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800"
+    ]
+  },
+  {
+    "id": 143,
+    "title": "Naguib Mahfouz Cafe",
+    "description": "Traditional Khan El Khalili cafe named after Egypt's Nobel laureate.",
+    "longdescription": "Naguib Mahfouz Cafe, located in the heart of Khan El Khalili, is named after Egypt's Nobel Prize-winning author who frequented the area. The cafe offers traditional Egyptian food and beverages in a beautifully decorated setting that evokes the atmosphere of old Cairo. Visitors can enjoy traditional dishes like kofta and grilled meats while soaking in the vibrant energy of the surrounding market. The cafe is a perfect blend of culinary tradition and literary heritage.",
+    "lat": 30.0476,
+    "lng": 31.2623,
+    "tags": [
+      "cafe",
+      "historical",
+      "food",
+      "cultural"
+    ],
+    "city": "Cairo",
+    "rating": 4.4,
+    "reviews": 1560,
+    "coverImage": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
+      "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800",
+      "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800"
+    ]
+  },
+  {
+    "id": 144,
+    "title": "The Tap Maadi",
+    "description": "Popular craft beer bar and grill with lively atmosphere.",
+    "longdescription": "The Tap is one of Cairo's most popular casual dining and drinks destinations, with its Maadi branch being especially beloved. Known for a wide selection of craft beers, burgers, and pub-style food, it draws a lively crowd of expats and locals alike. The outdoor terrace is particularly popular on cool evenings, making it a great spot for group gatherings or casual nights out in the neighborhood.",
+    "lat": 29.9596,
+    "lng": 31.2578,
+    "tags": [
+      "food",
+      "modern",
+      "busy",
+      "nightlife"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 2100,
+    "coverImage": "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=800",
+      "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800"
+    ]
+  },
+  {
+    "id": 145,
+    "title": "Zooba",
+    "description": "Modern Egyptian street food restaurant with vibrant design.",
+    "longdescription": "Zooba reimagines classic Egyptian street food in a fresh, modern setting. From its signature koshary bowls to creative takes on ful medames and taameya sandwiches, Zooba celebrates Egypt's rich food culture with playful presentation and high-quality ingredients. The restaurant's bold graphic design and energetic atmosphere have made it an icon of Cairo's contemporary dining scene. Multiple branches across the city make it easily accessible.",
+    "lat": 30.0622,
+    "lng": 31.2201,
+    "tags": [
+      "food",
+      "modern",
+      "local",
+      "cheap"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 4300,
+    "coverImage": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 146,
+    "title": "Abou El Sid",
+    "description": "Elegant restaurant serving authentic Egyptian cuisine in vintage decor.",
+    "longdescription": "Abou El Sid is an institution in Cairo's dining scene, celebrated for serving authentic Egyptian home-style cooking in a setting that evokes nostalgic 1940s Cairo. Dark wooden furniture, vintage photographs, and warm lantern lighting create an intimate atmosphere perfect for experiencing dishes like molokhia, stuffed pigeon, and Om Ali dessert. Located in Zamalek, it remains a top choice for both Egyptians craving traditional flavors and visitors seeking genuine local cuisine.",
+    "lat": 30.0614,
+    "lng": 31.2199,
+    "tags": [
+      "food",
+      "cultural",
+      "historical",
+      "romantic"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 2870,
+    "coverImage": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+    ]
+  },
+  {
+    "id": 147,
+    "title": "Lucille's Cairo",
+    "description": "American-style diner beloved for its burgers and milkshakes.",
+    "longdescription": "Lucille's is a retro American diner that has become a Cairo institution, famous for its juicy burgers, thick milkshakes, and generous portions. The bright, colorful interiors and friendly service make it a go-to spot for families and groups. Located in Maadi, it has a loyal local following and is often packed on weekends. A true comfort food haven in the heart of the city.",
+    "lat": 29.9601,
+    "lng": 31.2574,
+    "tags": [
+      "food",
+      "modern",
+      "busy",
+      "local"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 3100,
+    "coverImage": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800",
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800"
+    ]
+  },
+  {
+    "id": 148,
+    "title": "Al-Borg Restaurant Alexandria",
+    "description": "Fresh seafood restaurant with views over Alexandria's harbor.",
+    "longdescription": "Al-Borg is one of Alexandria's most celebrated seafood restaurants, offering the freshest catches of the Mediterranean prepared in traditional Egyptian style. Diners can select their fish from the display and have it cooked to order. The views of the harbor and sea create a quintessential Alexandrian dining experience. It's particularly famous for its grilled sea bass, calamari, and garlic shrimp, paired with freshly baked bread and classic mezze.",
+    "lat": 31.2001,
+    "lng": 29.8999,
+    "tags": [
+      "food",
+      "viewpoint",
+      "local",
+      "cultural"
+    ],
+    "city": "Alexandria",
+    "rating": 4.6,
+    "reviews": 2400,
+    "coverImage": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 149,
+    "title": "Trianon Cafe Alexandria",
+    "description": "Historic European-style patisserie open since 1905.",
+    "longdescription": "Trianon is one of Alexandria's oldest and most beloved cafes, operating since 1905. With its European-style interiors, marble tables, and an extensive menu of pastries, cakes, and coffees, it remains a cherished institution in the city. The cafe has been frequented by Egyptian royalty, intellectuals, and artists over the decades. It is especially famous for its baklava, croissants, and thick hot chocolate — a delightful blend of Eastern and Western cafe culture.",
+    "lat": 31.1998,
+    "lng": 29.9054,
+    "tags": [
+      "cafe",
+      "historical",
+      "cultural",
+      "calm"
+    ],
+    "city": "Alexandria",
+    "rating": 4.5,
+    "reviews": 1870,
+    "coverImage": "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800",
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+      "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800"
+    ]
+  },
+  {
+    "id": 150,
+    "title": "Kom El Dikka Roman Theatre",
+    "description": "Well-preserved Roman amphitheatre in the heart of Alexandria.",
+    "longdescription": "Kom El Dikka is an archaeological site in Alexandria that houses the only remaining Roman amphitheatre in Egypt. Built in the 4th century AD, it once seated around 800 spectators and is remarkably well preserved. The site also includes Roman baths, a villa, and mosaics. Discovered accidentally during construction work in the 1960s, it offers a fascinating window into Alexandria's Greco-Roman past. The theatre is still occasionally used for cultural performances.",
+    "lat": 31.1972,
+    "lng": 29.9088,
+    "tags": [
+      "historical",
+      "cultural",
+      "mysterious",
+      "touristic"
+    ],
+    "city": "Alexandria",
+    "rating": 4.4,
+    "reviews": 1320,
+    "coverImage": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 151,
+    "title": "Wekalet El Ghouri Arts Centre",
+    "description": "Stunning 500-year-old Mamluk caravanserai turned cultural venue.",
+    "longdescription": "Wekalet El Ghouri is a beautifully restored Mamluk-era caravanserai in Islamic Cairo, built in the early 16th century. Today it serves as a cultural center hosting traditional Sufi performances, art exhibitions, and craft workshops. The building's stunning architecture — with its central courtyard, arched corridors, and intricate stonework — makes it as much a destination for photography as for culture. The free Sufi whirling performances held here several nights a week are among Cairo's most magical experiences.",
+    "lat": 30.0487,
+    "lng": 31.2618,
+    "tags": [
+      "historical",
+      "cultural",
+      "photography",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 890,
+    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 152,
+    "title": "Darb 1718 Contemporary Arts Center",
+    "description": "Underground Cairo arts hub in a converted historic building.",
+    "longdescription": "Darb 1718 is one of Cairo's most exciting independent arts spaces, located in the Fustat area near Old Cairo. Housed in a renovated historic building, it hosts contemporary art exhibitions, film screenings, music performances, and cultural events throughout the year. The space is a hub for Egypt's independent creative community and regularly features works by emerging Egyptian artists. Its outdoor garden and raw industrial aesthetic give it a uniquely bohemian character unlike anywhere else in the city.",
+    "lat": 30.0063,
+    "lng": 31.2314,
+    "tags": [
+      "art",
+      "cultural",
+      "modern",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 640,
+    "coverImage": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800"
+    ]
+  },
+  {
+    "id": 153,
+    "title": "Ras Shitan Beach",
+    "description": "Remote Sinai beach with crystal water and Bedouin camps.",
+    "longdescription": "Ras Shitan is a secluded beach north of Nuweiba in the Sinai Peninsula, accessible only by 4WD or camel. Known for its crystal-clear turquoise waters, colorful coral reefs, and a laid-back Bedouin camp culture, it offers one of Egypt's most authentic off-the-grid beach experiences. Visitors sleep in simple palm-leaf huts on the shore, eat fresh grilled fish, and watch star-filled skies with almost no light pollution. It is a paradise for snorkelers, free divers, and anyone seeking total escape.",
+    "lat": 29.1167,
+    "lng": 34.6833,
+    "tags": [
+      "beach",
+      "adventure",
+      "hidden",
+      "diving"
+    ],
+    "city": "Nuweiba",
+    "rating": 4.8,
+    "reviews": 760,
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+    ]
+  },
+  {
+    "id": 154,
+    "title": "Mount Sinai",
+    "description": "Sacred mountain with a legendary sunrise hike.",
+    "longdescription": "Mount Sinai, known locally as Gebel Musa, is one of the most sacred sites in the world for Christians, Jews, and Muslims. According to religious tradition, it is the mountain where Moses received the Ten Commandments. Thousands of pilgrims and hikers climb its rocky trails each year, with the pre-dawn ascent timed to witness one of Egypt's most breathtaking sunrises. At the summit stands a small chapel and mosque, and on clear mornings the views stretch across the Sinai wilderness for miles in every direction.",
+    "lat": 28.5392,
+    "lng": 33.9753,
+    "tags": [
+      "adventure",
+      "historical",
+      "mysterious",
+      "photography"
+    ],
+    "city": "Saint Catherine",
+    "rating": 4.9,
+    "reviews": 8400,
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 155,
+    "title": "Saint Catherine's Monastery",
+    "description": "One of the world's oldest Christian monasteries at the foot of Mount Sinai.",
+    "longdescription": "Saint Catherine's Monastery is a UNESCO World Heritage Site and one of the oldest continuously inhabited Christian monasteries in the world, founded in the 6th century AD. Nestled at the foot of Mount Sinai, it houses an extraordinary collection of early Christian manuscripts, icons, and mosaics, including the famous Transfiguration mosaic in the basilica. The monastery is still home to a small community of Greek Orthodox monks and welcomes visitors in the morning hours. Its remote desert setting adds to its profound atmosphere of sacred solitude.",
+    "lat": 28.5561,
+    "lng": 33.9759,
+    "tags": [
+      "historical",
+      "cultural",
+      "mysterious",
+      "hidden"
+    ],
+    "city": "Saint Catherine",
+    "rating": 4.8,
+    "reviews": 5600,
+    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800"
+    ]
+  },
+  {
+    "id": 156,
+    "title": "Colored Canyon",
+    "description": "Dramatic narrow canyon with multicolored rock walls.",
+    "longdescription": "The Colored Canyon near Nuweiba is one of Sinai's most spectacular natural wonders. Carved by ancient water erosion, its narrow passages wind between towering rock walls streaked with vivid shades of red, orange, yellow, and purple. The hike through the canyon takes about two hours and involves some light scrambling over boulders. The surreal colors are most vibrant in the late morning light, making it a dream destination for photographers and nature lovers. Most visits are arranged through Bedouin guides from nearby villages.",
+    "lat": 29.2833,
+    "lng": 34.4167,
+    "tags": [
+      "adventure",
+      "nature",
+      "photography",
+      "hidden"
+    ],
+    "city": "Nuweiba",
+    "rating": 4.8,
+    "reviews": 1430,
+    "coverImage": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+    ]
+  },
+  {
+    "id": 157,
+    "title": "Ras Abu Gallum",
+    "description": "Protected Sinai protectorate with pristine beaches and coral.",
+    "longdescription": "Ras Abu Gallum is a protected natural reserve stretching along the Gulf of Aqaba between Dahab and Nuweiba. Accessible only on foot or by camel, its remote beaches are among Sinai's most pristine, with untouched coral reefs just meters from shore. The area is home to rare marine life and is popular among snorkelers and freedivers. Bedouin families live in the area and offer simple camps for overnight stays. The complete absence of roads and development makes it feel genuinely wild and far removed from the modern world.",
+    "lat": 28.6083,
+    "lng": 34.5567,
+    "tags": [
+      "beach",
+      "adventure",
+      "nature",
+      "diving",
+      "hidden"
+    ],
+    "city": "Dahab",
+    "rating": 4.9,
+    "reviews": 920,
+    "coverImage": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800"
+    ]
+  },
+  {
+    "id": 158,
+    "title": "Luxor Museum",
+    "description": "World-class museum housing exceptional pharaonic artifacts.",
+    "longdescription": "The Luxor Museum is widely regarded as one of Egypt's finest museums, housing a carefully curated collection of artifacts from the Theban region. Unlike the sprawling Egyptian Museum in Cairo, Luxor's museum is compact and beautifully presented, with excellent lighting and informative displays. Highlights include a gallery of royal mummies, the reconstructed wall of Akhenaten's temple, and beautifully preserved statuary. Its quality over quantity approach makes it a deeply satisfying experience for history enthusiasts.",
+    "lat": 25.7002,
+    "lng": 32.6385,
+    "tags": [
+      "historical",
+      "cultural",
+      "mysterious",
+      "touristic"
+    ],
+    "city": "Luxor",
+    "rating": 4.7,
+    "reviews": 4100,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 159,
+    "title": "Sofra Restaurant Luxor",
+    "description": "Charming rooftop restaurant serving traditional Upper Egyptian cuisine.",
+    "longdescription": "Sofra is a hidden gem in Luxor's old town, serving authentic Upper Egyptian home cooking in a beautifully decorated rooftop setting. The menu features traditional dishes rarely found in tourist restaurants, including slow-cooked fatta, grilled meats with local spices, and seasonal vegetable stews. The terrace offers lovely views over the old quarters of Luxor, and the warm, family-run atmosphere makes guests feel genuinely welcomed. An essential stop for anyone wanting to eat like a local in Luxor.",
+    "lat": 25.6978,
+    "lng": 32.6358,
+    "tags": [
+      "food",
+      "cultural",
+      "hidden",
+      "local"
+    ],
+    "city": "Luxor",
+    "rating": 4.6,
+    "reviews": 1240,
+    "coverImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 160,
+    "title": "Hot Air Balloon Ride Luxor",
+    "description": "Sunrise balloon flight over the temples and Valley of the Kings.",
+    "longdescription": "A hot air balloon ride over Luxor at sunrise is one of the most unforgettable experiences Egypt has to offer. Launching from the West Bank as dawn breaks, balloons drift silently over the Valley of the Kings, Hatshepsut's temple, the Colossi of Memnon, and vast stretches of lush Nile farmland. The golden morning light on ancient temples seen from above is truly magical. Flights typically last around 45 minutes and are operated by several licensed companies. Booking in advance is essential, especially in peak season.",
+    "lat": 25.7323,
+    "lng": 32.6101,
+    "tags": [
+      "adventure",
+      "photography",
+      "romantic",
+      "viewpoint"
+    ],
+    "city": "Luxor",
+    "rating": 4.9,
+    "reviews": 6200,
+    "coverImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+    ]
+  },
+  {
+    "id": 161,
+    "title": "Aswan Souk",
+    "description": "Colorful market street with Nubian crafts, spices and textiles.",
+    "longdescription": "The Aswan Souk is one of Egypt's most atmospheric markets, stretching for nearly a kilometer along a covered street in the heart of the city. Unlike the more touristy Khan El Khalili, Aswan's market caters largely to locals and has a distinctly Nubian character. Stalls overflow with colorful fabrics, handwoven baskets, aromatic spices, hibiscus tea, henna, and silver jewelry. The pace is relaxed and shopkeepers are generally friendly. It is an ideal place to buy authentic Nubian souvenirs and sample local street food.",
+    "lat": 24.0889,
+    "lng": 32.8998,
+    "tags": [
+      "market",
+      "cultural",
+      "local",
+      "busy"
+    ],
+    "city": "Aswan",
+    "rating": 4.5,
+    "reviews": 2300,
+    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ]
+  },
+  {
+    "id": 162,
+    "title": "Aswan Botanical Garden",
+    "description": "Lush island garden on the Nile with rare tropical plants.",
+    "longdescription": "Aswan Botanical Garden occupies the entirety of Kitchener's Island, a peaceful green oasis in the middle of the Nile. Originally planted in the early 20th century under the direction of Lord Kitchener, who received the island as a gift, it now houses hundreds of exotic plant species from Africa, Asia, and the Americas. Reached only by small felucca boat, the island offers a serene escape from the city with shaded paths, birdsong, and stunning Nile views. It is an ideal stop on any felucca journey through Aswan.",
+    "lat": 24.0872,
+    "lng": 32.8877,
+    "tags": [
+      "nature",
+      "calm",
+      "hidden",
+      "romantic"
+    ],
+    "city": "Aswan",
+    "rating": 4.5,
+    "reviews": 1670,
+    "coverImage": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800"
+    ]
+  },
+  {
+    "id": 163,
+    "title": "Felucca Sailing Aswan",
+    "description": "Traditional Nile sailing boats for a peaceful river experience.",
+    "longdescription": "Sailing on a felucca is one of the quintessential Aswan experiences. These traditional wooden sailboats have plied the Nile for thousands of years, and hiring one for a few hours — or even overnight — remains the best way to experience the river's timeless beauty. Drifting past the Botanical Garden, Elephantine Island, and the golden sand dunes of the west bank while the wind fills the white sails, you understand why ancient Egyptians considered the Nile sacred. Sunset felucca rides are particularly magical.",
+    "lat": 24.0882,
+    "lng": 32.8944,
+    "tags": [
+      "nature",
+      "romantic",
+      "calm",
+      "cultural"
+    ],
+    "city": "Aswan",
+    "rating": 4.8,
+    "reviews": 3900,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 164,
+    "title": "Hurghada Marina",
+    "description": "Bustling marina with restaurants, cafes and water sports.",
+    "longdescription": "Hurghada Marina is the social heart of the Red Sea resort city, lined with restaurants, cafes, ice cream shops, and boutiques. Yachts and dive boats fill the harbor while visitors stroll along the promenade, browse souvenir shops, and watch street performers. The marina is the main departure point for snorkeling and diving trips, glass-bottom boat excursions, and day trips to nearby islands. In the evenings it comes alive with music, shisha cafes, and a lively waterfront atmosphere that makes it a great spot to end a day on the water.",
+    "lat": 27.2167,
+    "lng": 33.8367,
+    "tags": [
+      "modern",
+      "busy",
+      "cafe",
+      "beach"
+    ],
+    "city": "Hurghada",
+    "rating": 4.4,
+    "reviews": 4700,
+    "coverImage": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+    ]
+  },
+  {
+    "id": 165,
+    "title": "Giftun Island",
+    "description": "Stunning uninhabited Red Sea island with pristine coral reefs.",
+    "longdescription": "Giftun Island is a protected national park a short boat ride from Hurghada, renowned for having some of the most beautiful coral reefs in the entire Red Sea. The island's shallow lagoons are perfect for snorkeling, while the deeper reefs attract scuba divers seeking spectacular wall dives teeming with marine life. The white sand beach and turquoise waters create a picture-perfect setting that feels worlds away from the resort hotels on the mainland. Day trips from Hurghada are easily arranged and remain one of the region's top experiences.",
+    "lat": 27.1783,
+    "lng": 33.9067,
+    "tags": [
+      "beach",
+      "diving",
+      "nature",
+      "adventure"
+    ],
+    "city": "Hurghada",
+    "rating": 4.8,
+    "reviews": 5300,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ]
+  },
+  {
+    "id": 166,
+    "title": "Egyptian Museum Cairo",
+    "description": "World's greatest collection of ancient Egyptian artifacts.",
+    "longdescription": "The Egyptian Museum in Tahrir Square is one of the world's most important archaeological museums, housing over 120,000 artifacts spanning thousands of years of ancient Egyptian civilization. The undisputed highlight is the Tutankhamun gallery, where the pharaoh's gold death mask and treasures from his intact tomb are displayed. Other must-see sections include the royal mummy room, the Akhenaten gallery, and a vast collection of papyrus scrolls. Despite its age and crowded conditions, the sheer density of extraordinary objects makes every visit overwhelming in the best possible way.",
+    "lat": 30.0477,
+    "lng": 31.2336,
+    "tags": [
+      "historical",
+      "cultural",
+      "mysterious",
+      "touristic"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 22000,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+    ]
+  },
+  {
+    "id": 167,
+    "title": "Cairo Citadel",
+    "description": "Medieval Islamic fortress with panoramic views over Cairo.",
+    "longdescription": "The Citadel of Saladin is a medieval Islamic fortification built in the 12th century that dominated Cairo's skyline for 700 years. It served as the seat of Egyptian government until the 19th century and contains several stunning mosques within its walls, most famously the Muhammad Ali Mosque with its Ottoman domes and alabaster interiors. The hilltop location offers sweeping panoramic views of the city, the Nile, and on clear days the distant Pyramids of Giza. The complex also houses several military and police museums within its towers and halls.",
+    "lat": 30.0289,
+    "lng": 31.2598,
+    "tags": [
+      "historical",
+      "viewpoint",
+      "cultural",
+      "touristic"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 14600,
+    "coverImage": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 168,
+    "title": "Coptic Cairo",
+    "description": "Ancient Christian quarter with churches, a synagogue and museums.",
+    "longdescription": "Coptic Cairo, also known as Old Cairo or Misr El Qadima, is the historic heart of Egypt's Christian community and one of the oldest inhabited parts of the city. The area contains a remarkable concentration of ancient churches, including the Hanging Church (Al-Muallaqah) which dates to the 3rd century, the Church of Saint Sergius built over the crypt where the Holy Family is said to have sheltered, and the Ben Ezra Synagogue. The Coptic Museum houses the world's finest collection of Coptic art and manuscripts. The quiet cobblestone lanes and ancient walls create a deeply contemplative atmosphere.",
+    "lat": 30.0051,
+    "lng": 31.2297,
+    "tags": [
+      "historical",
+      "cultural",
+      "mysterious",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 5800,
+    "coverImage": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ]
+  },
+  {
+    "id": 169,
+    "title": "Oasis Cafe Siwa",
+    "description": "Peaceful mud-brick cafe in the heart of the Siwa Oasis.",
+    "longdescription": "The Oasis Cafe in Siwa is a tranquil spot built in the traditional Siwan mud-brick style, offering refreshing drinks, light meals, and fresh juices in a setting that perfectly complements the oasis landscape around it. Seated under date palms with views of the ancient Shali fortress, it is the ideal place to decompress after a day of exploring. The cafe serves traditional Siwan tea, fresh mango and guava juices, and simple home-cooked dishes. It embodies the slow, peaceful pace that makes Siwa one of Egypt's most beloved destinations.",
+    "lat": 29.2011,
+    "lng": 25.5195,
+    "tags": [
+      "cafe",
+      "calm",
+      "hidden",
+      "nature"
+    ],
+    "city": "Siwa",
+    "rating": 4.6,
+    "reviews": 540,
+    "coverImage": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800"
+    ]
+  },
+  {
+    "id": 170,
+    "title": "Shali Fortress",
+    "description": "Ruined medieval mud-brick fortress rising above Siwa town.",
+    "longdescription": "The Shali Fortress is a dramatic ruined citadel that dominates the center of Siwa Oasis, built from a local salt-clay material called kershef in the 13th century. It once housed the entire population of Siwa within its labyrinthine walls, and at its peak contained mosques, houses, and storerooms stacked several stories high. Heavy rains in the 1920s caused much of it to dissolve, but the atmospheric ruins that remain are extraordinary to explore, especially at sunset when the crumbling towers glow orange and pink. A small cafe at the base makes for a perfect ending to the visit.",
+    "lat": 29.2027,
+    "lng": 25.5199,
+    "tags": [
+      "historical",
+      "photography",
+      "mysterious",
+      "hidden"
+    ],
+    "city": "Siwa",
+    "rating": 4.7,
+    "reviews": 1100,
+    "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 171,
+    "title": "Sakkara Country Club",
+    "description": "Peaceful countryside club with horses, gardens and Nile views near the pyramids.",
+    "longdescription": "Sakkara Country Club sits in the agricultural countryside south of Giza, surrounded by green fields with the Step Pyramid visible on the horizon. It offers horse riding through palm groves and farmland, a swimming pool, tennis courts and a relaxed open-air restaurant. Weekends draw Cairo families escaping the city for a slower pace. The combination of countryside scenery, ancient monuments on the skyline and fresh air makes it a completely different side of the Cairo experience.",
+    "lat": 29.92,
+    "lng": 31.16,
+    "tags": [
+      "nature",
+      "calm",
+      "adventure",
+      "hidden"
+    ],
+    "city": "Giza",
+    "rating": 4.5,
+    "reviews": 870,
+    "coverImage": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800"
+    ]
+  },
+  {
+    "id": 172,
+    "title": "Pyramids Sound and Light Show",
+    "description": "Dramatic evening show projected onto the Giza Pyramids and Sphinx.",
+    "longdescription": "The Sound and Light Show at the Giza Plateau is one of Egypt's most theatrical experiences, held each evening as colored lights illuminate the Great Pyramids and the Sphinx narrates the story of ancient Egypt in dramatic fashion. Visitors sit in open-air stands facing the monuments as the desert sky darkens around them. Despite its kitsch reputation, the spectacle of the Sphinx lit up against the night sky with the pyramids looming behind genuinely impresses. Shows run in multiple languages throughout the week.",
+    "lat": 29.9753,
+    "lng": 31.1344,
+    "tags": [
+      "historical",
+      "touristic",
+      "photography",
+      "mysterious"
+    ],
+    "city": "Giza",
+    "rating": 4.4,
+    "reviews": 7200,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+    ]
+  },
+  {
+    "id": 173,
+    "title": "Grand Egyptian Museum",
+    "description": "The world's largest archaeological museum, home to Tutankhamun's treasures.",
+    "longdescription": "The Grand Egyptian Museum near the Giza Plateau is the largest archaeological museum in the world, purpose-built to house Egypt's extraordinary collection of ancient artifacts. Its centerpiece is the complete Tutankhamun collection — over 5,000 objects including the golden death mask — displayed together for the first time since the pharaoh's tomb was discovered in 1922. The building itself is an architectural marvel, with a massive atrium containing a 24-meter statue of Ramesses II. A landmark of global significance.",
+    "lat": 29.9876,
+    "lng": 31.1123,
+    "tags": [
+      "historical",
+      "modern",
+      "cultural",
+      "mysterious",
+      "touristic"
+    ],
+    "city": "Giza",
+    "rating": 4.9,
+    "reviews": 18400,
+    "coverImage": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 174,
+    "title": "Baron Empain Palace",
+    "description": "Haunted Hindu-style palace ruin in the heart of Heliopolis.",
+    "longdescription": "The Baron Empain Palace in Heliopolis is one of Cairo's most extraordinary and mysterious buildings, built between 1907 and 1911 for Belgian industrialist Édouard Empain. Modeled on the Hindu temples of Angkor Wat and Orissa, it rises incongruously from a Cairo suburb with its carved stone figures, rotating upper chamber and ornate towers. Long abandoned and rumored to be haunted, it has recently been restored and opened as a museum. The building's bizarre architectural fusion and dark history make it utterly fascinating.",
+    "lat": 30.0901,
+    "lng": 31.3234,
+    "tags": [
+      "historical",
+      "mysterious",
+      "photography",
+      "hidden",
+      "cultural"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 3400,
+    "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 175,
+    "title": "Sufi Night at Al-Ghouri",
+    "description": "Free weekly Sufi whirling ceremony in a 500-year-old Cairo venue.",
+    "longdescription": "Every Tuesday and Wednesday evening, the courtyard of Wekalet El-Ghouri in Islamic Cairo fills with the hypnotic performance of Tanoura — the Egyptian Sufi whirling dance. Performers in colorful layered skirts spin continuously for extended periods as traditional music fills the ancient stone space. The show is completely free and open to all visitors. It is one of the most genuinely moving cultural experiences Cairo offers and one of the few remaining regular platforms for this ancient spiritual art form.",
+    "lat": 30.0487,
+    "lng": 31.2618,
+    "tags": [
+      "cultural",
+      "historical",
+      "hidden",
+      "photography"
+    ],
+    "city": "Cairo",
+    "rating": 4.8,
+    "reviews": 2100,
+    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800"
+    ]
+  },
+  {
+    "id": 176,
+    "title": "Corniche El Nil — Downtown Cairo",
+    "description": "Cairo's main Nile promenade lined with cafes and boat piers.",
+    "longdescription": "The Downtown Corniche stretches along the eastern bank of the Nile from Tahrir Square northward, lined with riverside cafes, boat hire piers and open-air seating areas. In the evening it becomes one of Cairo's most lively social spaces, with families, couples and groups gathering to watch the river, smoke shisha and enjoy the cooling breeze. Felucca boats depart from here for short sunset sails. The view across to Zamalek and Gezira Island, with the Cairo Tower rising above the trees, is one of the city's most iconic.",
+    "lat": 30.0444,
+    "lng": 31.2277,
+    "tags": [
+      "romantic",
+      "calm",
+      "viewpoint",
+      "food",
+      "local"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 5600,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+    ]
+  },
+  {
+    "id": 177,
+    "title": "Al-Muizz Street at Night",
+    "description": "Islamic Cairo's grandest street transformed by lantern light after dark.",
+    "longdescription": "Al-Muizz Street in Islamic Cairo is always impressive, but after sunset it becomes truly magical. The ancient facades of mosques, madrasas and palaces are lit by warm lanterns, street vendors sell tea and roasted nuts, and the crowds thin enough to appreciate the architecture. The absence of vehicle traffic in this pedestrianized stretch allows visitors to walk freely between Fatimid-era monuments that span nearly a thousand years of Islamic architecture. The best time is after Isha prayer when the atmosphere is most authentically local.",
+    "lat": 30.051,
+    "lng": 31.2622,
+    "tags": [
+      "historical",
+      "photography",
+      "cultural",
+      "romantic"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 6800,
+    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800"
+    ]
+  },
+  {
+    "id": 178,
+    "title": "Tahrir Square",
+    "description": "Cairo's iconic central square at the heart of modern Egyptian history.",
+    "longdescription": "Tahrir Square — Liberation Square — is the symbolic heart of modern Cairo and one of the most historically charged public spaces in the Arab world. Surrounded by the Egyptian Museum, the Arab League building and the Mogamma administrative complex, it has been the site of pivotal moments in Egyptian history. Today it functions as a busy traffic roundabout and public gathering space, but its historical weight is palpable. The view from the square toward the Nile and the nearby overpass with the river beyond remains a quintessential Cairo image.",
+    "lat": 30.0444,
+    "lng": 31.2357,
+    "tags": [
+      "historical",
+      "cultural",
+      "photography",
+      "modern"
+    ],
+    "city": "Cairo",
+    "rating": 4.3,
+    "reviews": 8900,
+    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800"
+    ]
+  },
+  {
+    "id": 179,
+    "title": "Heliopolis District",
+    "description": "Elegant garden suburb with belle époque architecture and leafy avenues.",
+    "longdescription": "Heliopolis is Cairo's most elegant early 20th-century suburb, designed by Belgian industrialist Baron Empain as a self-contained garden city in the desert. Its wide avenues are lined with arcaded apartment buildings in Moorish, neo-Islamic and Art Deco styles, interspersed with ornate churches, a basilica, parks and the surreal Baron Palace. The neighborhood retains a distinctive European-inflected character unlike any other part of Cairo, and its tree-shaded streets and independent cafes make it a pleasure to explore on foot.",
+    "lat": 30.087,
+    "lng": 31.322,
+    "tags": [
+      "historical",
+      "cultural",
+      "calm",
+      "photography",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 1240,
+    "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800"
+    ]
+  },
+  {
+    "id": 180,
+    "title": "Om Ali Dessert — Koshary Abou Shakra",
+    "description": "Historic Cairo restaurant famous for classic Egyptian Om Ali pudding.",
+    "longdescription": "Abou Shakra is one of Cairo's oldest and most respected traditional restaurants, founded in 1947 and still family-run. Famous for its grilled meats, stuffed pigeon and hearty stews, it is most beloved for its Om Ali — Egypt's national bread pudding baked with cream, nuts and raisins until bubbling and golden. Served in the terracotta dish it was baked in, it is one of the finest versions in the city. The unpretentious dining room, the consistent quality and the sense of history make it a Cairo classic.",
+    "lat": 30.0538,
+    "lng": 31.2411,
+    "tags": [
+      "food",
+      "cultural",
+      "local",
+      "historical"
+    ],
+    "city": "Cairo",
+    "rating": 4.7,
+    "reviews": 4200,
+    "coverImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ]
+  },
+  {
+    "id": 181,
+    "title": "Fishawi's by Night",
+    "description": "Cairo's oldest cafe at its most atmospheric after midnight.",
+    "longdescription": "El Fishawi Cafe in Khan El Khalili never closes — it has operated 24 hours a day for over 200 years. But the experience transforms completely after midnight, when the market crowds thin and the cafe fills with locals — writers, night-shift workers, students and insomniacs — drinking mint tea and playing backgammon by lamplight in the narrow alley. The mirrored walls, the hanging lanterns and the smell of shisha smoke create an atmosphere entirely specific to old Cairo. Arriving at 2am for tea is one of the city's great experiences.",
+    "lat": 30.0478,
+    "lng": 31.2625,
+    "tags": [
+      "food",
+      "cultural",
+      "historical",
+      "mysterious",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.8,
+    "reviews": 3100,
+    "coverImage": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800",
+      "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800",
+      "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800"
+    ]
+  },
+  {
+    "id": 182,
+    "title": "Marsa Matrouh Corniche",
+    "description": "Beautiful Mediterranean promenade with turquoise lagoons.",
+    "longdescription": "Marsa Matrouh's corniche stretches along one of the Mediterranean's most striking natural lagoons, where turquoise water enclosed by white sand bars creates a color palette that rivals the Caribbean. In summer the town comes alive with Egyptian families escaping the heat, the beach restaurants serve fresh fish, and the water is warm and impossibly clear. Outside peak season it is almost entirely empty, making it one of Egypt's most beautiful and peaceful beaches with almost no tourists.",
+    "lat": 31.3528,
+    "lng": 27.2392,
+    "tags": [
+      "beach",
+      "romantic",
+      "calm",
+      "photography",
+      "local"
+    ],
+    "city": "Marsa Matrouh",
+    "rating": 4.7,
+    "reviews": 3800,
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+    ]
+  },
+  {
+    "id": 183,
+    "title": "El Alamein War Cemetery",
+    "description": "Solemn and moving WWII cemetery on the North African coast.",
+    "longdescription": "The El Alamein War Cemetery contains the graves of over 7,000 Commonwealth soldiers who fell during the pivotal North African battles of 1942. The cemetery, maintained by the Commonwealth War Graves Commission, sits quietly on the coastal desert near the town of El Alamein, its white Portland stone headstones aligned in precise rows against a backdrop of pale sand and blue sky. The adjacent El Alamein Museum provides context for one of WWII's most strategically decisive campaigns. A profoundly moving and beautifully maintained site.",
+    "lat": 30.8336,
+    "lng": 28.9445,
+    "tags": [
+      "historical",
+      "cultural",
+      "calm",
+      "photography"
+    ],
+    "city": "El Alamein",
+    "rating": 4.8,
+    "reviews": 2700,
+    "coverImage": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800",
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 184,
+    "title": "North Coast (Sahel) Beaches",
+    "description": "Egypt's premier Mediterranean summer beach destination.",
+    "longdescription": "The Egyptian North Coast, known as El Sahel, stretches for hundreds of kilometers between Alexandria and Marsa Matrouh along the Mediterranean. In summer it transforms into one of the busiest holiday destinations in the Arab world, as millions of Egyptians flock to private beach resorts, compounds and open beaches. The water is a vivid Mediterranean blue, the sand is fine and white, and the resort infrastructure ranges from budget camps to ultra-luxury compounds. The energy in July and August is electric and uniquely Egyptian.",
+    "lat": 30.9501,
+    "lng": 28.3001,
+    "tags": [
+      "beach",
+      "modern",
+      "busy",
+      "local"
+    ],
+    "city": "Marsa Matrouh",
+    "rating": 4.5,
+    "reviews": 12400,
+    "coverImage": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 185,
+    "title": "Snorkel Trail — Sharm El Naga",
+    "description": "Accessible shallow reef perfect for beginner snorkelers.",
+    "longdescription": "Sharm El Naga, midway between Hurghada and Safaga, offers one of the Red Sea's most accessible and rewarding shallow snorkel trails. A marked underwater trail leads snorkelers through a garden of coral formations teeming with parrotfish, angelfish, moray eels and sea turtles, all in water shallow enough for complete beginners. The beach facilities are simple but adequate, and the reef is in excellent condition. For those unable or unwilling to dive, it offers a genuinely spectacular glimpse of the Red Sea's underwater world.",
+    "lat": 26.8224,
+    "lng": 33.9332,
+    "tags": [
+      "beach",
+      "diving",
+      "nature",
+      "adventure"
+    ],
+    "city": "Hurghada",
+    "rating": 4.7,
+    "reviews": 3200,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ]
+  },
+  {
+    "id": 186,
+    "title": "Taba Border Viewpoint",
+    "description": "Dramatic viewpoint where four countries meet on the Gulf of Aqaba.",
+    "longdescription": "At Taba on the northernmost tip of the Gulf of Aqaba, a unique geographic situation allows visitors to see four countries simultaneously — Egypt, Israel, Jordan and Saudi Arabia — across a narrow stretch of water. The Egyptian side has a simple viewpoint and a beach area with a view of Aqaba's lit skyline at night and the Jordanian mountains rising dramatically across the gulf. The border setting, the extraordinary geometry of the meeting point and the desert-meets-sea landscape make it one of Sinai's most unusual destinations.",
+    "lat": 29.4932,
+    "lng": 34.8979,
+    "tags": [
+      "viewpoint",
+      "photography",
+      "hidden",
+      "adventure"
+    ],
+    "city": "Taba",
+    "rating": 4.6,
+    "reviews": 1870,
+    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  },
+  {
+    "id": 187,
+    "title": "Hurghada Old Town (Dahar)",
+    "description": "The authentic local heart of Hurghada away from the resort strip.",
+    "longdescription": "Dahar is Hurghada's original town center, predating the resort development by decades. Its narrow streets are lined with local restaurants, spice shops, jewelers, fabric merchants and simple cafes where fishermen and tradespeople go about daily life entirely separate from the tourist bubble. The fish market in the early morning is a highlight — boats unload their catch directly from the sea while buyers haggle over sea bass, mullet and shrimp. Exploring Dahar on foot gives a completely different and authentic perspective on this Red Sea city.",
+    "lat": 27.2582,
+    "lng": 33.8123,
+    "tags": [
+      "local",
+      "food",
+      "cultural",
+      "hidden"
+    ],
+    "city": "Hurghada",
+    "rating": 4.4,
+    "reviews": 1560,
+    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+    ]
+  },
+  {
+    "id": 188,
+    "title": "Al-Hakim Mosque",
+    "description": "Fatimid-era mosque with a legendary and dark history in Islamic Cairo.",
+    "longdescription": "The Mosque of Al-Hakim Bi-Amr Allah at the northern gate of Islamic Cairo is one of Egypt's most fascinating and undervisited mosques. Built by the eccentric and sometimes brutal Fatimid Caliph Al-Hakim in the early 11th century, it has had a turbulent history — used as a stable by Crusaders, a prison by Saladin, and a warehouse before being restored. The mosque's two distinctive minarets are among the oldest surviving in Cairo. Al-Hakim himself is a legendary and mysterious figure, believed by some to be divine, which adds an intriguing layer to the visit.",
+    "lat": 30.0558,
+    "lng": 31.2626,
+    "tags": [
+      "historical",
+      "mysterious",
+      "hidden",
+      "cultural"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 760,
+    "coverImage": "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 189,
+    "title": "City of the Dead — Cairo Necropolis",
+    "description": "Vast medieval cemetery where thousands of families still live.",
+    "longdescription": "The Cairo Necropolis, known as the City of the Dead, is one of the most extraordinary urban phenomena in the world — a vast medieval Islamic cemetery stretching for kilometers where, due to chronic housing shortages, tens of thousands of living Cairenes have made their homes among the tombs and mausoleums. The area contains some of Cairo's finest Mamluk architecture including the tombs of the Burgi sultans, elaborately decorated with carved stone domes and intricate facades. Walking its streets is one of Cairo's most haunting and unforgettable experiences.",
+    "lat": 30.0334,
+    "lng": 31.2712,
+    "tags": [
+      "historical",
+      "mysterious",
+      "hidden",
+      "photography",
+      "cultural"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 1100,
+    "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800"
+    ]
+  },
+  {
+    "id": 190,
+    "title": "Lucite Club — Zamalek",
+    "description": "Intimate rooftop jazz bar above the Nile in Zamalek.",
+    "longdescription": "Lucite is one of Cairo's most beloved intimate music venues, a rooftop bar in Zamalek with views across the Nile that hosts regular jazz nights, acoustic sets and DJ evenings. The small terrace, string lights, and carefully curated music program make it the go-to destination for Cairo's creative and expat community seeking quality live music in an unhurried setting. Tables are limited so booking ahead is strongly recommended on weekends when local bands perform.",
+    "lat": 30.0621,
+    "lng": 31.2195,
+    "tags": [
+      "modern",
+      "romantic",
+      "food",
+      "calm"
+    ],
+    "city": "Cairo",
+    "rating": 4.6,
+    "reviews": 940,
+    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
+    ]
+  },
+  {
+    "id": 191,
+    "title": "Souq Al-Fustat",
+    "description": "Modern craft market in Old Cairo selling Egyptian artisan goods.",
+    "longdescription": "Souq Al-Fustat is a contemporary artisan market near Old Cairo, designed to showcase and sell high-quality Egyptian handicrafts in a pleasant open-air setting. Unlike the touristy shops of Khan El Khalili, the vendors here focus on well-made goods — handwoven textiles, blown glass, hand-painted ceramics, leather goods and silver jewelry — at fair prices. The market is organized and calm, making it an excellent alternative shopping destination for visitors seeking authentic Egyptian craftsmanship without the pressure of the traditional bazaar.",
+    "lat": 30.0044,
+    "lng": 31.2331,
+    "tags": [
+      "cultural",
+      "modern",
+      "local",
+      "hidden"
+    ],
+    "city": "Cairo",
+    "rating": 4.5,
+    "reviews": 1230,
+    "coverImage": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800"
+    ]
+  },
+  {
+    "id": 192,
+    "title": "Shark's Bay",
+    "description": "Calm bay in Sharm El Sheikh with excellent shallow reef snorkeling.",
+    "longdescription": "Shark's Bay is a quieter alternative to the busy Naama Bay beaches, offering a calmer atmosphere, a pleasant strip of cafes and excellent snorkeling directly from the beach. Despite the name, sharks are rarely seen here — the bay is known instead for colorful reef fish, sea turtles and healthy hard corals just meters from shore. Several dive centers operate from the beach, making it a convenient base for both beginner snorkelers and experienced divers.",
+    "lat": 27.944,
+    "lng": 34.3622,
+    "tags": [
+      "beach",
+      "diving",
+      "calm",
+      "nature"
+    ],
+    "city": "Sharm El Sheikh",
+    "rating": 4.6,
+    "reviews": 4100,
+    "coverImage": "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    ]
+  },
+  {
+    "id": 193,
+    "title": "Nile Cruise — Luxor to Aswan",
+    "description": "Classic three or four night cruise between Egypt's two great temple cities.",
+    "longdescription": "A Nile cruise between Luxor and Aswan is one of the world's great travel experiences, gliding past farmland, riverside villages, ancient temple pylons and sandstone cliffs for four days while stopping at Edfu, Kom Ombo, the Valley of the Kings and Karnak. Traditional feluccas offer a rustic version while larger cruise ships provide comfort and guided excursions. The pace of the river, the constant presence of monuments on both banks and the way Egyptian life unfolds along the shores creates an immersive experience impossible to replicate any other way.",
+    "lat": 25.7,
+    "lng": 32.64,
+    "tags": [
+      "historical",
+      "romantic",
+      "cultural",
+      "adventure",
+      "photography"
+    ],
+    "city": "Luxor",
+    "rating": 4.9,
+    "reviews": 15600,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800"
+    ]
+  },
+  {
+    "id": 194,
+    "title": "Agilkia Island Sound and Light",
+    "description": "Magical evening show at Philae Temple reflected on the Nile.",
+    "longdescription": "The Sound and Light Show at Philae Temple (Agilkia Island) is one of Egypt's finest, using colored lights, narration and music to bring the story of Isis and Osiris to life among the ancient columns and pylons of the temple. The show takes place across the water at night, with the temple's reflection shimmering below and the stars above — a setting of exceptional beauty. Visitors are transported to the island by small motorboat, which adds to the sense of occasion. One of the most atmospheric evening experiences in all of Egypt.",
+    "lat": 24.013,
+    "lng": 32.8789,
+    "tags": [
+      "historical",
+      "romantic",
+      "photography",
+      "mysterious"
+    ],
+    "city": "Aswan",
+    "rating": 4.7,
+    "reviews": 3400,
+    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800"
+    ]
+  },
+  {
+    "id": 195,
+    "title": "Wadi Hammamat",
+    "description": "Ancient desert road with pharaonic rock inscriptions and drawings.",
+    "longdescription": "Wadi Hammamat is a dry river valley in Egypt's Eastern Desert that served as a major trade and quarrying route for over 4,000 years. Its rock faces are covered in thousands of ancient inscriptions and drawings left by Pharaonic expeditions, Roman soldiers, Greek merchants and desert travelers across the millennia. The wadi passes through dramatic desert mountain scenery between Qena and the Red Sea coast. It remains remarkably little visited and offers an extraordinary open-air gallery of ancient graffiti spanning the full sweep of Egyptian history.",
+    "lat": 26.0001,
+    "lng": 33.5001,
+    "tags": [
+      "historical",
+      "hidden",
+      "adventure",
+      "mysterious",
+      "photography"
+    ],
+    "city": "Qena",
+    "rating": 4.7,
+    "reviews": 480,
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+    ]
+  },
+  {
+    "id": 196,
+    "title": "Ain Sokhna Sunset",
+    "description": "The Red Sea at its most beautiful during golden hour from Sokhna's shore.",
+    "longdescription": "While Ain Sokhna is typically experienced as a resort destination, its finest moment is the daily sunset when the Red Sea mountains of Sinai across the water turn shades of deep purple and the calm sea reflects the sky in gold and rose. The beach at this hour — mostly empty of swimmers, the air cooling, small fishing boats returning to shore — is one of Egypt's most quietly beautiful scenes. Several beach cafes and shisha spots along the corniche make it easy to settle in and watch the evening unfold.",
+    "lat": 29.598,
+    "lng": 32.3501,
+    "tags": [
+      "romantic",
+      "photography",
+      "calm",
+      "nature",
+      "beach"
+    ],
+    "city": "Ain Sokhna",
+    "rating": 4.7,
+    "reviews": 2800,
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
+      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+    ]
+  },
+  {
+    "id": 197,
+    "title": "Spice Market — Aswan",
+    "description": "Fragrant market stalls overflowing with Nubian spices and hibiscus.",
+    "longdescription": "Tucked into Aswan's main souk, the spice section is one of the most sensory-rich shopping experiences in Egypt. Enormous mounds of dried hibiscus flowers (karkade), cumin, coriander, fenugreek, saffron and blended spice mixes are displayed in open sacks, their colors vivid and their aroma overwhelming. Nubian vendors offer small cups of hibiscus tea while visitors browse. The spice market feeds directly into Aswan's broader souk, where the Nubian character of the city is most strongly felt through the fabrics, baskets and crafts on display.",
+    "lat": 24.0895,
+    "lng": 32.8999,
+    "tags": [
+      "food",
+      "cultural",
+      "photography",
+      "local"
+    ],
+    "city": "Aswan",
+    "rating": 4.6,
+    "reviews": 2100,
+    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800"
+    ]
+  },
+  {
+    "id": 198,
+    "title": "Kafr El Sheikh Bird Lake",
+    "description": "Vast wetland lake hosting enormous seasonal bird migrations.",
+    "longdescription": "Lake Burullus in Kafr El Sheikh governorate on the Nile Delta coast is one of Egypt's most important wildlife sanctuaries, a vast brackish lagoon that serves as a critical stopover for hundreds of thousands of migratory birds traveling between Europe and Africa each autumn and spring. Flamingos, pelicans, herons, egrets and dozens of species of waders and waterfowl fill the shallows in season. Completely off the tourist circuit, it offers birders and nature photographers a genuinely wild Egyptian experience rarely seen by outsiders.",
+    "lat": 31.5001,
+    "lng": 31.0001,
+    "tags": [
+      "nature",
+      "hidden",
+      "photography",
+      "adventure"
+    ],
+    "city": "Kafr El Sheikh",
+    "rating": 4.7,
+    "reviews": 340,
+    "coverImage": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800"
+    ]
+  },
+  {
+    "id": 199,
+    "title": "Rosetta (Rashid)",
+    "description": "Historic Nile Delta city where the famous Rosetta Stone was discovered.",
+    "longdescription": "Rosetta, known in Arabic as Rashid, is a historic port city at the mouth of the western Nile branch where it meets the Mediterranean. It is internationally famous as the site where the Rosetta Stone was discovered in 1799, the trilingual decree that allowed scholars to finally decode ancient Egyptian hieroglyphics. The city itself is a gem of Ottoman architecture, with over 20 remarkably preserved houses featuring ornate brick facades and wooden mashrabiyya screens. The Rosetta Museum and the Tabiya Fort are both worth visiting for their historic collections.",
+    "lat": 31.4001,
+    "lng": 30.4101,
+    "tags": [
+      "historical",
+      "cultural",
+      "hidden",
+      "mysterious"
+    ],
+    "city": "Rosetta",
+    "rating": 4.6,
+    "reviews": 1240,
+    "coverImage": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+    ]
+  },
+  {
+    "id": 200,
+    "title": "Nile Sunset Felucca — Cairo",
+    "description": "The most romantic hour in Cairo, drifting on the Nile at dusk.",
+    "longdescription": "Hiring a felucca from the Cairo corniche for a sunset sail is one of the simplest and most rewarding things to do in the city. As the sun sinks behind the Giza pyramids on the western horizon, the Nile turns gold and the city's noise fades to a murmur. The felucca captain navigates silently between the islands as the sky deepens through orange to purple. Bring food, drinks and good company — an hour on the river at this hour resets everything. It costs almost nothing and remains one of Cairo's most enduringly magical experiences.",
+    "lat": 30.049,
+    "lng": 31.2255,
+    "tags": [
+      "romantic",
+      "calm",
+      "photography",
+      "nature",
+      "local"
+    ],
+    "city": "Cairo",
+    "rating": 4.9,
+    "reviews": 7800,
+    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "gallery": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+    ]
+  }
 ]
+
+
