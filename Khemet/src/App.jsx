@@ -12,7 +12,7 @@ import Signup from "./pages/Signup";
 import PlaceDetails from "./pages/PlaceDetails";
 import About from "./pages/About";
 import Contributions from "./pages/Contributions";
-import SavedTrips from "./pages/Savedtrips";
+import SavedTrips from "./pages/SavedTrips";
 import Favorites from "./pages/Favorites";
 import AddPlace from "./pages/AddPlace";
 import "./App.css"

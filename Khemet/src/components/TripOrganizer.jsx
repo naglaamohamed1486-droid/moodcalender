@@ -1,14 +1,20 @@
 import places from "../places.json";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
 
 function TripOrganizer({
   trip,
   setTrip,
-  saveTrip,
-  closeTrip
+  closeTrip,
+  duplicateTrip,
+  deleteTrip
 }) {
   // ===========================
   // Add New Day
   // ===========================
+
+  const { saveTrip } = useAuth();
+  const [savedMessage, setSavedMessage] = useState(false);
 
   const addDay = () => {
     setTrip({
@@ -240,16 +246,16 @@ const moveDayDown = (dayIndex) => {
 
                <div className="editing-actions">
 
-                    <button
+                    {/* <button
                         className="secondary-btn"
-                        // onClick={duplicateTrip}
+                        onClick={duplicateTrip}
                     >
                         📄 Duplicate
-                    </button>
+                    </button> */}
 
                     <button
                         className="danger-btn"
-                        // onClick={deleteTrip}
+                        onClick={deleteTrip}
                     >
                         🗑 Delete
                     </button>
@@ -464,11 +470,24 @@ const moveDayDown = (dayIndex) => {
 
           <div className="organizer-footer">
             <button
-              className="save-trip-btn"
-              onClick={saveTrip}
+                className="save-trip-btn"
+                  onClick={() => {
+                    saveTrip(trip);
+                    setSavedMessage(true);
+
+                    setTimeout(() => {
+                        setSavedMessage(false);
+                        setTrip(null);
+                    }, 2000);
+                    }}
             >
-              ✓ Save Trip
+                Save Trip
             </button>
+            {savedMessage && (
+                <div className="saved-message">
+                     ✓ Trip saved to your Saved Trips!
+                </div>
+            )}
           </div>
         </div>
       </div>

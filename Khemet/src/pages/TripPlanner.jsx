@@ -1,10 +1,12 @@
-import { useState, useRef } from "react";
+
 import places from "../places.json";
 import "../css/TripPlanner.css";
 import PlanCard from "../components/PlanCard";
 import TripPreviewModal from "../components/TripPreviewModal";
 import TripOrganizer from "../components/TripOrganizer";
 import Generator from "../components/Generator";
+import { useState, useRef, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // ===========================
 // Distance & travel time helpers
@@ -260,17 +262,20 @@ function TripPlanner() {
   const [editingTrip, setEditingTrip] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const organizerRef = useRef(null);
-  const [savedTrips, setSavedTrips] = useState([]);
+  // const [savedTrips, setSavedTrips] = useState([]);
 
-  const saveTrip = () => {
-    setSavedTrips((prev) => [...prev, editingTrip]);
-    setEditingTrip(null);
-  };
-  const deleteTrip = (index) => {
-  setSavedTrips((prev) =>
-    prev.filter((_, i) => i !== index)
-  );
-};
+  // const saveTrip = () => {
+  //   if (!editingTrip) return;
+
+  //   setSavedTrips(prev => [...prev, editingTrip]);
+
+  //   setEditingTrip(null);
+  // };
+//   const deleteTrip = (index) => {
+//   setSavedTrips((prev) =>
+//     prev.filter((_, i) => i !== index)
+//   );
+// };
 
   const handleSelect = (plan) => {
   const built = buildItinerary(plan.places, selectedInterests, days, pace);
@@ -322,7 +327,47 @@ function TripPlanner() {
   setPlans(generated);
 };
 
+const closeTrip = () => {
+  setEditingTrip(null);
+};
 
+const deleteTrip = () => {
+  setSavedTrips(prev =>
+    prev.filter(t => t.name !== editingTrip.name)
+  );
+
+  setEditingTrip(null);
+};
+
+const duplicateTrip = () => {
+  const copy = {
+    ...editingTrip,
+    name: editingTrip.name + " Copy",
+    itinerary: editingTrip.itinerary.map(day => [...day])
+  };
+
+  setSavedTrips(prev => [...prev, copy]);
+};
+const location = useLocation();
+const navigate = useNavigate();
+
+useEffect(() => {
+  if (location.state?.trip) {
+    setEditingTrip(location.state.trip);
+
+    navigate(location.pathname, {
+      replace: true,
+      state: null,
+    });
+
+    setTimeout(() => {
+      organizerRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
+}, [location, navigate]);
 
   return (
     <div className="trip-page">
@@ -395,8 +440,9 @@ function TripPlanner() {
           <TripOrganizer
             trip={editingTrip}
             setTrip={setEditingTrip}
-            saveTrip={saveTrip}
-            closeTrip={() => setEditingTrip(null)}
+            closeTrip={closeTrip}
+            deleteTrip={deleteTrip}
+            duplicateTrip={duplicateTrip}
           />
         )}
       </div>

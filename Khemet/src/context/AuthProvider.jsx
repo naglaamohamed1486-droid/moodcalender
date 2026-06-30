@@ -37,6 +37,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (user) {
       setFavorites(user.favorites || []);
+      setSavedTrips(user.savedTrips || []);
     }
   }, [user]);
 
@@ -50,11 +51,13 @@ export function AuthProvider({ children }) {
 
   setUser(fullUser);       
   setFavorites(userData.favorites || []);
+  setSavedTrips(userData.savedTrips || []);
 };
 
   const logout = () => {
     setUser(null);
     setFavorites([]);
+    setSavedTrips([]);
     localStorage.removeItem("user");
   };
 
@@ -94,6 +97,63 @@ export function AuthProvider({ children }) {
     return favorites.some((f) => f.id === id);
   };
 
+  const [savedTrips, setSavedTrips] = useState(
+      user?.savedTrips || []
+  );
+  const saveTrip = (trip) => {
+    console.log(trip);
+  if (!user) return;
+
+  const updatedTrips = [...savedTrips, trip];
+
+  setSavedTrips(updatedTrips);
+
+  const updatedUser = {
+    ...user,
+    savedTrips: updatedTrips,
+  };
+
+  setUser(updatedUser);
+
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+  syncUserInStorage(updatedUser);
+};
+const deleteTrip = (index) => {
+  const updatedTrips = savedTrips.filter((_, i) => i !== index);
+
+  setSavedTrips(updatedTrips);
+
+  const updatedUser = {
+    ...user,
+    savedTrips: updatedTrips,
+  };
+
+  setUser(updatedUser);
+
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+  syncUserInStorage(updatedUser);
+};
+const duplicateTrip = (index) => {
+  const copy = {
+    ...savedTrips[index],
+    name: savedTrips[index].name + " Copy",
+  };
+
+  const updatedTrips = [...savedTrips, copy];
+
+  setSavedTrips(updatedTrips);
+
+  const updatedUser = {
+    ...user,
+    savedTrips: updatedTrips,
+  };
+
+  setUser(updatedUser);
+
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+  syncUserInStorage(updatedUser);
+};
+
   return (
     <AuthContext.Provider
       value={{
@@ -104,6 +164,10 @@ export function AuthProvider({ children }) {
         favorites,
         toggleFavorite,
         isFavorite,
+        savedTrips,
+        saveTrip,
+        deleteTrip,
+        duplicateTrip,
       }}
     >
       {children}
