@@ -1,4 +1,3 @@
-
 import places from "../places.json";
 import "../css/TripPlanner.css";
 import PlanCard from "../components/PlanCard";
@@ -11,6 +10,119 @@ import { useLocation, useNavigate } from "react-router-dom";
 // ===========================
 // Distance & travel time helpers
 // ===========================
+
+const titlePools = {
+  historical: [
+    "Pharaohs' Legacy",
+    "Ancient Wonders",
+    "Timeless Egypt",
+    "Treasures of the Nile",
+  ],
+  adventure: [
+    "Desert Explorer",
+    "Wild Egypt",
+    "Adventure Trail",
+    "Epic Expedition",
+  ],
+  beach: [
+    "Sea Breeze Escape",
+    "Coral Coast",
+    "Sun & Sea",
+    "Blue Waters Journey",
+  ],
+  nature: [
+    "Nature's Escape",
+    "Green Horizons",
+    "Oasis Journey",
+    "Scenic Retreat",
+  ],
+  food: [
+    "Taste of Egypt",
+    "Culinary Journey",
+    "Flavors of the Nile",
+  ],
+  photography: [
+    "Picture Perfect Egypt",
+    "Golden Hour Journey",
+    "Lens & Landscapes",
+  ],
+  romantic: [
+    "Romantic Getaway",
+    "Sunset Escape",
+    "Love Along the Nile",
+  ],
+  hidden: [
+    "Hidden Treasures",
+    "Secret Egypt",
+    "Off the Beaten Path",
+  ],
+};
+
+// Fallback titles per cluster — used to guarantee variety even when the
+// interest-based pool runs out or several plans land on the same cluster.
+const clusterTitlePools = {
+  "North Egypt": [
+    "Northern Highlights",
+    "Cairo & Beyond",
+    "Nile Delta Discovery",
+    "Balanced Egypt",
+  ],
+  "Nile Valley": [
+    "Journey Along the Nile",
+    "Nile Valley Wonders",
+    "Upper Egypt Explorer",
+    "Relaxed Pilgrimage",
+  ],
+  "Red Sea & Sinai": [
+    "Red Sea Escape",
+    "Sinai Shores",
+    "Coral Coast Adventure",
+    "Adventure Trail",
+  ],
+  "Western Desert": [
+    "Desert Discovery",
+    "Oasis Trail",
+    "Sahara Journey",
+    "Desert Explorer",
+  ],
+};
+
+function random(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Picks a title that hasn't been used yet by an earlier plan in this batch.
+// Tries the interest pool first, then the cluster pool, then guarantees
+// uniqueness with a numbered fallback as a last resort — so Plan A, B, and C
+// never end up with the same name.
+function generatePlanTitle(clusterName, selectedInterests, usedTitles) {
+  const candidates = [];
+
+  if (selectedInterests.length) {
+    const pool = titlePools[selectedInterests[0]];
+    if (pool) candidates.push(...pool);
+  }
+
+  candidates.push(...(clusterTitlePools[clusterName] || ["Egypt Explorer"]));
+
+  const available = candidates.filter((t) => !usedTitles.has(t));
+  let chosen = available.length ? random(available) : null;
+
+  // Last resort: every candidate is already taken — make one up that's
+  // still tied to the cluster so it never repeats.
+  if (!chosen) {
+    let suffix = 2;
+    const base = clusterTitlePools[clusterName]?.[0] || "Egypt Explorer";
+    chosen = `${base} II`;
+    while (usedTitles.has(chosen)) {
+      suffix++;
+      chosen = `${base} ${suffix}`;
+    }
+  }
+
+  usedTitles.add(chosen);
+  return chosen;
+}
 
 function haversineDistance(lat1, lng1, lat2, lng2) {
   const R = 6371; // km
@@ -209,11 +321,7 @@ function buildItinerary(planPlaces, selectedInterests, days, pace) {
 // ===========================
 
 function generatePlans(allPlaces, selectedInterests, days, pace) {
-  const titles = [
-    "Plan A",
-    "Plan B", 
-    "Plan C",
-  ];
+  const labels = ["Plan A", "Plan B", "Plan C"];  
 
   // Score each cluster by how well its places match selected interests
   const cityMap = groupByCity(allPlaces);
@@ -228,6 +336,9 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
   })
     .filter((c) => c.placeCount > 0)
     .sort((a, b) => b.score - a.score);
+
+  // Tracks titles already handed out so Plan A/B/C never repeat a name
+  const usedTitles = new Set();
 
   // Assign top 3 clusters (or rotate if fewer than 3)
   const plans = [0, 1, 2].map((i) => {
@@ -244,11 +355,18 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
     if (!itinerary) return null;
 
     return {
-      title: titles[i],
+      label: labels[i],
+      title: generatePlanTitle(
+        CITY_CLUSTERS[clusterEntry.index].name,
+        selectedInterests,
+        usedTitles
+      ),
+
       clusterName: CITY_CLUSTERS[clusterEntry.index].name,
       places: itinerary.flatMap((d) => d.places),
       itinerary,
     };
+    
   }).filter(Boolean);
 
   return plans;
@@ -414,6 +532,7 @@ useEffect(() => {
             {plans.map((plan, index) => (
               <PlanCard
   key={index}
+  index={index}
   plan={plan}
   days={days}
   selectedInterests={selectedInterests}

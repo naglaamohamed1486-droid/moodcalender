@@ -1,4 +1,3 @@
-
 .plans-container {
   margin-top: 30px;
   display: grid;
@@ -10,13 +9,13 @@
   background: #fbf4e8;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .plan-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(27, 79, 107, 0.10);
+  box-shadow: 0 16px 48px rgba(27, 79, 107, 0.1);
   border-color: rgba(201, 168, 76, 0.2);
 }
 
@@ -37,6 +36,12 @@
   transform: scale(1.03);
 }
 
+.plan-image-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ede9d8 0%, #ddd5b4 100%);
+}
+
 .plan-content {
   padding: 14px;
 }
@@ -47,35 +52,34 @@
   font-size: 15px;
 }
 
-.plan-content button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background: #234d67;
-  color: #fef5e3;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.plan-image-wrapper {
-  position: relative;
-}
+/* ---------- Badge ---------- */
 
 .plan-badge {
   position: absolute;
   top: 15px;
   right: 15px;
-
-  background: #d9a632;
-  color: black;
-
   padding: 8px 14px;
-
   border-radius: 999px;
-
   font-weight: 600;
+  font-size: 13px;
+}
+
+/* Plan A — gold */
+.plan-badge.badge-a {
+  background: #d9a632;
+  color: #1f2937;
+}
+
+/* Plan B — terracotta */
+.plan-badge.badge-b {
+  background: #c1512a;
+  color: #fff5e6;
+}
+
+/* Plan C — navy */
+.plan-badge.badge-c {
+  background: #1b3a52;
+  color: #fdf6e3;
 }
 
 .plan-title {
@@ -88,13 +92,19 @@
 .plan-subtitle {
   color: #666;
   margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.plan-divider {
+  border: none;
+  border-top: 1px solid rgba(35, 77, 103, 0.12);
+  margin: 12px 0 16px;
 }
 
 .day-row {
   display: flex;
   align-items: center;
   gap: 15px;
-
   margin-bottom: 15px;
 }
 
@@ -102,17 +112,14 @@
   width: 24px;
   height: 24px;
   font-size: 12px;
-
   border-radius: 50%;
-
   background: #234d67;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .place-name {
@@ -127,56 +134,42 @@
 
 .plan-buttons {
   margin-top: 25px;
-
   display: flex;
   gap: 12px;
 }
 
 .preview-btn {
   flex: 1;
-
   background: white;
-
   border: 1px solid #ddd;
-
   padding: 14px;
-
   border-radius: 14px;
-
   cursor: pointer;
-
+  font-size: 13px;
   transition: transform 0.2s ease;
 }
 
-.preview-btn:hover{
-    transform: translateY(-2px);
-
-    
+.preview-btn:hover {
+  transform: translateY(-2px);
 }
 
 .select-btn {
   flex: 1;
-
   background: #d9a632;
-
   border: none;
-
   padding: 14px;
-
   border-radius: 14px;
-
   cursor: pointer;
-
   font-weight: bold;
-
+  font-size: 13px;
   transition: transform 0.2s ease;
 }
 
-.select-btn:hover{
-    transform: translateY(-2px);
-    
-    
+.select-btn:hover {
+  transform: translateY(-2px);
 }
+
+/* ---------- Section header (Three itineraries for you) ---------- */
 
 .title-row {
   display: flex;
@@ -202,12 +195,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-
   color: #d1a340;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 10px;
-
   margin-bottom: 6px;
 }
 
@@ -220,7 +211,6 @@
 .plans-header h2 {
   margin-top: 6px;
   margin-bottom: 10px;
-
   color: #234d67;
   font-size: 24px;
   font-weight: 400;
@@ -229,8 +219,13 @@
 
 .plans-header p {
   max-width: 600px;
-
   color: #6f6659;
   font-size: 14px;
   line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .plans-container {
+    grid-template-columns: 1fr;
+  }
 }
