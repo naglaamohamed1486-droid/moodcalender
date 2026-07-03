@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import "../css/Map.css";
 
 import SearchBar from "../components/SearchBar";
@@ -9,10 +10,20 @@ import PlaceCard from "../components/PlaceCard";
 
 import placesData from "../places.json";
 
+
 export default function Map() {
   const [search, setSearch] = useState("");
   const [tag, setTag] = useState("All");
+  const [searchParams] = useSearchParams();
   const [selectedPlace, setSelectedPlace] = useState(null);
+  useEffect(() => {
+  const tagFromUrl = searchParams.get("tag");
+
+    if (tagFromUrl) {
+      setTag(tagFromUrl);
+      setSelectedPlace(null);
+    }
+  }, [searchParams]);
 
   const places = Array.isArray(placesData) ? placesData : [];
 
