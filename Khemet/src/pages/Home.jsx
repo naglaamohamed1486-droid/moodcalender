@@ -8,9 +8,15 @@ import { useAuth } from "../context/AuthContext";
 import hero from "../assets/Hero.png";
 import st from "../assets/hieroglyph-pattern.png";
 import '../index.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
  const { user } = useAuth();
+const navigate = useNavigate();
+
+const goToTag = (tag) => {
+  navigate(`/map?tag=${encodeURIComponent(tag)}`);
+};
 const [places, setPlaces] = useState([]);
 const [visibleCount, setVisibleCount] = useState(6);
 
@@ -103,7 +109,10 @@ return (
           <p className="search-home-tit">What calls to you?</p>
           <p className="search-home-dit">Filter the map and feed by the experiences you crave.</p>
           <div className="search-tags">
-            <div className="tag-card">
+          <div
+            className="tag-card"
+            onClick={() => goToTag("Historical")}
+          >
               <svg
   className="line-svg search-home-line "
   version="1.1"
@@ -135,7 +144,7 @@ return (
   </g>
               </svg>
               <div className="search-home-card-data">
-              <h3 className="search-home-card-tit">History</h3>
+              <h3 className="search-home-card-tit">Historical</h3>
                 <p className="search-home-card-p">Pyramids, temples and tombs</p>
                    <svg
   className="search-home-arrow-svg"
@@ -163,7 +172,10 @@ return (
 </svg>
             </div>
           </div>
-            <div className="tag-card">
+          <div
+            className="tag-card"
+            onClick={() => goToTag("Adventure")}
+          >
                 <svg
   className="line-svg search-home-line "
   version="1.1"
@@ -223,7 +235,10 @@ return (
 </svg>
               </div>
               </div>
-            <div className="tag-card">
+              <div
+                className="tag-card"
+                onClick={() => goToTag("Cultural")}
+              >
                 <svg
   className="line-svg search-home-line "
   version="1.1"
@@ -255,7 +270,7 @@ return (
   </g>
               </svg>
               <div className="search-home-card-data">
-              <h3  className="search-home-card-tit">Culture</h3>
+              <h3  className="search-home-card-tit">Cultural</h3>
               <p className="search-home-card-p">Bazar, food and craft</p>
                 <svg
   className="search-home-arrow-svg"
@@ -283,7 +298,10 @@ return (
 </svg>
               </div>
               </div>
-            <div className="tag-card">
+              <div
+                className="tag-card"
+                onClick={() => goToTag("Nature")}
+              >
                 <svg
   className="line-svg search-home-line "
   version="1.1"
