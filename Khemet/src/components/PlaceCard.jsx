@@ -13,10 +13,7 @@ export default function PlaceCard({ place, onSelect }) {
     place.category || place.tags?.[0] || "Historical";
 
   return (
-    <div
-      className="place-card"
-      onClick={() => navigate(`/place/${place.id}`)}
-    >
+      <div className="place-card">
       {/* IMAGE */}
 
       <div className="place-card-image">
@@ -84,28 +81,39 @@ export default function PlaceCard({ place, onSelect }) {
 
         {/* FOOTER */}
 
-        <div className="place-footer">
-          <div className="place-rating">
-            ⭐ {place.rating}
+ <div className="place-footer">
+  <div className="place-rating">
+    ⭐ {place.rating}
+    <span>({place.reviews})</span>
+  </div>
 
-            <span>
-              ({place.reviews})
-            </span>
-          </div>
+  <div className="place-actions">
 
-          <button
-            className="map-btn"
-            onClick={(e) => {
-              e.stopPropagation();
+    <button
+      className="details-btn"
+      onClick={(e) => {
+        e.stopPropagation();
+        navigate(`/place/${place.id}`);
+      }}
+    >
+      👁 Show Details
+    </button>
 
-              if (!place.lat || !place.lng) return;
+    <button
+      className="map-btn"
+      onClick={(e) => {
+        e.stopPropagation();
 
-              onSelect(place);
-            }}
-          >
-            📍 Show on Map
-          </button>
-        </div>
+        if (!place.lat || !place.lng) return;
+
+        onSelect(place);
+      }}
+    >
+      📍 Show on Map
+    </button>
+
+  </div>
+  </div>
       </div>
     </div>
   );

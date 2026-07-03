@@ -111,7 +111,7 @@ return (
           <div className="search-tags">
           <div
             className="tag-card"
-            onClick={() => goToTag("Historical")}
+            onClick={() => goToTag("historical")}
           >
               <svg
   className="line-svg search-home-line "
@@ -174,7 +174,7 @@ return (
           </div>
           <div
             className="tag-card"
-            onClick={() => goToTag("Adventure")}
+            onClick={() => goToTag("adventure")}
           >
                 <svg
   className="line-svg search-home-line "
@@ -237,7 +237,7 @@ return (
               </div>
               <div
                 className="tag-card"
-                onClick={() => goToTag("Cultural")}
+                onClick={() => goToTag("cultural")}
               >
                 <svg
   className="line-svg search-home-line "
@@ -300,7 +300,7 @@ return (
               </div>
               <div
                 className="tag-card"
-                onClick={() => goToTag("Nature")}
+                onClick={() => goToTag("nature")}
               >
                 <svg
   className="line-svg search-home-line "
