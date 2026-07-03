@@ -76,8 +76,6 @@ html { scroll-behavior: smooth; }
   border-radius: 100%;
   transition: filter 0.25s ease;
 }
-
-
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -87,7 +85,6 @@ html { scroll-behavior: smooth; }
   object-fit: cover;
   display: block;
 }
-
 .profile-pic-overlay {
   position: absolute;
   inset: 0;
@@ -119,7 +116,6 @@ html { scroll-behavior: smooth; }
 .profile-pic-wrapper:hover .placeholder-pic {
   filter: brightness(0.75);
 }
-
 /* responsive adjustments */
 @media (max-width: 480px) {
   .profile-pic-wrapper,
@@ -188,6 +184,25 @@ html { scroll-behavior: smooth; }
 .profile-hero-btns-gen:hover {
   border: oklch(73.86% 0.13492 80.564) 1px solid;
   background-color: oklch(73.86% 0.13492 80.564);
+}
+.profile-hero-btns-sub{
+  background: oklch(69.141% 0.12129 81.006);
+  color: #3A2A1A;
+  padding: 7px 12px;
+  box-shadow: oklch(69.141% 0.12129 81.006) 0.2px 0.2px 7px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  text-align: center;
+  align-content: center;
+  border: transparent 1px solid;
+  font: 16px "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  font-weight: 400;
+  white-space: nowrap;
+  justify-self: center;
 }
 .create-svg {
   position: relative;
@@ -581,11 +596,12 @@ html { scroll-behavior: smooth; }
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
-.pf-trips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
+/* .pf-trips-grid {
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(340px,1fr));
+    gap:28px;
+} */
 .pf-trip-card {
   background-color: #FDF8EE;
   border: 1px solid rgba(201, 168, 76, 0.3);
@@ -763,55 +779,92 @@ html { scroll-behavior: smooth; }
   font-size: 24px;
 }
 
-/* override contrib-card horizontal layout when used inside profile grid */
-.pf-cards-grid .contrib-card {
-  flex-direction: column;
-}
-
-.pf-cards-grid .contrib-card-thumb {
-  width: 100%;
-  height: 180px;
-  flex-shrink: 0;
-}
-
-.pf-cards-grid .contrib-card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pf-cards-grid .contrib-card-thumb--empty {
-  width: 100%;
-  height: 180px;
-}
-
-.pf-cards-grid .contrib-card-actions {
+.pf-cards-grid .card-footer {
   display: flex;
-  justify-content: flex-start;
-  margin: 5px; 
-}
-.pf-cards-grid .contrib-card-actions-right{
-  display: flex;
-  gap: 8px;
   align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-light, rgba(0, 0, 0, 0.08));
 }
 
-.pf-cards-grid .contrib-btn-edit {
-  background-color: transparent;
-  border: 1px solid #1B4F6B;
-  color: #1B4F6B;
-  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: background 0.2s ease, color 0.2s ease;
+.pf-cards-grid .card-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.85rem;
+ left: -16px;
+  color: var(--text-secondary, #666);
 }
-.pf-cards-grid .contrib-btn-edit:hover {
-  background-color: #1B4F6B;
-  color: #FDF8EE;
+
+.pf-cards-grid .card-rating .stars {
+  color: var(--star-color, #f5b301);
+  font-size: 0.9rem;
+}
+
+.pf-cards-grid .card-rating .reviews {
+  color: var(--text-muted, #999);
+  font-size: 0.75rem;
+}
+
+
+.pf-cards-grid .contrib-card-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+
+.pf-cards-grid .x-contrib-btn-edit {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary, #2c3e50);
+  background: transparent;
+  border: 1px solid var(--color-primary, #2c3e50);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.pf-cards-grid .x-contrib-btn-edit:hover {
+  background: var(--color-primary, #2c3e50);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.pf-cards-grid .x-contrib-btn-edit:active {
+  transform: translateY(0);
+}
+
+
+.pf-cards-grid .card-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* ─── Admin stat-card accents ────────────────────────────────── */
+.pf-linkat-svg-approved {
+  background-color: rgba(91, 138, 100, 0.12);
+}
+.pf-linkat-svg-pending {
+  background-color: rgba(201, 168, 76, 0.15);
+}
+.pf-linkat-svg-rejected {
+  background-color: rgba(168, 64, 47, 0.12);
+}
+
+.pf-linkat-approved:hover {
+  box-shadow: 0 4px 18px rgba(91, 138, 100, 0.18);
+}
+.pf-linkat-pending:hover {
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.18);
+}
+.pf-linkat-rejected:hover {
+  box-shadow: 0 4px 18px rgba(168, 64, 47, 0.15);
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -961,7 +1014,8 @@ html { scroll-behavior: smooth; }
     width: 100%;
   }
   .profile-hero-btns-gen,
-  .profile-hero-btns-add {
+  .profile-hero-btns-add,
+  .profile-hero-btns-sub {
     width: 100%;
     justify-content: center;
   }

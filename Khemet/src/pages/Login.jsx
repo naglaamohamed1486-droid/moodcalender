@@ -12,10 +12,9 @@ export default function Login() {
     email: "",
     password: "",
   });
-
    const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
   const toastTimeout = useRef(null);
-
+  
   const showToast = (type, message) => {
     if (toastTimeout.current) clearTimeout(toastTimeout.current);
     setToast({ visible: true, type, message });

@@ -18,7 +18,7 @@ function Card({ place, onEdit }) {
       });
     }
   }, [place.id]);
-
+  
   const handleSave = (e) => {
     e.preventDefault();
     if (!user) return;

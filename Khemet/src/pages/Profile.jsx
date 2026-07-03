@@ -4,8 +4,8 @@ import { useState, useRef ,useEffect } from "react";
 import Card from "../components/Card";
 import PlaceCard from "../components/AddPlaceCard";
 import Toast from "../components/Toast";
+import SavedTripsList from "../components/savedTripsList";
 import { setUserProfilePic , getUserProfilePic } from "../components/PicCache";
-
 import '../css/profile.css'
 
 
@@ -19,6 +19,7 @@ export default function Profile() {
     bio: user.bio || "",
   });
   const fileInputRef = useRef(null);
+  const { savedTrips } = useAuth();
   const [activeTab, setActiveTab] = useState("info");
   const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
   const toastTimeout = useRef(null);
@@ -119,9 +120,10 @@ export default function Profile() {
   />
 </div>
           <div className="profile-hero-personal">
-          <p className="profile-hero-type">EXPLORER</p>
+              {user.role == "user" ? (<><p className="profile-hero-type">EXPLORER</p></>) : (<><p className="profile-hero-type">Administrator</p></>)}
           <p className="profile-hero-name"> {user.name}</p>
-            <p className="profile-hero-email"> <svg
+              <p className="profile-hero-email">
+                <svg
               className="hero-email-svg"
               width="18"
               height="18"
@@ -150,90 +152,143 @@ export default function Profile() {
               </div>
           </div>
           <div className="profile-hero-btns">
-            <Link  className="profile-hero-btns-gen" to="/trip-plan"><svg className="create-svg" fill="#2A1A08" width="24px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#2A1A08" strokeWidth="8.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
-               Plan a trip</Link>
-            <Link className="profile-hero-btns-add" to="/addplace"> <span className="pf-hero-add-svg">+</span>Add a place</Link>
-          </div>
+            {user.role == "user" ? (<>
+              <Link className="profile-hero-btns-gen" to="/trip-plan"><svg className="create-svg" fill="#2A1A08" width="24px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#2A1A08" strokeWidth="8.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
+                Plan a trip</Link>
+              <Link className="profile-hero-btns-add" to="/addplace"> <span className="pf-hero-add-svg">+</span>Add a place</Link>
+            </>) : (<>
+                <Link className="profile-hero-btns-sub" to="/submissions" >
+                  <svg fill="#3A2A1A" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.695 491.695" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M436.714,0H149.471c-16.438,0-29.812,13.374-29.812,29.812v66.714c-54.49,15.594-94.489,65.857-94.489,125.288 c0,59.431,39.998,109.694,94.489,125.288v114.783c0,16.438,13.374,29.812,29.812,29.812h234.733c2.785,0,5.455-1.106,7.425-3.075 l71.821-71.822c1.969-1.969,3.075-4.64,3.075-7.425V29.812C466.525,13.374,453.152,0,436.714,0z M149.471,21h287.243 c4.858,0,8.811,3.953,8.811,8.812v31.689H140.659V29.812C140.659,24.953,144.612,21,149.471,21z M46.17,221.813 c0-60.263,49.027-109.29,109.29-109.29c60.263,0,109.29,49.027,109.29,109.29s-49.027,109.291-109.29,109.291 C95.197,331.104,46.17,282.076,46.17,221.813z M140.659,461.884V351.258c4.86,0.552,9.797,0.846,14.802,0.846 c39.135,0,74.292-17.347,98.195-44.752h64.336c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-49.381 c9.133-15.95,14.984-34.005,16.644-53.242h32.736c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-32.603 c-1.42-19.194-7.02-37.242-15.886-53.241h48.488c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-62.974 c-23.918-28.323-59.67-46.347-99.558-46.347c-5.005,0-9.942,0.294-14.802,0.846v-9.867h304.866v316.372h-42.009 c-16.439,0-29.811,13.374-29.811,29.811v42.011H149.471C144.612,470.695,140.659,466.743,140.659,461.884z M394.705,455.845v-27.16 c0-4.859,3.953-8.811,8.811-8.811h27.16L394.705,455.845z"></path> <path d="M359.246,158.869h34.87c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 C348.746,154.168,353.447,158.869,359.246,158.869z"></path> <path d="M359.246,233.11h34.87c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 C348.746,228.409,353.447,233.11,359.246,233.11z"></path> <path d="M359.246,307.352h34.87c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 S353.447,307.352,359.246,307.352z"></path> <path d="M394.116,381.593c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-98.225c-5.799,0-10.5,4.701-10.5,10.5 s4.701,10.5,10.5,10.5H394.116z"></path> <path d="M236.982,168.845l-12.81-12.81c-3.45-3.449-8.036-5.349-12.915-5.349s-9.465,1.9-12.915,5.349l-67.19,67.19l-18.573-18.573 c-3.449-3.448-8.036-5.348-12.914-5.348c-4.878,0-9.465,1.9-12.914,5.349l-12.813,12.812c-7.12,7.121-7.12,18.708,0.001,25.829 l44.297,44.296c3.45,3.451,8.037,5.351,12.916,5.351c0,0,0.001,0,0.001,0c4.878,0,9.465-1.9,12.913-5.349l92.917-92.917 C244.103,187.554,244.103,175.966,236.982,168.845z M131.151,270.807l-40.429-40.428l8.942-8.942l24.062,24.062 c4.101,4.101,10.749,4.101,14.85,0l72.681-72.681l8.942,8.942L131.151,270.807z"></path> </g> </g></svg>Submissions</Link>
+            </>)}
+            </div>
         </div>
         
       </div>
       <div className="pf-link">
+        
         <div className="pf-link-cont">
-          <Link  to="/favorites" className="pf-linkat">
-            <div className="pf-linkat-data">
-              <div className="pf-linkat-svg"><svg
-  fill="#C9A84C"
-  width="28"
-  height="34"
-  viewBox="0 0 24 24"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M20.5,4.609A5.811,5.811,0,0,0,16,2.5a5.75,5.75,0,0,0-4,1.455A5.75,5.75,0,0,0,8,2.5,5.811,5.811,0,0,0,3.5,4.609c-.953,1.156-1.95,3.249-1.289,6.66,1.055,5.447,8.966,9.917,9.3,10.1a1,1,0,0,0,.974,0c.336-.187,8.247-4.657,9.3-10.1C22.45,7.858,21.453,5.765,20.5,4.609Zm-.674,6.28C19.08,14.74,13.658,18.322,12,19.34c-2.336-1.41-7.142-4.95-7.821-8.451-.513-2.646.189-4.183.869-5.007A3.819,3.819,0,0,1,8,4.5a3.493,3.493,0,0,1,3.115,1.469,1.005,1.005,0,0,0,1.76.011A3.489,3.489,0,0,1,16,4.5a3.819,3.819,0,0,1,2.959,1.382C19.637,6.706,20.339,8.243,19.826,10.889Z" />
-</svg></div>
-            <div className="pf-linkat-det">
-              <p className="pf-link-num">{user.favorites?.length || 0}</p>
-              <p className="pf-link-title">FAVORITES</p>
-            </div>
-            </div>
-          </Link>
-          <Link to="/SavedTrips" className="pf-linkat">
-            <div className="pf-linkat-data">
-              <div className="pf-linkat-svg">
-                <svg
-                width="32"
-                height="34"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#C9A84C"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.75 6L7.5 5.25H16.5L17.25 6V19.3162L12 16.2051L6.75 19.3162V6Z
-                    M8.25 6.75V16.6838L12 14.4615L15.75 16.6838V6.75H8.25Z"
+          {user.role == "user" ? (<>
+            <Link to="/favorites" className="pf-linkat">
+              <div className="pf-linkat-data">
+                <div className="pf-linkat-svg"><svg
                   fill="#C9A84C"
-                />
-              </svg></div>
-            <div className="pf-linkat-det">
-              <p className="pf-link-num">{user.savedTrips?.length || 0}</p>
-              <p className="pf-link-title">SAVED TRIPS</p>
-            </div>
-            </div>
-          </Link>
-          <Link to="/savedtrips" className="pf-linkat">
-            <div className="pf-linkat-data">
-            <div className="pf-linkat-svg"><svg className="create-svg" fill="#C9A84C" width="34px" height="34px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#C9A84C" strokeWidth="8.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg></div>
-            <div className="pf-linkat-det">
-              <p className="pf-link-num">{user.savedTrips?.length || 0}</p>
-              <p className="pf-link-title">GENERATED TRIPS</p>
-            </div>
-            </div>
-          </Link>
-          <Link to="/contributions" className="pf-linkat">
-            <div className="pf-linkat-data">
-              <div className="pf-linkat-svg"><svg
-                width="28px"
-                height="34px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M19.186 2.09c.521.25 1.136.612 1.625 1.101.49.49.852 1.104 1.1 1.625.313.654.11 1.408-.401 1.92l-7.214 7.213c-.31.31-.688.541-1.105.675l-4.222 1.353a.75.75 0 0 1-.943-.944l1.353-4.221a2.75 2.75 0 0 1 .674-1.105l7.214-7.214c.512-.512 1.266-.714 1.92-.402zm.211 2.516a3.608 3.608 0 0 0-.828-.586l-6.994 6.994a1.002 1.002 0 0 0-.178.241L9.9 14.102l2.846-1.496c.09-.047.171-.107.242-.178l6.994-6.994a3.61 3.61 0 0 0-.586-.828zM4.999 5.5A.5.5 0 0 1 5.47 5l5.53.005a1 1 0 0 0 0-2L5.5 3A2.5 2.5 0 0 0 3 5.5v12.577c0 .76.082 1.185.319 1.627.224.419.558.754.977.978.442.236.866.318 1.627.318h12.154c.76 0 1.185-.082 1.627-.318.42-.224.754-.559.978-.978.236-.442.318-.866.318-1.627V13a1 1 0 1 0-2 0v5.077c0 .459-.021.571-.082.684a.364.364 0 0 1-.157.157c-.113.06-.225.082-.684.082H5.923c-.459 0-.57-.022-.684-.082a.363.363 0 0 1-.157-.157c-.06-.113-.082-.225-.082-.684V5.5z"
-                fill="#C9A84C"
-              />
-            </svg></div>
-            <div className="pf-linkat-det">
-              <p className="pf-link-num">{user.contributions?.length || 0}</p>
-              <p className="pf-link-title">CONTRIBUTIONS</p>
-            </div>
-            </div>
-          </Link>
+                  width="28"
+                  height="34"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M20.5,4.609A5.811,5.811,0,0,0,16,2.5a5.75,5.75,0,0,0-4,1.455A5.75,5.75,0,0,0,8,2.5,5.811,5.811,0,0,0,3.5,4.609c-.953,1.156-1.95,3.249-1.289,6.66,1.055,5.447,8.966,9.917,9.3,10.1a1,1,0,0,0,.974,0c.336-.187,8.247-4.657,9.3-10.1C22.45,7.858,21.453,5.765,20.5,4.609Zm-.674,6.28C19.08,14.74,13.658,18.322,12,19.34c-2.336-1.41-7.142-4.95-7.821-8.451-.513-2.646.189-4.183.869-5.007A3.819,3.819,0,0,1,8,4.5a3.493,3.493,0,0,1,3.115,1.469,1.005,1.005,0,0,0,1.76.011A3.489,3.489,0,0,1,16,4.5a3.819,3.819,0,0,1,2.959,1.382C19.637,6.706,20.339,8.243,19.826,10.889Z" />
+                </svg></div>
+                <div className="pf-linkat-det">
+                  <p className="pf-link-num">{user.favorites?.length || 0}</p>
+                  <p className="pf-link-title">FAVORITES</p>
+                </div>
+              </div>
+            </Link>
+            <Link to="/SavedTrips" className="pf-linkat">
+              <div className="pf-linkat-data">
+                <div className="pf-linkat-svg">
+                  <svg
+                    width="32"
+                    height="34"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C9A84C"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.75 6L7.5 5.25H16.5L17.25 6V19.3162L12 16.2051L6.75 19.3162V6Z
+                    M8.25 6.75V16.6838L12 14.4615L15.75 16.6838V6.75H8.25Z"
+                      fill="#C9A84C"
+                    />
+                  </svg></div>
+                <div className="pf-linkat-det">
+                  <p className="pf-link-num">{user.savedTrips?.length || 0}</p>
+                  <p className="pf-link-title">SAVED TRIPS</p>
+                </div>
+              </div>
+            </Link>
+            <Link to="/savedtrips" className="pf-linkat">
+              <div className="pf-linkat-data">
+                <div className="pf-linkat-svg"><svg className="create-svg" fill="#C9A84C" width="34px" height="34px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#C9A84C" strokeWidth="8.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg></div>
+                <div className="pf-linkat-det">
+                  <p className="pf-link-num">{user.savedTrips?.length || 0}</p>
+                  <p className="pf-link-title">GENERATED TRIPS</p>
+                </div>
+              </div>
+            </Link>
+            <Link to="/contributions" className="pf-linkat">
+              <div className="pf-linkat-data">
+                <div className="pf-linkat-svg"><svg
+                  width="28px"
+                  height="34px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M19.186 2.09c.521.25 1.136.612 1.625 1.101.49.49.852 1.104 1.1 1.625.313.654.11 1.408-.401 1.92l-7.214 7.213c-.31.31-.688.541-1.105.675l-4.222 1.353a.75.75 0 0 1-.943-.944l1.353-4.221a2.75 2.75 0 0 1 .674-1.105l7.214-7.214c.512-.512 1.266-.714 1.92-.402zm.211 2.516a3.608 3.608 0 0 0-.828-.586l-6.994 6.994a1.002 1.002 0 0 0-.178.241L9.9 14.102l2.846-1.496c.09-.047.171-.107.242-.178l6.994-6.994a3.61 3.61 0 0 0-.586-.828zM4.999 5.5A.5.5 0 0 1 5.47 5l5.53.005a1 1 0 0 0 0-2L5.5 3A2.5 2.5 0 0 0 3 5.5v12.577c0 .76.082 1.185.319 1.627.224.419.558.754.977.978.442.236.866.318 1.627.318h12.154c.76 0 1.185-.082 1.627-.318.42-.224.754-.559.978-.978.236-.442.318-.866.318-1.627V13a1 1 0 1 0-2 0v5.077c0 .459-.021.571-.082.684a.364.364 0 0 1-.157.157c-.113.06-.225.082-.684.082H5.923c-.459 0-.57-.022-.684-.082a.363.363 0 0 1-.157-.157c-.06-.113-.082-.225-.082-.684V5.5z"
+                    fill="#C9A84C"
+                  />
+                </svg></div>
+                <div className="pf-linkat-det">
+                  <p className="pf-link-num">{user.contributions?.length || 0}</p>
+                  <p className="pf-link-title">CONTRIBUTIONS</p>
+                </div>
+              </div>
+            </Link>
+          </>) : (<>
+  <Link to="/submissions?status=approved" className="pf-linkat pf-linkat-approved">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-approved">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#5B8A64" strokeWidth="1.5" />
+          <path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#5B8A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{user.approvedCount || 0}</p>
+        <p className="pf-link-title">APPROVED PLACES</p>
+      </div>
+    </div>
+  </Link>
 
+  <Link to="/submissions?status=pending" className="pf-linkat pf-linkat-pending">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-pending">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 3h8M8 21h8M8 3c0 4 4 5 4 8s-4 4-4 8M16 3c0 4-4 5-4 8s4 4 4 8"
+            stroke="#C9A84C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{user.pendingCount || 0}</p>
+        <p className="pf-link-title">PENDING REVIEW</p>
+      </div>
+    </div>
+  </Link>
+
+  <Link to="/submissions?status=rejected" className="pf-linkat pf-linkat-rejected">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-rejected">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#A8402F" strokeWidth="1.5" />
+          <path d="M9 9l6 6M15 9l-6 6" stroke="#A8402F" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{user.rejectedCount || 0}</p>
+        <p className="pf-link-title">REJECTED PLACES</p>
+      </div>
+    </div>
+  </Link>
+</>)}
         </div>
       </div>
-      <div className="pf-btn-sec">
+      {user.role == "user" &&
+        <div className="pf-btn-sec">
         <div className="pf-btn-cont">
           <button  className={`pf-btn ${activeTab === "info" ? "active" : ""}`} onClick={() => setActiveTab("info")}><svg className="pf-btn-svg" width="14px" height="13px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="##7A6040">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -263,7 +318,7 @@ export default function Profile() {
             >
               <path d="M20.5,4.609A5.811,5.811,0,0,0,16,2.5a5.75,5.75,0,0,0-4,1.455A5.75,5.75,0,0,0,8,2.5,5.811,5.811,0,0,0,3.5,4.609c-.953,1.156-1.95,3.249-1.289,6.66,1.055,5.447,8.966,9.917,9.3,10.1a1,1,0,0,0,.974,0c.336-.187,8.247-4.657,9.3-10.1C22.45,7.858,21.453,5.765,20.5,4.609Zm-.674,6.28C19.08,14.74,13.658,18.322,12,19.34c-2.336-1.41-7.142-4.95-7.821-8.451-.513-2.646.189-4.183.869-5.007A3.819,3.819,0,0,1,8,4.5a3.493,3.493,0,0,1,3.115,1.469,1.005,1.005,0,0,0,1.76.011A3.489,3.489,0,0,1,16,4.5a3.819,3.819,0,0,1,2.959,1.382C19.637,6.706,20.339,8.243,19.826,10.889Z" />
             </svg>
-            Saved places <span className="pf-btn-num" >{ user.favorites?.length || 0}</span></button>
+            Favorite places <span className="pf-btn-num" >{ user.favorites?.length || 0}</span></button>
           <button className={`pf-btn ${activeTab === "trips" ? "active" : ""}`} onClick={() => setActiveTab("trips")}>
             <svg
                className="pf-btn-svg s-btn"
@@ -301,8 +356,11 @@ export default function Profile() {
             </svg>
             Contributions <span className="pf-btn-num"> {user.contributions?.length || 0}</span></button>
         </div>
-      </div>
+      </div>}
+      
       <div className="profile-content">
+        {user.role == "user" ? (<>
+          <div className="user-profile-content">
         {activeTab === "info" &&
           <div className="info-section">
              <button className="info-sec-btn" onClick={handleOpenEdit}>Edit Profile</button>
@@ -315,7 +373,7 @@ export default function Profile() {
               </div>
               <div className="info-sec">
                 <div className="details-sec-head">
-                  <h3 className="info-sec-tit">Details</h3>
+                <h3 className="info-sec-tit">Details</h3>
                 </div>
                 <ul className="sec-details-cont">
                   <li className="info-det"><span className="info-det-title">NAME</span>{ user.name}</li>
@@ -398,38 +456,39 @@ export default function Profile() {
             {user.favorites?.length > 0 ? (
               <div className="pf-content-section-container" >
                   <div className="pf-content-section-header" >
-                  <h3 className="title-sect-saved"> My Favourite Places</h3>
+                  <h3 className="title-sect-saved"> My Favorite Places</h3>
                   <div className="more-places-links">
-                  <Link to="/feed" className="exfav-more"> <svg
-  width="14"
-  height="14"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-    stroke="#1B4F6B"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-</svg>Explore more</Link>
+                      <Link to="/feed" className="exfav-more">
+                      <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                        stroke="#1B4F6B"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>Explore more</Link>
                   <Link to="/favorites" className="fav-more"> <svg
-              className="pf-btn-svg love-btn"
-              fill="#7A6040"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+                      className="pf-btn-svg love-btn"
+                      fill="#7A6040"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
               <path d="M20.5,4.609A5.811,5.811,0,0,0,16,2.5a5.75,5.75,0,0,0-4,1.455A5.75,5.75,0,0,0,8,2.5,5.811,5.811,0,0,0,3.5,4.609c-.953,1.156-1.95,3.249-1.289,6.66,1.055,5.447,8.966,9.917,9.3,10.1a1,1,0,0,0,.974,0c.336-.187,8.247-4.657,9.3-10.1C22.45,7.858,21.453,5.765,20.5,4.609Zm-.674,6.28C19.08,14.74,13.658,18.322,12,19.34c-2.336-1.41-7.142-4.95-7.821-8.451-.513-2.646.189-4.183.869-5.007A3.819,3.819,0,0,1,8,4.5a3.493,3.493,0,0,1,3.115,1.469,1.005,1.005,0,0,0,1.76.011A3.489,3.489,0,0,1,16,4.5a3.819,3.819,0,0,1,2.959,1.382C19.637,6.706,20.339,8.243,19.826,10.889Z" />
-            </svg> View All Favourite</Link>
+            </svg> View All Favorite</Link>
                  </div>
                   </div>
                 <div className="pf-cards-grid">
                   {user.favorites
-                      .slice(-6)
+                      .slice(-8)
                       .map((place, i) => (
                         <Card key={place.id || i} place={place} />
                     ))}
@@ -445,73 +504,48 @@ export default function Profile() {
                 <Link to="/map" className="pf-empty-btn">Explore Map</Link>
             </div>
         )}
-    </div>
+          </div>
 )}
 
 {activeTab === "trips" && (
     <div className="pf-content-section">
-        {user.savedTrips?.length > 0 ? (
-            <div className="pf-trips-grid">
-                {user?.savedTrips?.slice(0, 6).map((trip, i) => {
-  const title = trip.title || `Trip ${i + 1}`;
-  const places = trip.places || [];
-
-  const destination =
-    places.length > 0
-      ? places
-          .filter((p) => p?.title)
-          .map((p) => p.title)
-          .join(" • ")
-      : trip.destination || "—";
-
-  const image =
-    places[0]?.coverImage || "/assets/placeholder.jpg";
-
-  return (
-    <div
-      key={trip.id || i}
-      className="pf-trip-card"
-      onClick={() => onPreview?.(trip)} 
-      style={{ cursor: "pointer" }}
-    >
-      
-     
-      <div className="pf-trip-card-image">
-        <img src={image} alt={title} />
-      </div>
-
-      <div className="pf-trip-card-head">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M19 19.2674V7.84496C19 5.64147 17.4253 3.74489 15.2391 3.31522C13.1006 2.89493 10.8994 2.89493 8.76089 3.31522C6.57467 3.74489 5 5.64147 5 7.84496V19.2674C5 20.6038 6.46752 21.4355 7.63416 20.7604L10.8211 18.9159C11.5492 18.4945 12.4508 18.4945 13.1789 18.9159L16.3658 20.7604C17.5325 21.4355 19 20.6038 19 19.2674Z"
-            stroke="#C9A84C"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-
-        <span className="pf-trip-card-title">
-          {title}
-        </span>
-      </div>
-
-      <p className="pf-trip-card-sub">
-        {destination}
-      </p>
-
-      <p className="pf-trip-card-date">
-        {trip.createdAt
-          ? formatDate(new Date(trip.createdAt))
-          : "Recently added"}
-      </p>
-      <div className="pf-trip-card-actions"> 
-        <button className="edit-btn">Edit</button>
-
-      </div>
-    </div>
-  );
-})}
+            {user.savedTrips?.length > 0 ? (
+              <div className="pf-content-section-container" >
+                <div className="pf-content-section-header" >
+                  <h3 className="title-sect-saved"> My Saved Trips</h3>
+                  <div className="more-places-links">
+                    <Link to="/trip-plan" className="exfav-more">
+                <svg
+                fill="#1B4F6B"
+                width="15"
+                height="15"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M29.198 2.059c0.326 0 0.555 0.061 0.675 0.107 0.143 0.382 0.336 1.751-1.079 3.167l-7.218 7.218 0.052 0.896c0.11 1.874 0.313 5.232 0.488 8.111 0.154 2.563 0.301 4.983 0.311 5.189 0.005 0.142 0.007 0.175-0.125 0.334-0.295 0.358-0.846 0.966-1.309 1.47-0.72-1.939-2.232-6.033-3.067-8.325l-1.073-2.949-2.22 2.22-4.082 3.924-0.569 0.567-0.018 0.802c-0.014 0.64-0.011 1.79-0.009 2.803 0.002 0.706 0.004 1.348-0.001 1.701-0.009 0.017 0.136 0.036 0.123 0.059-0.087-0.14-0.181-0.29-0.28-0.447-0.823-1.313-1.962-3.128-2.309-3.695l-0.254-0.415-0.417-0.252c-1.516-0.916-3.196-1.973-4.221-2.634 0.035-0.020 0.064 0.088 0.088 0.075h0.067c0.323 0 0.856 0.007 1.453 0.015 0.782 0.011 1.668 0.023 2.346 0.023 0.26 0 0.491-0.002 0.677-0.006l0.803-0.018 0.568-0.567 3.929-4.053 2.212-2.211-2.935-1.080c-2.206-0.812-6.431-2.389-8.408-3.132 0.507-0.467 1.118-1.021 1.474-1.317 0.099-0.082 0.177-0.124 0.231-0.124l0.071 0.002c0.221 0.011 2.959 0.189 5.606 0.363 2.81 0.184 5.982 0.39 7.786 0.505l0.901 0.056 7.22-7.22c1.014-1.013 2.010-1.164 2.514-1.164zM29.198 0.060c-1.181 0-2.632 0.454-3.927 1.75l-6.581 6.581c-3.707-0.235-13.201-0.862-13.437-0.869-0.042-0.002-0.094-0.004-0.152-0.004-0.321 0-0.874 0.061-1.504 0.582-0.74 0.611-2.281 2.062-2.281 2.062-0.372 0.373-0.56 0.835-0.515 1.27 0.027 0.262 0.17 0.741 0.814 0.993 0.392 0.153 6.622 2.485 9.499 3.543l-3.929 4.053c-0.174 0.004-0.39 0.006-0.633 0.006-1.198 0-3.055-0.039-3.8-0.039-0.099 0-0.178 0-0.234 0.002-0.227 0.007-0.696-0.105-1.933 0.929l-0.088 0.082c-0.371 0.371-0.458 0.741-0.466 0.986-0.008 0.252 0.059 0.615 0.424 0.907 0.219 0.177 3.026 1.974 5.329 3.365 0.552 0.901 3.092 4.938 3.225 5.157 0.194 0.327 0.51 0.514 0.889 0.525h0.031c0.368 0 0.746-0.183 1.116-0.542 1.047-1.224 0.902-1.731 0.907-1.945 0.017-0.668-0.011-3.498 0.012-4.62l4.081-3.925c1.043 2.865 3.323 9.031 3.476 9.424 0.254 0.645 0.733 0.786 0.995 0.813 0.043 0.005 0.087 0.007 0.13 0.007 0.395 0 0.803-0.186 1.139-0.52 0 0 1.445-1.534 2.059-2.28s0.591-1.383 0.579-1.683c-0.005-0.208-0.584-9.651-0.799-13.338l6.583-6.583c2.333-2.334 1.962-5.146 1.096-6.011-0.383-0.385-1.157-0.675-2.103-0.675z" />
+              </svg>Plan more</Link>
+                    <Link to="/savedtrips" className="fav-more">
+                    <svg
+                  className="pf-btn-svg s-btn"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="#7A6040"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 19.2674V7.84496C19 5.64147 17.4253 3.74489 15.2391 3.31522C13.1006 2.89493 10.8994 2.89493 8.76089 3.31522C6.57467 3.74489 5 5.64147 5 7.84496V19.2674C5 20.6038 6.46752 21.4355 7.63416 20.7604L10.8211 18.9159C11.5492 18.4945 12.4508 18.4945 13.1789 18.9159L16.3658 20.7604C17.5325 21.4355 19 20.6038 19 19.2674Z"
+                    stroke="#7A6040"
+                    strokeWidth={1.5}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg> All Saved Trips</Link>
+                 </div>
+                  </div>
+                <div className="pf-trips-grid">
+               <SavedTripsList/>
+            </div>
             </div>
         ) : (
             <div className="pf-empty-state">
@@ -605,7 +639,41 @@ export default function Profile() {
     )}
   </div>
 )}
-</div>
+        </div></>) : (<>
+  <div className="info-section">
+    <div className="info-cont">
+      <div className="info-sec">
+        <div className="details-sec-head">
+          <h3 className="info-sec-tit">Admin Details</h3>
+        </div>
+        <ul className="sec-details-cont">
+          <li className="info-det"><span className="info-det-title">NAME</span>{user.name}</li>
+          <li className="info-det"><span className="info-det-title">EMAIL</span>{user.email}</li>
+          <li className="info-det"><span className="info-det-title">ROLE</span>Administrator</li>
+        </ul>
+      </div>
+
+      <div className="info-sec">
+        <div className="details-sec-head">
+          <h3 className="info-sec-tit">Review Summary</h3>
+          <Link to="/submissions" className="cont-more">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 6l6 6-6 6" stroke="#7A6040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Go to Submissions
+          </Link>
+        </div>
+        <ul className="sec-details-cont">
+          <li className="info-det"><span className="info-det-title">APPROVED</span>{user.approvedCount || 0}</li>
+          <li className="info-det"><span className="info-det-title">PENDING</span>{user.pendingCount || 0}</li>
+          <li className="info-det"><span className="info-det-title">REJECTED</span>{user.rejectedCount || 0}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</>)}
+       
+        </div>
 
     </main>
   );

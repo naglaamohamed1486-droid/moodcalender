@@ -16,6 +16,8 @@ import SavedTrips from "./pages/SavedTrips";
 import Favorites from "./pages/Favorites";
 import AddPlace from "./pages/AddPlace";
 import "./App.css"
+import Submissions from "./pages/Submissions";
+import Unauthorized from "./components/Unauthorized";
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           <Route path="/" element={<Layout />}>
 
             <Route index element={<Home />} />
+            <Route path="/unauthorized" element={<Unauthorized />} />
 
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
@@ -64,6 +67,12 @@ function App() {
                </ProtectedRoute>
              } />
             
+            <Route path="submissions" element={
+               <ProtectedRoute role="admin">
+                <Submissions/>
+               </ProtectedRoute>
+             } />
+            
             <Route path="favorites" element={
               <ProtectedRoute>
                <Favorites/>
@@ -79,6 +88,7 @@ function App() {
               <PlaceDetails />
               </ProtectedRoute>
               } />
+            
             
 
           </Route>

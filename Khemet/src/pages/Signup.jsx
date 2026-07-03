@@ -53,12 +53,12 @@ export default function Signup() {
        showToast("error", "User already exists");
       return;
     }
-
+    
     const newUser = {
   name,
   email,
   password,
-
+   role: email === "khemet2026@gmail.com" ? "admin" : "user",
   location: "",
   bio: "",
   profilePic: "",   
