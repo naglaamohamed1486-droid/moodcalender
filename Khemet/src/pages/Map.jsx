@@ -16,14 +16,15 @@ export default function Map() {
   const [tag, setTag] = useState("All");
   const [searchParams] = useSearchParams();
   const [selectedPlace, setSelectedPlace] = useState(null);
-  useEffect(() => {
+ useEffect(() => {
   const tagFromUrl = searchParams.get("tag");
 
-    if (tagFromUrl) {
-      setTag(tagFromUrl);
-      setSelectedPlace(null);
-    }
-  }, [searchParams]);
+  if (tagFromUrl) {
+    setTag(tagFromUrl);
+  } else {
+    setTag("All");
+  }
+}, [searchParams]);
 
   const places = Array.isArray(placesData) ? placesData : [];
 
