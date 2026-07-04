@@ -30,6 +30,7 @@ function Card({ place, onEdit }) {
       <div className="card-image">
         <img src={coverImage} alt={place.title} />
         <span className="card-category">{place.category || place.tags?.[0] || "Explore"}</span>
+        {user.role=="user" &&
         <button
           className={`saved-btn ${saved ? "saved-btn--active" : ""}`}
           aria-label="Save"
@@ -41,7 +42,8 @@ function Card({ place, onEdit }) {
           >
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
-        </button>
+          </button>
+        }
       </div>
 
       <div className="card-body">

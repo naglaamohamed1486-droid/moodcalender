@@ -4,8 +4,8 @@
 }
 
 .sub-intro {
-  color: #7A6040;
-  font-size: 13px;
+   color: #C9A84C;
+  font-size: 12px;
   letter-spacing: 3px;
   font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
   text-transform: uppercase;
@@ -29,6 +29,13 @@
 
 .sub-content {
   padding: 30px 0;
+}
+
+.pen
+.pen.active .pf-btn-svg path,
+.pen:hover .pf-btn-svg path {
+  stroke: #1B4F6B;
+ 
 }
 
 .sub-cards-grid {

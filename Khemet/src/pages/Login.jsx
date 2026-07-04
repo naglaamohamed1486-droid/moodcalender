@@ -12,7 +12,7 @@ export default function Login() {
     email: "",
     password: "",
   });
-   const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
   const toastTimeout = useRef(null);
   
   const showToast = (type, message) => {
@@ -59,7 +59,7 @@ export default function Login() {
 
     login(foundUser);
     showToast("success", "Welcome back!");
-    navigate("/");
+   setTimeout(() => navigate("/"), 900);
   };
 
   return (

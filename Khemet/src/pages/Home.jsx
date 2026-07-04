@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useRef} from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
@@ -7,13 +7,23 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import hero from "../assets/Hero.png";
 import st from "../assets/hieroglyph-pattern.png";
+import Toast from "../components/Toast";
 import '../index.css';
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
  const { user } = useAuth();
-const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const toastTimeout = useRef(null);
+    
+  const showToast = (type, message) => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+      setToast({ visible: true, type, message });
+      toastTimeout.current = setTimeout(() => {
+        setToast((t) => ({ ...t, visible: false }));
+      }, 3000);
+    };  
 const goToTag = (tag) => {
   navigate(`/map?tag=${encodeURIComponent(tag)}`);
 };
@@ -56,15 +66,16 @@ useEffect(() => {
 const visiblePlaces = places.slice(0, visibleCount);
 
 return (
-    <main className="home">
-      <section className="hero">
+  <main className="home">
+    <Toast message={toast.message} visible={toast.visible} type={toast.type} />
+    <section className="hero">
         <div className="hero-content">
           <h1 className="hero-tit-prim">Explore Egypt</h1>
           <h1 className="hero-tit-sec">like never before.</h1>
           <p className="hero-p">Discover timeless places. Plan unforgettable journeys across the land of pharaohs, pyramids and the eternal Nile.</p>
 
           {!user && (
-            <Link to="/login" className="cta-btn">
+            <Link to="/login" className="cta-btn home-btn">
               <svg className="exp-svg" width="24px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#3A2A1A"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M9.87868 9.87869L15.5355 8.46448L14.1213 14.1213L8.46446 15.5355L9.87868 9.87869Z" stroke="#3A2A1A" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#3A2A1A" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>Start Exploring
             </Link>
           )}
@@ -73,11 +84,25 @@ return (
             <div className="linkat">
               <Link to="/map" className="cta-btn home-btn">
                 <svg className="exp-svg" width="24px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#3A2A1A"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.048"></g><g id="SVGRepo_iconCarrier"> <path d="M9.87868 9.87869L15.5355 8.46448L14.1213 14.1213L8.46446 15.5355L9.87868 9.87869Z" stroke="#3A2A1A" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#3A2A1A" strokeWidth="1.44" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg> Explore Map
-              </Link>
-              <Link to="/trip-plan" className="trip-btn home-btn">
-                <svg className="create-svg" fill="#1B4F6B" width="24px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#1B4F6B" strokeWidth="4.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
+            </Link>
+
+            {user.role == "admin" ? (<>
+              <Link to="/" className="trip-btn home-btn" onClick={(e) => {
+    if (user.role == "admin") {
+      e.preventDefault();
+      showToast("error", "This section isn't part of the admin responsibilities.");
+    }
+  }}>
+                <svg className="create-svg" fill="#1B4F6B" width="24px" height="19px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#1B4F6B" strokeWidth="4.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
+                Create trip
+              </Link>  </>) : (<>
+                 <Link to="/trip-plan" className="trip-btn home-btn">
+                <svg className="create-svg" fill="#1B4F6B" width="24px" height="19px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#1B4F6B" strokeWidth="4.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
                 Create trip
               </Link>
+              </>)}
+             
+           
             </div>
           )}
         </div>
@@ -449,8 +474,10 @@ return (
           </g></svg>
             </Link>
           )}
-          {user && (
-            <Link to="/trip-plan" className="tripsec-btn home-btn">Generate my trip <svg
+          {user.role == "user" ?
+            (
+              <Link to="/trip-plan" className="tripsec-btn home-btn">Generate my trip
+                <svg
             className="gen-svg"
             width="24"
             height="24"
@@ -482,7 +509,49 @@ return (
               fill="#3A2A1A"
             />
           </g></svg></Link>
-          )}
+            ) : (<>
+            <Link to="/" className="tripsec-btn home-btn" onClick={(e) => {
+    if (user.role == "admin") {
+      e.preventDefault();
+      showToast("error", "This section isn't part of the admin responsibilities.");
+    }
+  }}>
+               Generate my trip
+                <svg
+            className="gen-svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            id="_24x24_On_Light_Next"
+            data-name="24x24/On Light/Next"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            stroke="#000000"
+            strokeWidth="0.00024"
+          >
+          <g strokeWidth="0"></g>
+
+          <g strokeLinecap="round" strokeLinejoin="round"></g>
+
+          <g>
+            <rect
+              id="view-box"
+              width="24"
+              height="24"
+              fill="#3A2A1A"
+              opacity="0"
+            />
+
+            <path
+              id="Shape"
+              d="M10.22,9.28a.75.75,0,0,1,0-1.06l2.72-2.72H.75A.75.75,0,0,1,.75,4H12.938L10.22,1.281A.75.75,0,1,1,11.281.22l4,4a.749.749,0,0,1,0,1.06l-4,4a.75.75,0,0,1-1.061,0Z"
+              transform="translate(4.25 7.25)"
+              fill="#3A2A1A"
+            />
+          </g></svg>
+              </Link> 
+            </>)}
+         
           </div>
           </div>
       </section>

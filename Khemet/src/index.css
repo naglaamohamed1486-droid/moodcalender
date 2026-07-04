@@ -83,10 +83,9 @@ padding-bottom:0px ;
   position: relative;
   bottom: -4px;
 }
-.create-svg{
- position: relative;
-  bottom: -4px;
+.trip-btn .create-svg{
   padding-right: 5px;
+  top: 4px;
 }
 .trip-btn{
   background:hsla(201, 89%, 79%, 0.2);

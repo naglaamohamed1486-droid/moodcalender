@@ -31,7 +31,7 @@ export default function PlaceCard({ place, onSelect }) {
           {category.toUpperCase()}
         </span>
 
-        <button
+        {user.role == "user" && <button
           className="favorite-btn"
           onClick={(e) => {
             e.stopPropagation();
@@ -50,7 +50,7 @@ export default function PlaceCard({ place, onSelect }) {
           >
             {saved ? "♥" : "♡"}
           </span>
-        </button>
+        </button>}
       </div>
 
       {/* BODY */}

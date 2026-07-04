@@ -30,7 +30,6 @@ const CATEGORIES = [
   { id: "mysterious", title: "Mystery", desc: "Ancient secrets, tombs and legends" },
   { id: "hidden", title: "Hidden Gems", desc: "Less crowded unique places" },
 ];
-
 const LOCATIONS = [
   {
    governorate: "Cairo",

@@ -70,8 +70,7 @@ export default function Submissions() {
       <h4 className="sub-intro">Admin Controller</h4>
       <h2 className="sub-title">Submissions</h2>
       <p className="sub-det">
-        Review community contributions. Approve to publish, or reject with a
-        clear reason.
+        Review community contributions. Approve to publish, or reject places that don't meet platform standards.   
       </p>
 
       <div className="pf-btn-sec">
@@ -81,7 +80,7 @@ export default function Submissions() {
             onClick={() => setActiveTab("pending")}
           >
             <svg
-              className="pf-btn-svg"
+              className="pnd pf-btn-svg"
               width="18px"
               height="18px"
               viewBox="0 0 24 24"

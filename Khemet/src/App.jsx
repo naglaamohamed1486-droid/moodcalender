@@ -32,8 +32,9 @@ function App() {
 
             <Route index element={<Home />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
-
+            <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
+           
             <Route path="signup" element={<Signup />} />
             <Route path="map" element={<Map />} />
             <Route path="feed" element={<Feed />} />
