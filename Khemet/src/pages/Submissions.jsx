@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate , Link  } from "react-router-dom";
+import { getPlaceImages } from "../components/PicCache";
+
 import "../css/Submissions.css";
 
 function loadSubmissions() {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const submissions = [];
-
   users.forEach((u) => {
     (u.contributions || []).forEach((place, i) => {
       submissions.push({
@@ -36,6 +38,28 @@ function saveSubmissionStatus(submission, newStatus) {
   });
 
   localStorage.setItem("users", JSON.stringify(updated));
+}
+
+function SubmissionCardImage({ place }) {
+  const [images, setImages] = useState({ coverImage: "", gallery: [] });
+
+  useEffect(() => {
+    let cancelled = false;
+    getPlaceImages(place.id).then((result) => {
+      if (!cancelled) setImages(result || { coverImage: "", gallery: [] });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [place.id]);
+
+  return images.coverImage ? (
+    
+      <img src={images.coverImage} alt={place.title} />
+   
+  ) : (
+    <div className="sub-card-img-placeholder" />
+  );
 }
 
 export default function Submissions() {
@@ -80,7 +104,7 @@ export default function Submissions() {
             onClick={() => setActiveTab("pending")}
           >
             <svg
-              className="pnd pf-btn-svg"
+              className="pnd-pf-btn-svg"
               width="18px"
               height="18px"
               viewBox="0 0 24 24"
@@ -146,14 +170,10 @@ export default function Submissions() {
           <div className="sub-cards-grid">
             {visible.map((place) => (
               <div key={`${place.ownerEmail}-${place.id}`} className="sub-card">
-                <div className="sub-card-img">
-                  {place.coverImage || place.image ? (
-                    <img src={place.coverImage || place.image} alt={place.title} />
-                  ) : (
-                    <div className="sub-card-img-placeholder" />
-                  )}
+                <div className="sub-card-img"  onClick={() => navigate(`/place/${place.id}`)}>
+                  <SubmissionCardImage place={place} />
+                  <Link to={`/place/${place.id}`}><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="3.5" stroke="#7A6040"></circle> <path d="M20.188 10.9343C20.5762 11.4056 20.7703 11.6412 20.7703 12C20.7703 12.3588 20.5762 12.5944 20.188 13.0657C18.7679 14.7899 15.6357 18 12 18C8.36427 18 5.23206 14.7899 3.81197 13.0657C3.42381 12.5944 3.22973 12.3588 3.22973 12C3.22973 11.6412 3.42381 11.4056 3.81197 10.9343C5.23206 9.21014 8.36427 6 12 6C15.6357 6 18.7679 9.21014 20.188 10.9343Z" stroke="#7A6040"></path> </g></svg></Link>
                 </div>
-
                 <div className="sub-card-body">
                   <h3 className="sub-card-title">{place.title || "Untitled place"}</h3>
                   <p className="sub-card-owner">Submitted by {place.ownerName || place.ownerEmail}</p>
