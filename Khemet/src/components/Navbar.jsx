@@ -124,7 +124,8 @@ function Navbar() {
         <span className={`bar ${isMenuOpen ? "active" : ""}`}></span>
         <span className={`bar ${isMenuOpen ? "active" : ""}`}></span>
       </div>
-
+  
+      
       <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
         <ul>
         {user?.role === "user" && <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>}
