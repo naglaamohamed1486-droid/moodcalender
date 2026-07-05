@@ -4,7 +4,29 @@ import "../css/Card.css";
 import { useAuth } from "../context/AuthContext";
 import { getPlaceImages } from "../components/PicCache"; 
 
-function Card({ place, onEdit }) {
+function StatusIcon({ status }) {
+  if (status === "approved") {
+    return (
+      <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+  if (status === "rejected") {
+    return (
+      <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+      <path d="M12 7v5l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function Card({ place ,showStatus = false}) {
   const { user, toggleFavorite, isFavorite } = useAuth();
   const saved = isFavorite(place.id);
   const [coverImage, setCoverImage] = useState(place.coverImage);
@@ -27,8 +49,9 @@ function Card({ place, onEdit }) {
 
   return (
     <div className="card">
+      
       <div className="card-image">
-        <img src={coverImage} alt={place.title} />
+        <img src={coverImage || place.image} alt={place.title} />
         <span className="card-category">{place.category || place.tags?.[0] || "Explore"}</span>
         {user.role=="user" &&
         <button
@@ -47,9 +70,17 @@ function Card({ place, onEdit }) {
       </div>
 
       <div className="card-body">
+        <div className="card-title-row">
         <h3 className="card-title">{place.title}</h3>
-        <p className="card-location">{place.city}</p>
-        <p className="card-description">{place.description}</p>
+        {showStatus && (
+          <span className={`card-status-badge card-status-${place.status || "pending"}`}>
+            <StatusIcon status={place.status || "pending"} />
+            {place.status || "pending"}
+          </span>
+        )}
+      </div>
+      <p className="card-location">{place.city}{place.governorate && place.city !== place.governorate ? `, ${place.governorate}` : ""}</p>
+      <p className="card-description">{place.description}</p>
 
         <div className="card-tags">
           {place.tags?.map((tag, i) => (
@@ -64,9 +95,6 @@ function Card({ place, onEdit }) {
             <span className="reviews">({place.reviews || 0})</span>
           </div>
           <div className="contrib-card-actions-right">
-            {onEdit && (
-              <button className="x-contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
-            )}
             <Link to={`/place/${place.id}`} className="card-btn">
               View details →
             </Link>

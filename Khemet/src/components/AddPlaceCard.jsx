@@ -3,25 +3,29 @@ import { Link } from "react-router-dom";
 import { getPlaceImages } from "./PicCache";
 import { useAuth } from "../context/AuthContext";
 import "../css/card.css";
+import { categoryLabel } from '../data/placesdatahandling'
 
-const CATEGORIES = [
-  { id: "nature", title: "Nature" },
-  { id: "historical", title: "Historical" },
-  { id: "beach", title: "Beach" },
-  { id: "urban", title: "Urban" },
-  { id: "adventure", title: "Adventure" },
-  { id: "cultural", title: "Cultural" },
-  { id: "photography", title: "Photography" },
-  { id: "romantic", title: "Romantic" },
-  { id: "modern", title: "Modern" },
-  { id: "diving", title: "Diving" },
-  { id: "mysterious", title: "Mystery" },
-  { id: "hidden", title: "Hidden Gems" },
-  { id: "food", title: "Food" },
-];
-
-const categoryLabel = (id) => CATEGORIES.find((c) => c.id === id)?.title || id;
-
+function StatusIcon({ status }) {
+  if (status === "approved") {
+    return (
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+  if (status === "rejected") {
+    return (
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+      <path d="M12 7v5l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 export default function PlaceCard({ place, onEdit, onDelete }) {
   const [images, setImages] = useState({ coverImage: "", gallery: [] });
 
@@ -52,18 +56,25 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
         </div>
       )}
       <div className="contrib-card-body">
-        <div className="contrib-card-top">
-          <div>
-            <h4 className="contrib-card-name">{place.title}</h4>
-            <p className="contrib-card-desc">{place.description}</p>
-          </div>
-          <span className="contrib-card-rating">
-            <span className="stars">★</span>
-            <span>{place.rating || 4.5}</span>
-            <span className="reviews">({place.reviews || 0})</span>
-          </span>
-        </div>
+       <div className="contrib-card-top">
+      <div className="contrib-card-headline">
+        <h4 className="contrib-card-name">{place.title}</h4>
 
+        {place.status === "rejected" && place.rejectionReason ? (
+          <p className="contrib-rejection-reason">{place.rejectionReason}</p>
+        ) : (
+          <p className="contrib-card-desc">{place.description}</p>
+        )}
+      </div>
+
+      <div className="contrib-card-top-right">
+        <span className={`contrib-status-badge contrib-status-${place.status || "pending"}`}>
+          <StatusIcon status={place.status || "pending"} />
+          {place.status || "pending"}
+        </span>
+       
+      </div>
+    </div>
         <div className="contrib-card-meta">
           <span className="contrib-meta-pill contrib-meta-location">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -92,11 +103,11 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
         </div>
 
         <div className="contrib-card-actions">
-          <span className="contrib-card-rating-footer">
-            <span className="stars">★</span>
-            <span>{place.rating || 4.5}</span>
-            <span className="reviews">({place.reviews || 0})</span>
-          </span>
+           <span className="contrib-card-rating">
+          <span className="stars">★</span>
+          <span>{place.rating || 4.5}</span>
+          <span className="reviews">({place.reviews || 0})</span>
+        </span>
 
           <div className="contrib-card-actions-right">
             <button className="x-contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>

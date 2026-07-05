@@ -621,8 +621,7 @@ export default function Profile() {
             <Card
               key={place.id || i}
               place={place}
-              onEdit={() => {}}
-              onDelete={() => {}}
+              showStatus
             />
           ))}
         </div>
