@@ -19,6 +19,9 @@ import Booking from "./pages/Booking";
 import "./App.css"
 import Submissions from "./pages/Submissions";
 import Unauthorized from "./components/Unauthorized";
+import Dashboard from "./pages/Dashboard";
+import AdminUser from "./pages/adminUsers";
+import AdminReport from "./pages/adminReports";
 
 
 function App() {
@@ -72,6 +75,21 @@ function App() {
             <Route path="submissions" element={
                <ProtectedRoute role="admin">
                 <Submissions/>
+               </ProtectedRoute>
+             } />
+            <Route path="dashboard" element={
+               <ProtectedRoute role="admin">
+                  <Dashboard/>
+               </ProtectedRoute>
+             } />
+            <Route path="adminUsers" element={
+               <ProtectedRoute role="admin">
+                <AdminUser/>
+               </ProtectedRoute>
+             } />
+            <Route path="adminReports" element={
+               <ProtectedRoute role="admin">
+                  <AdminReport/>
                </ProtectedRoute>
              } />
             

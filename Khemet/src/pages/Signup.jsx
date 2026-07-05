@@ -58,7 +58,7 @@ export default function Signup() {
   name,
   email,
   password,
-   role: email === "khemet2026@gmail.com" ? "admin" : "user",
+  role: email === "khemet2026@gmail.com" ? "admin" : "user",
   location: "",
   bio: "",
   profilePic: "",   
@@ -73,7 +73,8 @@ export default function Signup() {
     login(newUser);
 
     showToast("success", "Account created successfully");
-    setTimeout(() => navigate("/"), 900);
+    const isAdmin = newUser.role === "admin" || newUser.email === "khemet2026@gmail.com";
+    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 900);
   };
 
   return (

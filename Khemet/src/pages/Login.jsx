@@ -59,7 +59,8 @@ export default function Login() {
 
     login(foundUser);
     showToast("success", "Welcome back!");
-   setTimeout(() => navigate("/"), 900);
+   const isAdmin = foundUser.role === "admin" || foundUser.email === "khemet2026@gmail.com";
+    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 900);
   };
 
   return (
