@@ -15,6 +15,7 @@ import Contributions from "./pages/Contributions";
 import SavedTrips from "./pages/SavedTrips";
 import Favorites from "./pages/Favorites";
 import AddPlace from "./pages/AddPlace";
+import Booking from "./pages/Booking";
 import "./App.css"
 
 
@@ -79,6 +80,8 @@ function App() {
               <PlaceDetails />
               </ProtectedRoute>
               } />
+
+              <Route path="/booking" element={<Booking />} />
             
 
           </Route>

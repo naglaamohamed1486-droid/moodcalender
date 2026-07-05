@@ -6,10 +6,12 @@ import TripOrganizer from "../components/TripOrganizer";
 import Generator from "../components/Generator";
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { savePlan } from "../components/Booking/bookingDB";
 // ===========================
 // Distance & travel time helpers
 // ===========================
+
+
 
 const titlePools = {
   historical: [
@@ -372,6 +374,36 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
   return plans;
 }
 function TripPlanner() {
+  //Booking
+  const handleBooking = async (plan) => {
+
+  try {
+
+    await savePlan(plan);
+
+    const answer = window.confirm(
+      "Do you want to proceed with booking this plan?"
+    );
+
+    if (!answer) return;
+
+    navigate("/booking", {
+      state: {
+        plan,
+      },
+    });
+
+  }
+
+  catch(err){
+
+    console.log(err);
+
+  }
+
+};
+
+
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [days, setDays] = useState(3);
   const [pace, setPace] = useState("Balanced");
@@ -379,6 +411,21 @@ function TripPlanner() {
   const [showPreview, setShowPreview] = useState(false);
   const [editingTrip, setEditingTrip] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
+  const handleSelectPlan = async (plan) => {
+
+  // افتح الـ Organizer الأول
+  handleSelect(plan);
+
+  // خزن البلان
+  await savePlan(plan);
+
+  // احتفظ بيه للـ Booking
+  setSelectedPlan(plan);
+
+  // افتح الـ Popup
+  setShowBookingPopup(true);
+};
   const organizerRef = useRef(null);
   // const [savedTrips, setSavedTrips] = useState([]);
 
@@ -538,7 +585,7 @@ useEffect(() => {
   selectedInterests={selectedInterests}
   buildItinerary={(p) => buildItinerary(p, selectedInterests, days, pace)}
   onPreview={handlePreview}
-  onSelect={handleSelect}
+  onSelect={handleSelectPlan}
 />
             ))}
           </div>
@@ -565,6 +612,52 @@ useEffect(() => {
           />
         )}
       </div>
+      {showBookingPopup && (
+  <div className="booking-popup-overlay">
+
+    <div className="booking-popup">
+
+      <h2>Book this plan?</h2>
+
+      <p>
+        {selectedPlan?.title} has been saved.
+        Would you like to continue to booking?
+      </p>
+
+      <div className="popup-buttons">
+
+        <button
+  onClick={() => {
+    setShowBookingPopup(false);
+
+    organizerRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+>
+  Not now
+</button>
+
+        <button
+  onClick={() => {
+    setShowBookingPopup(false);
+
+    navigate("/booking", {
+      state: {
+        plan: editingTrip,
+      },
+    });
+  }}
+>
+          Yes, Start Booking
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
     </div>
   );
 }
