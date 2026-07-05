@@ -150,7 +150,7 @@ export default function Dashboard() {
             <Link className="dash-hero-btns-sub" to="/submissions">
               Submissions
             </Link>
-            <Link className="dash-hero-btns-repo" to="/reports">
+            <Link className="dash-hero-btns-repo" to="/adminReports">
               Manage reports
             </Link>
           </div>
@@ -206,13 +206,13 @@ export default function Dashboard() {
           <button className="dash-action-btn" onClick={() => navigate("/submissions")}>
             Review Submissions →
           </button>
-          <button className="dash-action-btn" onClick={() => navigate("/users")}>
+          <button className="dash-action-btn" onClick={() => navigate("/adminUsers")}>
             Manage Users →
           </button>
           <button className="dash-action-btn" onClick={() => navigate("/feed")}>
             View All Places →
           </button>
-          <button className="dash-action-btn" onClick={() => navigate("/reports")}>
+          <button className="dash-action-btn" onClick={() => navigate("/adminReports")}>
             Manage Reports →
           </button>
         </div>

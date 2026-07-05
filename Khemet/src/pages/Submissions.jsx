@@ -196,17 +196,21 @@ export default function Submissions() {
       </div>
     </div>
           </div>
-          <div className="pf-linkat">
-            <div className="pf-linkat-data">
-              <div className="pf-linkat-svg">
-
-              </div>
-               <div className="pf-linkat-det">
-                <p className="pf-link-num">{counts.all || 0}</p>
-                <p className="pf-link-title">TOTAL PLACES</p>
-              </div>
-             </div>
+         <div className="pf-linkat">
+          <div className="pf-linkat-data">
+            <div className="pf-linkat-svg pf-linkat-svg-total">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7L12 3L20 7L12 11L4 7Z" stroke="#5B6B7A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 12L12 16L20 12" stroke="#5B6B7A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 17L12 21L20 17" stroke="#5B6B7A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
+            <div className="pf-linkat-det">
+              <p className="pf-link-num">{counts.all || 0}</p>
+              <p className="pf-link-title">TOTAL SUBMISSIONS</p>
+            </div>
+          </div>
+        </div>
             </div>
       </div>
      <div className="sub-tabs">
