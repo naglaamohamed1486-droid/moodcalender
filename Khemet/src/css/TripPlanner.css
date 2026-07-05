@@ -112,6 +112,7 @@
     background:#f1e4c4;
 }
 .generator-middle{
+    border-top:1px solid #e3d7bd;
 
     display:flex;
     justify-content:space-between;
@@ -683,3 +684,192 @@ cursor:pointer;
     cursor:pointer;
 }
 
+/* ==========================
+   Latest Saved Trips
+========================== */
+
+.latest-trips-section{
+    margin-top:90px;
+}
+
+.latest-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    margin-bottom:35px;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid #ece4d3;
+}
+
+.latest-header h2{
+
+    margin-top:8px;
+
+    font-size:38px;
+
+    color:#234d67;
+
+    font-family:Georgia, serif;
+
+    font-weight:600;
+}
+
+.latest-header .saved-step{
+
+    display:block;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    color:#C9A84C;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+.view-all-btn{
+
+    text-decoration:none;
+
+    color:#234d67;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    transition:.25s ease;
+}
+
+.view-all-btn:hover{
+
+    color:#C9A84C;
+
+    transform:translateX(4px);
+}
+
+.view-all-btn::after{
+
+
+    transition:.25s;
+}
+
+.view-all-btn:hover::after{
+
+    transform:translateX(4px);
+}
+/* ==========================
+   Blank Trip Box
+========================== */
+
+.blank-trip-box{
+
+    background:linear-gradient(135deg,#fffdf8,#f8f3e7);
+
+    border:1px solid #e7dcc5;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    margin:45px 0 70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.blank-trip-box h3{
+
+    margin:0 0 12px;
+
+    font-size:30px;
+
+    color:#234d67;
+
+    font-family:Georgia, serif;
+}
+
+.blank-trip-box p{
+
+    margin:0;
+
+    color:#666;
+
+    max-width:520px;
+
+    line-height:1.7;
+
+    font-size:16px;
+}
+
+.blank-trip-btn{
+
+    background:#C9A84C;
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    transition:.25s;
+}
+
+.blank-trip-btn:hover{
+
+    background:#b89334;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(201,168,76,.35);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .blank-trip-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        text-align:left;
+
+        padding:30px;
+    }
+
+    .blank-trip-btn{
+
+        width:100%;
+    }
+
+}

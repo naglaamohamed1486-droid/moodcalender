@@ -7,9 +7,13 @@ import Generator from "../components/Generator";
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { savePlan } from "../components/Booking/bookingDB";
+import { useAuth } from "../context/AuthContext";
+import SavedTripsList from "../components/savedTripsList";
+import { Link } from "react-router-dom";
 // ===========================
 // Distance & travel time helpers
 // ===========================
+
 
 
 
@@ -534,6 +538,7 @@ useEffect(() => {
   }
 }, [location, navigate]);
 
+const { savedTrips } = useAuth();
   return (
     <div className="trip-page">
       <div className="trip-header">
@@ -555,6 +560,7 @@ useEffect(() => {
         toggleInterest={toggleInterest}
         onGenerate={generate}
       />
+      
 
       {plans.length > 0 && !editingTrip && (
         <>
@@ -655,11 +661,76 @@ useEffect(() => {
       </div>
 
     </div>
+    
 
   </div>
 )}
+      {/* latest saved trips section */}
+      <section className="latest-trips-section">
+
+        <div className="latest-header">
+
+          <div>
+            <span className="saved-step">
+              YOUR TRIPS
+            </span>
+
+            <h2>Latest Saved Trips</h2>
+          </div>
+
+          <Link
+            to="/savedtrips"
+            className="view-all-btn"
+          >
+            View All →
+          </Link>
+
+        </div>
+
+        {savedTrips.length > 0 ? (
+
+          <SavedTripsList
+            trips={savedTrips.slice(-3).reverse()}
+            previewMode
+          />
+
+        ) : (
+
+          <p className="no-trips">
+            No saved trips yet.
+          </p>
+
+        )}
+
+      </section>
+
+      {/* Blank Trip */}
+
+      <div className="blank-trip-box">
+
+        <h3>Create from Scratch</h3>
+
+        <p>
+          Start with an empty itinerary and build your own adventure.
+        </p>
+
+        <button
+          className="blank-trip-btn"
+          onClick={() =>
+            setEditingTrip({
+              name: "My Custom Trip",
+              itinerary: [[]],
+            })
+          }
+        >
+          + Blank Trip
+        </button>
+
+      </div>
+
     </div>
   );
 }
+
 
 export default TripPlanner;

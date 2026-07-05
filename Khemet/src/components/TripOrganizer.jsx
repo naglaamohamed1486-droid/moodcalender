@@ -226,9 +226,9 @@ const moveDayDown = (dayIndex) => {
         </button> */}
         </div>
       </div>
-        <div className="generator-top">
+        {/* <div className="generator-top">
           <h2>{trip.name}</h2>
-        </div>
+        </div> */}
         <div className="generator-middle">
              <div className="editing-info">
                 <span className="editing-label">
