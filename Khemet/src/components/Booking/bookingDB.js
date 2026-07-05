@@ -1,5 +1,5 @@
 const DB_NAME = "KhemetDB";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 function openDatabase() {
   return new Promise((resolve, reject) => {
@@ -14,6 +14,13 @@ function openDatabase() {
           autoIncrement: true,
         });
       }
+
+      if (!db.objectStoreNames.contains("plans")) {
+  db.createObjectStore("plans", {
+    keyPath: "id",
+    autoIncrement: true,
+  });
+}
 
       if (!db.objectStoreNames.contains("flights")) {
         db.createObjectStore("flights", {
@@ -33,13 +40,17 @@ export async function savePlan(plan) {
   const db = await openDatabase();
 
   return new Promise((resolve, reject) => {
-    const tx = db.transaction("bookings", "readwrite");
-    const store = tx.objectStore("bookings");
+    const tx = db.transaction("plans", "readwrite");
+    const store = tx.objectStore("plans");
 
     const request = store.add({
-      plan,
+      title: plan.title,
+      label: plan.label,
+      clusterName: plan.clusterName,
+      places: plan.places,
+      itinerary: plan.itinerary,
       createdAt: new Date().toISOString(),
-    });
+      });
 
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);

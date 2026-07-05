@@ -1,6 +1,8 @@
 import places from "../places.json";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
+import { savePlan } from "./Booking/bookingDB";
+import { useNavigate } from "react-router-dom";
 
 function TripOrganizer({
   trip,
@@ -12,6 +14,10 @@ function TripOrganizer({
   // ===========================
   // Add New Day
   // ===========================
+
+  const navigate = useNavigate();
+
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
 
   const { saveTrip } = useAuth();
   const [savedMessage, setSavedMessage] = useState(false);
@@ -470,19 +476,29 @@ const moveDayDown = (dayIndex) => {
 
           <div className="organizer-footer">
             <button
-                className="save-trip-btn"
-                  onClick={() => {
-                    saveTrip(trip);
-                    setSavedMessage(true);
+  className="save-trip-btn"
+  onClick={async () => {
+  try {
+    await savePlan(trip);
 
-                    setTimeout(() => {
-                        setSavedMessage(false);
-                        setTrip(null);
-                    }, 2000);
-                    }}
-            >
-                Save Trip
-            </button>
+    saveTrip(trip);
+
+    setSavedMessage(true);
+    setTimeout(() => {
+    setSavedMessage(false);
+}, 1500);
+
+setShowBookingPopup(true);
+
+    setShowBookingPopup(true);   // <-- دي أهم سطر
+
+  } catch (err) {
+    console.error(err);
+  }
+}}
+>
+  Save Trip
+</button>
             {savedMessage && (
                 <div className="saved-message">
                      ✓ Trip saved to your Saved Trips!
@@ -491,6 +507,48 @@ const moveDayDown = (dayIndex) => {
           </div>
         </div>
       </div>
+
+      {showBookingPopup && (
+  <div className="booking-popup-overlay">
+
+    <div className="booking-popup">
+
+      <h2>Trip Saved Successfully!</h2>
+
+      <p>
+        Would you like to continue with booking?
+      </p>
+
+      <div className="popup-buttons">
+
+        <button
+          onClick={() => {
+            setShowBookingPopup(false);
+          }}
+        >
+          Not Now
+        </button>
+
+        <button
+          onClick={() =>{
+            setShowBookingPopup(false);
+            
+            navigate("/booking", {
+              state: {
+                plan: trip,
+              },
+            })
+          }}
+        >
+          Continue Booking
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
     </section>
   );
 }
