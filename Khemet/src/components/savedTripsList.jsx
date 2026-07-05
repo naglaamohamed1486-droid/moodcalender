@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import TripDetailsModal from "../components/TripDetailsModal";
 
+
 function SavedTripsList({
   trips,
   onDelete,
@@ -60,9 +61,17 @@ function SavedTripsList({
           </div>
 
 
-          <button className="book-btn">
-                  <PiTicketBold />
-                  Book this trip
+          <button className="book-btn"
+          onClick={() =>
+            navigate("/booking", {
+              state:{
+                plan: trip,
+              },
+            })
+          }
+          >
+            <PiTicketBold />
+            Book This Trip
                 </button>
 
           
@@ -113,8 +122,13 @@ function SavedTripsList({
                 });
                 }}
                 onBook={() => {
-                alert("Booking page coming soon ✈️");
-                }}
+                 navigate("/booking", {
+                  state:{
+                    plan: selectedTrip,
+                  },
+                });
+              }}
+                
             />
             )}
 

@@ -415,19 +415,9 @@ function TripPlanner() {
   const [showPreview, setShowPreview] = useState(false);
   const [editingTrip, setEditingTrip] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const [showBookingPopup, setShowBookingPopup] = useState(false);
-  const handleSelectPlan = async (plan) => {
-
-  // افتح الـ Organizer الأول
-  handleSelect(plan);
+  
 
 
-  // احتفظ بيه للـ Booking
-  setSelectedPlan(plan);
-
-  // افتح الـ Popup
-  setShowBookingPopup(true);
-};
   const organizerRef = useRef(null);
   // const [savedTrips, setSavedTrips] = useState([]);
 
@@ -589,7 +579,7 @@ const { savedTrips } = useAuth();
   selectedInterests={selectedInterests}
   buildItinerary={(p) => buildItinerary(p, selectedInterests, days, pace)}
   onPreview={handlePreview}
-  onSelect={handleSelectPlan}
+  onSelect={handleSelect}
 />
             ))}
           </div>
@@ -616,53 +606,7 @@ const { savedTrips } = useAuth();
           />
         )}
       </div>
-      {showBookingPopup && (
-  <div className="booking-popup-overlay">
-
-    <div className="booking-popup">
-
-      <h2>Book this plan?</h2>
-
-      <p>
-        {selectedPlan?.title} has been saved.
-        Would you like to continue to booking?
-      </p>
-
-      <div className="popup-buttons">
-
-        <button
-  onClick={() => {
-    setShowBookingPopup(false);
-
-    organizerRef.current?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }}
->
-  Not now
-</button>
-
-        <button
-  onClick={() => {
-    setShowBookingPopup(false);
-
-    navigate("/booking", {
-      state: {
-        plan: editingTrip,
-      },
-    });
-  }}
->
-          Yes, Start Booking
-        </button>
-
-      </div>
-
-    </div>
-    
-
-  </div>
-)}
+      
       {/* latest saved trips section */}
       <section className="latest-trips-section">
 
