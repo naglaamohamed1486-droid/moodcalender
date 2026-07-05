@@ -1,22 +1,32 @@
 import { useAuth } from "../context/AuthContext";
 import "../css/SavedTrips.css";
-import { FiCopy, FiTrash2, FiEdit2 } from "react-icons/fi";
+import {
+  FiEye,
+  FiTrash2,
+  FiEdit2,
+} from "react-icons/fi";
 import { PiTicketBold } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import TripDetailsModal from "../components/TripDetailsModal";
 
-function SavedTripsList() {
-  const {
-    savedTrips,
-    duplicateTrip,
-    deleteTrip,
-  } = useAuth();
+function SavedTripsList({
+  trips,
+  onDelete,
+  previewMode = false,
+}){
+   const {
+  deleteTrip,
+} = useAuth();
+
     const navigate = useNavigate();
-    
+    const [selectedTrip, setSelectedTrip] = useState(null);
+
 
   return (
     <div className="saved-grid">
 
-      {savedTrips.map((trip, index) => (
+      {trips.map((trip, index) => (
 
         <div
           key={index}
@@ -71,17 +81,15 @@ function SavedTripsList() {
                   <div className="footer-icons">
 
                     <button
-                      onClick={() =>
-                        duplicateTrip(index)
-                      }
-                    >
-                      <FiCopy />
-                    </button>
+                        onClick={() => setSelectedTrip(trip)}
+                        >
+                        <FiEye />
+                        </button>
 
                     <button
                       className="delete"
                       onClick={() =>
-                        deleteTrip(index)
+                        onDelete(index)
                       }
                     >
                       <FiTrash2 />
@@ -92,8 +100,25 @@ function SavedTripsList() {
             </div>
 
     </div>
+    
 
       ))}
+      {selectedTrip && (
+            <TripDetailsModal
+                trip={selectedTrip}
+                onClose={() => setSelectedTrip(null)}
+                onEdit={() => {
+                navigate("/trip-plan", {
+                    state: { trip: selectedTrip },
+                });
+                }}
+                onBook={() => {
+                alert("Booking page coming soon ✈️");
+                }}
+            />
+            )}
+
+      
 
     </div>
   );

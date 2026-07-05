@@ -3,7 +3,10 @@ import SavedTripsList from "../components/savedTripsList";
 import "../css/SavedTrips.css";
 
 export default function SavedTrips() {
-  const { savedTrips } = useAuth();
+  const { savedTrips,
+    deleteTrip,
+   } = useAuth();
+   
 
   return (
     <section className="saved-page">
@@ -41,8 +44,10 @@ export default function SavedTrips() {
 
       ) : (
 
-        <SavedTripsList />
-
+        <SavedTripsList
+          trips={savedTrips}
+          onDelete={deleteTrip}
+        />
       )}
 
     </section>
