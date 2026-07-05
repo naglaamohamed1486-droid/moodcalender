@@ -421,8 +421,6 @@ function TripPlanner() {
   // افتح الـ Organizer الأول
   handleSelect(plan);
 
-  // خزن البلان
-  await savePlan(plan);
 
   // احتفظ بيه للـ Booking
   setSelectedPlan(plan);

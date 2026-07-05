@@ -1,6 +1,7 @@
 import places from "../places.json";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
+import { savePlan } from "./Booking/bookingDB";
 
 function TripOrganizer({
   trip,
@@ -470,19 +471,28 @@ const moveDayDown = (dayIndex) => {
 
           <div className="organizer-footer">
             <button
-                className="save-trip-btn"
-                  onClick={() => {
-                    saveTrip(trip);
-                    setSavedMessage(true);
+  className="save-trip-btn"
+  onClick={async () => {
+    try {
+      await savePlan(trip);
 
-                    setTimeout(() => {
-                        setSavedMessage(false);
-                        setTrip(null);
-                    }, 2000);
-                    }}
-            >
-                Save Trip
-            </button>
+      saveTrip(trip);
+
+      setSavedMessage(true);
+
+      console.log("Plan saved to IndexedDB ✅");
+
+      setTimeout(() => {
+        setSavedMessage(false);
+      }, 1500);
+
+    } catch (err) {
+      console.error(err);
+    }
+  }}
+>
+  Save Trip
+</button>
             {savedMessage && (
                 <div className="saved-message">
                      ✓ Trip saved to your Saved Trips!
