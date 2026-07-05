@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 import { getPlaceImages } from "../components/PicCache";
 import SubDetails from "../components/Submissionsdetails";
 import "../css/Submissions.css";
@@ -104,6 +105,7 @@ export default function Submissions() {
     pending: submissions.filter((s) => s.status === "pending").length,
     approved: submissions.filter((s) => s.status === "approved").length,
     rejected: submissions.filter((s) => s.status === "rejected").length,
+    all:submissions.length,
   };
 
   const visible = submissions.filter((s) => s.status === activeTab);
@@ -148,7 +150,65 @@ export default function Submissions() {
       <p className="sub-det">
         Review community contributions. Approve to publish, or reject places that don't meet platform standards.
       </p>
+      <div className="pf-link">
+        <div className="pf-link-cont">
+          <div className="pf-linkat pf-linkat-approved">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-approved">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#5B8A64" strokeWidth="1.5" />
+          <path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#5B8A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{counts.approved || 0}</p>
+        <p className="pf-link-title">APPROVED PLACES</p>
+      </div>
+    </div>
+  </div>
 
+  <div className="pf-linkat pf-linkat-pending">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-pending">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 3h8M8 21h8M8 3c0 4 4 5 4 8s-4 4-4 8M16 3c0 4-4 5-4 8s4 4 4 8"
+            stroke="#C9A84C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{counts.pending || 0}</p>
+        <p className="pf-link-title">PENDING REVIEW</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="pf-linkat pf-linkat-rejected">
+    <div className="pf-linkat-data">
+      <div className="pf-linkat-svg pf-linkat-svg-rejected">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="#A8402F" strokeWidth="1.5" />
+          <path d="M9 9l6 6M15 9l-6 6" stroke="#A8402F" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+      <div className="pf-linkat-det">
+        <p className="pf-link-num">{counts.rejected || 0}</p>
+        <p className="pf-link-title">REJECTED PLACES</p>
+      </div>
+    </div>
+          </div>
+          <div className="pf-linkat">
+            <div className="pf-linkat-data">
+              <div className="pf-linkat-svg">
+
+              </div>
+               <div className="pf-linkat-det">
+                <p className="pf-link-num">{counts.all || 0}</p>
+                <p className="pf-link-title">TOTAL PLACES</p>
+              </div>
+             </div>
+            </div>
+            </div>
+      </div>
      <div className="sub-tabs">
   <div className="sub-tabs-cont">
     <button
@@ -184,7 +244,6 @@ export default function Submissions() {
     </button>
   </div>
 </div>
-
       <div className="sub-content">
         {visible.length > 0 ? (
           <div className="sub-cards-grid">

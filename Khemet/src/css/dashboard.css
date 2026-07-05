@@ -1,0 +1,508 @@
+/* ══════════════════════════════════════════════════════════════
+   DASHBOARD
+══════════════════════════════════════════════════════════════ */
+
+@keyframes dashFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes dashFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-main, .dash-hero, .dash-stats, .dash-quick-actions, .dash-lower-grid {
+    animation: none !important;
+  }
+}
+
+.dashboard-main {
+  background-color: #F5EDD7;
+  min-height: 100vh;
+  padding: 150px;
+  padding-top: 130px;
+  animation: dashFadeIn 0.4s ease both;
+}
+
+.dashboard-main > * {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.dash-hero {
+  background-color: #1B4F6B;
+  padding: 25px;
+  border-radius: 25px;
+  animation: dashFadeUp 0.45s ease both;
+}
+
+.dash-hero-cont {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 15px;
+}
+
+.dash-hero-data {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dash-pic-wrapper {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 1px solid #C9A84C;
+  background-color: #FDF8EE;
+  box-shadow: #C9A84C 0.1px 0.1px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  flex-shrink: 0;
+}
+
+.admin-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dash-hero-type {
+  color: oklch(69.141% 0.12129 81.006);
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.dash-hero-name {
+  color: #FDF8EE;
+  font-size: 44px;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  line-height: 1.1;
+}
+
+.dash-hero-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #F5EDD7;
+  font-size: 14px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin-top: 2px;
+}
+
+.hero-email-svg {
+  flex-shrink: 0;
+}
+
+.dash-hero-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.dash-hero-btns-sub {
+  background-color: #C9A84C;
+  color: #2A1A08;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+.dash-hero-btns-sub:hover {
+  background-color: oklch(73.86% 0.13492 80.564);
+}
+
+.dash-hero-btns-repo {
+  background-color: rgba(253, 248, 238, 0.1);
+  border: 1px solid rgba(253, 248, 238, 0.3);
+  color: #FDF8EE;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+.dash-hero-btns-repo:hover {
+  background-color: rgba(253, 248, 238, 0.2);
+}
+
+/* ─── Stat cards ─────────────────────────────────────────────── */
+.dash-stats {
+  margin: 25px 0;
+  padding: 7px 0;
+  animation: dashFadeUp 0.45s 0.1s ease both;
+}
+
+.dash-stats-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dash-stat-card {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 18px;
+  padding: 18px 20px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.dash-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(201, 168, 76, 0.15);
+}
+
+.dash-stat-data {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dash-stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #EFE4C4;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 22px;
+  flex-shrink: 0;
+}
+
+/* icons filled in via CSS since the markup ships empty divs */
+.dash-stats-cont .dash-stat-card:nth-child(1) .dash-stat-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M17 20v-1a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v1' stroke='%231B4F6B' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='8' r='3.2' stroke='%231B4F6B' stroke-width='1.6'/%3E%3Cpath d='M17 8.5a3 3 0 1 0 0-6M20.5 20v-1a4 4 0 0 0-3-3.87' stroke='%231B4F6B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.dash-stats-cont .dash-stat-card:nth-child(2) .dash-stat-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%231B4F6B' stroke-width='1.6'/%3E%3Cpath d='M8.2 12.3l2.4 2.4 5.2-5.4' stroke='%231B4F6B' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.dash-stats-cont .dash-stat-card:nth-child(3) .dash-stat-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect x='4' y='8' width='16' height='11' rx='2' stroke='%231B4F6B' stroke-width='1.6'/%3E%3Cpath d='M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M4 13h16' stroke='%231B4F6B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.dash-stats-cont .dash-stat-card:nth-child(4) .dash-stat-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z' stroke='%231B4F6B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.dash-stat-det {
+  min-width: 0;
+}
+
+.dash-stat-num {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 26px;
+  color: #1B4F6B;
+  line-height: 1.1;
+}
+
+.dash-stat-title {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7A6040;
+  margin-top: 3px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ─── Quick actions ──────────────────────────────────────────── */
+.dash-quick-actions {
+  margin-top: 10px;
+  animation: dashFadeUp 0.45s 0.15s ease both;
+}
+
+.dash-section-title {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 22px;
+  color: #1B4F6B;
+  margin-bottom: 14px;
+}
+
+.dash-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.dash-action-btn {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(27, 79, 107, 0.15);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-align: left;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1B4F6B;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.dash-action-btn:hover {
+  background-color: rgba(27, 79, 107, 0.06);
+  border-color: rgba(27, 79, 107, 0.35);
+  transform: translateY(-1px);
+}
+.dash-action-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Lower grid: analytics + recent activity ────────────────── */
+.dash-lower-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "fav trips"
+    "activity activity";
+  gap: 24px;
+  margin-top: 36px;
+  align-items: start;
+  animation: dashFadeUp 0.4s 0.05s ease both;
+}
+
+.dash-lower-grid .dash-analytics-block:nth-of-type(1) {
+  grid-area: fav;
+}
+.dash-lower-grid .dash-analytics-block:nth-of-type(2) {
+  grid-area: trips;
+}
+.dash-lower-grid .dash-activity {
+  grid-area: activity;
+}
+
+.dash-analytics-block,
+.dash-activity {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.dash-analytics-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7A6040;
+  margin-bottom: 16px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dash-analytics-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dash-analytics-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(122, 96, 64, 0.12);
+}
+.dash-analytics-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.dash-analytics-name {
+  font-size: 13.5px;
+  color: #2A1A08;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-analytics-count {
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #C9A84C;
+  flex-shrink: 0;
+}
+
+.dash-analytics-link {
+  font-size: 11.5px;
+  color: #1B4F6B;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+.dash-analytics-link:hover {
+  opacity: 0.65;
+  text-decoration: underline;
+}
+
+.dash-analytics-empty {
+  font-size: 13px;
+  color: #7A6040;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  padding: 6px 0 2px;
+}
+
+/* ─── Recent activity ────────────────────────────────────────── */
+.dash-activity-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dash-activity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  background-color: rgba(122, 96, 64, 0.035);
+}
+
+.dash-activity-row[data-status="pending"] {
+  border-left-color: #C9A84C;
+}
+.dash-activity-row[data-status="approved"] {
+  border-left-color: #5B8A64;
+}
+.dash-activity-row[data-status="rejected"] {
+  border-left-color: #A8402F;
+}
+
+.dash-activity-main {
+  min-width: 0;
+}
+
+.dash-activity-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2A1A08;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-activity-sub {
+  font-size: 11.5px;
+  color: #7A6040;
+  margin-top: 2px;
+  text-transform: capitalize;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dash-activity-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #7A6040;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1280px) {
+  .dashboard-main {
+    padding: 100px 80px;
+    padding-top: 110px;
+  }
+  .dash-hero-name {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-main {
+    padding: 80px 50px;
+    padding-top: 100px;
+  }
+  .dash-hero-cont {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .dash-hero-btns {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    padding: 70px 24px;
+    padding-top: 90px;
+  }
+  .dash-hero {
+    padding: 20px;
+  }
+  .dash-hero-data {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .dash-hero-name {
+    font-size: 32px;
+  }
+  .dash-stats-cont {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-quick-actions-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-lower-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "fav"
+      "trips"
+      "activity";
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-main {
+    padding: 60px 16px;
+    padding-top: 80px;
+  }
+  .dash-hero-name {
+    font-size: 26px;
+  }
+  .dash-hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .dash-hero-btns-sub,
+  .dash-hero-btns-repo {
+    text-align: center;
+  }
+  .dash-stats-cont {
+    grid-template-columns: 1fr;
+  }
+  .dash-quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-analytics-block,
+  .dash-activity {
+    padding: 16px;
+  }
+  .dash-analytics-name {
+    font-size: 12.5px;
+  }
+}

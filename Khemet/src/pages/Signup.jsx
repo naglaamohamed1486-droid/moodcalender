@@ -58,7 +58,7 @@ export default function Signup() {
   name,
   email,
   password,
-   role: email === "khemet2026@gmail.com" ? "admin" : "user",
+  role: email === "khemet2026@gmail.com" ? "admin" : "user",
   location: "",
   bio: "",
   profilePic: "",   

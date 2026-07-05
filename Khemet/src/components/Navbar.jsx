@@ -56,11 +56,13 @@ function Navbar() {
       </Link>
 
       <ul className="links">
-        <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
-        <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""}>Map</NavLink></li>
+        {user?.role === "user" && <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>}
+        {user?.role === "user" && <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""}>Map</NavLink></li>}
+        {user?.role === "admin" && <li> <NavLink to="/dashboard" className={({ isActive }) => isActive ? "active" : ""}>Dashboard</NavLink></li>}
         <li><NavLink to="/feed" className={({ isActive }) => isActive ? "active" : ""}>Popular Places</NavLink></li>
         {user?.role === "user" && <li><NavLink to="/trip-plan" className={({ isActive }) => isActive ? "active" : ""}>Trip Planner</NavLink></li>}
         {user?.role === "admin" && <li><NavLink to="/submissions" className={({ isActive }) => isActive ? "active" : ""}>Submissions</NavLink></li>}
+        {user?.role === "admin" && <li><NavLink to="/adminReports" className={({ isActive }) => isActive ? "active" : ""}>Reports</NavLink></li>}
       </ul>
 
       <div className="right">
@@ -75,11 +77,12 @@ function Navbar() {
 
             {showProfileMenu && (
               <div className="profile-dropdown">
-                <Link to="/profile" onClick={closeAll}>My Profile</Link>
+                {user?.role === "user" && <Link to="/profile" onClick={closeAll}>My Profile</Link>}
+                {user?.role === "admin" &&  <Link to="/dashboard" onClick={closeAll}>Dashboard</Link>}
                 {user.role === "user" && <Link to="/favorites" onClick={closeAll}>Favorites</Link>}
                 {user.role === "user" && <Link to="/savedtrips" onClick={closeAll}>My Trips</Link>}
                 {user.role === "user" && <Link to="/contributions" onClick={closeAll}>My Contributions</Link>}
-                {user.role === "admin" && <Link to="/submissions" onClick={closeAll}>Submissions</Link>}
+                {user.role === "admin" && <Link to="/adminUsers" onClick={closeAll}>Manage Users</Link>}
               </div>
             )}
 
@@ -104,11 +107,13 @@ function Navbar() {
 
           {showProfileMenu && (
             <div className="profile-dropdown">
-              <Link to="/profile" onClick={closeAll}>My Profile</Link>
+              {user.role === "user" && <Link to="/profile" onClick={closeAll}>My Profile</Link>}
+              {user.role === "admin" &&  <Link to="/dashboard" onClick={closeAll}>Dashboard</Link>}
               {user.role === "user" && <Link to="/favorites" onClick={closeAll}>Favorites</Link>}
               {user.role === "user" && <Link to="/savedtrips" onClick={closeAll}>My Trips</Link>}
               {user.role === "user" && <Link to="/contributions" onClick={closeAll}>My Contributions</Link>}
-              {user.role === "admin" && <Link to="/submissions" onClick={closeAll}>Submissions</Link>}
+              {user.role === "admin" && <Link to="/adminUsers" onClick={closeAll}>Manage Users</Link>}
+              
             </div>
           )}
         </div>
@@ -122,12 +127,14 @@ function Navbar() {
 
       <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
         <ul>
-          <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} onClick={toggleMenu}>Home</NavLink></li>
-          <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""} onClick={toggleMenu}>Map</NavLink></li>
-          <li><NavLink to="/feed" className={({ isActive }) => isActive ? "active" : ""} onClick={toggleMenu}>Popular Places</NavLink></li>
-          {user?.role === "user" && <li><NavLink to="/trip-plan" className={({ isActive }) => isActive ? "active" : ""} onClick={toggleMenu}>Trip Planner</NavLink></li>}
-          {user?.role === "admin" && <li><NavLink to="/submissions" className={({ isActive }) => isActive ? "active" : ""} onClick={toggleMenu}>Submissions</NavLink></li>}
-        </ul>
+        {user?.role === "user" && <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>}
+        {user?.role === "user" && <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""}>Map</NavLink></li>}
+        {user?.role === "admin" && <li> <NavLink to="/dashboard" className={({ isActive }) => isActive ? "active" : ""}>Dashboard</NavLink></li>}
+        <li><NavLink to="/feed" className={({ isActive }) => isActive ? "active" : ""}>Popular Places</NavLink></li>
+        {user?.role === "user" && <li><NavLink to="/trip-plan" className={({ isActive }) => isActive ? "active" : ""}>Trip Planner</NavLink></li>}
+        {user?.role === "admin" && <li><NavLink to="/submissions" className={({ isActive }) => isActive ? "active" : ""}>Submissions</NavLink></li>}
+        {user?.role === "admin" && <li><NavLink to="/adminReports" className={({ isActive }) => isActive ? "active" : ""}>Reports</NavLink></li>}
+      </ul>
 
         <div className="mobile-right">
           {user ? (

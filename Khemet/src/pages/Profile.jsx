@@ -120,7 +120,7 @@ export default function Profile() {
   />
 </div>
           <div className="profile-hero-personal">
-              {user.role == "user" ? (<><p className="profile-hero-type">EXPLORER</p></>) : (<><p className="profile-hero-type">Administrator</p></>)}
+          <p className="profile-hero-type">EXPLORER</p>
           <p className="profile-hero-name"> {user.name}</p>
               <p className="profile-hero-email">
                 <svg
@@ -152,14 +152,10 @@ export default function Profile() {
               </div>
           </div>
           <div className="profile-hero-btns">
-            {user.role == "user" ? (<>
+           
               <Link className="profile-hero-btns-gen" to="/trip-plan"><svg className="create-svg" fill="#2A1A08" width="24px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="#2A1A08" strokeWidth="8.096"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M197.00781,132.74023l-52.16015-19.21777a3.99186,3.99186,0,0,1-2.3711-2.37012L123.25977,58.99219a11.99948,11.99948,0,0,0-22.51954,0L81.52246,111.15234a3.99186,3.99186,0,0,1-2.37012,2.3711L26.99219,132.74023a11.99948,11.99948,0,0,0,0,22.51954l52.16015,19.21777a3.99186,3.99186,0,0,1,2.3711,2.37012l19.21679,52.16015a11.99948,11.99948,0,0,0,22.51954,0l19.21679-52.16015h.001a3.99186,3.99186,0,0,1,2.37012-2.3711l52.16015-19.21679a11.99948,11.99948,0,0,0,0-22.51954Zm-2.76562,15.01368L142.082,166.96973a11.98076,11.98076,0,0,0-7.11133,7.1123l-19.21679,52.16016a4.00076,4.00076,0,0,1-7.50782,0L89.03027,174.082a11.98076,11.98076,0,0,0-7.1123-7.11133L29.75781,147.75391a4.00076,4.00076,0,0,1,0-7.50782L81.918,121.03027a11.98076,11.98076,0,0,0,7.11133-7.1123l19.21679-52.16016a4.00076,4.00076,0,0,1,7.50782,0L134.96973,113.918a11.98076,11.98076,0,0,0,7.1123,7.11133l52.16016,19.21679a4.00076,4.00076,0,0,1,0,7.50782ZM148,40a4.0002,4.0002,0,0,1,4-4h20V16a4,4,0,0,1,8,0V36h20a4,4,0,0,1,0,8H180V64a4,4,0,0,1-8,0V44H152A4.0002,4.0002,0,0,1,148,40Zm96,48a4.0002,4.0002,0,0,1-4,4H228v12a4,4,0,0,1-8,0V92H208a4,4,0,0,1,0-8h12V72a4,4,0,0,1,8,0V84h12A4.0002,4.0002,0,0,1,244,88Z"></path> </g></svg>
                 Plan a trip</Link>
               <Link className="profile-hero-btns-add" to="/addplace"> <span className="pf-hero-add-svg">+</span>Add a place</Link>
-            </>) : (<>
-                <Link className="profile-hero-btns-sub" to="/submissions" >
-                  <svg fill="#3A2A1A" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.695 491.695" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M436.714,0H149.471c-16.438,0-29.812,13.374-29.812,29.812v66.714c-54.49,15.594-94.489,65.857-94.489,125.288 c0,59.431,39.998,109.694,94.489,125.288v114.783c0,16.438,13.374,29.812,29.812,29.812h234.733c2.785,0,5.455-1.106,7.425-3.075 l71.821-71.822c1.969-1.969,3.075-4.64,3.075-7.425V29.812C466.525,13.374,453.152,0,436.714,0z M149.471,21h287.243 c4.858,0,8.811,3.953,8.811,8.812v31.689H140.659V29.812C140.659,24.953,144.612,21,149.471,21z M46.17,221.813 c0-60.263,49.027-109.29,109.29-109.29c60.263,0,109.29,49.027,109.29,109.29s-49.027,109.291-109.29,109.291 C95.197,331.104,46.17,282.076,46.17,221.813z M140.659,461.884V351.258c4.86,0.552,9.797,0.846,14.802,0.846 c39.135,0,74.292-17.347,98.195-44.752h64.336c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-49.381 c9.133-15.95,14.984-34.005,16.644-53.242h32.736c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-32.603 c-1.42-19.194-7.02-37.242-15.886-53.241h48.488c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-62.974 c-23.918-28.323-59.67-46.347-99.558-46.347c-5.005,0-9.942,0.294-14.802,0.846v-9.867h304.866v316.372h-42.009 c-16.439,0-29.811,13.374-29.811,29.811v42.011H149.471C144.612,470.695,140.659,466.743,140.659,461.884z M394.705,455.845v-27.16 c0-4.859,3.953-8.811,8.811-8.811h27.16L394.705,455.845z"></path> <path d="M359.246,158.869h34.87c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 C348.746,154.168,353.447,158.869,359.246,158.869z"></path> <path d="M359.246,233.11h34.87c5.799,0,10.5-4.701,10.5-10.5c0-5.799-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 C348.746,228.409,353.447,233.11,359.246,233.11z"></path> <path d="M359.246,307.352h34.87c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-34.87c-5.799,0-10.5,4.701-10.5,10.5 S353.447,307.352,359.246,307.352z"></path> <path d="M394.116,381.593c5.799,0,10.5-4.701,10.5-10.5s-4.701-10.5-10.5-10.5h-98.225c-5.799,0-10.5,4.701-10.5,10.5 s4.701,10.5,10.5,10.5H394.116z"></path> <path d="M236.982,168.845l-12.81-12.81c-3.45-3.449-8.036-5.349-12.915-5.349s-9.465,1.9-12.915,5.349l-67.19,67.19l-18.573-18.573 c-3.449-3.448-8.036-5.348-12.914-5.348c-4.878,0-9.465,1.9-12.914,5.349l-12.813,12.812c-7.12,7.121-7.12,18.708,0.001,25.829 l44.297,44.296c3.45,3.451,8.037,5.351,12.916,5.351c0,0,0.001,0,0.001,0c4.878,0,9.465-1.9,12.913-5.349l92.917-92.917 C244.103,187.554,244.103,175.966,236.982,168.845z M131.151,270.807l-40.429-40.428l8.942-8.942l24.062,24.062 c4.101,4.101,10.749,4.101,14.85,0l72.681-72.681l8.942,8.942L131.151,270.807z"></path> </g> </g></svg>Submissions</Link>
-            </>)}
             </div>
         </div>
         
@@ -167,7 +163,6 @@ export default function Profile() {
       <div className="pf-link">
         
         <div className="pf-link-cont">
-          {user.role == "user" ? (<>
             <Link to="/favorites" className="pf-linkat">
               <div className="pf-linkat-data">
                 <div className="pf-linkat-svg"><svg
@@ -239,55 +234,10 @@ export default function Profile() {
                 </div>
               </div>
             </Link>
-          </>) : (<>
-  <Link to="/submissions?status=approved" className="pf-linkat pf-linkat-approved">
-    <div className="pf-linkat-data">
-      <div className="pf-linkat-svg pf-linkat-svg-approved">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="9" stroke="#5B8A64" strokeWidth="1.5" />
-          <path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#5B8A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      <div className="pf-linkat-det">
-        <p className="pf-link-num">{user.approvedCount || 0}</p>
-        <p className="pf-link-title">APPROVED PLACES</p>
-      </div>
-    </div>
-  </Link>
-
-  <Link to="/submissions?status=pending" className="pf-linkat pf-linkat-pending">
-    <div className="pf-linkat-data">
-      <div className="pf-linkat-svg pf-linkat-svg-pending">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 3h8M8 21h8M8 3c0 4 4 5 4 8s-4 4-4 8M16 3c0 4-4 5-4 8s4 4 4 8"
-            stroke="#C9A84C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-      <div className="pf-linkat-det">
-        <p className="pf-link-num">{user.pendingCount || 0}</p>
-        <p className="pf-link-title">PENDING REVIEW</p>
-      </div>
-    </div>
-  </Link>
-
-  <Link to="/submissions?status=rejected" className="pf-linkat pf-linkat-rejected">
-    <div className="pf-linkat-data">
-      <div className="pf-linkat-svg pf-linkat-svg-rejected">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="9" stroke="#A8402F" strokeWidth="1.5" />
-          <path d="M9 9l6 6M15 9l-6 6" stroke="#A8402F" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      </div>
-      <div className="pf-linkat-det">
-        <p className="pf-link-num">{user.rejectedCount || 0}</p>
-        <p className="pf-link-title">REJECTED PLACES</p>
-      </div>
-    </div>
-  </Link>
-</>)}
+        
+        
         </div>
       </div>
-      {user.role == "user" &&
         <div className="pf-btn-sec">
         <div className="pf-btn-cont">
           <button  className={`pf-btn ${activeTab === "info" ? "active" : ""}`} onClick={() => setActiveTab("info")}><svg className="pf-btn-svg" width="14px" height="13px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="##7A6040">
@@ -356,10 +306,9 @@ export default function Profile() {
             </svg>
             Contributions <span className="pf-btn-num"> {user.contributions?.length || 0}</span></button>
         </div>
-      </div>}
+      </div>
       
       <div className="profile-content">
-        {user.role == "user" ? (<>
           <div className="user-profile-content">
         {activeTab === "info" &&
           <div className="info-section">
@@ -638,39 +587,8 @@ export default function Profile() {
     )}
   </div>
 )}
-        </div></>) : (<>
-  <div className="info-section">
-    <div className="info-cont">
-      <div className="info-sec">
-        <div className="details-sec-head">
-          <h3 className="info-sec-tit">Admin Details</h3>
-        </div>
-        <ul className="sec-details-cont">
-          <li className="info-det"><span className="info-det-title">NAME</span>{user.name}</li>
-          <li className="info-det"><span className="info-det-title">EMAIL</span>{user.email}</li>
-          <li className="info-det"><span className="info-det-title">ROLE</span>Administrator</li>
-        </ul>
-      </div>
-
-      <div className="info-sec">
-        <div className="details-sec-head">
-          <h3 className="info-sec-tit">Review Summary</h3>
-          <Link to="/submissions" className="cont-more">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 6l6 6-6 6" stroke="#7A6040" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Go to Submissions
-          </Link>
-        </div>
-        <ul className="sec-details-cont">
-          <li className="info-det"><span className="info-det-title">APPROVED</span>{user.approvedCount || 0}</li>
-          <li className="info-det"><span className="info-det-title">PENDING</span>{user.pendingCount || 0}</li>
-          <li className="info-det"><span className="info-det-title">REJECTED</span>{user.rejectedCount || 0}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</>)}
+            </div>
+         
        
         </div>
 
