@@ -38,7 +38,7 @@ function SavedTripsList({
 
             <img
               src={trip.itinerary?.[0]?.[0]?.coverImage}
-              alt={trip.name}
+              alt={trip.title}
             />
 
             <span className="saved-badge">
@@ -47,7 +47,7 @@ function SavedTripsList({
              
             <div className="overlay">
 
-            <h3>{trip.name}</h3>
+            <h3 className="title">{trip.title}</h3>
 
             <p>
               {trip.itinerary.reduce(
