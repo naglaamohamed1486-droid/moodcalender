@@ -79,38 +79,33 @@ function Reservations({
 
   };
 
-  const handleContinue = () => {
+const handleContinue = () => {
 
-    let total = booking.flight
-      ? Number(booking.flight.price)
-      : 0;
+  let total = booking.flight
+    ? Number(booking.flight.price)
+    : 0;
 
-    reservations.forEach(r => {
+  reservations.forEach((r) => {
 
-      if (r.transportation)
-        total += 200;
+    if (r.transportation)
+      total += 200;
 
-      if (r.restaurant)
-        total += 350;
+    if (r.restaurant)
+      total += Number(r.restaurant.price);
 
-      if (r.ticket)
-        total += 400;
+    if (r.ticket)
+      total += 400;
 
-    });
+  });
 
-    setBooking({
+  setBooking({
+    ...booking,
+    reservations,
+    totalPrice: total,
+  });
 
-      ...booking,
-
-      reservations,
-
-      totalPrice: total,
-
-    });
-
-    nextStep();
-
-  };
+  nextStep();
+};
 
   return (
 
@@ -211,33 +206,32 @@ function Reservations({
 
                 </label>
 
-                <input
+                <select
+  value={reservation.restaurant?.name || ""}
+  onChange={(e) => {
+    const selectedRestaurant = place.nearbyRestaurants.find(
+      (restaurant) => restaurant.name === e.target.value
+    );
 
-                  type="text"
+    updateReservation(
+      dayIndex,
+      placeIndex,
+      "restaurant",
+      selectedRestaurant
+    );
+  }}
+>
+  <option value="">Choose a restaurant</option>
 
-                  placeholder="Optional"
-
-                  value={
-                    reservation.restaurant || ""
-                  }
-
-                  onChange={(e)=>
-
-                    updateReservation(
-
-                      dayIndex,
-
-                      placeIndex,
-
-                      "restaurant",
-
-                      e.target.value
-
-                    )
-
-                  }
-
-                />
+  {place.nearbyRestaurants?.map((restaurant) => (
+    <option
+      key={restaurant.name}
+      value={restaurant.name}
+    >
+      {restaurant.name} ({restaurant.price} $)
+    </option>
+  ))}
+</select>
 
                 <label>
 
