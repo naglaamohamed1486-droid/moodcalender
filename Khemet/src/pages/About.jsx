@@ -1,10 +1,17 @@
 import '../css/about.css';
-import AboutImage from "../assets/AbOUTT.jpeg";
 import logo from '../assets/logo.png'
 function Frieze() {
   return <div className="frieze" role="presentation" aria-hidden="true" />;
 }
 
+
+function HieroglyphName({ glyphs }) {
+  return (
+    <div className="hiero-cartouche">
+      <span className="hiero-glyphs">{glyphs}</span>
+    </div>
+  );
+}
 export default function About() {
   return (
     <div className="about-page">
@@ -93,7 +100,7 @@ export default function About() {
         </div>
 
       <div className="story-image">
-        <div className="cartouche logo-frame">
+        <div className="border logo-frame">
           <img src={logo} alt="Khemet logo" />
         </div>
       </div>
@@ -129,7 +136,6 @@ export default function About() {
       </section>
 
       {/* ---------- Team ---------- */}
-      {/* ---------- Team ---------- */}
 <section className="team">
   <div className="section-heading">
     <span className="eyebrow">Meet the team</span>
@@ -137,41 +143,37 @@ export default function About() {
   </div>
   <div className="team-container">
     <div className="member">
-      <div className="member-mark">M</div>
+      
+      <HieroglyphName glyphs="𓅓𓇋𓈖𓈖𓄿" />
       <h4>Menna</h4>
       <p>Co-Founder</p>
     </div>
     <div className="member">
-      <div className="member-mark">N</div>
+      
+      <HieroglyphName glyphs="𓈖𓄿𓎼𓃭𓄿𓄿" />
       <h4>Naglaa</h4>
       <p>Co-Founder</p>
     </div>
     <div className="member">
-      <div className="member-mark">H</div>
+      
+      <HieroglyphName glyphs="𓉔𓄿𓃀𓇋𓃀𓄿" />
       <h4>Habiba</h4>
       <p>Co-Founder</p>
     </div>
     <div className="member">
-      <div className="member-mark">S</div>
+      
+      <HieroglyphName glyphs="𓋴𓄿𓈖𓂧𓂋𓄿" />
       <h4>Sandra</h4>
       <p>Co-Founder</p>
     </div>
-
     <div className="member">
-      <div className="member-mark">S</div>
+      
+      <HieroglyphName glyphs="𓇌𓅱𓅱𓋴𓋴𓇋𓆑" />
       <h4>Youssef</h4>
       <p>Co-Founder</p>
     </div>
   </div>
 </section>
-
-      {/* ---------- CTA ---------- */}
-      <section className="cta">
-        <h2>Ready to plan your trip?</h2>
-        <p>Tell us what you're drawn to, and we'll put together an itinerary in minutes.</p>
-        
-        
-      </section>
 
     </div>
   );

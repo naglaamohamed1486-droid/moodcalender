@@ -1,11 +1,7 @@
 /* ============================================
    KHEMET — About page
-   Palette matched to the rest of the site.
-   Signature details: kheker-frieze dividers and
-   cartouche frames (see .frieze / .cartouche below),
-   both borrowed from real Egyptian temple ornament.
    ============================================ */
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Egyptian+Hieroglyphs&display=swap');
 :root{
   --k-cream: #F5EDD7;
   --k-card: #FBF4E8;
@@ -208,11 +204,8 @@
   justify-content: center;
 }
 
-/* Cartouche frame — the rounded band ancient names were
-   enclosed in, with a short bar at the base representing
-   the tied ends of the ring. Reused for the hero image
-   and for team portraits (round variant) below. */
-.cartouche{
+
+.border{
   position: relative;
   padding: 10px;
   border: 2px solid var(--k-gold);
@@ -220,7 +213,7 @@
   background: var(--k-cream);
 }
 
-.cartouche::after{
+.border::after{
   content: "";
   position: absolute;
   left: 50%;
@@ -232,11 +225,11 @@
   background: var(--k-gold);
 }
 
-.cartouche{
+.border{
   max-width: 460px;
 }
 
-.cartouche img{
+.border img{
   display: block;
   width: 100%;
   height: 320px;
@@ -244,7 +237,7 @@
   object-fit: cover;
 }
 
-.cartouche.round{
+.border.round{
   border-radius: 50%;
   padding: 6px;
   width: 150px;
@@ -255,25 +248,25 @@
   margin: 0 auto 18px;
 }
 
-.cartouche.round::after{
+.border.round::after{
   bottom: -10px;
   width: 30px;
 }
 
-.cartouche.round img{
+.border.round img{
   width: 100%;
   height: 100%;
   border-radius: 50%;
   max-width: none;
 }
-.cartouche.logo-frame{
+.border.logo-frame{
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 30px;
 }
 
-.cartouche.logo-frame img{
+.border.logo-frame img{
   width: auto;
   height: auto;
   max-width: 220px;
@@ -337,7 +330,7 @@
 ============================================ */
 .team{
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: 40px auto 60px;
 }
 
 .team-container{
@@ -346,7 +339,40 @@
   gap: 16px;
   flex-wrap: wrap;
 }
+/* ============================================
+   Hieroglyph name cartouche
+============================================ */
 
+
+.hiero-cartouche{
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid var(--k-gold);
+  border-radius: 999px;
+  background: var(--k-cream);
+  position: relative;
+  margin-bottom: 14px;
+}
+.hiero-cartouche::before,
+.hiero-cartouche::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: var(--k-gold);
+}
+.hiero-cartouche::before{ left: -6px; }
+.hiero-cartouche::after{ right: -6px; }
+
+.hiero-glyphs{
+  font-family: "Noto Sans Egyptian Hieroglyphs", serif;
+  font-size: 18px;
+  color: var(--k-gold-dark);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
 .member{
   width: 200px;
   text-align: center;
