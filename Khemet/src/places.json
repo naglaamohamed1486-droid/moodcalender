@@ -176,6 +176,7 @@
       "local",
       "busy"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.8,
     "reviews": 5600,
@@ -1644,6 +1645,7 @@
       "photography",
       "romantic"
     ],
+
     "city": "Hurghada",
     "rating": 4.8,
     "reviews": 8123,
@@ -2238,6 +2240,7 @@
       "romantic",
       "hidden"
     ],
+
     "city": "Fayoum",
     "rating": 4.8,
     "reviews": 4700,
@@ -2536,6 +2539,7 @@
       "photography",
       "modern"
     ],
+    
     "city": "Taba",
     "rating": 4.8,
     "reviews": 3725,
@@ -2894,6 +2898,7 @@
       "nature",
       "photography"
     ],
+    
     "city": "Qena",
     "rating": 4.5,
     "reviews": 2581,
@@ -3059,6 +3064,7 @@
       "romantic",
       "photography"
     ],
+    
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 19342,
@@ -3091,6 +3097,7 @@
       "food",
       "photography"
     ],
+    
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 11027,
@@ -3124,6 +3131,7 @@
       "shopping",
       "photography"
     ],
+    
     "city": "Sharm El Sheikh",
     "rating": 4.7,
     "reviews": 8934,
@@ -3511,6 +3519,7 @@
       "romantic",
       "photography"
     ],
+    
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 3312,
@@ -3577,6 +3586,7 @@
       "nature",
       "photography"
     ],
+    
     "city": "Luxor",
     "rating": 4.7,
     "reviews": 7024,
@@ -3611,6 +3621,7 @@
       "busy",
       "cultural"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.8,
     "reviews": 6400,
@@ -3645,6 +3656,7 @@
       "hidden",
       "cultural"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 3200,
@@ -3679,6 +3691,7 @@
       "busy",
       "modern"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 5100,
@@ -3878,6 +3891,7 @@
       "cultural",
       "local"
     ],
+    
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 340,
@@ -3911,6 +3925,7 @@
       "romantic",
       "viewpoint"
     ],
+    
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 2100,
@@ -3945,6 +3960,7 @@
       "cultural",
       "food"
     ],
+    
     "city": "Alexandria",
     "rating": 4.5,
     "reviews": 420,
@@ -3978,6 +3994,7 @@
       "food",
       "busy"
     ],
+    
     "city": "Alexandria",
     "rating": 4.3,
     "reviews": 2800,
@@ -4079,6 +4096,7 @@
       "hidden",
       "adventure"
     ],
+    "type": "restaurant",
     "city": "Dahab",
     "rating": 4.9,
     "reviews": 870,
@@ -4450,6 +4468,7 @@
       "food",
       "diving"
     ],
+    
     "city": "Marsa Alam",
     "rating": 4.5,
     "reviews": 980,
@@ -4618,6 +4637,7 @@
       "viewpoint",
       "modern"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 3200,
@@ -4684,6 +4704,7 @@
       "food",
       "cultural"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.4,
     "reviews": 1560,
@@ -4717,6 +4738,7 @@
       "busy",
       "nightlife"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 2100,
@@ -4750,6 +4772,7 @@
       "local",
       "cheap"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 4300,
@@ -4783,6 +4806,7 @@
       "historical",
       "romantic"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 2870,
@@ -4816,6 +4840,7 @@
       "busy",
       "local"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 3100,
@@ -4849,6 +4874,7 @@
       "local",
       "cultural"
     ],
+    "type": "restaurant",
     "city": "Alexandria",
     "rating": 4.6,
     "reviews": 2400,
@@ -5213,6 +5239,7 @@
       "hidden",
       "local"
     ],
+    "type": "restaurant",
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 1240,
@@ -5777,6 +5804,7 @@
       "food",
       "local"
     ],
+    
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 5600,
@@ -5910,6 +5938,7 @@
       "local",
       "historical"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 4200,
@@ -5944,6 +5973,7 @@
       "mysterious",
       "hidden"
     ],
+    
     "city": "Cairo",
     "rating": 4.8,
     "reviews": 3100,
@@ -6143,6 +6173,7 @@
       "cultural",
       "hidden"
     ],
+    
     "city": "Hurghada",
     "rating": 4.4,
     "reviews": 1560,
@@ -6243,6 +6274,7 @@
       "food",
       "calm"
     ],
+    "type": "restaurant",
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 940,
@@ -6477,6 +6509,7 @@
       "photography",
       "local"
     ],
+    
     "city": "Aswan",
     "rating": 4.6,
     "reviews": 2100,

@@ -80,22 +80,25 @@ function Reservations({
   };
 
 const handleContinue = () => {
-
   let total = booking.flight
     ? Number(booking.flight.price)
     : 0;
 
   reservations.forEach((r) => {
+    // Transportation
+    if (r.transportation) {
+      total += 20;
+    }
 
-    if (r.transportation)
-      total += 200;
+    // Restaurant reservation
+    if (r.restaurant) {
+      total += Number(r.restaurant.price || 0);
+    }
 
-    if (r.restaurant)
-      total += Number(r.restaurant.price);
-
-    if (r.ticket)
-      total += 400;
-
+    // Attraction ticket
+    if (r.ticket) {
+      total += 40;
+    }
   });
 
   setBooking({
@@ -135,6 +138,8 @@ const handleContinue = () => {
                 dayIndex,
                 placeIndex
               );
+              const isRestaurant =
+                place.type === "restaurant";
 
             return(
 
@@ -200,104 +205,139 @@ const handleContinue = () => {
 
                 </select>
 
-                <label>
 
-                  Nearby Restaurant
+{isRestaurant ? (
+  <>
+    <label className="ticket-label">
+      Reserve a Table
 
-                </label>
+      <input
+        type="checkbox"
+        checked={reservation.reserveRestaurant || false}
+        onChange={(e) => {
+          updateReservation(
+            dayIndex,
+            placeIndex,
+            "reserveRestaurant",
+            e.target.checked
+          );
 
-                <select
-  value={reservation.restaurant?.name || ""}
-  onChange={(e) => {
-    const selectedRestaurant = place.nearbyRestaurants.find(
-      (restaurant) => restaurant.name === e.target.value
-    );
+          if (e.target.checked) {
+            updateReservation(
+              dayIndex,
+              placeIndex,
+              "restaurant",
+              {
+                name: place.title,
+                price: 10, 
+              }
+            );
+          } else {
+            updateReservation(
+              dayIndex,
+              placeIndex,
+              "restaurant",
+              null
+            );
+          }
+        }}
+      />
+    </label>
+  </>
+) : (
+  <>
+    <label className="ticket-label">
+      Reserve a Restaurant
 
-    updateReservation(
-      dayIndex,
-      placeIndex,
-      "restaurant",
-      selectedRestaurant
-    );
-  }}
->
-  <option value="">Choose a restaurant</option>
+      <input
+        type="checkbox"
+        checked={reservation.reserveRestaurant || false}
+        onChange={(e) =>
+          updateReservation(
+            dayIndex,
+            placeIndex,
+            "reserveRestaurant",
+            e.target.checked
+          )
+        }
+      />
+    </label>
 
-  {place.nearbyRestaurants?.map((restaurant) => (
-    <option
-      key={restaurant.name}
-      value={restaurant.name}
-    >
-      {restaurant.name} ({restaurant.price} $)
-    </option>
-  ))}
-</select>
+    {reservation.reserveRestaurant && (
+      <>
+        <label>Restaurant</label>
 
-                <label>
+        <select
+          value={reservation.restaurant?.name || ""}
+          onChange={(e) => {
+            const selectedRestaurant =
+              place.nearbyRestaurants.find(
+                (restaurant) =>
+                  restaurant.name === e.target.value
+              );
 
-                  Time
+            updateReservation(
+              dayIndex,
+              placeIndex,
+              "restaurant",
+              selectedRestaurant
+            );
+          }}
+        >
+          <option value="">
+            Choose a restaurant
+          </option>
 
-                </label>
+          {place.nearbyRestaurants?.map(
+            (restaurant) => (
+              <option
+                key={restaurant.name}
+                value={restaurant.name}
+              >
+                {restaurant.name} ({restaurant.price} $)
+              </option>
+            )
+          )}
+        </select>
+      </>
+    )}
+  </>
+)}
 
-                <input
+{reservation.reserveRestaurant && (
+  <>
+    <label>Reservation Time</label>
 
-                  type="time"
+    <input
+      type="time"
+      value={reservation.time || ""}
+      onChange={(e) =>
+        updateReservation(
+          dayIndex,
+          placeIndex,
+          "time",
+          e.target.value
+        )
+      }
+    />
 
-                  value={
-                    reservation.time || ""
-                  }
+    <label>Guests</label>
 
-                  onChange={(e)=>
-
-                    updateReservation(
-
-                      dayIndex,
-
-                      placeIndex,
-
-                      "time",
-
-                      e.target.value
-
-                    )
-
-                  }
-
-                />
-
-                <label>
-
-                  Guests
-
-                </label>
-
-                <input
-
-                  type="number"
-
-                  min="1"
-
-                  value={
-                    reservation.guests || 1
-                  }
-
-                  onChange={(e)=>
-
-                    updateReservation(
-
-                      dayIndex,
-
-                      placeIndex,
-
-                      "guests",
-
-                      e.target.value
-
-                    )
-
-                  }
-
-                />
+    <input
+      type="number"
+      min="1"
+      value={reservation.guests || 1}
+      onChange={(e) =>
+        updateReservation(
+          dayIndex,
+          placeIndex,
+          "guests",
+          e.target.value
+        )
+      }
+    />
+  </>
+)}
 
                 <label className="ticket-label">
 
