@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+const classMultiplier = {
+  Economy: 1,
+  Business: 1.6,
+  "First Class": 2.2,
+};
+
 const airlines = [
   {
     name: "EgyptAir",
@@ -29,6 +35,14 @@ function FlightForm({
   nextStep,
   back,
 }) {
+
+  const calculatePrice = (basePrice, cabinClass) => {
+  return Math.round(basePrice * classMultiplier[cabinClass]);
+};
+const today = new Date().toISOString().split("T")[0];
+
+
+
   const [flight, setFlight] = useState({
     departure: "",
     arrival: "Cairo",
@@ -36,26 +50,33 @@ function FlightForm({
     travelers: 1,
     class: "Economy",
     airline: "",
+    basePrice: 0,
     price: 0,
   });
 
   const chooseAirline = (item) => {
-    setFlight({
-      ...flight,
-      airline: item.name,
-      price: item.price,
-    });
-  };
+  setFlight({
+    ...flight,
+    airline: item.name,
+    basePrice: item.price,
+    price: calculatePrice(item.price, flight.class),
+  });
+};
 
   const continueBooking = () => {
+
     if (
       !flight.departure ||
       !flight.departureDate ||
       !flight.airline
     ) {
-      alert("Please complete the form.");
+      alert("Please complete all required fields.");
       return;
     }
+    if (flight.departureDate < today) {
+     alert("Departure date cannot be in the past.");
+     return;
+  }
 
     setBooking({
       ...booking,
@@ -63,16 +84,24 @@ function FlightForm({
     });
 
     nextStep();
+
   };
 
   return (
+
     <div className="booking-card">
 
-      <h2>Flight Booking</h2>
+      <h2>Book Your Flight</h2>
+
+      <p>
+        Fill in your travel information and choose
+        the airline that best fits your trip.
+      </p>
 
       <div className="flight-grid">
 
         <div>
+
           <label>Departure</label>
 
           <input
@@ -82,37 +111,44 @@ function FlightForm({
             onChange={(e)=>
               setFlight({
                 ...flight,
-                departure:e.target.value
+                departure:e.target.value,
               })
             }
           />
+
         </div>
 
         <div>
+
           <label>Arrival</label>
 
           <input
             value="Cairo"
             disabled
           />
+
         </div>
 
         <div>
-          <label>Date</label>
+
+          <label>Departure Date</label>
 
           <input
             type="date"
+            min={today}
             value={flight.departureDate}
             onChange={(e)=>
               setFlight({
                 ...flight,
-                departureDate:e.target.value
+                departureDate:e.target.value,
               })
             }
           />
+
         </div>
 
         <div>
+
           <label>Travelers</label>
 
           <input
@@ -122,58 +158,79 @@ function FlightForm({
             onChange={(e)=>
               setFlight({
                 ...flight,
-                travelers:Number(e.target.value)
+                travelers:Number(e.target.value),
               })
             }
           />
+
         </div>
 
         <div>
-          <label>Class</label>
+
+          <label>Cabin Class</label>
 
           <select
             value={flight.class}
-            onChange={(e)=>
-              setFlight({
-                ...flight,
-                class:e.target.value
-              })
-            }
+            onChange={(e) => {
+  const newClass = e.target.value;
+
+  setFlight({
+  ...flight,
+  class: newClass,
+  basePrice: flight.basePrice,
+  price: calculatePrice(
+    flight.basePrice,
+    newClass
+  ),
+});
+}}
           >
             <option>Economy</option>
             <option>Business</option>
-            <option>First</option>
+            <option>First Class</option>
           </select>
+
         </div>
 
       </div>
 
-      <h3>Suggested Flights</h3>
+      <h3
+        style={{
+          marginTop: "35px",
+          marginBottom: "15px",
+        }}
+      >
+        Suggested Airlines
+      </h3>
 
       <div className="airlines">
 
         {airlines.map((item)=>(
-
-          <div
+                    <div
             key={item.name}
             className={`airline ${
-              flight.airline===item.name
-              ? "selected"
-              : ""
+              flight.airline === item.name
+                ? "selected"
+                : ""
             }`}
-            onClick={()=>chooseAirline(item)}
+            onClick={() => chooseAirline(item)}
           >
 
             <div>
 
               <h4>{item.name}</h4>
 
-              <small>{item.duration}</small>
+              <small>
+                {item.duration}
+              </small>
 
             </div>
 
             <strong>
-              ${item.price}
+              ${calculatePrice(
+                  item.price,
+                  flight.class
+               )}
             </strong>
 
           </div>
@@ -188,7 +245,7 @@ function FlightForm({
           className="back-btn"
           onClick={back}
         >
-          Back
+          ← Back
         </button>
 
         <button
@@ -201,7 +258,9 @@ function FlightForm({
       </div>
 
     </div>
+
   );
+
 }
 
 export default FlightForm;

@@ -109,9 +109,9 @@
 }
 
 .day-number {
-  width: 24px;
-  height: 24px;
-  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
   border-radius: 50%;
   background: #234d67;
   color: white;
@@ -123,7 +123,28 @@
 }
 
 .place-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 4px;
   font-size: 13px;
+}
+
+.place-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.place-item:not(:last-child)::after {
+  content: "•";
+  margin-left: 4px;
+  color: #d1a340;
+}
+
+.place-icon {
+  color: #d1a340;
+  flex-shrink: 0;
 }
 
 .more-days {

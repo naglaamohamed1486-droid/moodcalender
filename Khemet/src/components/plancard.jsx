@@ -6,6 +6,28 @@ const FALLBACK_LABELS = ["Plan A", "Plan B", "Plan C"];
 // Each plan gets its own badge color — A gold, B terracotta, C navy
 const BADGE_VARIANTS = ["badge-a", "badge-b", "badge-c"];
 
+// Small pin icon shown before each place name
+function PlaceIcon() {
+  return (
+    <svg
+      className="place-icon"
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9.5" r="2.4" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
+
 function PlanCard({ plan, index, days, buildItinerary, onPreview, onSelect }) {
   const label = plan.label || FALLBACK_LABELS[index] || `Plan ${index + 1}`;
   const badgeVariant = BADGE_VARIANTS[index % BADGE_VARIANTS.length];
@@ -42,7 +64,12 @@ function PlanCard({ plan, index, days, buildItinerary, onPreview, onSelect }) {
             <div className="day-row" key={dayObj.day}>
               <span className="day-number">{dayObj.day}</span>
               <span className="place-name">
-                {dayObj.places.map((place) => place.title).join(" • ")}
+                {dayObj.places.map((place, i) => (
+                  <span className="place-item" key={place.id || i}>
+                    <PlaceIcon />
+                    {place.title}
+                  </span>
+                ))}
               </span>
             </div>
           ))}

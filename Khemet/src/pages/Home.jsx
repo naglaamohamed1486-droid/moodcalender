@@ -474,7 +474,7 @@ return (
           </g></svg>
             </Link>
           )}
-          {user.role == "user" ?
+          {user?.role == "user" ?
             (
               <Link to="/trip-plan" className="tripsec-btn home-btn">Generate my trip
                 <svg

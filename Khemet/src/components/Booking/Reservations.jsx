@@ -207,7 +207,7 @@ function Reservations({
 
                 <label>
 
-                  Restaurant
+                  Nearby Restaurant
 
                 </label>
 
@@ -305,7 +305,9 @@ function Reservations({
 
                 />
 
-                <label>
+                <label className="ticket-label">
+
+                  Book Ticket
 
                   <input
 
@@ -333,8 +335,6 @@ function Reservations({
 
                   />
 
-                  Book Ticket
-
                 </label>
 
               </div>
@@ -350,12 +350,14 @@ function Reservations({
       <div className="booking-buttons">
 
         <button
+          className="back-btn"
           onClick={prevStep}
         >
           ← Back
         </button>
 
         <button
+          className="next-btn"
           onClick={handleContinue}
         >
           Continue →

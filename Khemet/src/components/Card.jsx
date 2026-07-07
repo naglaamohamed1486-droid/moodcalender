@@ -53,7 +53,7 @@ function Card({ place ,showStatus = false}) {
       <div className="card-image">
         <img src={coverImage || place.image} alt={place.title} />
         <span className="card-category">{place.category || place.tags?.[0] || "Explore"}</span>
-        {user.role=="user" &&
+        {user?.role=="user" &&
         <button
           className={`saved-btn ${saved ? "saved-btn--active" : ""}`}
           aria-label="Save"

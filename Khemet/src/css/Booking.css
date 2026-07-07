@@ -1,5 +1,5 @@
 /* ============================================
-   KhemetDB Booking — "Lovable" cream/gold theme
+   KhemetDB Booking — recolored to match trip planner
    ============================================
    Optional: add these Google Fonts in your index.html <head>
    for the exact serif headings look:
@@ -7,16 +7,16 @@
 */
 
 :root{
-  --cream-bg:#f4e7cd;
-  --card-bg:#fbf2df;
-  --card-border:#e9dcbc;
-  --gold:#d1a44c;
-  --gold-dark:#b8863a;
-  --gold-soft:#fbecc9;
-  --teal-dark:#16424a;
-  --text-body:#5b5346;
+  --cream-bg:#F5EDD7;
+  --card-bg:#fcf7ee;
+  --card-border:#decfb8;
+  --gold:#C9A84C;
+  --gold-dark:#d6a537;
+  --gold-soft:#fbf4e8;
+  --teal-dark:#234d67;
+  --text-body:#6f6659;
   --text-muted:#8a7a5c;
-  --text-label:#b98f45;
+  --text-label:#C9A84C;
   --radius-lg:20px;
   --radius-md:14px;
   --radius-sm:10px;
@@ -29,7 +29,7 @@
   width:100%;
   max-width:1200px;
   margin:auto;
-  padding:50px;
+  padding:100px 60px 50px;
   background:var(--cream-bg);
   font-family:var(--font-body);
   color:var(--text-body);
@@ -173,6 +173,16 @@
   margin-top:25px;
 }
 
+.choice-row{
+  flex-direction:row;
+}
+
+@media (max-width: 700px){
+  .choice-row{
+    flex-direction:column;
+  }
+}
+
 .choice-box{
   display:flex;
   align-items:center;
@@ -183,6 +193,7 @@
   cursor:pointer;
   transition:.25s;
   background:var(--card-bg);
+  flex:1;
 }
 
 .choice-box:hover{
@@ -248,6 +259,13 @@
 .flight-grid select:focus{
   outline:none;
   border-color:var(--gold);
+}
+
+.section-subhead{
+  font-family:var(--font-heading);
+  color:var(--teal-dark);
+  margin:24px 0 12px;
+  font-size:17px;
 }
 
 .airlines{
@@ -380,6 +398,8 @@
   margin-bottom:10px;
   font-family:var(--font-heading);
   color:var(--teal-dark);
+  font-size:19px;
+  font-weight:600;
 }
 
 /* ============================================
@@ -558,6 +578,98 @@
 }
 
 /* ============================================
+   Stepper v2 (horizontal circle + label, used on the reference-style layout)
+   ============================================ */
+
+.stepper-track{
+  display:flex;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.stepper-node-wrap{
+  display:flex;
+  align-items:center;
+  flex:1;
+}
+
+.stepper-node{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
+}
+
+.stepper-circle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gold-soft);
+  color:var(--text-label);
+  font-weight:700;
+  font-family:var(--font-heading);
+  flex-shrink:0;
+  transition:.25s;
+}
+
+.stepper-node.active .stepper-circle{
+  background:var(--gold);
+  color:#fff;
+}
+
+.stepper-node.done .stepper-circle{
+  background:var(--teal-dark);
+  color:#fff;
+}
+
+.stepper-eyebrow{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-label);
+}
+
+.stepper-node.active .stepper-eyebrow,
+.stepper-node.done .stepper-eyebrow{
+  color:var(--text-muted);
+}
+
+.stepper-title{
+  font-family:var(--font-heading);
+  color:var(--text-muted);
+  font-size:15px;
+}
+
+.stepper-node.active .stepper-title,
+.stepper-node.done .stepper-title{
+  color:var(--teal-dark);
+}
+
+.stepper-connector{
+  flex:1;
+  height:2px;
+  background:var(--card-border);
+  margin:0 14px;
+}
+
+.stepper-connector.done{
+  background:var(--teal-dark);
+}
+
+@media (max-width:700px){
+  .stepper-eyebrow, .stepper-title{
+    display:none;
+  }
+  .stepper-connector{
+    margin:0 6px;
+  }
+}
+
+/* ============================================
    "Book this plan?" confirmation modal
    ============================================ */
 
@@ -653,4 +765,146 @@
 
 .modal-btn-primary:hover{
   background:var(--gold-dark);
+}
+
+
+.booking-card,
+.linked-trip-card,
+.live-total-card,
+.trip-day,
+.trip-day-card,
+.place-booking,
+.airline{
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.booking-card:hover,
+.linked-trip-card:hover,
+.live-total-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.09);
+}
+
+.trip-day:hover,
+.trip-day-card:hover,
+.place-booking:hover{
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px rgba(0,0,0,.07);
+}
+
+.airline:hover{
+  transform: translateY(-2px);
+}
+
+/* buttons */
+.next-btn,
+.back-btn,
+.modal-btn-primary,
+.modal-btn-secondary,
+.close-organizer,
+.secondary-btn,
+.danger-btn,
+.save-trip-btn,
+.blank-trip-btn,
+.book-trip-btn{
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+}
+
+.next-btn:hover,
+.modal-btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201,168,76,.35);
+}
+
+.back-btn:hover,
+.modal-btn-secondary:hover{
+  transform: translateY(-1px);
+}
+EOF
+Output
+
+/* ==== NEW: hover lift for cards + buttons ==== */
+
+.booking-card,
+.linked-trip-card,
+.live-total-card,
+.trip-day,
+.trip-day-card,
+.place-booking,
+.airline{
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.booking-card:hover,
+.linked-trip-card:hover,
+.live-total-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.09);
+}
+
+.trip-day:hover,
+.trip-day-card:hover,
+.place-booking:hover{
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px rgba(0,0,0,.07);
+}
+
+.airline:hover{
+  transform: translateY(-2px);
+}
+
+/* buttons */
+.next-btn,
+.back-btn,
+.modal-btn-primary,
+.modal-btn-secondary,
+.close-organizer,
+.secondary-btn,
+.danger-btn,
+.save-trip-btn,
+.blank-trip-btn,
+.book-trip-btn{
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+}
+
+.next-btn:hover,
+.modal-btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201,168,76,.35);
+}
+
+.back-btn:hover,
+.modal-btn-secondary:hover{
+  transform: translateY(-1px);
+}
+.place-booking input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  accent-color:var(--gold);
+}
+
+.place-booking label:has(input[type="checkbox"]){
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+.ticket-label{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  width:100%;
+}
+
+.place-booking input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  accent-color:var(--gold);
+  margin:0;
 }

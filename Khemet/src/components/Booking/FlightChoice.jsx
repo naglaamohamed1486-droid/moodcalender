@@ -6,22 +6,27 @@ function FlightChoice({
   nextStep,
   openFlightForm,
 }) {
+
   const [choice, setChoice] = useState(null);
 
   const handleContinue = () => {
+
     if (choice === null) {
       alert("Please choose an option.");
       return;
     }
 
     if (choice) {
+
       setBooking({
         ...booking,
         needFlight: true,
       });
 
       openFlightForm();
+
     } else {
+
       setBooking({
         ...booking,
         needFlight: false,
@@ -29,26 +34,36 @@ function FlightChoice({
       });
 
       nextStep();
+
     }
+
   };
 
   return (
+
     <div className="booking-card">
 
-      <h2>Do you need a flight?</h2>
+      <h2>
+        Do you need a flight?
+      </h2>
 
       <p>
-        Choose whether you'd like us to book your flight.
+        Choose whether you'd like us to arrange
+        your flight or continue using your own
+        reservation.
       </p>
 
       <div className="choice-container">
 
         <div
           className={`choice-box ${
-            choice === true ? "selected" : ""
+            choice === true
+              ? "selected"
+              : ""
           }`}
           onClick={() => setChoice(true)}
         >
+
           <input
             type="radio"
             checked={choice === true}
@@ -56,20 +71,30 @@ function FlightChoice({
           />
 
           <div>
-            <h3>Book Flight</h3>
+
+            <h3>
+              ✈ Book Flight
+            </h3>
 
             <p>
-              EgyptAir • Emirates • Qatar • Turkish
+              Choose from EgyptAir,
+              Emirates, Qatar Airways
+              and Turkish Airlines.
             </p>
+
           </div>
+
         </div>
 
         <div
           className={`choice-box ${
-            choice === false ? "selected" : ""
+            choice === false
+              ? "selected"
+              : ""
           }`}
           onClick={() => setChoice(false)}
         >
+
           <input
             type="radio"
             checked={choice === false}
@@ -77,15 +102,29 @@ function FlightChoice({
           />
 
           <div>
-            <h3>Skip</h3>
 
-            <p>I already have a flight.</p>
+            <h3>
+              🎫 I already have one
+            </h3>
+
+            <p>
+              Skip this step and continue
+              to planning your trip.
+            </p>
+
           </div>
+
         </div>
 
       </div>
 
       <div className="booking-buttons">
+                <button
+          className="back-btn"
+          onClick={() => window.history.back()}
+        >
+          ← Back
+        </button>
 
         <button
           className="next-btn"
@@ -97,7 +136,9 @@ function FlightChoice({
       </div>
 
     </div>
+
   );
+
 }
 
 export default FlightChoice;
