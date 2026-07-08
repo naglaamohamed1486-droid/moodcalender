@@ -1,22 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ==========================================================================
+   Khemet — Plan Cards
+   Palette: papyrus cream / deep lapis / antique gold / ochre terracotta / faience teal
+   ========================================================================== */
+
 .plans-container {
   margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
 .plan-card {
-  background: #fbf4e8;
-  border-radius: 20px;
+  position: relative;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(184, 155, 98, 0.05) 0px,
+      rgba(184, 155, 98, 0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(160deg, #f6f0e6 0%, #f8f3e8 100%);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(27, 26, 20, 0.1);
+  border: 1px solid rgba(201, 162, 76, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .plan-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(27, 79, 107, 0.1);
-  border-color: rgba(201, 168, 76, 0.2);
+  box-shadow: 0 18px 40px rgba(27, 52, 74, 0.18), 0 0 0 1px rgba(201, 162, 76, 0.3);
+  border-color: rgba(201, 162, 76, 0.6);
 }
 
 .plan-image-wrapper {
@@ -25,25 +42,34 @@
   overflow: hidden;
 }
 
+.plan-image-wrapper::after {
+  /* soft vignette so the cartouche badge always reads clearly */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22, 21, 15, 0.28) 0%, transparent 35%);
+}
+
 .plan-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  filter: saturate(1.05) contrast(1.03);
+  transition: transform 0.6s ease;
 }
 
 .plan-card:hover .plan-image-wrapper img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .plan-image-fallback {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ede9d8 0%, #ddd5b4 100%);
+  background: linear-gradient(135deg, #e8ddc0 0%, #d8c896 100%);
 }
 
 .plan-content {
-  padding: 14px;
+  padding: 16px 18px 18px;
 }
 
 .plan-content h3 {
@@ -52,73 +78,142 @@
   font-size: 15px;
 }
 
-/* ---------- Badge ---------- */
+/* ---------- Badge (cartouche) ---------- */
+/* Shaped like an Egyptian cartouche: a rounded oval with a small "knot"
+   at each end, rather than a plain pill. This is the card's one
+   ornamental signature, so it stays restrained everywhere else. */
 
 .plan-badge {
   position: absolute;
   top: 15px;
   right: 15px;
-  padding: 8px 14px;
+  z-index: 3;
+  padding: 7px 20px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Plan A — gold */
+.plan-badge::before,
+.plan-badge::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background: transparent;
+  transform: translateY(-50%);
+  opacity: 0.85;
+}
+
+.plan-badge::before {
+  left: 4px;
+}
+
+.plan-badge::after {
+  right: 4px;
+}
+
+/* Plan A — antique gold */
 .plan-badge.badge-a {
-  background: #d9a632;
-  color: #1f2937;
+  background: #c9a24c;
+  color: #2a2013;
 }
 
-/* Plan B — terracotta */
+/* Plan B — ochre terracotta */
 .plan-badge.badge-b {
-  background: #c1512a;
-  color: #fff5e6;
+  background: #b8552d;
+  color: #fbf0dd;
 }
 
-/* Plan C — navy */
+/* Plan C — deep lapis */
 .plan-badge.badge-c {
-  background: #1b3a52;
-  color: #fdf6e3;
+  background: #16344a;
+  color: #f3e8d2;
 }
 
 .plan-title {
-  font-size: 18px;
-  color: #234d67;
-  font-family: Georgia, serif;
-  margin-bottom: 10px;
+  font-size: 19px;
+  color: #16344a;
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
 }
 
 .plan-subtitle {
-  color: #666;
-  margin-bottom: 20px;
+  color: #7a6c50;
+  margin-bottom: 18px;
   font-size: 13px;
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
 }
 
+/* ---------- Divider: hieroglyph frieze ---------- */
+/* the card's signature flourish — a gold line broken by a small
+   faience ankh at the centre, standing in for a plain <hr> */
+
 .plan-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  margin: 10px 0 18px;
   border: none;
-  border-top: 1px solid rgba(35, 77, 103, 0.12);
-  margin: 12px 0 16px;
+  background: none;
+}
+
+.plan-divider::before,
+.plan-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 76, 0.55));
+}
+
+.plan-divider::after {
+  background: linear-gradient(90deg, rgba(201, 162, 76, 0.55), transparent);
+}
+
+.plan-divider-glyph {
+  flex-shrink: 0;
+  margin: 0 10px;
+  color: #4f7d72;
 }
 
 .day-row {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
-.day-number {
-  width: 18px;
-  height: 18px;
-  font-size: 10px;
+/* day marker: a small cartouche seal circle, kept compact */
+.day-numberr {
+  box-sizing: border-box;
+  width: 26px;
+  height: 26px;
+  min-width: 16px;
+  min-height: 16px;
+  padding: 0;
+  line-height: 1;
+  font-size: 8px;
   border-radius: 50%;
-  background: #234d67;
-  color: white;
+  background: #16344a;
+  border: 1px solid #c9a24c;
+  color: #f3e8d2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: "Cinzel", Georgia, serif;
   flex-shrink: 0;
 }
 
@@ -128,6 +223,8 @@
   align-items: center;
   gap: 4px 4px;
   font-size: 13px;
+  font-family: "EB Garamond", Georgia, serif;
+  color: #2f2a1e;
 }
 
 .place-item {
@@ -137,57 +234,68 @@
 }
 
 .place-item:not(:last-child)::after {
-  content: "•";
+  content: "\2022";
   margin-left: 4px;
-  color: #d1a340;
+  color: #c9a24c;
 }
 
 .place-icon {
-  color: #d1a340;
+  color: #b8552d;
   flex-shrink: 0;
 }
 
 .more-days {
   margin-top: 15px;
   margin-left: 50px;
-  color: #777;
+  color: #8a7c5e;
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
 }
 
 .plan-buttons {
-  margin-top: 25px;
+  margin-top: 22px;
   display: flex;
   gap: 12px;
 }
 
 .preview-btn {
   flex: 1;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 14px;
+  background: transparent;
+  border: 1px solid rgba(22, 52, 74, 0.35);
+  color: #16344a;
+  padding: 13px;
   border-radius: 14px;
   cursor: pointer;
   font-size: 13px;
-  transition: transform 0.2s ease;
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .preview-btn:hover {
   transform: translateY(-2px);
+  background: rgba(22, 52, 74, 0.05);
+  border-color: rgba(22, 52, 74, 0.6);
 }
 
 .select-btn {
   flex: 1;
-  background: #d9a632;
-  border: none;
-  padding: 14px;
+  background: #c9a24c;
+  border: 1px solid #a8843a;
+  color: #2a2013;
+  padding: 13px;
   border-radius: 14px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 13px;
-  transition: transform 0.2s ease;
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .select-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(201, 162, 76, 0.4);
 }
 
 /* ---------- Section header (Three itineraries for you) ---------- */
@@ -201,6 +309,7 @@
 .title-row h2 {
   margin: 0;
   line-height: 1;
+  font-family: "Cinzel", Georgia, serif;
 }
 
 .title-row svg {
@@ -216,11 +325,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #d1a340;
+  color: #b8552d;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 10px;
   margin-bottom: 6px;
+  font-family: "Cinzel", Georgia, serif;
 }
 
 .plans-step svg {
@@ -232,17 +342,18 @@
 .plans-header h2 {
   margin-top: 6px;
   margin-bottom: 10px;
-  color: #234d67;
-  font-size: 24px;
-  font-weight: 400;
-  font-family: Georgia, serif;
+  color: #16344a;
+  font-size: 26px;
+  font-weight: 600;
+  font-family: "Cinzel", Georgia, serif;
 }
 
 .plans-header p {
   max-width: 600px;
-  color: #6f6659;
+  color: #6f6650;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-family: "EB Garamond", Georgia, serif;
 }
 
 @media (max-width: 900px) {

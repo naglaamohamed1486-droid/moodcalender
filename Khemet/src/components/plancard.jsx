@@ -62,7 +62,7 @@ function PlanCard({ plan, index, days, buildItinerary, onPreview, onSelect }) {
         <div className="plan-itinerary">
           {itinerary.map((dayObj) => (
             <div className="day-row" key={dayObj.day}>
-              <span className="day-number">{dayObj.day}</span>
+              <span className="day-numberr">{dayObj.day}</span>
               <span className="place-name">
                 {dayObj.places.map((place, i) => (
                   <span className="place-item" key={place.id || i}>
