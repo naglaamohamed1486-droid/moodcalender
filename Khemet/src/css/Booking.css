@@ -919,3 +919,171 @@
 .modal-btn-secondary:hover{
   transform: translateY(-1px);
 }
+/* ===========================
+   BOOKING SUMMARY
+=========================== */
+
+.summary-section{
+    margin-top:32px;
+}
+
+.summary-section h3{
+    color:#6d5622;
+    margin-bottom:14px;
+    font-size:1.15rem;
+    font-weight:700;
+}
+
+.summary-box{
+    background:#fff;
+    border:1px solid #e7dcc0;
+    border-radius:18px;
+    padding:20px 24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.summary-box h4{
+    color:#4a3b15;
+    margin-bottom:10px;
+    font-size:1.2rem;
+}
+
+.summary-box p{
+    margin:10px 0;
+    color:#6d6d6d;
+    line-height:1.6;
+}
+
+.summary-reservation{
+    background:#faf7ef;
+    border-left:5px solid #c9a84c;
+    padding:16px 18px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.summary-reservation h4{
+    color:#5f4b17;
+    margin-bottom:10px;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:14px 0;
+    color:#555;
+}
+
+.total-row{
+    margin-top:18px;
+    font-size:1.2rem;
+    color:#000;
+}
+
+.payment-select{
+    width:100%;
+    padding:14px 18px;
+    border-radius:12px;
+    border:1px solid #d8cba8;
+    font-size:15px;
+    background:#fff;
+    outline:none;
+}
+
+.payment-select:focus{
+    border-color:#c9a84c;
+}
+
+.policy-box{
+    background:#fff8e5;
+    border:1px solid #edd58a;
+    border-radius:14px;
+    padding:18px;
+    color:#6b5a2c;
+    line-height:1.8;
+}
+
+.summary-actions{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    margin-top:35px;
+}
+
+.summary-back{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#ececec;
+    cursor:pointer;
+    font-weight:600;
+    transition:.25s;
+}
+
+.summary-back:hover{
+    background:#dcdcdc;
+}
+
+.summary-confirm{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#c9a84c,#b48d28);
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.summary-confirm:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(201,168,76,.35);
+}
+
+.status{
+    padding:4px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.status.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.booking-success{
+    text-align:center;
+    padding:40px 10px;
+}
+
+.success-icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#32b86c;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    margin-bottom:22px;
+}
+
+.booking-success h2{
+    color:#2f7f46;
+    margin-bottom:12px;
+}
+
+.booking-success p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.summary-box strong{
+    color:#333;
+}
