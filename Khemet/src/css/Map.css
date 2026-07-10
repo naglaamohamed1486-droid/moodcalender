@@ -1,3 +1,23 @@
+.clear-btn{
+    height:50px;
+    padding:13px 22px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#1B4F6B;
+    color:#fff;
+
+    font-weight:700;
+    font-size:15px;
+    white-space:nowrap;
+    cursor:pointer;
+
+    transition:.25s;
+}
+.clear-btn:hover{
+    background:#932C2C;
+}
 .map-page{
     min-height:100vh;
     background:linear-gradient(to bottom,#f8f2e8,#f5eee3);

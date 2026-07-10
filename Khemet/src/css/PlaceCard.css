@@ -1,13 +1,14 @@
-.place-card {
-  background: #FDF8EE;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(245, 237, 215, .8);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
-  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+.place-card{
+    background:#FDF8EE;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(245,237,215,.8);
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+
+    display:flex;
+    flex-direction:column;
+
+    height:auto;
 }
 
 .place-card:hover {
