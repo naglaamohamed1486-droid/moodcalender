@@ -1,5 +1,6 @@
 import '../css/about.css';
 import logo from '../assets/logo.png'
+import { useEffect } from "react";
 function Frieze() {
   return <div className="frieze" role="presentation" aria-hidden="true" />;
 }
@@ -13,6 +14,12 @@ function HieroglyphName({ glyphs }) {
   );
 }
 export default function About() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // أو احذفي behavior خالص
+    });
+  }, []);
   return (
     <div className="about-page">
 

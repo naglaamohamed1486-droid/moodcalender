@@ -10,6 +10,7 @@ import { savePlan } from "../components/Booking/bookingDB";
 import { useAuth } from "../context/AuthContext";
 import SavedTripsList from "../components/savedTripsList";
 import { Link } from "react-router-dom";
+
 // ===========================
 // Distance & travel time helpers
 // ===========================
@@ -378,6 +379,12 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
   return plans;
 }
 function TripPlanner() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // أو احذفي behavior خالص
+    });
+  }, []);
   
   //Booking
   const handleBooking = async (plan) => {
