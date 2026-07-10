@@ -142,14 +142,15 @@
 /* ─── Stat cards ─────────────────────────────────────────────── */
 .dash-stats {
   margin: 25px 0;
-  padding: 7px 0;
-  animation: dashFadeUp 0.45s 0.1s ease both;
+  padding: 5px 0;
+  animation: dashFadeUp 0.45s 0.1s ease both; 
 }
 
 .dash-stats-cont {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: center;
 }
 
 .dash-stat-card {
@@ -442,6 +443,9 @@
   }
   .dash-hero-btns {
     justify-content: flex-start;
+  }
+   .dash-stats-cont {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
