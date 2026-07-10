@@ -2,7 +2,7 @@ import { useState, useRef,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import { setPlaceImages } from "../components/PicCache"
+import { setPlaceImages ,uploadSingleImage } from "../components/PicCache"
 import L from "leaflet";
 import Toast from "../components/toast";
 import "leaflet/dist/leaflet.css";
@@ -240,35 +240,35 @@ export default function AddPlace() {
       reader.readAsDataURL(file);
   });
 
-  const handleCoverImage = async (e) => {
-    const file = e.target.files[0];
+ const handleCoverImage = async (e) => {
+  const file = e.target.files[0];
   if (!file) return;
   if (file.size > 2 * 1024 * 1024) { alert("Cover image must be under 2MB"); return; }
-    const link = await ImgToLink(file);
-    try {
-    const url = await uploadPlaceImage(link); 
+  const link = await ImgToLink(file);
+  try {
+    const url = await uploadSingleImage(link);
     setForm(prev => ({ ...prev, coverImage: url }));
-    } catch (err) {
-       showToast("error", "Failed to upload cover image");
+  } catch (err) {
+    console.error("Cover upload error:", err);
+    showToast("error", "Failed to upload cover image");
   }
-    
-  };
+};
 
-  const handleGalleryImages = async (e) => {
-    const files = Array.from(e.target.files);
-    const remainingSlots = 3 - form.gallery.length;
-    if (remainingSlots <= 0) { e.target.value = ""; return; }
-    const validFiles = files.filter(f => f.size <= 2 * 1024 * 1024).slice(0, remainingSlots);
-    const links = await Promise.all(validFiles.map(ImgToLink));
-   try {
-    const urls = await Promise.all(links.map(uploadPlaceImage)); 
+const handleGalleryImages = async (e) => {
+  const files = Array.from(e.target.files);
+  const remainingSlots = 3 - form.gallery.length;
+  if (remainingSlots <= 0) { e.target.value = ""; return; }
+  const validFiles = files.filter(f => f.size <= 2 * 1024 * 1024).slice(0, remainingSlots);
+  const links = await Promise.all(validFiles.map(ImgToLink));
+  try {
+    const urls = await Promise.all(links.map(uploadSingleImage));
     setForm(prev => ({ ...prev, gallery: [...prev.gallery, ...urls] }));
   } catch (err) {
-     showToast("error", "Failed to upload  gallery images");
+    console.error("Gallery upload error:", err);
+    showToast("error", "Failed to upload gallery images");
   }
   e.target.value = "";
 };
-
   const removeGalleryImage = (i) => {
     setForm(prev => ({ ...prev, gallery: prev.gallery.filter((_, idx) => idx !== i) }));
   };
