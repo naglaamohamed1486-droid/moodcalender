@@ -1,7 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "../css/Map.css";
-
 import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
 import MapView from "../components/MapView";
@@ -25,6 +24,11 @@ export default function Map() {
     setTag("All");
   }
 }, [searchParams]);
+const clearFilters = () => {
+  setSearch("");
+  setTag("All");
+  setSelectedPlace(null);
+};
 
   const places = Array.isArray(placesData) ? placesData : [];
 
@@ -83,6 +87,12 @@ export default function Map() {
             tag={tag}
             setTag={setTag}
           />
+        <button
+          className="clear-btn"
+          onClick={clearFilters}
+        >
+          ✕ Clear
+        </button>
 
           <div className="places-counter">
             {filteredPlaces.length} Places

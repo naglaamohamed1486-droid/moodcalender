@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import BookingStepper from "../components/booking/BookingStepper";
-import FlightChoice from "../components/booking/FlightChoice";
-import FlightForm from "../components/booking/FlightForm";
-import TripPlanning from "../components/booking/TripPlanning";
-import Reservations from "../components/booking/Reservations";
-import BookingSummary from "../components/booking/BookingSummary";
-import LinkedPlanCard from "../components/booking/LinkedPlanCard";
-import LiveTotal from "../components/booking/LiveTotal";
+import BookingStepper from "../components/Booking/BookingStepper";
+import FlightChoice from "../components/Booking/FlightChoice";
+import FlightForm from "../components/Booking/FlightForm";
+import TripPlanning from "../components/Booking/TripPlanning";
+import Reservations from "../components/Booking/Reservations";
+import BookingSummary from "../components/Booking/BookingSummary";
+import LinkedPlanCard from "../components/Booking/LinkedPlanCard";
+import LiveTotal from "../components/Booking/LiveTotal";
 
 import "../css/Booking.css";
 
@@ -40,6 +40,8 @@ function Booking() {
       </div>
     );
   }
+    console.log("Current step:", step);
+
 
   return (
     <div className="booking-page">

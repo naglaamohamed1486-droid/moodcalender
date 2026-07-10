@@ -106,7 +106,9 @@ export default function PlaceCard({ place, onSelect }) {
 
         if (!place.lat || !place.lng) return;
 
-        onSelect(place);
+        onSelect((prev) =>
+          prev?.id === place.id ? null : place
+        );
       }}
     >
       📍 Show on Map

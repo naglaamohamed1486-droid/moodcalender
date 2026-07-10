@@ -52,9 +52,11 @@ export default function Profile() {
 
   const reader = new FileReader();
   reader.onloadend = async () => {
-    await setUserProfilePic(user.email, reader.result); 
-    updateUser({ profilePic: reader.result });           
-  };
+const imageUrl = await setUserProfilePic(user.email, reader.result);
+
+await updateUser({
+  profilePic: imageUrl,
+});  };
   reader.readAsDataURL(file);
 };
   

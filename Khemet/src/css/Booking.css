@@ -1,28 +1,33 @@
 /* ============================================
-   KhemetDB Booking — recolored to match trip planner
+   KhemetDB Booking — unified with the Khemet trip-planner cards
    ============================================
-   Optional: add these Google Fonts in your index.html <head>
-   for the exact serif headings look:
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+   Add this font import once, in your index.html <head> (or keep the
+   @import below if your build allows runtime CSS imports):
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root{
-  --cream-bg:#F5EDD7;
-  --card-bg:#fcf7ee;
-  --card-border:#decfb8;
-  --gold:#C9A84C;
-  --gold-dark:#d6a537;
-  --gold-soft:#fbf4e8;
-  --teal-dark:#234d67;
-  --text-body:#6f6659;
-  --text-muted:#8a7a5c;
-  --text-label:#C9A84C;
-  --radius-lg:20px;
-  --radius-md:14px;
-  --radius-sm:10px;
-  --shadow-card:0 15px 30px rgba(0,0,0,.06);
-  --font-heading:'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* papyrus cream / deep lapis / antique gold / ochre terracotta / faience teal —
+     same palette as the plan cards, so booking reads as one continuous product */
+  --cream-bg:#f3e8d2;
+  --card-bg:#f8f3e8;
+  --card-border:#e0cfa4;
+  --gold:#c9a24c;
+  --gold-dark:#a8843a;
+  --gold-soft:#f6ecd9;
+  --teal-dark:#16344a;
+  --terracotta:#b8552d;
+  --faience:#4f7d72;
+  --text-body:#6f6650;
+  --text-muted:#8a7c5e;
+  --text-label:#b8552d;
+  --radius-lg:16px;
+  --radius-md:12px;
+  --radius-sm:8px;
+  --shadow-card:0 10px 28px rgba(27,26,20,.1);
+  --font-heading:'Cinzel', Georgia, serif;
+  --font-body:'EB Garamond', Georgia, serif;
 }
 
 .booking-page{
@@ -76,6 +81,7 @@
   align-items:center;
   justify-content:center;
   background:var(--gold-soft);
+  border:1px solid var(--card-border);
   color:var(--text-label);
   font-weight:700;
   font-family:var(--font-heading);
@@ -84,12 +90,14 @@
 
 .step.active .circle{
   background:var(--gold);
+  border-color:var(--gold-dark);
   color:#fff;
 }
 
 .step.done .circle{
   background:var(--teal-dark);
-  color:#fff;
+  border-color:var(--teal-dark);
+  color:var(--gold-soft);
 }
 
 .step span{
@@ -98,6 +106,7 @@
   letter-spacing:.06em;
   text-transform:uppercase;
   color:var(--text-muted);
+  font-family:var(--font-heading);
 }
 
 .step.active span,
@@ -108,7 +117,16 @@
 /* ---------- Card ---------- */
 
 .booking-card{
-  background:var(--card-bg);
+  position:relative;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(184,155,98,.05) 0px,
+      rgba(184,155,98,.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    var(--card-bg);
   border:1px solid var(--card-border);
   border-radius:var(--radius-lg);
   padding:35px;
@@ -119,7 +137,7 @@
   margin-bottom:10px;
   font-family:var(--font-heading);
   color:var(--teal-dark);
-  font-weight:700;
+  font-weight:600;
   font-size:28px;
 }
 
@@ -136,32 +154,37 @@
 
 .next-btn{
   background:var(--gold);
-  color:#fff;
-  border:none;
+  color:#2a2013;
+  border:1px solid var(--gold-dark);
   padding:14px 28px;
   border-radius:var(--radius-sm);
   cursor:pointer;
   font-size:15px;
   font-weight:600;
+  font-family:var(--font-heading);
+  letter-spacing:.3px;
   transition:.2s;
 }
 
 .next-btn:hover{
   background:var(--gold-dark);
+  color:#fff;
 }
 
 .back-btn{
   background:transparent;
-  border:none;
+  border:1px solid transparent;
   padding:14px 20px;
   border-radius:var(--radius-sm);
   cursor:pointer;
   color:var(--text-muted);
   font-weight:600;
+  font-family:var(--font-heading);
 }
 
 .back-btn:hover{
   color:var(--teal-dark);
+  border-color:rgba(22,52,74,.25);
 }
 
 /* ---------- Choice boxes ---------- */
@@ -188,7 +211,7 @@
   align-items:center;
   gap:20px;
   padding:20px;
-  border:2px solid var(--card-border);
+  border:1px solid var(--card-border);
   border-radius:var(--radius-md);
   cursor:pointer;
   transition:.25s;
@@ -241,6 +264,7 @@
   text-transform:uppercase;
   color:var(--text-label);
   margin-bottom:8px;
+  font-family:var(--font-heading);
 }
 
 .flight-grid input,
@@ -266,6 +290,7 @@
   color:var(--teal-dark);
   margin:24px 0 12px;
   font-size:17px;
+  font-weight:600;
 }
 
 .airlines{
@@ -280,7 +305,7 @@
   justify-content:space-between;
   align-items:center;
   padding:18px;
-  border:2px solid var(--card-border);
+  border:1px solid var(--card-border);
   border-radius:var(--radius-md);
   cursor:pointer;
   transition:.3s;
@@ -329,7 +354,7 @@
 }
 
 .trip-day-card p{
-  color:var(--gold-dark);
+  color:var(--terracotta);
   font-weight:bold;
   margin-bottom:12px;
 }
@@ -359,7 +384,7 @@
 .trip-day small{
   display:block;
   margin-bottom:12px;
-  color:var(--gold-dark);
+  color:var(--terracotta);
   font-weight:600;
 }
 
@@ -402,6 +427,29 @@
   font-weight:600;
 }
 
+.place-booking input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  accent-color:var(--gold);
+  margin:0;
+}
+
+.place-booking label:has(input[type="checkbox"]){
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+.ticket-label{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  width:100%;
+}
+
 /* ============================================
    Hero header ("Plan & book in 4 steps")
    ============================================ */
@@ -414,18 +462,19 @@
   display:inline-flex;
   align-items:center;
   gap:8px;
-  font-size:12px;
+  font-size:11px;
   font-weight:700;
-  letter-spacing:.12em;
+  letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--text-label);
   margin-bottom:14px;
+  font-family:var(--font-heading);
 }
 
 .booking-hero-title{
   font-family:var(--font-heading);
-  font-size:40px;
-  font-weight:700;
+  font-size:38px;
+  font-weight:600;
   color:var(--teal-dark);
   margin-bottom:10px;
 }
@@ -433,6 +482,8 @@
 .booking-hero-subtitle{
   color:var(--text-muted);
   font-size:16px;
+  font-family:var(--font-body);
+  font-style:italic;
 }
 
 /* ---------- "Linked to trip" saved-trip card ---------- */
@@ -460,6 +511,7 @@
   height:44px;
   border-radius:50%;
   background:var(--gold);
+  border:1px solid var(--gold-dark);
   color:#fff;
   display:flex;
   align-items:center;
@@ -474,6 +526,7 @@
   text-transform:uppercase;
   color:var(--text-label);
   margin-bottom:2px;
+  font-family:var(--font-heading);
 }
 
 .linked-trip-title{
@@ -486,17 +539,39 @@
   color:var(--text-muted);
   font-size:14px;
   margin-top:2px;
+  font-style:italic;
 }
 
+/* cartouche-style badge, matching the plan-card badge treatment */
 .linked-trip-badge{
+  position:relative;
   background:var(--teal-dark);
-  color:#fff;
-  font-size:13px;
+  color:var(--cream-bg);
+  font-size:12px;
   font-weight:600;
-  padding:8px 16px;
+  font-family:var(--font-heading);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  padding:8px 20px;
   border-radius:999px;
   white-space:nowrap;
 }
+
+.linked-trip-badge::before,
+.linked-trip-badge::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  border:2px solid currentColor;
+  transform:translateY(-50%);
+  opacity:.85;
+}
+
+.linked-trip-badge::before{ left:4px; }
+.linked-trip-badge::after{ right:4px; }
 
 /* ============================================
    Booking layout (form + sidebar)
@@ -518,7 +593,15 @@
 /* ---------- Live Total sidebar ---------- */
 
 .live-total-card{
-  background:var(--card-bg);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(184,155,98,.05) 0px,
+      rgba(184,155,98,.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    var(--card-bg);
   border:1px solid var(--card-border);
   border-radius:var(--radius-lg);
   padding:26px;
@@ -534,12 +617,13 @@
   text-transform:uppercase;
   color:var(--text-label);
   margin-bottom:10px;
+  font-family:var(--font-heading);
 }
 
 .live-total-amount{
   font-family:var(--font-heading);
-  font-size:38px;
-  font-weight:700;
+  font-size:36px;
+  font-weight:600;
   color:var(--teal-dark);
   margin-bottom:6px;
 }
@@ -550,6 +634,7 @@
   margin-bottom:20px;
   padding-bottom:20px;
   border-bottom:1px solid var(--card-border);
+  font-style:italic;
 }
 
 .live-total-line{
@@ -563,6 +648,7 @@
 
 .live-total-line .icon{
   margin-right:8px;
+  color:var(--terracotta);
 }
 
 .live-total-note{
@@ -578,7 +664,7 @@
 }
 
 /* ============================================
-   Stepper v2 (horizontal circle + label, used on the reference-style layout)
+   Stepper v2 (horizontal circle + label)
    ============================================ */
 
 .stepper-track{
@@ -601,13 +687,14 @@
 }
 
 .stepper-circle{
-  width:38px;
-  height:38px;
+  width:36px;
+  height:36px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   background:var(--gold-soft);
+  border:1px solid var(--card-border);
   color:var(--text-label);
   font-weight:700;
   font-family:var(--font-heading);
@@ -617,12 +704,14 @@
 
 .stepper-node.active .stepper-circle{
   background:var(--gold);
+  border-color:var(--gold-dark);
   color:#fff;
 }
 
 .stepper-node.done .stepper-circle{
   background:var(--teal-dark);
-  color:#fff;
+  border-color:var(--teal-dark);
+  color:var(--gold-soft);
 }
 
 .stepper-eyebrow{
@@ -631,6 +720,7 @@
   letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--text-label);
+  font-family:var(--font-heading);
 }
 
 .stepper-node.active .stepper-eyebrow,
@@ -686,6 +776,7 @@
 
 .modal-card{
   background:var(--card-bg);
+  border:1px solid var(--card-border);
   border-radius:var(--radius-lg);
   padding:32px;
   max-width:460px;
@@ -712,7 +803,8 @@
 
 .modal-title{
   font-family:var(--font-heading);
-  font-size:26px;
+  font-size:24px;
+  font-weight:600;
   color:var(--teal-dark);
   margin-bottom:14px;
 }
@@ -722,6 +814,7 @@
   font-size:15px;
   line-height:1.6;
   margin-bottom:28px;
+  font-family:var(--font-body);
 }
 
 .modal-body strong{
@@ -742,6 +835,7 @@
   font-weight:600;
   cursor:pointer;
   padding:12px 8px;
+  font-family:var(--font-heading);
 }
 
 .modal-btn-secondary:hover{
@@ -750,12 +844,13 @@
 
 .modal-btn-primary{
   background:var(--gold);
-  color:#fff;
-  border:none;
+  color:#2a2013;
+  border:1px solid var(--gold-dark);
   padding:13px 26px;
   border-radius:var(--radius-sm);
   font-weight:600;
   font-size:15px;
+  font-family:var(--font-heading);
   cursor:pointer;
   display:flex;
   align-items:center;
@@ -765,8 +860,12 @@
 
 .modal-btn-primary:hover{
   background:var(--gold-dark);
+  color:#fff;
 }
 
+/* ============================================
+   Hover lift for cards + buttons
+   ============================================ */
 
 .booking-card,
 .linked-trip-card,
@@ -782,7 +881,7 @@
 .linked-trip-card:hover,
 .live-total-card:hover{
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0,0,0,.09);
+  box-shadow: 0 18px 40px rgba(27,52,74,.14);
 }
 
 .trip-day:hover,
@@ -790,14 +889,13 @@
 .place-booking:hover{
   transform: translateY(-2px);
   border-color: var(--gold);
-  box-shadow: 0 10px 24px rgba(0,0,0,.07);
+  box-shadow: 0 10px 24px rgba(27,26,20,.08);
 }
 
 .airline:hover{
   transform: translateY(-2px);
 }
 
-/* buttons */
 .next-btn,
 .back-btn,
 .modal-btn-primary,
@@ -814,97 +912,178 @@
 .next-btn:hover,
 .modal-btn-primary:hover{
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(201,168,76,.35);
+  box-shadow: 0 10px 20px rgba(201,162,76,.35);
 }
 
 .back-btn:hover,
 .modal-btn-secondary:hover{
   transform: translateY(-1px);
 }
-EOF
-Output
+/* ===========================
+   BOOKING SUMMARY
+=========================== */
 
-/* ==== NEW: hover lift for cards + buttons ==== */
-
-.booking-card,
-.linked-trip-card,
-.live-total-card,
-.trip-day,
-.trip-day-card,
-.place-booking,
-.airline{
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+.summary-section{
+    margin-top:32px;
 }
 
-.booking-card:hover,
-.linked-trip-card:hover,
-.live-total-card:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(0,0,0,.09);
+.summary-section h3{
+    color:#6d5622;
+    margin-bottom:14px;
+    font-size:1.15rem;
+    font-weight:700;
 }
 
-.trip-day:hover,
-.trip-day-card:hover,
-.place-booking:hover{
-  transform: translateY(-2px);
-  border-color: var(--gold);
-  box-shadow: 0 10px 24px rgba(0,0,0,.07);
+.summary-box{
+    background:#fff;
+    border:1px solid #e7dcc0;
+    border-radius:18px;
+    padding:20px 24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-.airline:hover{
-  transform: translateY(-2px);
+.summary-box h4{
+    color:#4a3b15;
+    margin-bottom:10px;
+    font-size:1.2rem;
 }
 
-/* buttons */
-.next-btn,
-.back-btn,
-.modal-btn-primary,
-.modal-btn-secondary,
-.close-organizer,
-.secondary-btn,
-.danger-btn,
-.save-trip-btn,
-.blank-trip-btn,
-.book-trip-btn{
-  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+.summary-box p{
+    margin:10px 0;
+    color:#6d6d6d;
+    line-height:1.6;
 }
 
-.next-btn:hover,
-.modal-btn-primary:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(201,168,76,.35);
+.summary-reservation{
+    background:#faf7ef;
+    border-left:5px solid #c9a84c;
+    padding:16px 18px;
+    border-radius:12px;
+    margin-bottom:18px;
 }
 
-.back-btn:hover,
-.modal-btn-secondary:hover{
-  transform: translateY(-1px);
-}
-.place-booking input[type="checkbox"]{
-  width:18px;
-  height:18px;
-  flex-shrink:0;
-  accent-color:var(--gold);
+.summary-reservation h4{
+    color:#5f4b17;
+    margin-bottom:10px;
 }
 
-.place-booking label:has(input[type="checkbox"]){
-  display:flex;
-  align-items:center;
-  gap:8px;
-  cursor:pointer;
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:14px 0;
+    color:#555;
 }
 
-.ticket-label{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  cursor:pointer;
-  width:100%;
+.total-row{
+    margin-top:18px;
+    font-size:1.2rem;
+    color:#000;
 }
 
-.place-booking input[type="checkbox"]{
-  width:18px;
-  height:18px;
-  flex-shrink:0;
-  accent-color:var(--gold);
-  margin:0;
+.payment-select{
+    width:100%;
+    padding:14px 18px;
+    border-radius:12px;
+    border:1px solid #d8cba8;
+    font-size:15px;
+    background:#fff;
+    outline:none;
+}
+
+.payment-select:focus{
+    border-color:#c9a84c;
+}
+
+.policy-box{
+    background:#fff8e5;
+    border:1px solid #edd58a;
+    border-radius:14px;
+    padding:18px;
+    color:#6b5a2c;
+    line-height:1.8;
+}
+
+.summary-actions{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    margin-top:35px;
+}
+
+.summary-back{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#ececec;
+    cursor:pointer;
+    font-weight:600;
+    transition:.25s;
+}
+
+.summary-back:hover{
+    background:#dcdcdc;
+}
+
+.summary-confirm{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#c9a84c,#b48d28);
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.summary-confirm:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(201,168,76,.35);
+}
+
+.status{
+    padding:4px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.status.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.booking-success{
+    text-align:center;
+    padding:40px 10px;
+}
+
+.success-icon{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#32b86c;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    margin-bottom:22px;
+}
+
+.booking-success h2{
+    color:#2f7f46;
+    margin-bottom:12px;
+}
+
+.booking-success p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.summary-box strong{
+    color:#333;
 }
