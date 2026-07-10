@@ -21,27 +21,35 @@ function PlaceDetails() {
       top: 0,
       behavior: 'smooth'
     });
-    const found = placesData.find((p) => p.id === parseInt(id));
-    setPlace(found);
+const allPlaces = [
+  ...placesData,
+  ...(user?.contributions || []).filter(
+    (p) => p.status === "approved" || p.status === "pending"
+  ),
+];
 
-    if (found) {
-      const similar = placesData.filter((p) => {
-        if (p.id === found.id) return false;
+const found = allPlaces.find((p) => p.id === parseInt(id));
 
-        const sameCity = p.city === found.city;
-        const commonTags = p.tags?.some((tag) => found.tags?.includes(tag));
+setPlace(found);
 
-        return sameCity || commonTags;
-      });
+if (found) {
+  const similar = allPlaces.filter((p) => {
+    if (p.id === found.id) return false;
 
-      const sorted = similar.sort((a, b) => {
-        const aScore = a.city === found.city ? 2 : 0;
-        const bScore = b.city === found.city ? 2 : 0;
-        return bScore - aScore;
-      });
+    const sameCity = p.city === found.city;
+    const commonTags = p.tags?.some((tag) => found.tags?.includes(tag));
 
-      setRelatedPlaces(sorted.slice(0, 3));
-    }
+    return sameCity || commonTags;
+  });
+
+  const sorted = similar.sort((a, b) => {
+    const aScore = a.city === found.city ? 2 : 0;
+    const bScore = b.city === found.city ? 2 : 0;
+    return bScore - aScore;
+  });
+
+  setRelatedPlaces(sorted.slice(0, 3));
+}
   }, [id]);
 
   if (!place) {
