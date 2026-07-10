@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
-import { setUserProfilePic , getUserProfilePic } from "../components/PicCache";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { auth, db } from "../firebase";
 
 function stripImages(place) {
   const { coverImage, gallery, ...rest } = place;
@@ -15,144 +17,133 @@ export function syncUserInStorage(updatedUser) {
   localStorage.setItem("users", JSON.stringify(updatedUsers));
 }
 
-
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem("user");
-    return stored ? JSON.parse(stored) : null; 
-  });
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
+  const [savedTrips, setSavedTrips] = useState([]);
 
- 
   useEffect(() => {
-    if (user?.email && !user.profilePic) {
-      getUserProfilePic(user.email).then((pic) => {
-        if (pic) setUser((prev) => ({ ...prev, profilePic: pic }));
-      });
-    }
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
+        const userData = userDoc.data();
+
+        const fullUser = {
+          ...userData,
+          uid: firebaseUser.uid,
+        };
+
+        setUser(fullUser);
+        setFavorites(userData?.favorites || []);
+        setSavedTrips(userData?.savedTrips || []);
+      } else {
+        setUser(null);
+        setFavorites([]);
+        setSavedTrips([]);
+      }
+
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  const [favorites, setFavorites] = useState([]);
+  const login = (userData) => {
+    setUser(userData);
+    setFavorites(userData.favorites || []);
+    setSavedTrips(userData.savedTrips || []);
+  };
 
-
-  useEffect(() => {
-    if (user) {
-      setFavorites(user.favorites || []);
-      setSavedTrips(user.savedTrips || []);
-    }
-  }, [user]);
-
-
- const login = async (userData) => {
-  const pic = await getUserProfilePic(userData.email);
-  const fullUser = { ...userData, profilePic: pic || null };
-
-  const { profilePic, ...safeForStorage } = fullUser;
-  localStorage.setItem("user", JSON.stringify(safeForStorage)); 
-
-  setUser(fullUser);       
-  setFavorites(userData.favorites || []);
-  setSavedTrips(userData.savedTrips || []);
-};
-
-  const logout = () => {
+  const logout = async () => {
+    await auth.signOut();
     setUser(null);
     setFavorites([]);
     setSavedTrips([]);
     localStorage.removeItem("user");
   };
 
-
-  const updateUser = (newData) => {
+  const updateUser = async (newData) => {
     if (!user) return;
+
     const updated = { ...user, ...newData };
-    const { profilePic, ...safeUser } = updated;
-    const safeForStorage = {
-    ...safeUser,
-    contributions: (safeUser.contributions || []).map(stripImages),
-  };
     setUser(updated);
-    localStorage.setItem("user", JSON.stringify(safeForStorage));
+    const { uid, ...safeData } = updated;
+
+    const safeForStorage = {
+      ...safeData,
+      contributions: (safeData.contributions || []).map(stripImages),
+    };
+
+    await updateDoc(doc(db, "users", user.uid), safeForStorage);
     syncUserInStorage(safeForStorage);
   };
 
-  const toggleFavorite = (place) => {
+  const toggleFavorite = async (place) => {
     if (!user) return;
+
     const exists = favorites.some((f) => f.id === place.id);
+
     const updatedFavorites = exists
       ? favorites.filter((f) => f.id !== place.id)
       : [...favorites, place];
 
     setFavorites(updatedFavorites);
+
     const updatedUser = { ...user, favorites: updatedFavorites };
     setUser(updatedUser);
-    localStorage.setItem("user", JSON.stringify(updatedUser));
-    const safeForStorage = {
-    ...updatedUser,
-    contributions: (updatedUser.contributions || []).map(stripImages),
-  };
-    syncUserInStorage(safeForStorage);
+
+    await updateDoc(doc(db, "users", user.uid), {
+      favorites: updatedFavorites,
+    });
   };
 
-  const isFavorite = (id) => {
-    return favorites.some((f) => f.id === id);
+  const isFavorite = (id) => favorites.some((f) => f.id === id);
+
+  const saveTrip = async (trip) => {
+    if (!user) return;
+
+    const updatedTrips = [...savedTrips, trip];
+    setSavedTrips(updatedTrips);
+
+    const updatedUser = { ...user, savedTrips: updatedTrips };
+    setUser(updatedUser);
+
+    await updateDoc(doc(db, "users", user.uid), {
+      savedTrips: updatedTrips,
+    });
   };
 
-  const [savedTrips, setSavedTrips] = useState(
-      user?.savedTrips || []
-  );
-  const saveTrip = (trip) => {
-    console.log(trip);
-  if (!user) return;
+  const deleteTrip = async (index) => {
+    const updatedTrips = savedTrips.filter((_, i) => i !== index);
+    setSavedTrips(updatedTrips);
 
-  const updatedTrips = [...savedTrips, trip];
+    const updatedUser = { ...user, savedTrips: updatedTrips };
+    setUser(updatedUser);
 
-  setSavedTrips(updatedTrips);
-
-  const updatedUser = {
-    ...user,
-    savedTrips: updatedTrips,
+    await updateDoc(doc(db, "users", user.uid), {
+      savedTrips: updatedTrips,
+    });
   };
 
-  setUser(updatedUser);
+  const duplicateTrip = async (index) => {
+    const copy = {
+      ...savedTrips[index],
+      name: savedTrips[index].name + " Copy",
+    };
 
-  localStorage.setItem("user", JSON.stringify(updatedUser));
-  syncUserInStorage(updatedUser);
-};
-const deleteTrip = (index) => {
-  const updatedTrips = savedTrips.filter((_, i) => i !== index);
+    const updatedTrips = [...savedTrips, copy];
+    setSavedTrips(updatedTrips);
 
-  setSavedTrips(updatedTrips);
+    const updatedUser = { ...user, savedTrips: updatedTrips };
+    setUser(updatedUser);
 
-  const updatedUser = {
-    ...user,
-    savedTrips: updatedTrips,
+    await updateDoc(doc(db, "users", user.uid), {
+      savedTrips: updatedTrips,
+    });
   };
 
-  setUser(updatedUser);
-
-  localStorage.setItem("user", JSON.stringify(updatedUser));
-  syncUserInStorage(updatedUser);
-};
-const duplicateTrip = (index) => {
-  const copy = {
-    ...savedTrips[index],
-    name: savedTrips[index].name + " Copy",
-  };
-
-  const updatedTrips = [...savedTrips, copy];
-
-  setSavedTrips(updatedTrips);
-
-  const updatedUser = {
-    ...user,
-    savedTrips: updatedTrips,
-  };
-
-  setUser(updatedUser);
-
-  localStorage.setItem("user", JSON.stringify(updatedUser));
-  syncUserInStorage(updatedUser);
-};
+  if (loading) return null;
 
   return (
     <AuthContext.Provider
