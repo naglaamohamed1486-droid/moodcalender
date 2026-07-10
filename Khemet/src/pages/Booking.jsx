@@ -20,6 +20,13 @@ function Booking() {
   const [step, setStep] = useState(1);
   const [showFlightForm, setShowFlightForm] = useState(false);
 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [step, showFlightForm]);
+
   const [booking, setBooking] = useState({
     plan: selectedPlan,
     flight: null,

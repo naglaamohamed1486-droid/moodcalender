@@ -707,7 +707,7 @@ cursor:pointer;
 
 .latest-header h2{
 
-    margin-top:8px;
+    /* margin-top:8px;
 
     font-size:38px;
 
@@ -715,7 +715,13 @@ cursor:pointer;
 
     font-family:Georgia, serif;
 
-    font-weight:600;
+    font-weight:600; */
+    margin-top: 10px;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #1B4F6B;
+  font-family: Georgia, serif;
 }
 
 .latest-header .saved-step{
@@ -769,6 +775,7 @@ cursor:pointer;
 
     transform:translateX(4px);
 }
+
 /* ==========================
    Blank Trip Box
 ========================== */
@@ -798,13 +805,19 @@ cursor:pointer;
 
 .blank-trip-box h3{
 
-    margin:0 0 12px;
+    /* margin:0 0 12px;
 
-    font-size:30px;
+    font-size:25px;
 
     color:#234d67;
 
-    font-family:Georgia, serif;
+    font-family:Georgia, serif; */
+    margin-top: 10px;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #1B4F6B;
+  font-family: Georgia, serif;
 }
 
 .blank-trip-box p{
@@ -818,6 +831,7 @@ cursor:pointer;
     line-height:1.7;
 
     font-size:16px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
 }
 
 .blank-trip-btn{
