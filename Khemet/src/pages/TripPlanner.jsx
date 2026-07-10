@@ -378,6 +378,7 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
   return plans;
 }
 function TripPlanner() {
+  
   //Booking
   const handleBooking = async (plan) => {
 
@@ -419,6 +420,7 @@ function TripPlanner() {
 
 
   const organizerRef = useRef(null);
+  const plansRef = useRef(null);
   // const [savedTrips, setSavedTrips] = useState([]);
 
   // const saveTrip = () => {
@@ -526,6 +528,15 @@ useEffect(() => {
   }
 }, [location, navigate]);
 
+useEffect(() => {
+  if (plans.length > 0) {
+    plansRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}, [plans]);
+
 const { savedTrips } = useAuth();
   return (
     <div className="trip-page">
@@ -551,7 +562,7 @@ const { savedTrips } = useAuth();
       
 
       {plans.length > 0 && !editingTrip && (
-        <>
+        <div ref={plansRef}>
           <div className="plans-header">
             <div className="plans-step">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -583,7 +594,7 @@ const { savedTrips } = useAuth();
 />
             ))}
           </div>
-        </>
+        </div>
       )}
 
       {showPreview && (

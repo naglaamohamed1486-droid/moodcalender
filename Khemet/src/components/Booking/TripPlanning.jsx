@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toast from "../Toast";
 
 function TripPlanning({
   booking,
@@ -9,6 +10,29 @@ function TripPlanning({
   const [startDate, setStartDate] = useState(
     booking.startDate || ""
   );
+
+  const [toast, setToast] = useState({
+  visible: false,
+  message: "",
+  type: "error",
+});
+
+const showToast = (message, type = "error") => {
+  setToast({
+    visible: true,
+    message,
+    type,
+  });
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(() => {
+    setToast((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+  }, 2500);
+};
 
   const itinerary = booking.plan.itinerary.map((day, index) => {
     if (Array.isArray(day)) {
@@ -23,12 +47,12 @@ function TripPlanning({
 
   const handleContinue = () => {
     if (!startDate) {
-      alert("Please choose a start date.");
+      showToast("Please choose a trip start date.");
       return;
     }
 
     if (startDate < today) {
-      alert("Trip start date cannot be in the past.");
+      showToast("Trip start date cannot be in the past.");
       return;
     }
 
@@ -67,6 +91,7 @@ function TripPlanning({
   const today = new Date().toISOString().split("T")[0];
 
   return (
+    <>
     <div className="booking-card">
 
       <h2>Trip Schedule</h2>
@@ -118,6 +143,7 @@ function TripPlanning({
           }
 
           return (
+          
 
             <div
               key={index}
@@ -217,9 +243,18 @@ function TripPlanning({
         </button>
 
       </div>
+      
 
     </div>
+    <Toast
+    visible={toast.visible}
+    message={toast.message}
+    type={toast.type}
+  />
+    </>
+  
   );
+  
 }
 
 export default TripPlanning;
