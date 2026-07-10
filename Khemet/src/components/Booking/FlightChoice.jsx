@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toast from "../Toast";
 
 function FlightChoice({
   booking,
@@ -8,13 +9,35 @@ function FlightChoice({
 }) {
 
   const [choice, setChoice] = useState(null);
+  const [toast, setToast] = useState({
+  visible: false,
+  message: "",
+  type: "error",
+});
+
+const showToast = (message, type = "error") => {
+  setToast({
+    visible: true,
+    message,
+    type,
+  });
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(() => {
+    setToast((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+  }, 2500);
+};
 
   const handleContinue = () => {
 
-    if (choice === null) {
-      alert("Please choose an option.");
-      return;
-    }
+   if (choice === null) {
+  showToast("Please choose a flight option first.");
+  return;
+}
 
     if (choice) {
 
@@ -40,6 +63,7 @@ function FlightChoice({
   };
 
   return (
+    <>
 
     <div className="booking-card">
 
@@ -136,9 +160,14 @@ function FlightChoice({
       </div>
 
     </div>
+    <Toast
+    visible={toast.visible}
+    message={toast.message}
+    type={toast.type}
+  />
+  </>
 
   );
-
 }
 
 export default FlightChoice;

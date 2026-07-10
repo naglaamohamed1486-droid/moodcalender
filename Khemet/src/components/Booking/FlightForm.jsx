@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toast from "../Toast";
 
 const classMultiplier = {
   Economy: 1,
@@ -54,6 +55,29 @@ const today = new Date().toISOString().split("T")[0];
     price: 0,
   });
 
+  const [toast, setToast] = useState({
+  visible: false,
+  message: "",
+  type: "error",
+});
+
+const showToast = (message, type = "error") => {
+  setToast({
+    visible: true,
+    message,
+    type,
+  });
+
+  clearTimeout(window.toastTimer);
+
+  window.toastTimer = setTimeout(() => {
+    setToast((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+  }, 2500);
+};
+
   const chooseAirline = (item) => {
   setFlight({
     ...flight,
@@ -70,11 +94,11 @@ const today = new Date().toISOString().split("T")[0];
       !flight.departureDate ||
       !flight.airline
     ) {
-      alert("Please complete all required fields.");
+      showToast("Please complete all required fields.");
       return;
     }
     if (flight.departureDate < today) {
-     alert("Departure date cannot be in the past.");
+     showToast("Departure date cannot be in the past.");
      return;
   }
 
@@ -88,6 +112,7 @@ const today = new Date().toISOString().split("T")[0];
   };
 
   return (
+     <>
 
     <div className="booking-card">
 
@@ -258,6 +283,12 @@ const today = new Date().toISOString().split("T")[0];
       </div>
 
     </div>
+    <Toast
+      visible={toast.visible}
+      message={toast.message}
+      type={toast.type}
+    />
+    </>
 
   );
 
