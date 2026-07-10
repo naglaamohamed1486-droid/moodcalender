@@ -283,67 +283,81 @@ export default function AddPlace() {
   };
 
   // ── submit ────────────────────────────────────────────────
-  const handleSubmit = () => {
-    const e = validate();
+  const handleSubmit = async () => {
+  const e = validate();
 
-    if (Object.keys(e).length > 0) {
-      setErrors(e);
+  if (Object.keys(e).length > 0) {
+    setErrors(e);
 
-      const firstKey = FIELD_ORDER.find((key) => e[key]);
-      const missingCount = Object.keys(e).length;
-      const firstMessage = e[firstKey] || "Please fill in the required fields";
+    const firstKey = FIELD_ORDER.find((key) => e[key]);
+    const missingCount = Object.keys(e).length;
+    const firstMessage = e[firstKey] || "Please fill in the required fields";
 
-      showToast(
-        "error",
-        missingCount > 1 ? `${firstMessage} (+${missingCount - 1} more)` : firstMessage
-      );
-      return;
-    }
-      const submittedForm = (!form.gallery || form.gallery.length === 0)
-    ? { ...form, gallery: [form.coverImage] }
-    : form;
+    showToast(
+      "error",
+      missingCount > 1
+        ? `${firstMessage} (+${missingCount - 1} more)`
+        : firstMessage
+    );
+    return;
+  }
 
-    try {
-      const nextId = getNextId();
-      const placeFields = { ...form };
-      delete placeFields.rating;
-      delete placeFields.reviewText;
-      delete placeFields.coverImage;
-      delete placeFields.gallery;
+  const submittedForm =
+    !form.gallery || form.gallery.length === 0
+      ? { ...form, gallery: [form.coverImage] }
+      : form;
 
-      let newPlace = {
-        ...placeFields,
-        id: nextId,
-        lat: parseFloat(form.lat),
-        lng: parseFloat(form.lng),
-        rating: 0,
-        reviews: 0,
-        reviewsList: [],
-        addedByname: user.name,
-        addedByemail: user.email,
-        createdAt: Date.now(),
-        status:'pending'
-      };
+  try {
+    const nextId = getNextId();
 
-      newPlace = addReviewToPlace(newPlace, {
-        rating: form.rating,
-        text: form.reviewText,
-        author: user.email,
-      });
+    const placeFields = { ...submittedForm };
+    delete placeFields.rating;
+    delete placeFields.reviewText;
+    delete placeFields.coverImage;
+    delete placeFields.gallery;
 
-      setPlaceImages(newPlace.id, {
-        coverImage: form.coverImage,
-        gallery: form.gallery,
-      });
+    let newPlace = {
+      ...placeFields,
+      id: nextId,
+      lat: parseFloat(submittedForm.lat),
+      lng: parseFloat(submittedForm.lng),
+      rating: 0,
+      reviews: 0,
+      reviewsList: [],
+      addedByname: user.name,
+      addedByemail: user.email,
+      createdAt: Date.now(),
+      status: "pending",
+    };
 
-      updateUser({ contributions: [...(user.contributions || []), newPlace] });
-      showToast("success", "Place added successfully");
-      setTimeout(() => navigate("/contributions"), 1800);
-    } catch (err) {
-      console.error("Submit failed:", err);
-      showToast("error", `Something went wrong: ${err.message}`);
-    }
-  };
+    newPlace = addReviewToPlace(newPlace, {
+      rating: submittedForm.rating,
+      text: submittedForm.reviewText,
+      author: user.email,
+    });
+
+    const images = await setPlaceImages(newPlace.id, {
+      coverImage: submittedForm.coverImage,
+      gallery: submittedForm.gallery,
+    });
+
+    newPlace = {
+      ...newPlace,
+      coverImage: images.coverImage,
+      gallery: images.gallery,
+    };
+
+    await updateUser({
+      contributions: [...(user.contributions || []), newPlace],
+    });
+
+    showToast("success", "Place added successfully");
+    setTimeout(() => navigate("/contributions"), 1800);
+  } catch (err) {
+    console.error("Submit failed:", err);
+    showToast("error", `Something went wrong: ${err.message}`);
+  }
+};
   return (
     <div className="addplace-main">
       <Toast message={toast.message} visible={toast.visible} type={toast.type} />
