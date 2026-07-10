@@ -207,7 +207,7 @@ const showToast = (type, message) => {
       return e;
   };
 
- const handleSave = () => {
+const handleSave = async () => {
   const e = validate();
 
   if (Object.keys(e).length > 0) {
@@ -219,7 +219,6 @@ const showToast = (type, message) => {
     return;
   }
 
-  // If this place already went through review, editing it resends it to the admin queue
   const wasReviewed = editTarget.status === "approved" || editTarget.status === "rejected";
 
   const updatedContributions = contributions.map((p) => {
@@ -236,23 +235,27 @@ const showToast = (type, message) => {
     };
   });
 
-  updateUser({ contributions: updatedContributions });
-  showToast(
-    "update",
-    wasReviewed ? "Place updated & resent for admin review" : "Place updated"
-  );
-  closeEdit();
+  try {
+    await updateUser({ contributions: updatedContributions });
+    showToast(
+      "update",
+      wasReviewed ? "Place updated & resent for admin review" : "Place updated"
+    );
+    closeEdit();
+  } catch (err) {
+    console.error("Save failed:", err);
+    showToast("error", `Couldn't save changes: ${err.message}`);
+  }
 };
 
-
- const handleDelete = async (id) => {
+const handleDelete = async (id) => {
   try {
     await deletePlaceImages(id);
 
     const updatedContributions = (user.contributions || []).filter((p) => p.id !== id);
     const updatedFavorites = (user.favorites || []).filter((p) => p.id !== id);
 
-    updateUser({
+    await updateUser({
       contributions: updatedContributions,
       favorites: updatedFavorites,
     });

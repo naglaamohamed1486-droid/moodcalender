@@ -1,4 +1,6 @@
 import placesData from "../places.json";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 export const CATEGORIES = [
   { id: "nature", title: "Nature", desc: "Parks, deserts, mountains" },
@@ -448,23 +450,38 @@ cityCoords: {
 ];
 
 // ── Derived place data (replaces the standalone "places" localStorage key) ──
+export async function getAllContributedPlaces() {
+  const snap = await getDocs(collection(db, "users"));
+  const places = [];
 
-export function getAllContributedPlaces() {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  return users.flatMap((u) => u.contributions || []);
+  snap.forEach((userDoc) => {
+    const u = userDoc.data();
+    (u.contributions || []).forEach((place) => {
+      places.push({
+        ...place,
+        ownerId: userDoc.id,
+        ownerEmail: u.email,
+        ownerName: u.name,
+      });
+    });
+  });
+
+  return places;
 }
 
-export function getApprovedPlaces() {
-  return getAllContributedPlaces().filter((p) => p.status === "approved");
+export async function getApprovedPlaces() {
+  const places = await getAllContributedPlaces();
+  return places.filter((p) => p.status === "approved");
 }
 
 const FALLBACK_LAST_ID = 200;
 
-export function getNextId() {
+export async function getNextId() {
+  const contributed = await getAllContributedPlaces();
   const ids = [
     FALLBACK_LAST_ID,
     ...placesData.map((p) => p.id),
-    ...getAllContributedPlaces().map((p) => p.id),
+    ...contributed.map((p) => p.id),
   ];
   return Math.max(...ids) + 1;
 }

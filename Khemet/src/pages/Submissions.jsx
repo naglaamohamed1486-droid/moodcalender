@@ -1,18 +1,22 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
+import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { collection, getDocs, doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import { getPlaceImages } from "../components/PicCache";
 import SubDetails from "../components/Submissionsdetails";
 import "../css/Submissions.css";
 
-function loadSubmissions() {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+async function loadSubmissions() {
+  const snap = await getDocs(collection(db, "users"));
   const submissions = [];
-  users.forEach((u) => {
-    (u.contributions || []).forEach((place, i) => {
+
+  snap.forEach((userDoc) => {
+    const u = userDoc.data();
+    (u.contributions || []).forEach((place) => {
       submissions.push({
         ...place,
-        id: place.id || `${u.email}-${i}`,
         status: place.status || "pending",
+        ownerId: userDoc.id,
         ownerEmail: u.email,
         ownerName: u.name,
       });
@@ -22,22 +26,17 @@ function loadSubmissions() {
   return submissions;
 }
 
-function saveSubmissionStatus(submission, newStatus, extra = {}) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+async function saveSubmissionStatus(submission, newStatus, extra = {}) {
+  const userRef = doc(db, "users", submission.ownerId);
+  const userSnap = await getDoc(userRef);
+  if (!userSnap.exists()) return;
 
-  const updated = users.map((u) => {
-    if (u.email !== submission.ownerEmail) return u;
-    return {
-      ...u,
-      contributions: (u.contributions || []).map((place, i) => {
-        const placeId = place.id || `${u.email}-${i}`;
-        if (placeId !== submission.id) return place;
-        return { ...place, status: newStatus, ...extra };
-      }),
-    };
-  });
+  const data = userSnap.data();
+  const updatedContributions = (data.contributions || []).map((place) =>
+    place.id === submission.id ? { ...place, status: newStatus, ...extra } : place
+  );
 
-  localStorage.setItem("users", JSON.stringify(updated));
+  await updateDoc(userRef, { contributions: updatedContributions });
 }
 
 function formatDate(iso) {
@@ -93,32 +92,49 @@ const EditIcon = () => (
 export default function Submissions() {
   const [activeTab, setActiveTab] = useState("pending");
   const [submissions, setSubmissions] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [detailsTarget, setDetailsTarget] = useState(null);
   const [editingReasonId, setEditingReasonId] = useState(null);
   const [reasonDraft, setReasonDraft] = useState("");
 
-  useEffect(() => {
-    setSubmissions(loadSubmissions());
+  const refreshSubmissions = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await loadSubmissions();
+      setSubmissions(data);
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    refreshSubmissions();
+  }, [refreshSubmissions]);
 
   const counts = {
     pending: submissions.filter((s) => s.status === "pending").length,
     approved: submissions.filter((s) => s.status === "approved").length,
     rejected: submissions.filter((s) => s.status === "rejected").length,
-    all:submissions.length,
+    all: submissions.length,
   };
 
   const visible = submissions.filter((s) => s.status === activeTab);
 
-  const handleDecision = (submission, newStatus, extra = {}) => {
-    saveSubmissionStatus(submission, newStatus, extra);
+  const handleDecision = async (submission, newStatus, extra = {}) => {
     setSubmissions((prev) =>
       prev.map((s) =>
-        s.id === submission.id && s.ownerEmail === submission.ownerEmail
+        s.id === submission.id && s.ownerId === submission.ownerId
           ? { ...s, status: newStatus, ...extra }
           : s
       )
     );
+    try {
+      await saveSubmissionStatus(submission, newStatus, extra);
+    } catch (err) {
+      console.error("Failed to update submission:", err);
+
+      refreshSubmissions();
+    }
   };
 
   const handleReReview = (place) => {
@@ -249,10 +265,14 @@ export default function Submissions() {
   </div>
 </div>
       <div className="sub-content">
-        {visible.length > 0 ? (
+        {loading ? (
+          <div className="pf-empty-state">
+            <p className="pf-empty-title">Loading submissions…</p>
+          </div>
+        ) : visible.length > 0 ? (
           <div className="sub-cards-grid">
             {visible.map((place) => (
-              <div key={`${place.ownerEmail}-${place.id}`} className="sub-card" data-status={place.status}>
+              <div key={`${place.ownerId}-${place.id}`} className="sub-card" data-status={place.status}>
                 <div className="sub-card-img">
                   <SubmissionCardImage place={place} />
                    <span className="sub-card-category-badge">{place.category}</span>

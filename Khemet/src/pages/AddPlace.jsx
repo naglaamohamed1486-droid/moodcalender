@@ -308,7 +308,7 @@ export default function AddPlace() {
       : form;
 
   try {
-    const nextId = getNextId();
+    const nextId = await getNextId();
 
     const placeFields = { ...submittedForm };
     delete placeFields.rating;
