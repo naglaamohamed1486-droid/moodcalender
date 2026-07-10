@@ -1,7 +1,7 @@
 import { useState ,useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { deletePlaceImages, getPlaceImages } from "../components/PicCache";
+import { deletePlaceImages } from "../components/PicCache";
 import PlaceCard from "../components/AddPlaceCard";
 import Toast from "../components/toast";
 import "../css/contribution.css";

@@ -1,21 +1,23 @@
 import { ref, uploadString, getDownloadURL, deleteObject } from "firebase/storage";
 import { storage } from "../firebase";
 export async function setPlaceImages(id, { coverImage, gallery }) {
+  const result = {
+    coverImage: "",
+    gallery: [],
+  };
+
   if (coverImage) {
-    const coverRef = ref(storage, `places/${id}/cover`);
-    await uploadString(coverRef, coverImage, "data_url");
+    result.coverImage = await uploadImage(coverImage);
   }
 
   if (gallery && gallery.length > 0) {
-    await Promise.all(
-      gallery.map((img, index) => {
-        const galleryRef = ref(storage, `places/${id}/gallery_${index}`);
-        return uploadString(galleryRef, img, "data_url");
-      })
+    result.gallery = await Promise.all(
+      gallery.map((img) => uploadImage(img))
     );
   }
-}
 
+  return result;
+}
 export async function getPlaceImages(id) {
   try {
     const coverRef = ref(storage, `places/${id}/cover`);
