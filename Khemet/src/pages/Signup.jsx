@@ -74,7 +74,7 @@ export default function Signup() {
 
     showToast("success", "Account created successfully");
     const isAdmin = newUser.role === "admin" || newUser.email === "khemet2026@gmail.com";
-    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 900);
+    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 700);
   };
 
   return (

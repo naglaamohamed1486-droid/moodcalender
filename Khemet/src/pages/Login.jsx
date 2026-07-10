@@ -60,7 +60,7 @@ export default function Login() {
     login(foundUser);
     showToast("success", "Welcome back!");
    const isAdmin = foundUser.role === "admin" || foundUser.email === "khemet2026@gmail.com";
-    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 900);
+    setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 700);
   };
 
   return (
