@@ -4,10 +4,10 @@ import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../firebase";
 
-function stripImages(place) {
-  const { coverImage, gallery, ...rest } = place;
-  return rest;
-}
+// function stripImages(place) {
+//   const { coverImage, gallery, ...rest } = place;
+//   return rest;
+// }
 
 export function syncUserInStorage(updatedUser) {
   const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -63,21 +63,24 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("user");
   };
 
-  const updateUser = async (newData) => {
-    if (!user) return;
+const updateUser = async (newData) => {
+  if (!user) return;
 
-    const updated = { ...user, ...newData };
-    setUser(updated);
-    const { uid, ...safeData } = updated;
+  const updated = { ...user, ...newData };
+  setUser(updated);
 
-    const safeForStorage = {
-      ...safeData,
-      contributions: (safeData.contributions || []).map(stripImages),
-    };
+  const { uid, ...safeData } = updated;
 
-    await updateDoc(doc(db, "users", user.uid), safeForStorage);
-    syncUserInStorage(safeForStorage);
-  };
+  await updateDoc(doc(db, "users", user.uid), {
+    ...safeData,
+    contributions: safeData.contributions || [],
+  });
+
+  syncUserInStorage({
+    ...safeData,
+    uid: user.uid,
+  });
+};
 
   const toggleFavorite = async (place) => {
     if (!user) return;
