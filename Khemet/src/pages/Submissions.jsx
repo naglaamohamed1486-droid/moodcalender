@@ -149,6 +149,7 @@ export default function Submissions() {
 
   return (
     <main className="Submissions">
+      <Link to="/dashboard" className="au-back-link">← Back to Dashboard</Link>
       <h4 className="sub-intro">Admin Controller</h4>
       <h2 className="sub-title">Submissions</h2>
       <p className="sub-det">

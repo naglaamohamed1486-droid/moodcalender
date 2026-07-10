@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import "../css/Card.css";
 import { useAuth } from "../context/AuthContext";
-import { getPlaceImages } from "../components/PicCache"; 
 
 function StatusIcon({ status }) {
   if (status === "approved") {
@@ -26,21 +24,10 @@ function StatusIcon({ status }) {
   );
 }
 
-function Card({ place ,showStatus = false}) {
+function Card({ place, showStatus = false }) {
   const { user, toggleFavorite, isFavorite } = useAuth();
   const saved = isFavorite(place.id);
-  const [coverImage, setCoverImage] = useState(place.coverImage);
 
-  useEffect(() => {
-    if (place.id > 200) {
-      getPlaceImages(place.id).then((cached) => {
-        if (cached?.coverImage) {
-          setCoverImage(cached.coverImage);
-        }
-      });
-    }
-  }, [place.id]);
-  
   const handleSave = (e) => {
     e.preventDefault();
     if (!user) return;
@@ -49,11 +36,11 @@ function Card({ place ,showStatus = false}) {
 
   return (
     <div className="card">
-      
+
       <div className="card-image">
-        <img src={coverImage || place.image} alt={place.title} />
+        <img src={place.coverImage || place.image} alt={place.title} />
         <span className="card-category">{place.category || place.tags?.[0] || "Explore"}</span>
-        {user?.role=="user" &&
+        {user?.role == "user" &&
         <button
           className={`saved-btn ${saved ? "saved-btn--active" : ""}`}
           aria-label="Save"
