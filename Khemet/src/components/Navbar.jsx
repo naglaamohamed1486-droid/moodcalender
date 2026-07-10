@@ -77,7 +77,7 @@ function Navbar() {
 
             {showProfileMenu && (
               <div className="profile-dropdown">
-                {user?.role === "user" && <Link to="/profile" onClick={closeAll}>My Profile</Link>}
+                {user?.role === "user" && <Link to={`/profile/${user.uid}`} onClick={closeAll}>My Profile</Link>}
                 {user?.role === "admin" &&  <Link to="/dashboard" onClick={closeAll}>Dashboard</Link>}
                 {user.role === "user" && <Link to="/favorites" onClick={closeAll}>Favorites</Link>}
                 {user.role === "user" && <Link to="/savedtrips" onClick={closeAll}>My Trips</Link>}
@@ -107,7 +107,7 @@ function Navbar() {
 
           {showProfileMenu && (
             <div className="profile-dropdown">
-              {user.role === "user" && <Link to="/profile" onClick={closeAll}>My Profile</Link>}
+              {user?.role === "user" && <Link to={`/profile/${user.uid}`} onClick={closeAll}>My Profile</Link>}
               {user.role === "admin" &&  <Link to="/dashboard" onClick={closeAll}>Dashboard</Link>}
               {user.role === "user" && <Link to="/favorites" onClick={closeAll}>Favorites</Link>}
               {user.role === "user" && <Link to="/savedtrips" onClick={closeAll}>My Trips</Link>}
