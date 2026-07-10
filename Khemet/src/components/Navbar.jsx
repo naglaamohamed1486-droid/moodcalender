@@ -45,7 +45,7 @@ function Navbar() {
     logout();
     setShowProfileMenu(false);
     setIsMenuOpen(false);
-    navigate("/login");
+    navigate("/");
   };
 
   return (

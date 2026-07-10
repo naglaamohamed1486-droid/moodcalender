@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { getPlaceImages } from "./PicCache";
+import { useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "../css/adminreview.css";
 
@@ -20,19 +19,8 @@ const formatDate = (iso) => {
 };
 
 export default function SubDetails({ place, onDetClose, onhandleDecision }) {
-  const [images, setImages] = useState({ coverImage: "", gallery: [] });
   const [showRejectInput, setShowRejectInput] = useState(false);
   const [reasonText, setReasonText] = useState(place.rejectionReason || "");
-
-  useEffect(() => {
-    let cancelled = false;
-    getPlaceImages(place.id).then((result) => {
-      if (!cancelled) setImages(result || { coverImage: "", gallery: [] });
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [place.id]);
 
   const handleApprove = () => {
     onhandleDecision(place, "approved", {
@@ -71,9 +59,9 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
         <div className="sub-body">
           <section className="sub-section">
             <div className="ep-coverImg">
-              {images.coverImage ? (
+              {place.coverImage ? (
                 <div className="sub-cover-thumb">
-                  <img src={images.coverImage} alt={place.title} />
+                  <img src={place.coverImage} alt={place.title} />
                   <span className="sub-cover-category">
                     {categoryLabel(place.category)}
                   </span>
@@ -161,8 +149,8 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
           <section className="sub-section">
             <h3 className="sub-section-title">Place Gallery</h3>
             <div className="sub-gallery-cont">
-              {images.gallery && images.gallery.length > 0 ? (
-                images.gallery.map((img, i) => (
+              {place.gallery && place.gallery.length > 0 ? (
+                place.gallery.map((img, i) => (
                   <div className="sub-img-gallery" key={i}>
                     <img src={img} alt={`${place.title} ${i + 1}`} />
                   </div>

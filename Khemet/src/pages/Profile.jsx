@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useState, useRef ,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import Card from "../components/Card";
 import PlaceCard from "../components/AddPlaceCard";
 import Toast from "../components/Toast";
@@ -10,13 +12,51 @@ import '../css/profile.css'
 
 
 export default function Profile() {
-  const { user, logout, updateUser } = useAuth();
+  const { id } = useParams();
+  const { user: authUser, logout, updateUser } = useAuth();
+  const isOwnProfile = !id || (authUser && id === authUser.uid);
+  const [viewedUser, setViewedUser] = useState(null);
+  const [loadingViewed, setLoadingViewed] = useState(!isOwnProfile);
+  const [viewError, setViewError] = useState("");
+
+   useEffect(() => {
+    if (isOwnProfile) return;
+    let cancelled = false;
+    setLoadingViewed(true);
+    setViewError("");
+
+    getDoc(doc(db, "users", id))
+      .then((snap) => {
+        if (cancelled) return;
+        if (!snap.exists()) {
+          setViewError("This user doesn't exist.");
+          setViewedUser(null);
+        } else {
+          setViewedUser({ ...snap.data(), uid: id });
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          console.error("Failed to load profile:", err);
+          setViewError("Couldn't load this profile.");
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setLoadingViewed(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [id, isOwnProfile]);
+  
+  const user = isOwnProfile ? authUser : viewedUser;
   const [showEditModal, setShowEditModal] = useState(false);
   const [formData, setFormData] = useState({
-    name: user.name || "",
-    email: user.email || "",
-    location: user.location || "",
-    bio: user.bio || "",
+     name: authUser?.name || "",
+    email: authUser?.email || "",
+    location: authUser?.location || "",
+    bio: authUser?.bio || "",
   });
   const fileInputRef = useRef(null);
   const { savedTrips } = useAuth();
@@ -30,8 +70,21 @@ export default function Profile() {
       setToast((t) => ({ ...t, visible: false }));
     }, 3000);
   };
-  if (!user) {
+  if (!authUser) {
   return <h2>Please login first</h2>;
+  }
+
+   if (!isOwnProfile && loadingViewed) {
+    return <main className="profile-main"><p className="pf-loading-state">Loading profile…</p></main>;
+  }
+
+  if (!isOwnProfile && (viewError || !user)) {
+    return (
+      <main className="profile-main">
+        <p className="pf-empty-title">{viewError || "User not found."}</p>
+        <Link to="/adminUsers" className="pf-empty-btn">← Back to User Administration</Link>
+      </main>
+    );
   }
 
    const formatDate = (ts) => {
@@ -52,20 +105,20 @@ export default function Profile() {
 
   const reader = new FileReader();
   reader.onloadend = async () => {
-const imageUrl = await setUserProfilePic(user.email, reader.result);
+  const imageUrl = await setUserProfilePic(authUser.email, reader.result);
 
-await updateUser({
-  profilePic: imageUrl,
-});  };
-  reader.readAsDataURL(file);
-};
+  await updateUser({
+    profilePic: imageUrl,
+  });  };
+    reader.readAsDataURL(file);
+  };
   
   const handleOpenEdit = () => {
     setFormData({
-      name: user.name || "",
-      email: user.email || "",
-      location: user.location || "",
-      bio: user.bio || "",
+      name: authUser.name || "",
+      email:authUser.email || "",
+      location: authUser.location || "",
+      bio: authUser.bio || "",
     });
     setShowEditModal(true);
   };
@@ -85,10 +138,17 @@ await updateUser({
     <main className="profile-main" >
        <Toast message={toast.message} visible={toast.visible} type={toast.type} />
 
+      {!isOwnProfile && (
+        <div className="pf-viewing-notice">
+          {authUser.role == "admin" && <Link to="/adminUsers" className="pf-viewing-back">← Back to User Administration</Link>}
+          {user.banned && <span className="pf-viewing-banned-tag">Banned</span>}
+        </div>
+      )}
+
       <div className="profile-hero">
         <div className="profile-hero-cont">
         <div className="profile-data">
-          <div className="profile-pic-wrapper" onClick={() => fileInputRef.current.click()}>
+            <div className="profile-pic-wrapper" onClick={() => isOwnProfile && fileInputRef.current.click()} style={{ cursor: isOwnProfile ? "pointer" : "default" }}>
         {user.profilePic ? (
         <img className="profile-pic" src={user.profilePic} alt="profile" />
       ) : (
@@ -105,21 +165,24 @@ await updateUser({
       </svg>
     </div>
   )}
-
-  <div className="profile-pic-overlay">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#FDF8EE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-    <span>Edit</span>
-  </div>
-
-  <input
-    ref={fileInputRef}
-    type="file"
-    accept="image/*"
-    style={{ display: "none" }}
-    onChange={handlePicChange}
-  />
+    {isOwnProfile &&(<div className="profile-pic-overlay">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#FDF8EE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <span>Edit</span>
+              </div>
+                  )}
+  
+      {isOwnProfile && (
+        <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        style={{ display: "none" }}
+        onChange={handlePicChange}
+      />
+        )}
+  
 </div>
           <div className="profile-hero-personal">
           <p className="profile-hero-type">EXPLORER</p>

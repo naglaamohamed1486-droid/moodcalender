@@ -1,24 +1,34 @@
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import placesData from "../places.json";
 import logo from '../assets/logo.png'
 import '../css/dashboard.css'
 
-
-function loadDashboardStats() {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+async function loadDashboardStats() {
+  const snap = await getDocs(collection(db, "users"));
+  const users = [];
+  snap.forEach((d) => users.push(d.data()));
 
   let pending = 0;
   let approved = 0;
   let totalTrips = 0;
 
-  // most-saved places: assumes u.favorites = array of place IDs
   const favoriteCounts = {};
-  // most-added-to-trips: assumes each trip has a `places` array of place IDs
   const tripPlaceCounts = {};
-  // recent activity: flatten all contributions with owner info + timestamp
   const recentSubmissions = [];
+
+  const placeById = {};
+  placesData.forEach((p) => {
+    placeById[p.id] = p;
+  });
+  users.forEach((u) => {
+    (u.contributions || []).forEach((place) => {
+      placeById[place.id] = place;
+    });
+  });
 
   users.forEach((u) => {
     (u.contributions || []).forEach((place, i) => {
@@ -36,29 +46,24 @@ function loadDashboardStats() {
       });
     });
 
-   (u.favorites || []).forEach((place) => {
-     const placeId = place?.id ?? place; 
-    if (placeId == null) return;
-    favoriteCounts[placeId] = (favoriteCounts[placeId] || 0) + 1;
+    (u.favorites || []).forEach((place) => {
+      const placeId = place?.id ?? place;
+      if (placeId == null) return;
+      favoriteCounts[placeId] = (favoriteCounts[placeId] || 0) + 1;
     });
 
-    
     (u.savedTrips || []).forEach((trip) => {
       (trip.places || []).forEach((place) => {
-       
-        tripPlaceCounts[place.id] = (tripPlaceCounts[place.id] || 0) + 1;
+        const placeId = place?.id ?? place;
+        if (placeId == null) return;
+        tripPlaceCounts[placeId] = (tripPlaceCounts[placeId] || 0) + 1;
       });
     });
 
     totalTrips += (u.savedTrips || []).length;
   });
 
-  const placeById = {};
-  placesData.forEach((p) => {
-    placeById[p.id] = p;
-  });
-    
-     const topFavorites = Object.entries(favoriteCounts)
+  const topFavorites = Object.entries(favoriteCounts)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
     .map(([placeId, count]) => ({
@@ -112,6 +117,7 @@ const ClockIcon = () => (
 export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({
     totalUsers: 0,
     approvedPlaces: 0,
@@ -123,7 +129,18 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    setStats(loadDashboardStats());
+    let cancelled = false;
+    loadDashboardStats()
+      .then((s) => {
+        if (!cancelled) setStats(s);
+      })
+      .catch((err) => console.error("Failed to load dashboard stats:", err))
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
@@ -219,50 +236,54 @@ export default function Dashboard() {
       </div>
 
       <div className="dash-lower-grid">
-        {/* ANALYTICS */}
-     
-<div className="dash-analytics-block">
-  <p className="dash-analytics-label">Most saved places</p>
-  {stats.topFavorites.length > 0 ? (
-    <ul className="dash-analytics-list">
-      {stats.topFavorites.map((p) => (
-        <li key={p.id} className="dash-analytics-row">
-          <span className="dash-analytics-name">{p.title}</span>
-          <span className="dash-analytics-count">{p.count}</span>
-          <Link to={`/place/${p.id}`} className="dash-analytics-link">
-            View details →
-          </Link>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p className="dash-analytics-empty">No saved places data yet.</p>
-  )}
-</div>
+        <div className="dash-analytics-block">
+          <p className="dash-analytics-label">Most saved places</p>
+          {loading ? (
+            <p className="dash-analytics-empty">Loading…</p>
+          ) : stats.topFavorites.length > 0 ? (
+            <ul className="dash-analytics-list">
+              {stats.topFavorites.map((p) => (
+                <li key={p.id} className="dash-analytics-row">
+                  <span className="dash-analytics-name">{p.title}</span>
+                  <span className="dash-analytics-count">{p.count}</span>
+                  <Link to={`/place/${p.id}`} className="dash-analytics-link">
+                    View details →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="dash-analytics-empty">No saved places data yet.</p>
+          )}
+        </div>
 
-<div className="dash-analytics-block">
-  <p className="dash-analytics-label">Most added to trips</p>
-  {stats.topTripPlaces.length > 0 ? (
-    <ul className="dash-analytics-list">
-      {stats.topTripPlaces.map((p) => (
-        <li key={p.id} className="dash-analytics-row">
-          <span className="dash-analytics-name">{p.title}</span>
-          <span className="dash-analytics-count">{p.count}</span>
-          <Link to={`/place/${p.id}`} className="dash-analytics-link">
-            View details →
-          </Link>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p className="dash-analytics-empty">No trip data yet.</p>
-  )}
-</div>
+        <div className="dash-analytics-block">
+          <p className="dash-analytics-label">Most added to trips</p>
+          {loading ? (
+            <p className="dash-analytics-empty">Loading…</p>
+          ) : stats.topTripPlaces.length > 0 ? (
+            <ul className="dash-analytics-list">
+              {stats.topTripPlaces.map((p) => (
+                <li key={p.id} className="dash-analytics-row">
+                  <span className="dash-analytics-name">{p.title}</span>
+                  <span className="dash-analytics-count">{p.count}</span>
+                  <Link to={`/place/${p.id}`} className="dash-analytics-link">
+                    View details →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="dash-analytics-empty">No trip data yet.</p>
+          )}
+        </div>
 
         {/* RECENT ACTIVITY */}
         <div className="dash-activity">
           <h3 className="dash-section-title">Recent activity</h3>
-          {stats.recentActivity.length > 0 ? (
+          {loading ? (
+            <p className="dash-analytics-empty">Loading…</p>
+          ) : stats.recentActivity.length > 0 ? (
             <ul className="dash-activity-list">
               {stats.recentActivity.map((item) => (
                 <li key={item.id} className="dash-activity-row" data-status={item.status}>

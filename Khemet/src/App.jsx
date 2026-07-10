@@ -46,13 +46,13 @@ function App() {
             <Route
               path="trip-plan"
               element={
-                <ProtectedRoute>
+                <ProtectedRoute role="user">
                   <TripPlanner />
                 </ProtectedRoute>
               }
             />
             <Route
-              path="profile"
+              path="/profile/:id"
               element={
                 <ProtectedRoute>
                   <Profile />
@@ -61,13 +61,13 @@ function App() {
             />
 
             <Route path="contributions" element={
-              <ProtectedRoute>
+              <ProtectedRoute >
                 <Contributions/>
                </ProtectedRoute>
              } />
             
             <Route path="savedtrips" element={
-              <ProtectedRoute>
+              <ProtectedRoute role="user">
                 <SavedTrips/>
                </ProtectedRoute>
              } />
@@ -94,7 +94,7 @@ function App() {
              } />
             
             <Route path="favorites" element={
-              <ProtectedRoute>
+              <ProtectedRoute role="user">
                <Favorites/>
                </ProtectedRoute>
              } />

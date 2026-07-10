@@ -2,7 +2,7 @@ import { useState, useRef,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import { setPlaceImages } from "../components/PicCache"
+import { setPlaceImages ,uploadSingleImage } from "../components/PicCache"
 import L from "leaflet";
 import Toast from "../components/toast";
 import "leaflet/dist/leaflet.css";
@@ -233,31 +233,42 @@ export default function AddPlace() {
   };
 
   // ── images ────────────────────────────────────────────────
-  const toBase64 = (file) => new Promise((res, rej) => {
-    const reader = new FileReader();
-    reader.onloadend = () => res(reader.result);
-    reader.onerror = rej;
-    reader.readAsDataURL(file);
+  const ImgToLink = (file) => new Promise((res, rej) => {
+     const reader = new FileReader();
+      reader.onloadend = () => res(reader.result);
+      reader.onerror = rej;
+      reader.readAsDataURL(file);
   });
 
-  const handleCoverImage = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    if (file.size > 2 * 1024 * 1024) { alert("Cover image must be under 2MB"); return; }
-    const base64 = await toBase64(file);
-    setForm(prev => ({ ...prev, coverImage: base64 }));
-  };
+ const handleCoverImage = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) { alert("Cover image must be under 2MB"); return; }
+  const link = await ImgToLink(file);
+  try {
+    const url = await uploadSingleImage(link);
+    setForm(prev => ({ ...prev, coverImage: url }));
+  } catch (err) {
+    console.error("Cover upload error:", err);
+    showToast("error", "Failed to upload cover image");
+  }
+};
 
-  const handleGalleryImages = async (e) => {
-    const files = Array.from(e.target.files);
-    const remainingSlots = 3 - form.gallery.length;
-    if (remainingSlots <= 0) { e.target.value = ""; return; }
-    const validFiles = files.filter(f => f.size <= 2 * 1024 * 1024).slice(0, remainingSlots);
-    const base64s = await Promise.all(validFiles.map(toBase64));
-    setForm(prev => ({ ...prev, gallery: [...prev.gallery, ...base64s] }));
-    e.target.value = "";
-  };
-
+const handleGalleryImages = async (e) => {
+  const files = Array.from(e.target.files);
+  const remainingSlots = 3 - form.gallery.length;
+  if (remainingSlots <= 0) { e.target.value = ""; return; }
+  const validFiles = files.filter(f => f.size <= 2 * 1024 * 1024).slice(0, remainingSlots);
+  const links = await Promise.all(validFiles.map(ImgToLink));
+  try {
+    const urls = await Promise.all(links.map(uploadSingleImage));
+    setForm(prev => ({ ...prev, gallery: [...prev.gallery, ...urls] }));
+  } catch (err) {
+    console.error("Gallery upload error:", err);
+    showToast("error", "Failed to upload gallery images");
+  }
+  e.target.value = "";
+};
   const removeGalleryImage = (i) => {
     setForm(prev => ({ ...prev, gallery: prev.gallery.filter((_, idx) => idx !== i) }));
   };
@@ -284,6 +295,11 @@ export default function AddPlace() {
 
   // ── submit ────────────────────────────────────────────────
   const handleSubmit = async () => {
+
+  if (user.banned) {
+    showToast("error", "Your account has been suspended and can't submit new places.");
+    return;
+  }  
   const e = validate();
 
   if (Object.keys(e).length > 0) {
@@ -308,7 +324,7 @@ export default function AddPlace() {
       : form;
 
   try {
-    const nextId = getNextId();
+    const nextId = await getNextId();
 
     const placeFields = { ...submittedForm };
     delete placeFields.rating;
@@ -369,6 +385,12 @@ export default function AddPlace() {
         <p className="addplace-intro-p">
           Share a place with others — your discoveries help future explorers chart their own journeys through Egypt.
         </p>
+
+            {user.banned && (
+              <div className="add-banned-notice">
+                Your account is currently suspended. You can't add new places while suspended.
+              </div>
+            )}
 
         <div className="add-form-container">
 

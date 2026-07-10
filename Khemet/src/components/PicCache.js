@@ -51,3 +51,7 @@ export async function setUserProfilePic(userId, base64) {
 export async function getUserProfilePic(url) {
   return url || null;
 }
+
+export async function uploadSingleImage(base64) {
+  return await uploadImage(base64);
+}
