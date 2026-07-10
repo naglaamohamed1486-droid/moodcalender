@@ -51,20 +51,8 @@ function formatDate(iso) {
 }
 
 function SubmissionCardImage({ place }) {
-  const [images, setImages] = useState({ coverImage: "", gallery: [] });
-
-  useEffect(() => {
-    let cancelled = false;
-    getPlaceImages(place.id).then((result) => {
-      if (!cancelled) setImages(result || { coverImage: "", gallery: [] });
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [place.id]);
-
-  return images.coverImage ? (
-      <img src={images.coverImage} alt={place.title} />
+  return place.coverImage ? (
+    <img src={place.coverImage} alt={place.title} />
   ) : (
     <div className="sub-card-img-placeholder" />
   );

@@ -233,19 +233,25 @@ export default function AddPlace() {
   };
 
   // ── images ────────────────────────────────────────────────
-  const toBase64 = (file) => new Promise((res, rej) => {
-    const reader = new FileReader();
-    reader.onloadend = () => res(reader.result);
-    reader.onerror = rej;
-    reader.readAsDataURL(file);
+  const ImgToLink = (file) => new Promise((res, rej) => {
+     const reader = new FileReader();
+      reader.onloadend = () => res(reader.result);
+      reader.onerror = rej;
+      reader.readAsDataURL(file);
   });
 
   const handleCoverImage = async (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-    if (file.size > 2 * 1024 * 1024) { alert("Cover image must be under 2MB"); return; }
-    const base64 = await toBase64(file);
-    setForm(prev => ({ ...prev, coverImage: base64 }));
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) { alert("Cover image must be under 2MB"); return; }
+    const link = await ImgToLink(file);
+    try {
+    const url = await uploadPlaceImage(link); 
+    setForm(prev => ({ ...prev, coverImage: url }));
+    } catch (err) {
+       showToast("error", "Failed to upload cover image");
+  }
+    
   };
 
   const handleGalleryImages = async (e) => {
@@ -253,10 +259,15 @@ export default function AddPlace() {
     const remainingSlots = 3 - form.gallery.length;
     if (remainingSlots <= 0) { e.target.value = ""; return; }
     const validFiles = files.filter(f => f.size <= 2 * 1024 * 1024).slice(0, remainingSlots);
-    const base64s = await Promise.all(validFiles.map(toBase64));
-    setForm(prev => ({ ...prev, gallery: [...prev.gallery, ...base64s] }));
-    e.target.value = "";
-  };
+    const links = await Promise.all(validFiles.map(ImgToLink));
+   try {
+    const urls = await Promise.all(links.map(uploadPlaceImage)); 
+    setForm(prev => ({ ...prev, gallery: [...prev.gallery, ...urls] }));
+  } catch (err) {
+     showToast("error", "Failed to upload  gallery images");
+  }
+  e.target.value = "";
+};
 
   const removeGalleryImage = (i) => {
     setForm(prev => ({ ...prev, gallery: prev.gallery.filter((_, idx) => idx !== i) }));
