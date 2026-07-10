@@ -284,6 +284,11 @@ export default function AddPlace() {
 
   // ── submit ────────────────────────────────────────────────
   const handleSubmit = async () => {
+
+  if (user.banned) {
+    showToast("error", "Your account has been suspended and can't submit new places.");
+    return;
+  }  
   const e = validate();
 
   if (Object.keys(e).length > 0) {
@@ -369,6 +374,12 @@ export default function AddPlace() {
         <p className="addplace-intro-p">
           Share a place with others — your discoveries help future explorers chart their own journeys through Egypt.
         </p>
+
+            {user.banned && (
+              <div className="add-banned-notice">
+                Your account is currently suspended. You can't add new places while suspended.
+              </div>
+            )}
 
         <div className="add-form-container">
 

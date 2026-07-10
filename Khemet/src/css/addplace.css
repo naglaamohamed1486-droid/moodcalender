@@ -29,6 +29,29 @@
   margin-bottom: 6px;
 }
 
+.add-banned-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(168, 64, 47, 0.08);
+  border: 1px solid rgba(168, 64, 47, 0.35);
+  border-left: 3px solid #A8402F;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  color: #7A3A2E;
+  font-size: 13.5px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.add-banned-notice::before {
+  content: "⚠";
+  font-size: 16px;
+  color: #A8402F;
+  flex-shrink: 0;
+}
+
 .addplace-tit {
   font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
   font-size: 48px;

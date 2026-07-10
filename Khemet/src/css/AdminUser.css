@@ -1,0 +1,598 @@
+.usersmain {
+  padding: 150px;
+  padding-top: 130px;
+}
+
+.usersmain .sub-intro {
+  color: #C9A84C;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.usersmain .sub-title {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 40px;
+  margin-top: 4px;
+}
+
+.usersmain .sub-det {
+  color: #7A6040;
+  font-size: 14px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.au-back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  color: #7A6040;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.au-back-link:hover {
+  color: #1B4F6B;
+  border-color: #1B4F6B;
+}
+
+/* ─── Stat cards ──────────────────────────────────────────────── */
+.au-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 120px;
+  margin-bottom: 30px;
+}
+
+.au-stat-card {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.au-stat-card-warn {
+  border-color: rgba(168, 64, 47, 0.35);
+  background-color: rgba(168, 64, 47, 0.04);
+}
+
+.au-stat-num {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 32px;
+  line-height: 1;
+  margin: 0 0 6px;
+}
+
+.au-stat-card-warn .au-stat-num {
+  color: #A8402F;
+}
+
+.au-stat-title {
+  color: #7A6040;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+}
+
+/* ─── Toolbar: tabs + search ──────────────────────────────────── */
+.au-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.au-tabs {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.au-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0 15px 11px;
+  color: #7A6040;
+  font-size: 13px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.au-tab-btn:hover {
+  color: #1B4F6B;
+}
+
+.au-tab-btn.active {
+  color: #1B4F6B;
+  border-bottom-color: #C9A84C;
+}
+
+.au-tab-num {
+  width: 20px;
+  height: 20px;
+  margin-left: 7px;
+  background-color: rgba(122, 96, 64, 0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 11px;
+  color: inherit;
+}
+
+.au-search {
+  padding: 9px 14px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(122, 96, 64, 0.25);
+  border-radius: 8px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  color: #2A1A08;
+  background-color: #FDF8EE;
+  min-width: 420px;
+  max-width: 480px;
+}
+
+.au-search:focus {
+  outline: none;
+  border-color: #C9A84C;
+}
+
+.au-action-error {
+  background-color: rgba(168, 64, 47, 0.08);
+  border: 1px solid rgba(168, 64, 47, 0.3);
+  color: #A8402F;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 20px 0;
+}
+
+/* ─── User body / list ────────────────────────────────────────── */
+.user-body {
+  padding: 30px 0;
+}
+
+.user-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ─── Cards — horizontal, mirrors .sub-card ──────────────────── */
+.au-card {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-left: 3px solid transparent;
+  border-radius: 16px;
+  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.au-card:hover {
+  border-color: #C9A84C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.12);
+}
+
+.au-card[data-role="admin"] {
+  border-left-color: #C9A84C;
+}
+.au-card[data-banned="true"] {
+  border-left-color: #A8402F;
+}
+
+
+/* ─── Avatar ──────────────────────────────────────────────────── */
+.au-card-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #1B4F6B;
+  color: #FDF8EE;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.au-card[data-role="admin"] .au-card-avatar {
+  background-color: #C9A84C;
+  color: #2A1A08;
+}
+
+/* ─── Info ────────────────────────────────────────────────────── */
+.au-card-info {
+  min-width: 0;
+}
+
+.au-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3px;
+  flex-wrap: wrap;
+}
+
+.userName {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userName:hover {
+  color: #C9A84C;
+}
+
+.au-badge {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  padding: 3px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.au-badge-admin {
+  background-color: rgba(201, 168, 76, 0.9);
+  color: #2A1A08;
+}
+
+.au-badge-banned {
+  background-color: rgba(168, 64, 47, 0.9);
+  color: #FDF8EE;
+}
+
+.userEmail {
+  color: #7A6040;
+  font-size: 12.5px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.au-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.au-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: #7A6040;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.au-meta-item svg {
+  flex-shrink: 0;
+}
+
+/* ─── Card actions ────────────────────────────────────────────── */
+.au-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.viewProfile {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  color: #1B4F6B;
+  text-decoration: none;
+  white-space: nowrap;
+  justify-items:center ;
+}
+
+.viewProfile:hover {
+  text-decoration: underline;
+}
+
+.au-ban-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(168, 64, 47, 0.1);
+  color: #A8402F;
+  border: 1px solid rgba(168, 64, 47, 0.25);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.au-ban-btn:hover:not(:disabled) {
+  background-color: #A8402F;
+  color: #FDF8EE;
+}
+.au-ban-btn:hover:not(:disabled)  svg circle,
+.au-ban-btn:hover:not(:disabled) svg path{
+color: #FDF8EE;
+}
+
+.au-ban-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.au-ban-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.au-ban-btn-undo {
+  background-color: rgba(91, 138, 100, 0.12);
+  color: #3F6B47;
+  border-color: rgba(91, 138, 100, 0.3);
+}
+
+.au-ban-btn-undo:hover:not(:disabled) {
+  background-color: #5B8A64;
+  color: #FDF8EE;
+}
+
+/* ─── Empty state ─────────────────────────────────────────────── */
+.au-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #FDF8EE;
+  border: 1px dashed rgba(201, 168, 76, 0.4);
+  border-radius: 16px;
+}
+
+.au-empty-title {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.au-empty-sub {
+  color: #7A6040;
+  font-size: 13px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+}
+
+/* ─── Ban/unban confirm overlay ───────────────────────────────── */
+.au-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 26, 8, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.au-confirm {
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+
+.au-confirm-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.au-confirm-title {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.au-confirm-body {
+  color: #7A6040;
+  font-size: 13.5px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+
+.au-confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.au-cancel-btn {
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #7A6040;
+  border: 1px solid rgba(122, 96, 64, 0.3);
+  transition: background 0.2s ease;
+}
+
+.au-cancel-btn:hover {
+  background-color: rgba(122, 96, 64, 0.1);
+}
+
+.au-confirm-ban-btn,
+.au-confirm-unban-btn {
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  color: #FDF8EE;
+  transition: transform 0.15s ease;
+}
+
+.au-confirm-ban-btn:active,
+.au-confirm-unban-btn:active {
+  transform: translateY(1px);
+}
+
+.au-confirm-ban-btn {
+  background-color: #A8402F;
+}
+
+.au-confirm-unban-btn {
+  background-color: #5B8A64;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1280px) {
+  .usersmain {
+    padding: 100px 80px;
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .usersmain .sub-title {
+    font-size: 36px;
+  }
+  .au-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .au-card {
+    grid-template-columns: 70px 1fr auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .usersmain {
+    padding: 70px 24px;
+    padding-top: 90px;
+  }
+  .usersmain .sub-title {
+    font-size: 30px;
+  }
+  .usersmain .sub-det {
+    max-width: 100%;
+  }
+  .au-tabs {
+    gap: 0;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .au-tab-btn {
+    padding: 0 10px 10px;
+    font-size: 12px;
+  }
+  .au-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .au-search {
+    max-width: 100%;
+  }
+  .au-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "info"
+      "actions";
+    justify-items: start;
+  }
+  .au-card-avatar {
+    grid-area: avatar;
+  }
+  .au-card-info {
+    grid-area: info;
+    width: 100%;
+  }
+  .au-card-actions {
+    grid-area: actions;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .usersmain {
+    padding: 60px 16px;
+    padding-top: 80px;
+  }
+  .usersmain .sub-title {
+    font-size: 26px;
+  }
+  .usersmain .sub-intro {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  .au-stats {
+    grid-template-columns: 1fr;
+  }
+  .au-tab-btn {
+    padding: 0 8px 8px;
+    font-size: 11px;
+  }
+  .au-tab-num {
+    width: 16px;
+    height: 16px;
+    font-size: 9.5px;
+    margin-left: 5px;
+  }
+  .au-card {
+    padding: 16px;
+  }
+}
