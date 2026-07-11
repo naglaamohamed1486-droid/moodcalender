@@ -16,45 +16,67 @@ html { scroll-behavior: smooth; }
     padding: 0px;
     margin: 0px;
 }
-.hero{
+
+/* =============================================
+   KHEMET — Hero large-screen fix
+   Replace / merge into your existing hero block
+   ============================================= */
+
+.hero {
   position: relative;
-  height: 600px;
-  background: url('./assets/home.png') no-repeat center center/cover;
+  height: clamp(520px, 58vw, 820px);
+  background: url('./assets/home.png') no-repeat center center / cover;
   width: 100%;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden; /* prevents any bleed-out */
 }
-.hero-content{
-  padding: 5%;
+ 
+.hero-content {
   padding-left: 10%;
- padding-top: 140px;
- width: 700px;
+  padding-right: 5%;
+  padding-top: clamp(80px, 10vw, 160px);
+  padding-bottom: 40px;
+  width: clamp(320px, 42%, 620px);
+  max-width: 50%;
+  flex-shrink: 0;
+  /* remove the old fixed width: 700px */
 }
-.hero-tit-prim{
-color:   oklch(73.152% 0.13252 80.495);
-font-size: 60px;
-margin: 3px;
-margin-bottom: 0px;
-padding-bottom:0px ;
+ 
+.hero-tit-prim {
+  color: oklch(73.152% 0.13252 80.495);
+  font-size: clamp(32px, 3.8vw, 62px);
+  margin: 3px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1.1;
 }
-.hero-tit-sec{
-  font-size: 58px;
+ 
+.hero-tit-sec {
+  font-size: clamp(30px, 3.6vw, 60px);
   position: relative;
-  top: -23px;
-  padding: 0px 12px;
+  top: clamp(-14px, -1.5vw, -8px);
+  padding: 0 12px;
   font-style: italic;
-  font-family: "Cormorant Garamond", ui-serif,serif;
-  color:   oklch(0.275 0.035 55);
+  font-family: "Cormorant Garamond", ui-serif, serif;
+  color: oklch(0.275 0.035 55);
+  line-height: 1.1;
 }
-.hero-p{
-  color:  #1B4F6B;
-  font-size: 17px;
+ 
+.hero-p {
+  color: #1B4F6B;
+  font-size: clamp(13px, 1.1vw, 17px);
   position: relative;
-  top:-15px;
+  top: clamp(-8px, -0.8vw, -4px);
+  line-height: 1.5;
 }
+ 
 .linkat {
   display: inline-flex;
   gap: 12px;
-  margin-top: 5px;
- 
+  margin-top: 8px;
+  position: relative;
+  top: clamp(-6px, -0.5vw, 0px);
 }
 .home-btn{
   width: 160px;
@@ -773,5 +795,74 @@ font-weight: 405;
   .ex-more,
   .tag-card {
     transition: none;
+  }
+}
+
+/* ── Existing breakpoints adjusted ── */
+
+@media (max-width: 1024px) {
+  .hero {
+    height: clamp(440px, 52vw, 600px);
+  }
+
+  .hero-content {
+    padding-top: clamp(80px, 10vw, 130px);
+    width: clamp(320px, 50%, 520px);
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 460px;
+    background-position: center top;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding: 80px 24px 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-tit-prim {
+    font-size: 40px;
+  }
+
+  .hero-tit-sec {
+    font-size: 38px;
+    top: -14px;
+    padding: 0 8px;
+  }
+
+  .hero-p {
+    font-size: 14px;
+    top: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 70px 18px 32px;
+  }
+
+  .hero-tit-prim {
+    font-size: 32px;
+  }
+
+  .hero-tit-sec {
+    font-size: 30px;
+    top: -10px;
+    padding: 0 5px;
+  }
+
+  .hero-p {
+    font-size: 13px;
+    top: -5px;
   }
 }
