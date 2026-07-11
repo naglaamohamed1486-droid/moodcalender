@@ -75,7 +75,7 @@ function Footer() {
               <h3>Navigate</h3>
               <Link to="/">Home</Link>
               <Link to="/map">Map</Link>
-              <Link to="/feed">Popular Places</Link>
+              <Link to="/feed">Community</Link>
               {user && <Link to="/trip-plan">Trip Planner</Link>}
             </div>
 
