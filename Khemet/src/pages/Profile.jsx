@@ -251,7 +251,7 @@ export default function Profile() {
 
       </div>
 
-      {/* ─── Stat row: favorites only for self, trips for self/admin, contributions count reflects visibility tier ─── */}
+     
      <div className="pf-link">
         <div className="pf-link-cont">
           {viewerRole === "self" && (
@@ -371,9 +371,9 @@ export default function Profile() {
               <div className="info-cont">
                 <div className="info-sec">
                   <h3 className="info-sec-tit">BIO</h3>
-                  <p className="about-sec-p">
-                    {user?.bio || "Tell people about yourself..."}
-                  </p>
+                 <p className="about-sec-p">
+                  {user?.bio || (isOwnProfile ? "Tell people about yourself..." : `${user.name} hasn't shared a bio yet.`)}
+                </p>
                 </div>
                 <div className="info-sec">
                   <div className="details-sec-head">

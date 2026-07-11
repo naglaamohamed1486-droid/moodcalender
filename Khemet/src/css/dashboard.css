@@ -144,13 +144,16 @@
   margin: 25px 0;
   padding: 5px 0;
   animation: dashFadeUp 0.45s 0.1s ease both; 
+  justify-self: center;
+   width: 100%;
 }
 
 .dash-stats-cont {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  align-items: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dash-stat-card {
@@ -443,9 +446,6 @@
   }
   .dash-hero-btns {
     justify-content: flex-start;
-  }
-   .dash-stats-cont {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
