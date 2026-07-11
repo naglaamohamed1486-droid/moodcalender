@@ -1,16 +1,16 @@
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../app/providers/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebase";
-import "../css/AdminUser.css"
+import { db } from "../../firebase";
+import "./AdminUsers.css";
 
 async function loadAdminUsers() {
   const snap = await getDocs(collection(db, "users"));
   const users = [];
   snap.forEach((d) => {
     const data = d.data();
-    if (data.role === "admin") return; 
+    if (data.role === "admin") return;
     users.push({
       id: d.id,
       name: data.name || "Unnamed",
@@ -38,29 +38,76 @@ function formatDate(value) {
 }
 
 const BanIcon = () => (
-  <svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="12" cy="12" r="9" stroke="#A8402F" strokeWidth="1.6" />
-    <path d="M6.5 6.5L17.5 17.5" stroke="#A8402F" strokeWidth="1.6" strokeLinecap="round" />
+    <path
+      d="M6.5 6.5L17.5 17.5"
+      stroke="#A8402F"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
   </svg>
 );
 
 const UnbanIcon = () => (
-  <svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="12" cy="12" r="9" stroke="#5B8A64" strokeWidth="1.6" />
-    <path d="M8.5 12.2l2.3 2.3 4.7-4.9" stroke="#5B8A64" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M8.5 12.2l2.3 2.3 4.7-4.9"
+      stroke="#5B8A64"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 const PlacesIcon = () => (
-  <svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 21s7-6.5 7-11.5A7 7 0 1 0 5 9.5C5 14.5 12 21 12 21z" stroke="#7A6040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 21s7-6.5 7-11.5A7 7 0 1 0 5 9.5C5 14.5 12 21 12 21z"
+      stroke="#7A6040"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
     <circle cx="12" cy="9.5" r="2.3" stroke="#7A6040" strokeWidth="1.5" />
   </svg>
 );
 
 const ClockIcon = () => (
-  <svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#7A6040" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+      stroke="#7A6040"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -71,7 +118,7 @@ export default function AdminUser() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("all");
   const [query, setQuery] = useState("");
-  const [banTarget, setBanTarget] = useState(null); 
+  const [banTarget, setBanTarget] = useState(null);
   const [actionError, setActionError] = useState("");
 
   const refresh = useCallback(async () => {
@@ -92,40 +139,46 @@ export default function AdminUser() {
   }, [refresh]);
 
   const counts = {
-    all:users.filter((u) => u.role !== "admin").length,
+    all: users.filter((u) => u.role !== "admin").length,
     banned: users.filter((u) => u.banned).length,
   };
 
-   const visible = useMemo(() => {
+  const visible = useMemo(() => {
     let list = users;
     if (activeTab === "banned") list = list.filter((u) => u.banned);
 
     if (query.trim()) {
       const q = query.trim().toLowerCase();
       list = list.filter(
-        (u) => u.name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q)
+        (u) =>
+          u.name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q),
       );
     }
     return list;
-   }, [users, activeTab, query]);
-  
+  }, [users, activeTab, query]);
+
   const toggleBan = async (targetUser) => {
     setActionError("");
     const nextBanned = !targetUser.banned;
 
-   
     setUsers((prev) =>
-      prev.map((u) => (u.id === targetUser.id ? { ...u, banned: nextBanned } : u))
+      prev.map((u) =>
+        u.id === targetUser.id ? { ...u, banned: nextBanned } : u,
+      ),
     );
 
     try {
       await updateDoc(doc(db, "users", targetUser.id), { banned: nextBanned });
     } catch (err) {
       console.error("Failed to update ban status:", err);
-      setActionError(`Couldn't ${nextBanned ? "ban" : "unban"} ${targetUser.name}. Try again.`);
+      setActionError(
+        `Couldn't ${nextBanned ? "ban" : "unban"} ${targetUser.name}. Try again.`,
+      );
       // roll back
       setUsers((prev) =>
-        prev.map((u) => (u.id === targetUser.id ? { ...u, banned: targetUser.banned } : u))
+        prev.map((u) =>
+          u.id === targetUser.id ? { ...u, banned: targetUser.banned } : u,
+        ),
       );
     } finally {
       setBanTarget(null);
@@ -134,14 +187,17 @@ export default function AdminUser() {
 
   return (
     <main className="usersmain">
-      <Link to="/dashboard" className="au-back-link">← Back to Dashboard</Link>
+      <Link to="/dashboard" className="au-back-link">
+        ← Back to Dashboard
+      </Link>
       <h4 className="sub-intro">Admin Controller</h4>
       <h2 className="sub-title">User Administration</h2>
       <p className="sub-det">
-        Oversee explorers, manage accounts, and ensure a safe and high-quality community experience.
+        Oversee explorers, manage accounts, and ensure a safe and high-quality
+        community experience.
       </p>
 
-     {/* STAT CARDS */}
+      {/* STAT CARDS */}
       <div className="au-stats">
         <div className="au-stat-card">
           <p className="au-stat-num">{counts.all}</p>
@@ -199,7 +255,9 @@ export default function AdminUser() {
                     <Link to={`/profile/${u.id}`} className="userName">
                       {u.name}
                     </Link>
-                    {u.banned && <span className="au-badge au-badge-banned">Banned</span>}
+                    {u.banned && (
+                      <span className="au-badge au-badge-banned">Banned</span>
+                    )}
                   </div>
                   <p className="userEmail">{u.email}</p>
 
@@ -208,9 +266,12 @@ export default function AdminUser() {
                       <ClockIcon /> Joined {formatDate(u.createdAt)}
                     </span>
                     <span className="au-meta-item">
-                      <PlacesIcon /> {u.contributionCount} place{u.contributionCount !== 1 ? "s" : ""} added
+                      <PlacesIcon /> {u.contributionCount} place
+                      {u.contributionCount !== 1 ? "s" : ""} added
                     </span>
-                    <span className="au-meta-item">{u.favoriteCount} favorites</span>
+                    <span className="au-meta-item">
+                      {u.favoriteCount} favorites
+                    </span>
                     <span className="au-meta-item">{u.tripCount} trips</span>
                   </div>
                 </div>
@@ -223,7 +284,9 @@ export default function AdminUser() {
                     className={`au-ban-btn ${u.banned ? "au-ban-btn-undo" : ""}`}
                     disabled={u.id === currentAdmin?.uid}
                     onClick={() => setBanTarget(u)}
-                    title={u.id === currentAdmin?.uid ? "You can't ban yourself" : ""}
+                    title={
+                      u.id === currentAdmin?.uid ? "You can't ban yourself" : ""
+                    }
                   >
                     {u.banned ? <UnbanIcon /> : <BanIcon />}
                     {u.banned ? "Unban user" : "Ban user"}
@@ -236,7 +299,9 @@ export default function AdminUser() {
           <div className="au-empty-state">
             <p className="au-empty-title">No users found</p>
             <p className="au-empty-sub">
-              {query.trim() ? "Try a different search." : "Nothing to show in this tab."}
+              {query.trim()
+                ? "Try a different search."
+                : "Nothing to show in this tab."}
             </p>
           </div>
         )}
@@ -244,11 +309,18 @@ export default function AdminUser() {
 
       {/* BAN CONFIRM */}
       {banTarget && (
-        <div className="au-overlay" onClick={(e) => e.target === e.currentTarget && setBanTarget(null)}>
+        <div
+          className="au-overlay"
+          onClick={(e) => e.target === e.currentTarget && setBanTarget(null)}
+        >
           <div className="au-confirm">
-            <div className="au-confirm-icon">{banTarget.banned ? "✓" : "⚠"}</div>
+            <div className="au-confirm-icon">
+              {banTarget.banned ? "✓" : "⚠"}
+            </div>
             <h3 className="au-confirm-title">
-              {banTarget.banned ? `Unban ${banTarget.name}?` : `Ban ${banTarget.name}?`}
+              {banTarget.banned
+                ? `Unban ${banTarget.name}?`
+                : `Ban ${banTarget.name}?`}
             </h3>
             <p className="au-confirm-body">
               {banTarget.banned
@@ -256,11 +328,18 @@ export default function AdminUser() {
                 : "They'll be signed out and blocked from logging in until unbanned."}
             </p>
             <div className="au-confirm-actions">
-              <button className="au-cancel-btn" onClick={() => setBanTarget(null)}>
+              <button
+                className="au-cancel-btn"
+                onClick={() => setBanTarget(null)}
+              >
                 Cancel
               </button>
               <button
-                className={banTarget.banned ? "au-confirm-unban-btn" : "au-confirm-ban-btn"}
+                className={
+                  banTarget.banned
+                    ? "au-confirm-unban-btn"
+                    : "au-confirm-ban-btn"
+                }
                 onClick={() => toggleBan(banTarget)}
               >
                 {banTarget.banned ? "Yes, unban" : "Yes, ban"}

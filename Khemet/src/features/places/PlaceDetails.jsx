@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import placesData from "../places.json";
-import Card from "../components/Card";
-import "../css/PlaceDetails.css";
-import { useAuth } from "../context/AuthContext";
+import placesData from "../../places.json";
+import Card from "../../shared/components/Card";
+import "./PlaceDetails.css";
+import { useAuth } from "../../app/providers/AuthContext";
 
 function PlaceDetails() {
   const { id } = useParams();
@@ -15,41 +15,40 @@ function PlaceDetails() {
 
   const saved = place ? isFavorite(place.id) : false;
 
-
   useEffect(() => {
-     window.scrollTo({
+    window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-const allPlaces = [
-  ...placesData,
-  ...(user?.contributions || []).filter(
-    (p) => p.status === "approved" || p.status === "pending"
-  ),
-];
+    const allPlaces = [
+      ...placesData,
+      ...(user?.contributions || []).filter(
+        (p) => p.status === "approved" || p.status === "pending",
+      ),
+    ];
 
-const found = allPlaces.find((p) => p.id === parseInt(id));
+    const found = allPlaces.find((p) => p.id === parseInt(id));
 
-setPlace(found);
+    setPlace(found);
 
-if (found) {
-  const similar = allPlaces.filter((p) => {
-    if (p.id === found.id) return false;
+    if (found) {
+      const similar = allPlaces.filter((p) => {
+        if (p.id === found.id) return false;
 
-    const sameCity = p.city === found.city;
-    const commonTags = p.tags?.some((tag) => found.tags?.includes(tag));
+        const sameCity = p.city === found.city;
+        const commonTags = p.tags?.some((tag) => found.tags?.includes(tag));
 
-    return sameCity || commonTags;
-  });
+        return sameCity || commonTags;
+      });
 
-  const sorted = similar.sort((a, b) => {
-    const aScore = a.city === found.city ? 2 : 0;
-    const bScore = b.city === found.city ? 2 : 0;
-    return bScore - aScore;
-  });
+      const sorted = similar.sort((a, b) => {
+        const aScore = a.city === found.city ? 2 : 0;
+        const bScore = b.city === found.city ? 2 : 0;
+        return bScore - aScore;
+      });
 
-  setRelatedPlaces(sorted.slice(0, 3));
-}
+      setRelatedPlaces(sorted.slice(0, 3));
+    }
   }, [id]);
 
   if (!place) {
@@ -70,7 +69,14 @@ if (found) {
         <img src={place.coverImage} alt={place.title} />
         <div className="hero-overlay">
           <Link to="/map" className="back">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
             Back to map
@@ -90,7 +96,9 @@ if (found) {
               <p>{place.longdescription || place.description}</p>
               <div className="tags">
                 {place.tags?.map((tag, i) => (
-                  <span key={i} className="tag">#{tag}</span>
+                  <span key={i} className="tag">
+                    #{tag}
+                  </span>
                 ))}
               </div>
             </div>
@@ -109,51 +117,50 @@ if (found) {
             )}
           </div>
 
-         <div className="right-col">
-  <div className="location-block">
-    <div className="actions">
-    <button className="btn-primary">+ Add to trip</button>
-    <button
-    className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
-    onClick={() => user && toggleFavorite(place)}
-  >
-    {saved ? "♥ Saved" : "♡ Save"}
-  </button>
-  </div>
-  <br />
+          <div className="right-col">
+            <div className="location-block">
+              <div className="actions">
+                <button className="btn-primary">+ Add to trip</button>
+                <button
+                  className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
+                  onClick={() => user && toggleFavorite(place)}
+                >
+                  {saved ? "♥ Saved" : "♡ Save"}
+                </button>
+              </div>
+              <br />
 
-    <h3>LOCATION</h3>  
-    <p className="location-name">{place.city}</p>
-    <div className="location-map">
-      <iframe
-        title="map"
-        width="100%"
-        height="300"
-        frameBorder="0"
-        src={`https://www.openstreetmap.org/export/embed.html?bbox=${
-          place.lng - 0.015
-        },${place.lat - 0.015},${place.lng + 0.015},${place.lat + 0.015}&marker=${
-          place.lat
-        },${place.lng}`}
-      />
-    </div>
-  </div>
-</div>          
-          </div>
-        </div>
-
-        {relatedPlaces.length > 0 && (
-          <div className="related">
-            <h2>You may also like</h2>
-            <div className="places">
-              {relatedPlaces.map((item) => (
-                <Card key={item.id} place={item} />
-              ))}
+              <h3>LOCATION</h3>
+              <p className="location-name">{place.city}</p>
+              <div className="location-map">
+                <iframe
+                  title="map"
+                  width="100%"
+                  height="300"
+                  frameBorder="0"
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${
+                    place.lng - 0.015
+                  },${place.lat - 0.015},${place.lng + 0.015},${place.lat + 0.015}&marker=${
+                    place.lat
+                  },${place.lng}`}
+                />
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
-    
+
+      {relatedPlaces.length > 0 && (
+        <div className="related">
+          <h2>You may also like</h2>
+          <div className="places">
+            {relatedPlaces.map((item) => (
+              <Card key={item.id} place={item} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

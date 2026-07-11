@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../app/providers/AuthContext";
-import "./card.css";
-import { categoryLabel } from "../../data/placesdatahandling";
+import "./ContributionCard.css";
+import { categoryLabel } from "./placesdatahandling";
 
 function StatusIcon({ status }) {
   if (status === "approved") {

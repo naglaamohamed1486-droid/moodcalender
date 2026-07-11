@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import "../css/adminreview.css";
+import "./adminreview.css";
 
 const categoryLabel = (cat) => {
   if (!cat) return "Uncategorized";
@@ -48,11 +48,16 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
       <div className="sub-modal">
         <div className="sub-modal-header">
           <h2 className="sub-modal-title">Submitted Place Details</h2>
-          <button className="sub--close" onClick={onDetClose} aria-label="Close">
+          <button
+            className="sub--close"
+            onClick={onDetClose}
+            aria-label="Close"
+          >
             ×
           </button>
           <p className="sub-data">
-            Review the submitted place details and decide if this place meets platform standards.
+            Review the submitted place details and decide if this place meets
+            platform standards.
           </p>
         </div>
 
@@ -116,19 +121,19 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
               </div>
             </div>
 
-           <div className="sub-field">
-            <span className="sub-label">SHORT DESCRIPTION</span>
-            <div className="sub-desc-box">
-              <p className="sub-data">{place.description || "—"}</p>
+            <div className="sub-field">
+              <span className="sub-label">SHORT DESCRIPTION</span>
+              <div className="sub-desc-box">
+                <p className="sub-data">{place.description || "—"}</p>
+              </div>
             </div>
-          </div>
 
-          <div className="sub-field">
-            <span className="sub-label">FULL DESCRIPTION</span>
-            <div className="sub-desc-box sub-desc-box-lg">
-              <p className="sub-data">{place.longdescription || "—"}</p>
+            <div className="sub-field">
+              <span className="sub-label">FULL DESCRIPTION</span>
+              <div className="sub-desc-box sub-desc-box-lg">
+                <p className="sub-data">{place.longdescription || "—"}</p>
+              </div>
             </div>
-          </div>
 
             <div className="sub-field">
               <span className="sub-label">TAGS</span>
@@ -157,10 +162,36 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
                 ))
               ) : (
                 <div className="sub-gallery-empty">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="#7A6040" strokeWidth="1.5" />
-                    <circle cx="8.5" cy="10" r="1.5" stroke="#7A6040" strokeWidth="1.3" />
-                    <path d="M4 16l4.5-4 3 3 4-4.5L21 16" stroke="#7A6040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="3"
+                      y="5"
+                      width="18"
+                      height="14"
+                      rx="2"
+                      stroke="#7A6040"
+                      strokeWidth="1.5"
+                    />
+                    <circle
+                      cx="8.5"
+                      cy="10"
+                      r="1.5"
+                      stroke="#7A6040"
+                      strokeWidth="1.3"
+                    />
+                    <path
+                      d="M4 16l4.5-4 3 3 4-4.5L21 16"
+                      stroke="#7A6040"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                   <p>No gallery images were added to this submission.</p>
                 </div>
@@ -199,7 +230,9 @@ export default function SubDetails({ place, onDetClose, onhandleDecision }) {
                       .map((r, i) => (
                         <div key={i} className="review">
                           <p className="review-text">{r.text}</p>
-                          <span className="review-meta">{r.author} · {new Date(r.date).toLocaleDateString()}</span>
+                          <span className="review-meta">
+                            {r.author} · {new Date(r.date).toLocaleDateString()}
+                          </span>
                         </div>
                       ))
                   ) : (

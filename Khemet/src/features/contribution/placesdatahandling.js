@@ -1,6 +1,6 @@
-import placesData from "../places.json";
+import placesData from "../../places.json";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 
 export const CATEGORIES = [
   { id: "nature", title: "Nature", desc: "Parks, deserts, mountains" },

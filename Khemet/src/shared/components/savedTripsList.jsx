@@ -1,10 +1,10 @@
-import { useAuth } from "../app/providers/AuthContext";
-import "../css/SavedTrips.css";
+import { useAuth } from "../../app/providers/AuthContext";
+import "./SavedTrips.css";
 import { FiEye, FiTrash2, FiEdit2 } from "react-icons/fi";
 import { PiTicketBold } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import TripDetailsModal from "../features/trip-generator/generatorComponents/TripDetailsModal";
+import TripDetailsModal from "../../features/trip-generator/generatorComponents/TripDetailsModal";
 
 function SavedTripsList({ trips, onDelete, previewMode = false }) {
   const { deleteTrip } = useAuth();

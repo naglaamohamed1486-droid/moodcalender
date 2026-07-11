@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import "../css/CategoryFilter.css";
+import "./CategoryFilter.css";
 
 export default function CategoryFilter({
   places,
@@ -11,59 +11,39 @@ export default function CategoryFilter({
 
   const allTags = [
     ...new Set(
-      (places || []).flatMap((p) =>
-        Array.isArray(p.tags) ? p.tags : []
-      )
+      (places || []).flatMap((p) => (Array.isArray(p.tags) ? p.tags : [])),
     ),
   ].sort();
 
   const toggleTag = (tag) => {
     if (selectedTags.includes(tag)) {
-      setSelectedTags(
-        selectedTags.filter((t) => t !== tag)
-      );
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
     } else {
-      setSelectedTags([
-        ...selectedTags,
-        tag,
-      ]);
+      setSelectedTags([...selectedTags, tag]);
     }
   };
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(e.target)
-      ) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setOpen(false);
       }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
 
-    return () =>
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const title =
     selectedTags.length === 0
       ? "Select Categories"
       : selectedTags.length <= 2
-      ? selectedTags.join(", ")
-      : `${selectedTags.length} Categories Selected`;
+        ? selectedTags.join(", ")
+        : `${selectedTags.length} Categories Selected`;
 
   return (
-    <div
-      className="category-filter"
-      ref={wrapperRef}
-    >
+    <div className="category-filter" ref={wrapperRef}>
       <button
         type="button"
         className="category-select"
@@ -71,28 +51,17 @@ export default function CategoryFilter({
       >
         <span>{title}</span>
 
-        <span
-          className={`arrow ${
-            open ? "rotate" : ""
-          }`}
-        >
-          ▼
-        </span>
+        <span className={`arrow ${open ? "rotate" : ""}`}>▼</span>
       </button>
 
       {open && (
         <div className="category-dropdown">
           {allTags.map((tag) => (
-            <label
-              key={tag}
-              className="category-option"
-            >
+            <label key={tag} className="category-option">
               <input
                 type="checkbox"
                 checked={selectedTags.includes(tag)}
-                onChange={() =>
-                  toggleTag(tag)
-                }
+                onChange={() => toggleTag(tag)}
               />
 
               <span>{tag}</span>

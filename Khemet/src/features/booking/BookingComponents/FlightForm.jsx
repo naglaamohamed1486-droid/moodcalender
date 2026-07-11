@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Toast from "../Toast";
+import Toast from "../../../shared/components/Toast";
 
 const classMultiplier = {
   Economy: 1,
@@ -30,19 +30,11 @@ const airlines = [
   },
 ];
 
-function FlightForm({
-  booking,
-  setBooking,
-  nextStep,
-  back,
-}) {
-
+function FlightForm({ booking, setBooking, nextStep, back }) {
   const calculatePrice = (basePrice, cabinClass) => {
-  return Math.round(basePrice * classMultiplier[cabinClass]);
-};
-const today = new Date().toISOString().split("T")[0];
-
-
+    return Math.round(basePrice * classMultiplier[cabinClass]);
+  };
+  const today = new Date().toISOString().split("T")[0];
 
   const [flight, setFlight] = useState({
     departure: "",
@@ -56,51 +48,46 @@ const today = new Date().toISOString().split("T")[0];
   });
 
   const [toast, setToast] = useState({
-  visible: false,
-  message: "",
-  type: "error",
-});
-
-const showToast = (message, type = "error") => {
-  setToast({
-    visible: true,
-    message,
-    type,
+    visible: false,
+    message: "",
+    type: "error",
   });
 
-  clearTimeout(window.toastTimer);
+  const showToast = (message, type = "error") => {
+    setToast({
+      visible: true,
+      message,
+      type,
+    });
 
-  window.toastTimer = setTimeout(() => {
-    setToast((prev) => ({
-      ...prev,
-      visible: false,
-    }));
-  }, 2500);
-};
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer = setTimeout(() => {
+      setToast((prev) => ({
+        ...prev,
+        visible: false,
+      }));
+    }, 2500);
+  };
 
   const chooseAirline = (item) => {
-  setFlight({
-    ...flight,
-    airline: item.name,
-    basePrice: item.price,
-    price: calculatePrice(item.price, flight.class),
-  });
-};
+    setFlight({
+      ...flight,
+      airline: item.name,
+      basePrice: item.price,
+      price: calculatePrice(item.price, flight.class),
+    });
+  };
 
   const continueBooking = () => {
-
-    if (
-      !flight.departure ||
-      !flight.departureDate ||
-      !flight.airline
-    ) {
+    if (!flight.departure || !flight.departureDate || !flight.airline) {
       showToast("Please complete all required fields.");
       return;
     }
     if (flight.departureDate < today) {
-     showToast("Departure date cannot be in the past.");
-     return;
-  }
+      showToast("Departure date cannot be in the past.");
+      return;
+    }
 
     setBooking({
       ...booking,
@@ -108,190 +95,142 @@ const showToast = (message, type = "error") => {
     });
 
     nextStep();
-
   };
 
   return (
-     <>
+    <>
+      <div className="booking-card">
+        <h2>Book Your Flight</h2>
 
-    <div className="booking-card">
+        <p>
+          Fill in your travel information and choose the airline that best fits
+          your trip.
+        </p>
 
-      <h2>Book Your Flight</h2>
+        <div className="flight-grid">
+          <div>
+            <label>Departure</label>
 
-      <p>
-        Fill in your travel information and choose
-        the airline that best fits your trip.
-      </p>
-
-      <div className="flight-grid">
-
-        <div>
-
-          <label>Departure</label>
-
-          <input
-            type="text"
-            placeholder="Alexandria"
-            value={flight.departure}
-            onChange={(e)=>
-              setFlight({
-                ...flight,
-                departure:e.target.value,
-              })
-            }
-          />
-
-        </div>
-
-        <div>
-
-          <label>Arrival</label>
-
-          <input
-            value="Cairo"
-            disabled
-          />
-
-        </div>
-
-        <div>
-
-          <label>Departure Date</label>
-
-          <input
-            type="date"
-            min={today}
-            value={flight.departureDate}
-            onChange={(e)=>
-              setFlight({
-                ...flight,
-                departureDate:e.target.value,
-              })
-            }
-          />
-
-        </div>
-
-        <div>
-
-          <label>Travelers</label>
-
-          <input
-            type="number"
-            min="1"
-            value={flight.travelers}
-            onChange={(e)=>
-              setFlight({
-                ...flight,
-                travelers:Number(e.target.value),
-              })
-            }
-          />
-
-        </div>
-
-        <div>
-
-          <label>Cabin Class</label>
-
-          <select
-            value={flight.class}
-            onChange={(e) => {
-  const newClass = e.target.value;
-
-  setFlight({
-  ...flight,
-  class: newClass,
-  basePrice: flight.basePrice,
-  price: calculatePrice(
-    flight.basePrice,
-    newClass
-  ),
-});
-}}
-          >
-            <option>Economy</option>
-            <option>Business</option>
-            <option>First Class</option>
-          </select>
-
-        </div>
-
-      </div>
-
-      <h3
-        style={{
-          marginTop: "35px",
-          marginBottom: "15px",
-        }}
-      >
-        Suggested Airlines
-      </h3>
-
-      <div className="airlines">
-
-        {airlines.map((item)=>(
-                    <div
-            key={item.name}
-            className={`airline ${
-              flight.airline === item.name
-                ? "selected"
-                : ""
-            }`}
-            onClick={() => chooseAirline(item)}
-          >
-
-            <div>
-
-              <h4>{item.name}</h4>
-
-              <small>
-                {item.duration}
-              </small>
-
-            </div>
-
-            <strong>
-              ${calculatePrice(
-                  item.price,
-                  flight.class
-               )}
-            </strong>
-
+            <input
+              type="text"
+              placeholder="Alexandria"
+              value={flight.departure}
+              onChange={(e) =>
+                setFlight({
+                  ...flight,
+                  departure: e.target.value,
+                })
+              }
+            />
           </div>
 
-        ))}
+          <div>
+            <label>Arrival</label>
 
-      </div>
+            <input value="Cairo" disabled />
+          </div>
 
-      <div className="booking-buttons">
+          <div>
+            <label>Departure Date</label>
 
-        <button
-          className="back-btn"
-          onClick={back}
+            <input
+              type="date"
+              min={today}
+              value={flight.departureDate}
+              onChange={(e) =>
+                setFlight({
+                  ...flight,
+                  departureDate: e.target.value,
+                })
+              }
+            />
+          </div>
+
+          <div>
+            <label>Travelers</label>
+
+            <input
+              type="number"
+              min="1"
+              value={flight.travelers}
+              onChange={(e) =>
+                setFlight({
+                  ...flight,
+                  travelers: Number(e.target.value),
+                })
+              }
+            />
+          </div>
+
+          <div>
+            <label>Cabin Class</label>
+
+            <select
+              value={flight.class}
+              onChange={(e) => {
+                const newClass = e.target.value;
+
+                setFlight({
+                  ...flight,
+                  class: newClass,
+                  basePrice: flight.basePrice,
+                  price: calculatePrice(flight.basePrice, newClass),
+                });
+              }}
+            >
+              <option>Economy</option>
+              <option>Business</option>
+              <option>First Class</option>
+            </select>
+          </div>
+        </div>
+
+        <h3
+          style={{
+            marginTop: "35px",
+            marginBottom: "15px",
+          }}
         >
-          ← Back
-        </button>
+          Suggested Airlines
+        </h3>
 
-        <button
-          className="next-btn"
-          onClick={continueBooking}
-        >
-          Continue →
-        </button>
+        <div className="airlines">
+          {airlines.map((item) => (
+            <div
+              key={item.name}
+              className={`airline ${
+                flight.airline === item.name ? "selected" : ""
+              }`}
+              onClick={() => chooseAirline(item)}
+            >
+              <div>
+                <h4>{item.name}</h4>
 
+                <small>{item.duration}</small>
+              </div>
+
+              <strong>${calculatePrice(item.price, flight.class)}</strong>
+            </div>
+          ))}
+        </div>
+
+        <div className="booking-buttons">
+          <button className="back-btn" onClick={back}>
+            ← Back
+          </button>
+
+          <button className="next-btn" onClick={continueBooking}>
+            Continue →
+          </button>
+        </div>
       </div>
-
-    </div>
-    <Toast
-      visible={toast.visible}
-      message={toast.message}
-      type={toast.type}
-    />
+      <Toast
+        visible={toast.visible}
+        message={toast.message}
+        type={toast.type}
+      />
     </>
-
   );
-
 }
 
 export default FlightForm;

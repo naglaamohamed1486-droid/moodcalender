@@ -1,4 +1,4 @@
-import "../css/plancard.css";
+import "./plancard.css";
 
 // Fallback labels in case a plan is ever missing one (keeps "Plan A/B/C" reliable)
 const FALLBACK_LABELS = ["Plan A", "Plan B", "Plan C"];
@@ -52,7 +52,8 @@ function PlanCard({ plan, index, days, buildItinerary, onPreview, onSelect }) {
         <div className="plan-heading">
           <h3 className="plan-title">{plan.title}</h3>
           <p className="plan-subtitle">
-            {days} Day Journey · {totalPlaces} {totalPlaces === 1 ? "Place" : "Places"}
+            {days} Day Journey · {totalPlaces}{" "}
+            {totalPlaces === 1 ? "Place" : "Places"}
           </p>
         </div>
 

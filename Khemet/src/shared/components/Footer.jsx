@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../app/providers/AuthContext";
 import { useState } from "react";
 
 function Footer() {
@@ -66,7 +66,8 @@ function Footer() {
           <div>
             <h3>Explore Egypt</h3>
             <p>
-              Discover Egypt through local eyes — hidden gems, cozy spots, and real experiences.
+              Discover Egypt through local eyes — hidden gems, cozy spots, and
+              real experiences.
             </p>
           </div>
 
@@ -82,7 +83,9 @@ function Footer() {
             <div>
               <h3>Contact</h3>
               <Link to="/about">About</Link>
-              <button onClick={openModal} className="footer-link-btn">Support</button>
+              <button onClick={openModal} className="footer-link-btn">
+                Support
+              </button>
             </div>
           </div>
         </div>
@@ -98,7 +101,9 @@ function Footer() {
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>✕</button>
+            <button className="modal-close" onClick={closeModal}>
+              ✕
+            </button>
 
             <div className="modal-header">
               <h2>Contact Us</h2>
@@ -139,10 +144,18 @@ function Footer() {
                 </div>
 
                 <div className="modal-actions">
-                  <button type="button" className="btn-clear" onClick={handleClear}>
+                  <button
+                    type="button"
+                    className="btn-clear"
+                    onClick={handleClear}
+                  >
                     Clear
                   </button>
-                  <button type="submit" className="btn-submit" disabled={isSending}>
+                  <button
+                    type="submit"
+                    className="btn-submit"
+                    disabled={isSending}
+                  >
                     {isSending ? "Sending..." : "Submit"}
                   </button>
                 </div>

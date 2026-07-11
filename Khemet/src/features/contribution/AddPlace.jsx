@@ -8,11 +8,7 @@ import Toast from "../../shared/components/Toast";
 import "leaflet/dist/leaflet.css";
 import "./AddPlace.css";
 import placesData from "../../places.json";
-import {
-  CATEGORIES,
-  LOCATIONS,
-  getNextId,
-} from "../../data/placesdatahandling";
+import { CATEGORIES, LOCATIONS, getNextId } from "./placesdatahandling";
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:

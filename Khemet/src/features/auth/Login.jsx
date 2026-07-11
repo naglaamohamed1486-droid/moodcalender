@@ -1,18 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../app/providers/AuthContext";
 import { useState, useRef } from "react";
-import Toast from "../components/Toast";
-import '../css/login.css';
+import Toast from "../../shared/components/Toast";
+import "./login.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "../firebase";
+import { auth, db } from "../../firebase";
 
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const [toast, setToast] = useState({
+    visible: false,
+    type: "success",
+    message: "",
+  });
   const toastTimeout = useRef(null);
 
   const showToast = (type, message) => {
@@ -37,7 +41,11 @@ export default function Login() {
     }
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      );
       const firebaseUser = userCredential.user;
       const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
       const userData = userDoc.data();
@@ -47,7 +55,6 @@ export default function Login() {
 
       const isAdmin = userData.role === "admin";
       setTimeout(() => navigate(isAdmin ? "/dashboard" : "/"), 900);
-
     } catch (error) {
       if (error.code === "auth/user-not-found") {
         showToast("error", "No account found — please sign up first");
@@ -62,29 +69,52 @@ export default function Login() {
 
   return (
     <main className="main-login">
-      <Toast message={toast.message} visible={toast.visible} type={toast.type} />
+      <Toast
+        message={toast.message}
+        visible={toast.visible}
+        type={toast.type}
+      />
       <div className="LogIn container active" id="login">
         <form className="Log" onSubmit={handleLogin}>
           <h2>Welcome Back</h2>
           <div className="form-body">
             <div className="field">
-              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder=" " />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder=" "
+              />
               <label htmlFor="loginEmail">Email</label>
             </div>
             <div className="field">
-              <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder=" " />
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder=" "
+              />
               <label htmlFor="loginPass">Password</label>
             </div>
             <button type="submit">Log in</button>
-            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+            <p>
+              Don't have an account? <Link to="/signup">Sign up</Link>
+            </p>
           </div>
         </form>
 
         <div className="section-log section">
           <div className="section-content">
-            <h1><Link to="/">KHEMET</Link></h1>
+            <h1>
+              <Link to="/">KHEMET</Link>
+            </h1>
             <h2>Welcome Back to Khemet</h2>
-            <h3>Pick up where you left off and keep discovering Egypt's finest places.</h3>
+            <h3>
+              Pick up where you left off and keep discovering Egypt's finest
+              places.
+            </h3>
           </div>
         </div>
       </div>

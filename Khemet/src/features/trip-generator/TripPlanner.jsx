@@ -1,22 +1,19 @@
-import places from "../places.json";
-import "../css/TripPlanner.css";
-import PlanCard from "../components/PlanCard";
-import TripPreviewModal from "../components/TripPreviewModal";
-import TripOrganizer from "../components/TripOrganizer";
-import Generator from "../components/Generator";
+import places from "../../places.json";
+import "./TripPlanner.css";
+import PlanCard from "./generatorComponents/plancard";
+import TripPreviewModal from "./generatorComponents/TripPreviewModal";
+import TripOrganizer from "./generatorComponents/TripOrganizer";
+import Generator from "./generatorComponents/Generator";
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { savePlan } from "../components/Booking/bookingDB";
-import { useAuth } from "../context/AuthContext";
-import SavedTripsList from "../components/savedTripsList";
+import { savePlan } from "../booking/BookingComponents/bookingDB";
+import { useAuth } from "../../app/providers/AuthContext";
+import SavedTripsList from "../../shared/components/savedTripsList";
 import { Link } from "react-router-dom";
 
 // ===========================
 // Distance & travel time helpers
 // ===========================
-
-
-
 
 const titlePools = {
   historical: [
@@ -43,26 +40,14 @@ const titlePools = {
     "Oasis Journey",
     "Scenic Retreat",
   ],
-  food: [
-    "Taste of Egypt",
-    "Culinary Journey",
-    "Flavors of the Nile",
-  ],
+  food: ["Taste of Egypt", "Culinary Journey", "Flavors of the Nile"],
   photography: [
     "Picture Perfect Egypt",
     "Golden Hour Journey",
     "Lens & Landscapes",
   ],
-  romantic: [
-    "Romantic Getaway",
-    "Sunset Escape",
-    "Love Along the Nile",
-  ],
-  hidden: [
-    "Hidden Treasures",
-    "Secret Egypt",
-    "Off the Beaten Path",
-  ],
+  romantic: ["Romantic Getaway", "Sunset Escape", "Love Along the Nile"],
+  hidden: ["Hidden Treasures", "Secret Egypt", "Off the Beaten Path"],
 };
 
 // Fallback titles per cluster — used to guarantee variety even when the
@@ -167,11 +152,19 @@ function travelTimeHours(cityA, cityB, cityCoords) {
 const CITY_CLUSTERS = [
   {
     name: "North Egypt",
-    cities: ["Cairo", "Giza", "Alexandria", "Fayoum", "Ain Sokhna", "Port Said", "Ismailia"],
+    cities: [
+      "Cairo",
+      "Giza",
+      "Alexandria",
+      "Fayoum",
+      "Ain Sokhna",
+      "Port Said",
+      "Ismailia",
+    ],
   },
   {
     name: "Nile Valley",
-    cities: ["Luxor","Qena", "Aswan"],
+    cities: ["Luxor", "Qena", "Aswan"],
   },
   {
     name: "Red Sea & Sinai",
@@ -201,9 +194,15 @@ function scorePlace(place, selectedInterests) {
   return (place.tags || []).filter((t) => selectedInterests.includes(t)).length;
 }
 
-function pickPlacesForDay(placesPool, selectedInterests, placesPerDay, offset = 0) {
+function pickPlacesForDay(
+  placesPool,
+  selectedInterests,
+  placesPerDay,
+  offset = 0,
+) {
   const sorted = [...placesPool].sort(
-    (a, b) => scorePlace(b, selectedInterests) - scorePlace(a, selectedInterests)
+    (a, b) =>
+      scorePlace(b, selectedInterests) - scorePlace(a, selectedInterests),
   );
   // rotate by offset so different plans pick different places
   const rotated = [...sorted.slice(offset), ...sorted.slice(0, offset)];
@@ -214,7 +213,14 @@ function pickPlacesForDay(placesPool, selectedInterests, placesPerDay, offset = 
 // Core plan builder
 // ===========================
 
-function buildPlan(allPlaces, selectedInterests, days, pace, clusterIndex, placeOffset) {
+function buildPlan(
+  allPlaces,
+  selectedInterests,
+  days,
+  pace,
+  clusterIndex,
+  placeOffset,
+) {
   const placesPerDay = pace === "Relaxed" ? 2 : pace === "Intense" ? 5 : 3;
   const cityMap = groupByCity(allPlaces);
 
@@ -225,17 +231,23 @@ function buildPlan(allPlaces, selectedInterests, days, pace, clusterIndex, place
 
   // Score cities by interest match, sort so best city comes first
   const rankedCities = [...citiesInCluster].sort((a, b) => {
-    const scoreA = (cityMap[a] || []).reduce((s, p) => s + scorePlace(p, selectedInterests), 0);
-    const scoreB = (cityMap[b] || []).reduce((s, p) => s + scorePlace(p, selectedInterests), 0);
+    const scoreA = (cityMap[a] || []).reduce(
+      (s, p) => s + scorePlace(p, selectedInterests),
+      0,
+    );
+    const scoreB = (cityMap[b] || []).reduce(
+      (s, p) => s + scorePlace(p, selectedInterests),
+      0,
+    );
     return scoreB - scoreA;
   });
 
   const cityOffset = clusterIndex % rankedCities.length;
 
-const rotatedCities = [
-  ...rankedCities.slice(cityOffset),
-  ...rankedCities.slice(0, cityOffset),
-];
+  const rotatedCities = [
+    ...rankedCities.slice(cityOffset),
+    ...rankedCities.slice(0, cityOffset),
+  ];
 
   // Distribute days across cities evenly, keeping same city consecutive
   const daysPerCity = Math.ceil(days / rankedCities.length);
@@ -247,21 +259,25 @@ const rotatedCities = [
     if (dayCount >= days) break;
 
     const pool = [...(cityMap[city] || [])].sort(
-      (a, b) => scorePlace(b, selectedInterests) - scorePlace(a, selectedInterests)
+      (a, b) =>
+        scorePlace(b, selectedInterests) - scorePlace(a, selectedInterests),
     );
 
     // rotate pool by offset so different plans pick different places
-    const rotated = [...pool.slice(placeOffset % Math.max(pool.length, 1)), ...pool.slice(0, placeOffset % Math.max(pool.length, 1))];
+    const rotated = [
+      ...pool.slice(placeOffset % Math.max(pool.length, 1)),
+      ...pool.slice(0, placeOffset % Math.max(pool.length, 1)),
+    ];
 
     // Pick only unused places
     const available = rotated.filter((p) => !usedPlaceIds.has(p.id));
-    
+
     const cityDays = Math.min(daysPerCity, days - dayCount);
 
     for (let d = 0; d < cityDays; d++) {
       const startIdx = d * placesPerDay;
       const picked = available.slice(startIdx, startIdx + placesPerDay);
-      
+
       // If not enough unique places for this day, stop adding days for this city
       if (picked.length === 0) break;
 
@@ -311,7 +327,9 @@ function buildItinerary(planPlaces, selectedInterests, days, pace) {
     dayCount++;
 
     // Move to next city if this city's places are exhausted
-    const remaining = (cityMap[city] || []).filter((p) => !usedPlaceIds.has(p.id));
+    const remaining = (cityMap[city] || []).filter(
+      (p) => !usedPlaceIds.has(p.id),
+    );
     if (remaining.length < placesPerDay) cityIndex++;
   }
 
@@ -322,13 +340,12 @@ function buildItinerary(planPlaces, selectedInterests, days, pace) {
 // buildItinerary (used by PlanCard + TripPreviewModal)
 // ===========================
 
-
 // ===========================
 // generatePlans — 3 geographic plans
 // ===========================
 
 function generatePlans(allPlaces, selectedInterests, days, pace) {
-  const labels = ["Plan A", "Plan B", "Plan C"];  
+  const labels = ["Plan A", "Plan B", "Plan C"];
 
   // Score each cluster by how well its places match selected interests
   const cityMap = groupByCity(allPlaces);
@@ -337,7 +354,7 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
     const clusterPlaces = cluster.cities.flatMap((c) => cityMap[c] || []);
     const score = clusterPlaces.reduce(
       (sum, p) => sum + scorePlace(p, selectedInterests),
-      0
+      0,
     );
     return { index, score, placeCount: clusterPlaces.length };
   })
@@ -348,33 +365,34 @@ function generatePlans(allPlaces, selectedInterests, days, pace) {
   const usedTitles = new Set();
 
   // Assign top 3 clusters (or rotate if fewer than 3)
-  const plans = [0, 1, 2].map((i) => {
-    const clusterEntry = scoredClusters[i % scoredClusters.length];
-    const itinerary = buildPlan(
-      allPlaces,
-      selectedInterests,
-      days,
-      pace,
-      clusterEntry.index,
-      i * 2 // different place offset per plan
-    );
-
-    if (!itinerary) return null;
-
-    return {
-      label: labels[i],
-      title: generatePlanTitle(
-        CITY_CLUSTERS[clusterEntry.index].name,
+  const plans = [0, 1, 2]
+    .map((i) => {
+      const clusterEntry = scoredClusters[i % scoredClusters.length];
+      const itinerary = buildPlan(
+        allPlaces,
         selectedInterests,
-        usedTitles
-      ),
+        days,
+        pace,
+        clusterEntry.index,
+        i * 2, // different place offset per plan
+      );
 
-      clusterName: CITY_CLUSTERS[clusterEntry.index].name,
-      places: itinerary.flatMap((d) => d.places),
-      itinerary,
-    };
-    
-  }).filter(Boolean);
+      if (!itinerary) return null;
+
+      return {
+        label: labels[i],
+        title: generatePlanTitle(
+          CITY_CLUSTERS[clusterEntry.index].name,
+          selectedInterests,
+          usedTitles,
+        ),
+
+        clusterName: CITY_CLUSTERS[clusterEntry.index].name,
+        places: itinerary.flatMap((d) => d.places),
+        itinerary,
+      };
+    })
+    .filter(Boolean);
 
   return plans;
 }
@@ -385,36 +403,27 @@ function TripPlanner() {
       behavior: "instant", // أو احذفي behavior خالص
     });
   }, []);
-  
+
   //Booking
   const handleBooking = async (plan) => {
+    try {
+      await savePlan(plan);
 
-  try {
+      const answer = window.confirm(
+        "Do you want to proceed with booking this plan?",
+      );
 
-    await savePlan(plan);
+      if (!answer) return;
 
-    const answer = window.confirm(
-      "Do you want to proceed with booking this plan?"
-    );
-
-    if (!answer) return;
-
-    navigate("/booking", {
-      state: {
-        plan,
-      },
-    });
-
-  }
-
-  catch(err){
-
-    console.log(err);
-
-  }
-
-};
-
+      navigate("/booking", {
+        state: {
+          plan,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [days, setDays] = useState(3);
@@ -423,8 +432,6 @@ function TripPlanner() {
   const [showPreview, setShowPreview] = useState(false);
   const [editingTrip, setEditingTrip] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
-  
-
 
   const organizerRef = useRef(null);
   const plansRef = useRef(null);
@@ -437,93 +444,17 @@ function TripPlanner() {
 
   //   setEditingTrip(null);
   // };
-//   const deleteTrip = (index) => {
-//   setSavedTrips((prev) =>
-//     prev.filter((_, i) => i !== index)
-//   );
-// };
+  //   const deleteTrip = (index) => {
+  //   setSavedTrips((prev) =>
+  //     prev.filter((_, i) => i !== index)
+  //   );
+  // };
 
   const handleSelect = (plan) => {
-  const built = buildItinerary(plan.places, selectedInterests, days, pace);
-  setEditingTrip({
-    ...plan,
-    itinerary: built.map((d) => d.places),
-  });
-
-  setTimeout(() => {
-    organizerRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, 100);
-};
-
-  const handlePreview = (plan) => {
-    setSelectedPlan(plan);
-    setShowPreview(true);
-  };
-
-  const interests = [
-    { id: "historical", title: "History", desc: "Pyramids, temples and ancient sites" },
-    { id: "adventure", title: "Adventure", desc: "Deserts, diving and exploration" },
-    { id: "cultural", title: "Culture", desc: "Markets, traditions and heritage" },
-    { id: "nature", title: "Nature", desc: "Oases, lakes and scenic views" },
-    { id: "beach", title: "Beach", desc: "Sea, resorts and relaxation" },
-    { id: "food", title: "Food", desc: "Local dishes and cafés" },
-    { id: "photography", title: "Photography", desc: "Instagram-worthy locations" },
-    { id: "romantic", title: "Romantic", desc: "Sunsets and peaceful spots" },
-    { id: "modern", title: "Modern", desc: "Contemporary attractions" },
-    { id: "diving", title: "Diving", desc: "Coral reefs and underwater adventures" },
-    { id: "mysterious", title: "Mystery", desc: "Ancient secrets, tombs and legends" },
-    { id: "hidden", title: "Hidden Gems", desc: "Less crowded unique places" },
-  ];
-
-  const toggleInterest = (interest) => {
-    setSelectedInterests((prev) =>
-      prev.includes(interest)
-        ? prev.filter((item) => item !== interest)
-        : [...prev, interest]
-    );
-  };
-
-  const generate = () => {
-    setEditingTrip(null);     // اقفلي الـ Organizer
-    setShowPreview(false);    // لو الـ Preview مفتوح
-  const generated = generatePlans(places, selectedInterests, days, pace);
-  setPlans(generated);
-};
-
-const closeTrip = () => {
-  setEditingTrip(null);
-};
-
-const deleteTrip = () => {
-  setSavedTrips(prev =>
-    prev.filter(t => t.name !== editingTrip.name)
-  );
-
-  setEditingTrip(null);
-};
-
-const duplicateTrip = () => {
-  const copy = {
-    ...editingTrip,
-    name: editingTrip.name + " Copy",
-    itinerary: editingTrip.itinerary.map(day => [...day])
-  };
-
-  setSavedTrips(prev => [...prev, copy]);
-};
-const location = useLocation();
-const navigate = useNavigate();
-
-useEffect(() => {
-  if (location.state?.trip) {
-    setEditingTrip(location.state.trip);
-
-    navigate(location.pathname, {
-      replace: true,
-      state: null,
+    const built = buildItinerary(plan.places, selectedInterests, days, pace);
+    setEditingTrip({
+      ...plan,
+      itinerary: built.map((d) => d.places),
     });
 
     setTimeout(() => {
@@ -532,19 +463,117 @@ useEffect(() => {
         block: "start",
       });
     }, 100);
-  }
-}, [location, navigate]);
+  };
 
-useEffect(() => {
-  if (plans.length > 0) {
-    plansRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}, [plans]);
+  const handlePreview = (plan) => {
+    setSelectedPlan(plan);
+    setShowPreview(true);
+  };
 
-const { savedTrips } = useAuth();
+  const interests = [
+    {
+      id: "historical",
+      title: "History",
+      desc: "Pyramids, temples and ancient sites",
+    },
+    {
+      id: "adventure",
+      title: "Adventure",
+      desc: "Deserts, diving and exploration",
+    },
+    {
+      id: "cultural",
+      title: "Culture",
+      desc: "Markets, traditions and heritage",
+    },
+    { id: "nature", title: "Nature", desc: "Oases, lakes and scenic views" },
+    { id: "beach", title: "Beach", desc: "Sea, resorts and relaxation" },
+    { id: "food", title: "Food", desc: "Local dishes and cafés" },
+    {
+      id: "photography",
+      title: "Photography",
+      desc: "Instagram-worthy locations",
+    },
+    { id: "romantic", title: "Romantic", desc: "Sunsets and peaceful spots" },
+    { id: "modern", title: "Modern", desc: "Contemporary attractions" },
+    {
+      id: "diving",
+      title: "Diving",
+      desc: "Coral reefs and underwater adventures",
+    },
+    {
+      id: "mysterious",
+      title: "Mystery",
+      desc: "Ancient secrets, tombs and legends",
+    },
+    { id: "hidden", title: "Hidden Gems", desc: "Less crowded unique places" },
+  ];
+
+  const toggleInterest = (interest) => {
+    setSelectedInterests((prev) =>
+      prev.includes(interest)
+        ? prev.filter((item) => item !== interest)
+        : [...prev, interest],
+    );
+  };
+
+  const generate = () => {
+    setEditingTrip(null); // اقفلي الـ Organizer
+    setShowPreview(false); // لو الـ Preview مفتوح
+    const generated = generatePlans(places, selectedInterests, days, pace);
+    setPlans(generated);
+  };
+
+  const closeTrip = () => {
+    setEditingTrip(null);
+  };
+
+  const deleteTrip = () => {
+    setSavedTrips((prev) => prev.filter((t) => t.name !== editingTrip.name));
+
+    setEditingTrip(null);
+  };
+
+  const duplicateTrip = () => {
+    const copy = {
+      ...editingTrip,
+      name: editingTrip.name + " Copy",
+      itinerary: editingTrip.itinerary.map((day) => [...day]),
+    };
+
+    setSavedTrips((prev) => [...prev, copy]);
+  };
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state?.trip) {
+      setEditingTrip(location.state.trip);
+
+      navigate(location.pathname, {
+        replace: true,
+        state: null,
+      });
+
+      setTimeout(() => {
+        organizerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }, [location, navigate]);
+
+  useEffect(() => {
+    if (plans.length > 0) {
+      plansRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [plans]);
+
+  const { savedTrips } = useAuth();
   return (
     <div className="trip-page">
       <div className="trip-header">
@@ -566,7 +595,6 @@ const { savedTrips } = useAuth();
         toggleInterest={toggleInterest}
         onGenerate={generate}
       />
-      
 
       {plans.length > 0 && !editingTrip && (
         <div ref={plansRef}>
@@ -590,15 +618,17 @@ const { savedTrips } = useAuth();
           <div className="plans-container">
             {plans.map((plan, index) => (
               <PlanCard
-  key={index}
-  index={index}
-  plan={plan}
-  days={days}
-  selectedInterests={selectedInterests}
-  buildItinerary={(p) => buildItinerary(p, selectedInterests, days, pace)}
-  onPreview={handlePreview}
-  onSelect={handleSelect}
-/>
+                key={index}
+                index={index}
+                plan={plan}
+                days={days}
+                selectedInterests={selectedInterests}
+                buildItinerary={(p) =>
+                  buildItinerary(p, selectedInterests, days, pace)
+                }
+                onPreview={handlePreview}
+                onSelect={handleSelect}
+              />
             ))}
           </div>
         </div>
@@ -606,11 +636,13 @@ const { savedTrips } = useAuth();
 
       {showPreview && (
         <TripPreviewModal
-  plan={selectedPlan}
-  buildItinerary={(p) => buildItinerary(p, selectedInterests, days, pace)}
-  onClose={() => setShowPreview(false)}
-  onSelect={handleSelect}
-/>
+          plan={selectedPlan}
+          buildItinerary={(p) =>
+            buildItinerary(p, selectedInterests, days, pace)
+          }
+          onClose={() => setShowPreview(false)}
+          onSelect={handleSelect}
+        />
       )}
 
       <div ref={organizerRef}>
@@ -624,55 +656,34 @@ const { savedTrips } = useAuth();
           />
         )}
       </div>
-      
+
       {/* latest saved trips section */}
       <section className="latest-trips-section">
-
         <div className="latest-header">
-
           <div>
-            <span className="saved-step">
-              YOUR TRIPS
-            </span>
+            <span className="saved-step">YOUR TRIPS</span>
 
             <h2>Latest Saved Trips</h2>
           </div>
 
-          <Link
-            to="/savedtrips"
-            className="view-all-btn"
-          >
+          <Link to="/savedtrips" className="view-all-btn">
             View All →
           </Link>
-
         </div>
 
         {savedTrips.length > 0 ? (
-
-          <SavedTripsList
-            trips={savedTrips.slice(-3).reverse()}
-            previewMode
-          />
-
+          <SavedTripsList trips={savedTrips.slice(-3).reverse()} previewMode />
         ) : (
-
-          <p className="no-trips">
-            No saved trips yet.
-          </p>
-
+          <p className="no-trips">No saved trips yet.</p>
         )}
-
       </section>
 
       {/* Blank Trip */}
 
       <div className="blank-trip-box">
-
         <h3>Create from Scratch</h3>
 
-        <p>
-          Start with an empty itinerary and build your own adventure.
-        </p>
+        <p>Start with an empty itinerary and build your own adventure.</p>
 
         <button
           className="blank-trip-btn"
@@ -685,12 +696,9 @@ const { savedTrips } = useAuth();
         >
           + Blank Trip
         </button>
-
       </div>
-
     </div>
   );
 }
-
 
 export default TripPlanner;

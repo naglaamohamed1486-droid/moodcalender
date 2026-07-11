@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import BookingStepper from "../components/Booking/BookingStepper";
-import FlightChoice from "../components/Booking/FlightChoice";
-import FlightForm from "../components/Booking/FlightForm";
-import TripPlanning from "../components/Booking/TripPlanning";
-import Reservations from "../components/Booking/Reservations";
-import BookingSummary from "../components/Booking/BookingSummary";
-import LinkedPlanCard from "../components/Booking/LinkedPlanCard";
-import LiveTotal from "../components/Booking/LiveTotal";
+import BookingStepper from "./BookingComponents/BookingStepper";
+import FlightChoice from "./BookingComponents/FlightChoice";
+import FlightForm from "./BookingComponents/FlightForm";
+import TripPlanning from "./BookingComponents/TripPlanning";
+import Reservations from "./BookingComponents/Reservations";
+import BookingSummary from "./BookingComponents/BookingSummary";
+import LinkedPlanCard from "./BookingComponents/LinkedPlanCard";
+import LiveTotal from "./BookingComponents/LiveTotal";
 
-import "../css/Booking.css";
+import "./Booking.css";
 
 function Booking() {
   const location = useLocation();
@@ -21,11 +21,11 @@ function Booking() {
   const [showFlightForm, setShowFlightForm] = useState(false);
 
   useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}, [step, showFlightForm]);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [step, showFlightForm]);
 
   const [booking, setBooking] = useState({
     plan: selectedPlan,
@@ -47,31 +47,22 @@ function Booking() {
       </div>
     );
   }
-    console.log("Current step:", step);
-
+  console.log("Current step:", step);
 
   return (
     <div className="booking-page">
-
       {/* ================= HERO ================= */}
 
       <section className="booking-hero">
+        <div className="booking-hero-eyebrow">KHEMET BOOKING</div>
 
-        <div className="booking-hero-eyebrow">
-          KHEMET BOOKING
-        </div>
-
-        <h1 className="booking-hero-title">
-          Plan & Book Your Journey
-        </h1>
+        <h1 className="booking-hero-title">Plan & Book Your Journey</h1>
 
         <p className="booking-hero-subtitle">
-          Complete your booking in four easy steps.
-          Book flights, organize your itinerary,
-          reserve attractions and review everything
-          before confirming.
+          Complete your booking in four easy steps. Book flights, organize your
+          itinerary, reserve attractions and review everything before
+          confirming.
         </p>
-
       </section>
 
       {/* ================= STEPPER ================= */}
@@ -85,9 +76,7 @@ function Booking() {
       {/* ================= CONTENT ================= */}
 
       <div className="booking-layout">
-
         <div className="booking-content">
-
           {/* STEP 1 */}
 
           {step === 1 && !showFlightForm && (
@@ -95,9 +84,7 @@ function Booking() {
               booking={booking}
               setBooking={setBooking}
               nextStep={() => setStep(2)}
-              openFlightForm={() =>
-                setShowFlightForm(true)
-              }
+              openFlightForm={() => setShowFlightForm(true)}
             />
           )}
 
@@ -111,12 +98,10 @@ function Booking() {
                 setShowFlightForm(false);
                 setStep(2);
               }}
-              back={() =>
-                setShowFlightForm(false)
-              }
+              back={() => setShowFlightForm(false)}
             />
           )}
-                    {/* STEP 2 */}
+          {/* STEP 2 */}
 
           {step === 2 && (
             <TripPlanning
@@ -153,17 +138,13 @@ function Booking() {
               prevStep={() => setStep(3)}
             />
           )}
-
         </div>
 
         {/* ================= SIDEBAR ================= */}
 
         <aside>
-
           <LiveTotal booking={booking} />
-
         </aside>
-
       </div>
 
       {/* Decorative Bottom Section */}
@@ -176,11 +157,10 @@ function Booking() {
         }}
       >
         <p>
-          ✨ Every booking is securely stored and can
-          be managed later from your reservations.
+          ✨ Every booking is securely stored and can be managed later from your
+          reservations.
         </p>
       </section>
-
     </div>
   );
 }

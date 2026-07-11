@@ -1,13 +1,13 @@
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import "../css/Map.css";
-import SearchBar from "../components/SearchBar";
-import CategoryFilter from "../components/CategoryFilter";
-import MapView from "../components/MapView";
-import PlacesList from "../components/PlacesList";
-import PlaceCard from "../components/PlaceCard";
+import "./Map.css";
+import SearchBar from "../../shared/components/SearchBar";
+import CategoryFilter from "../places/CategoryFilter";
+import MapView from "./MapView";
+import PlacesList from "../places/PlacesList";
+import PlaceCard from "../places/PlaceCard";
 
-import placesData from "../places.json";
+import placesData from "../../places.json";
 
 export default function Map() {
   const [search, setSearch] = useState("");
@@ -44,17 +44,15 @@ export default function Map() {
         title.toLowerCase().includes(searchText) ||
         city.toLowerCase().includes(searchText);
 
-      const normalize = (str) =>
-        (str || "").toString().trim().toLowerCase();
+      const normalize = (str) => (str || "").toString().trim().toLowerCase();
 
       const matchesTag =
         selectedTags.length === 0 ||
         (Array.isArray(place.tags) &&
           place.tags.some((t) =>
             selectedTags.some(
-              (selected) =>
-                normalize(selected) === normalize(t)
-            )
+              (selected) => normalize(selected) === normalize(t),
+            ),
           ));
 
       return matchesSearch && matchesTag;
@@ -64,30 +62,20 @@ export default function Map() {
   return (
     <div className="map-page">
       <div className="map-container">
-
         <section className="hero-section">
-          <span className="hero-subtitle">
-            Discover Egypt
-          </span>
+          <span className="hero-subtitle">Discover Egypt</span>
 
-          <h1 className="hero-title">
-            Explore Egypt
-          </h1>
+          <h1 className="hero-title">Explore Egypt</h1>
 
           <p className="hero-description">
-            Discover ancient temples, hidden cafés,
-            breathtaking landscapes and unforgettable
-            places across Egypt.
+            Discover ancient temples, hidden cafés, breathtaking landscapes and
+            unforgettable places across Egypt.
           </p>
         </section>
 
         <section className="search-box">
-
           <div className="search-wrapper">
-            <SearchBar
-              search={search}
-              setSearch={setSearch}
-            />
+            <SearchBar search={search} setSearch={setSearch} />
           </div>
 
           <CategoryFilter
@@ -96,21 +84,14 @@ export default function Map() {
             setSelectedTags={setSelectedTags}
           />
 
-          <button
-            className="clear-btn"
-            onClick={clearFilters}
-          >
+          <button className="clear-btn" onClick={clearFilters}>
             ✕ Clear
           </button>
 
-          <div className="places-counter">
-            {filteredPlaces.length} Places
-          </div>
-
+          <div className="places-counter">{filteredPlaces.length} Places</div>
         </section>
 
         <section className="content-layout">
-
           <div className="map-column">
             <MapView
               places={filteredPlaces}
@@ -121,10 +102,7 @@ export default function Map() {
 
           <div className="cards-column">
             {selectedPlace ? (
-              <PlaceCard
-                place={selectedPlace}
-                onSelect={setSelectedPlace}
-              />
+              <PlaceCard place={selectedPlace} onSelect={setSelectedPlace} />
             ) : (
               <PlacesList
                 places={filteredPlaces}
@@ -132,9 +110,7 @@ export default function Map() {
               />
             )}
           </div>
-
         </section>
-
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../app/providers/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
-import placesData from "../places.json";
-import logo from '../assets/logo.png'
-import '../css/dashboard.css'
+import { db } from "../../firebase";
+import "../../places.json";
+import "../../assets/logo.png";
+import "./Dashboard.css";
 
 async function loadDashboardStats() {
   const snap = await getDocs(collection(db, "users"));
@@ -42,7 +42,8 @@ async function loadDashboardStats() {
         status,
         ownerName: u.name,
         ownerEmail: u.email,
-        createdAt: place.createdAt || place.approvedAt || place.rejectedAt || null,
+        createdAt:
+          place.createdAt || place.approvedAt || place.rejectedAt || null,
       });
     });
 
@@ -109,8 +110,20 @@ function formatDate(iso) {
 }
 
 const ClockIcon = () => (
-  <svg width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#7A6040" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+      stroke="#7A6040"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
@@ -155,9 +168,31 @@ export default function Dashboard() {
               <p className="dash-hero-type">Administrator</p>
               <p className="dash-hero-name">Khemet</p>
               <p className="dash-hero-email">
-                <svg className="hero-email-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#F5EDD7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <rect x="3" y="5" width="18" height="14" rx="2" stroke="#F5EDD7" strokeWidth="2" strokeLinecap="round" />
+                <svg
+                  className="hero-email-svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7"
+                    stroke="#F5EDD7"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                    stroke="#F5EDD7"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
                 {user.email}
               </p>
@@ -220,16 +255,25 @@ export default function Dashboard() {
       <div className="dash-quick-actions">
         <h3 className="dash-section-title">Quick actions</h3>
         <div className="dash-quick-actions-grid">
-          <button className="dash-action-btn" onClick={() => navigate("/submissions")}>
+          <button
+            className="dash-action-btn"
+            onClick={() => navigate("/submissions")}
+          >
             Review Submissions →
           </button>
-          <button className="dash-action-btn" onClick={() => navigate("/adminUsers")}>
+          <button
+            className="dash-action-btn"
+            onClick={() => navigate("/adminUsers")}
+          >
             Manage Users →
           </button>
           <button className="dash-action-btn" onClick={() => navigate("/feed")}>
             View All Places →
           </button>
-          <button className="dash-action-btn" onClick={() => navigate("/adminReports")}>
+          <button
+            className="dash-action-btn"
+            onClick={() => navigate("/adminReports")}
+          >
             Manage Reports →
           </button>
         </div>
@@ -286,7 +330,11 @@ export default function Dashboard() {
           ) : stats.recentActivity.length > 0 ? (
             <ul className="dash-activity-list">
               {stats.recentActivity.map((item) => (
-                <li key={item.id} className="dash-activity-row" data-status={item.status}>
+                <li
+                  key={item.id}
+                  className="dash-activity-row"
+                  data-status={item.status}
+                >
                   <div className="dash-activity-main">
                     <p className="dash-activity-title">{item.title}</p>
                     <p className="dash-activity-sub">

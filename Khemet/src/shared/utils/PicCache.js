@@ -1,4 +1,4 @@
-import { uploadImage } from "../cloudinaryService";
+import { uploadImage } from "../../services/cloudinary/cloudinaryService";
 
 const DB_NAME = "imageCacheDB";
 const STORE = "images";
@@ -20,11 +20,10 @@ function openDB() {
     req.onerror = (e) => reject(e.target.error);
   });
 }
+
 export async function setPlaceImages(id, { coverImage, gallery }) {
   const coverUrl = await uploadImage(coverImage);
-  const galleryUrls = await Promise.all(
-    gallery.map((img) => uploadImage(img))
-  );
+  const galleryUrls = await Promise.all(gallery.map((img) => uploadImage(img)));
   return {
     coverImage: coverUrl,
     gallery: galleryUrls,
@@ -40,18 +39,38 @@ export async function getPlaceImages(id) {
       req.onerror = () => resolve({ coverImage: "", gallery: [] });
     });
   }
+
   return { coverImage: "", gallery: [] };
 }
-export async function deletePlaceImages(id) {
-}
-export async function setUserProfilePic(userId, base64) {
-  return await uploadImage(base64);
-}
 
-export async function getUserProfilePic(url) {
-  return url || null;
+export async function setUserProfilePic(userId, imageFile) {
+  const url = await uploadImage(imageFile);
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const req = db.transaction(USER_STORE, "readwrite").objectStore(USER_STORE).put({ id: userId, url });
+    req.onsuccess = () => resolve(url);
+    req.onerror = () => reject(req.error);
+  });
 }
 
 export async function uploadSingleImage(base64) {
   return await uploadImage(base64);
+}
+
+export async function getUserProfilePic(userId) {
+  const db = await openDB();
+  return new Promise((resolve) => {
+    const req = db.transaction(USER_STORE).objectStore(USER_STORE).get(userId);
+    req.onsuccess = () => resolve(req.result?.url || "");
+    req.onerror = () => resolve("");
+  });
+}
+
+export async function deletePlaceImages(id) {
+  const db = await openDB();
+  return new Promise((resolve) => {
+    const req = db.transaction(STORE, "readwrite").objectStore(STORE).delete(Number(id));
+    req.onsuccess = () => resolve(true);
+    req.onerror = () => resolve(false);
+  });
 }

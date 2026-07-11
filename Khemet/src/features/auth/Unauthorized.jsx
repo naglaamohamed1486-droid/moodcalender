@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../css/unauthorized.css";
+import "./unauthorized.css";
 
 export default function Unauthorized({ code = "401" }) {
   return (
@@ -7,12 +7,7 @@ export default function Unauthorized({ code = "401" }) {
       <div className="unauth-card">
         <div className="unauth-seal" aria-hidden="true">
           <svg viewBox="0 0 120 120" className="unauth-seal-svg">
-            <circle
-              cx="60"
-              cy="60"
-              r="52"
-              className="unauth-seal-ring"
-            />
+            <circle cx="60" cy="60" r="52" className="unauth-seal-ring" />
             <circle
               cx="60"
               cy="60"
@@ -25,10 +20,7 @@ export default function Unauthorized({ code = "401" }) {
               className="unauth-eye"
             />
             <circle cx="60" cy="60" r="9" className="unauth-pupil" />
-            <path
-              d="M55 69 L50 82 M65 69 L70 82"
-              className="unauth-eye-mark"
-            />
+            <path d="M55 69 L50 82 M65 69 L70 82" className="unauth-eye-mark" />
             {/* crack across the seal */}
             <path
               d="M14 30 L46 52 L38 66 L66 74 L58 92 L106 96"
@@ -41,9 +33,9 @@ export default function Unauthorized({ code = "401" }) {
         <h1 className="unauth-code">{code}</h1>
         <h2 className="unauth-title">This passage is not open to you</h2>
         <p className="unauth-message">
-          The page beyond this seal requires access you don't currently
-          have. Sign in with an authorized account, or return to ground
-          you're free to walk.
+          The page beyond this seal requires access you don't currently have.
+          Sign in with an authorized account, or return to ground you're free to
+          walk.
         </p>
 
         <div className="unauth-actions">
