@@ -5,6 +5,8 @@ import { db } from "../firebase";
 import { getPlaceImages } from "../components/PicCache";
 import SubDetails from "../components/Submissionsdetails";
 import "../css/Submissions.css";
+import useScrollToTop from "../components/UseScrollToTop";
+
 
 async function loadSubmissions() {
   const snap = await getDocs(collection(db, "users"));
@@ -78,6 +80,7 @@ const EditIcon = () => (
 );
 
 export default function Submissions() {
+   useScrollToTop();
   const [activeTab, setActiveTab] = useState("pending");
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(true);

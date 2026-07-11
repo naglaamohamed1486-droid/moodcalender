@@ -28,7 +28,7 @@ export default function PlaceCard({ place, onSelect }) {
           {category.toUpperCase()}
         </span>
 
-        {user.role == "user" && <button
+        {user?.role == "user" && <button
           className="favorite-btn"
           onClick={(e) => {
             e.stopPropagation();

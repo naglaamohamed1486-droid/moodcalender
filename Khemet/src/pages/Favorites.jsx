@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Card from "../components/Card";
 import "../css/Favorites.css";
-
+import useScrollToTop from "../components/UseScrollToTop";
 
 function Favorites() {
+   useScrollToTop();
   const { user, favorites } = useAuth();
 
   if (!user) {

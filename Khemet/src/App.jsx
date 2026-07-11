@@ -41,7 +41,8 @@ function App() {
            
             <Route path="signup" element={<Signup />} />
             <Route path="map" element={<Map />} />
-            <Route path="feed" element={<Feed />} />
+            <Route path="feed" element={
+              <ProtectedRoute><Feed /></ProtectedRoute>} />
             <Route path="about" element={<About />} />
             <Route
               path="trip-plan"
@@ -109,7 +110,8 @@ function App() {
               </ProtectedRoute>
               } />
 
-              <Route path="/booking" element={<Booking />} />
+            <Route path="/booking" element={
+              <ProtectedRoute><Booking /></ProtectedRoute>} />
             
             
 

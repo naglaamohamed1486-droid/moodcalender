@@ -7,6 +7,7 @@ import Toast from "../components/toast";
 import "../css/contribution.css";
 import "../css/contributecard.css"
 import { CATEGORIES, LOCATIONS,  categoryLabel } from '../data/placesdatahandling'
+import useScrollToTop from "../components/UseScrollToTop";
 
 const STATUS_TABS = [
   { id: "all", label: "All" },
@@ -16,6 +17,7 @@ const STATUS_TABS = [
 ];
 
 export default function Contributions() {
+   useScrollToTop();
   const { user, updateUser } = useAuth();
   const contributions = user?.contributions || [];
   const [editTarget, setEditTarget] = useState(null); 

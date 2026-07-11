@@ -56,10 +56,10 @@ function Navbar() {
       </Link>
 
       <ul className="links">
-        {user?.role === "user" && <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>}
-        {user?.role === "user" && <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""}>Map</NavLink></li>}
+        {user?.role != "admin" && <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>}
+        {user?.role != "admin" && <li><NavLink to="/map" className={({ isActive }) => isActive ? "active" : ""}>Map</NavLink></li>}
         {user?.role === "admin" && <li> <NavLink to="/dashboard" className={({ isActive }) => isActive ? "active" : ""}>Dashboard</NavLink></li>}
-        <li><NavLink to="/feed" className={({ isActive }) => isActive ? "active" : ""}>Community</NavLink></li>
+        { user && ( <li><NavLink to="/feed" className={({ isActive }) => isActive ? "active" : ""}>Community</NavLink></li>)}
         {user?.role === "user" && <li><NavLink to="/trip-plan" className={({ isActive }) => isActive ? "active" : ""}>Trip Planner</NavLink></li>}
         {user?.role === "admin" && <li><NavLink to="/submissions" className={({ isActive }) => isActive ? "active" : ""}>Submissions</NavLink></li>}
         {user?.role === "admin" && <li><NavLink to="/adminReports" className={({ isActive }) => isActive ? "active" : ""}>Reports</NavLink></li>}

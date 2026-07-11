@@ -1,8 +1,10 @@
 import { useAuth } from "../context/AuthContext";
 import SavedTripsList from "../components/savedTripsList";
 import "../css/SavedTrips.css";
+import useScrollToTop from "../components/UseScrollToTop";
 
 export default function SavedTrips() {
+   useScrollToTop();
   const { savedTrips,
     deleteTrip,
    } = useAuth();
