@@ -9,26 +9,27 @@ import PlaceCard from "../components/PlaceCard";
 
 import placesData from "../places.json";
 
-
 export default function Map() {
   const [search, setSearch] = useState("");
-  const [tag, setTag] = useState("All");
+  const [selectedTags, setSelectedTags] = useState([]);
   const [searchParams] = useSearchParams();
   const [selectedPlace, setSelectedPlace] = useState(null);
- useEffect(() => {
-  const tagFromUrl = searchParams.get("tag");
 
-  if (tagFromUrl) {
-    setTag(tagFromUrl);
-  } else {
-    setTag("All");
-  }
-}, [searchParams]);
-const clearFilters = () => {
-  setSearch("");
-  setTag("All");
-  setSelectedPlace(null);
-};
+  useEffect(() => {
+    const tagFromUrl = searchParams.get("tag");
+
+    if (tagFromUrl) {
+      setSelectedTags([tagFromUrl]);
+    } else {
+      setSelectedTags([]);
+    }
+  }, [searchParams]);
+
+  const clearFilters = () => {
+    setSearch("");
+    setSelectedTags([]);
+    setSelectedPlace(null);
+  };
 
   const places = Array.isArray(placesData) ? placesData : [];
 
@@ -47,13 +48,18 @@ const clearFilters = () => {
         (str || "").toString().trim().toLowerCase();
 
       const matchesTag =
-        tag === "All" ||
+        selectedTags.length === 0 ||
         (Array.isArray(place.tags) &&
-          place.tags.some((t) => normalize(t) === normalize(tag)));
+          place.tags.some((t) =>
+            selectedTags.some(
+              (selected) =>
+                normalize(selected) === normalize(t)
+            )
+          ));
 
       return matchesSearch && matchesTag;
     });
-  }, [search, tag, places]);
+  }, [search, selectedTags, places]);
 
   return (
     <div className="map-page">
@@ -69,13 +75,15 @@ const clearFilters = () => {
           </h1>
 
           <p className="hero-description">
-            Discover ancient temples, hidden cafés, breathtaking landscapes
-            and unforgettable places across Egypt.
+            Discover ancient temples, hidden cafés,
+            breathtaking landscapes and unforgettable
+            places across Egypt.
           </p>
         </section>
 
         <section className="search-box">
-          <div className="search-input">
+
+          <div className="search-wrapper">
             <SearchBar
               search={search}
               setSearch={setSearch}
@@ -84,19 +92,21 @@ const clearFilters = () => {
 
           <CategoryFilter
             places={places}
-            tag={tag}
-            setTag={setTag}
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
           />
-        <button
-          className="clear-btn"
-          onClick={clearFilters}
-        >
-          ✕ Clear
-        </button>
+
+          <button
+            className="clear-btn"
+            onClick={clearFilters}
+          >
+            ✕ Clear
+          </button>
 
           <div className="places-counter">
             {filteredPlaces.length} Places
           </div>
+
         </section>
 
         <section className="content-layout">

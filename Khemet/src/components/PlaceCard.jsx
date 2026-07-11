@@ -28,8 +28,12 @@ export default function PlaceCard({ place, onSelect }) {
           {category.toUpperCase()}
         </span>
 
-        {user?.role == "user" && <button
-          className="favorite-btn"
+                {user?.role == "user" && 
+          <button
+          className={`favorite-btn ${
+            saved ? "favorite-btn--active" : ""
+          }`}
+          aria-label="Save"
           onClick={(e) => {
             e.stopPropagation();
 
@@ -38,15 +42,16 @@ export default function PlaceCard({ place, onSelect }) {
             toggleFavorite(place);
           }}
         >
-          <span
-            className={
-              saved
-                ? "favorite-heart active"
-                : "favorite-heart"
-            }
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill={saved ? "currentColor" : "none"}
+            stroke="currentColor"
+            strokeWidth="2"
           >
-            {saved ? "♥" : "♡"}
-          </span>
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </button>}
       </div>
 
@@ -83,7 +88,7 @@ export default function PlaceCard({ place, onSelect }) {
 
  <div className="place-footer">
   <div className="place-rating">
-    ⭐ {place.rating}
+    ★ {place.rating}
     <span>({place.reviews})</span>
   </div>
 
