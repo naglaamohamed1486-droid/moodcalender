@@ -9,7 +9,13 @@ export default function ProtectedRoute({ children, role }) {
   }
 
   if (role && user.role !== role) {
-    return <Navigate to="/unauthorized" replace />;
+    return (
+      <Navigate
+        to="/unauthorized"
+        state={{ isAdmin: user.role === "admin" }}
+        replace
+      />
+    );
   }
 
   return children;

@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import "../../places.json";
-import "../../assets/logo.png";
+import placesData from"../../places.json";
+import logo from"../../assets/logo.png";
 import "./Dashboard.css";
 
 async function loadDashboardStats() {

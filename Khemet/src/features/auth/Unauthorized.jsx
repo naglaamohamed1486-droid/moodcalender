@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./unauthorized.css";
 
-export default function Unauthorized({ code = "401" }) {
+export default function Unauthorized({ code = "401", isAdmin = false }) {
+  const location = useLocation();
+
+
+  const adminBlocked = isAdmin || Boolean(location.state?.isAdmin);
+
+  const eyebrow = adminBlocked ? "Wrong wing of the temple" : "Chamber sealed";
+  const title = adminBlocked
+    ? "This isn't part of the admin's path"
+    : "This passage is not open to you";
+  const message = adminBlocked
+    ? "You're signed in with admin rights, but this particular chamber isn't one admins walk through. Head back to the panel that is yours."
+    : "The page beyond this seal requires access you don't currently have. Sign in with an authorized account, or return to ground you're free to walk.";
+
+  const primaryTo = adminBlocked ? "/dashboard" : "/";
+  const primaryLabel = adminBlocked
+    ? "Return to admin panel"
+    : "Return to entrance";
+
   return (
     <div className="unauth-page">
       <div className="unauth-card">
@@ -29,22 +47,20 @@ export default function Unauthorized({ code = "401" }) {
           </svg>
         </div>
 
-        <p className="unauth-eyebrow">Chamber sealed</p>
+        <p className="unauth-eyebrow">{eyebrow}</p>
         <h1 className="unauth-code">{code}</h1>
-        <h2 className="unauth-title">This passage is not open to you</h2>
-        <p className="unauth-message">
-          The page beyond this seal requires access you don't currently have.
-          Sign in with an authorized account, or return to ground you're free to
-          walk.
-        </p>
+        <h2 className="unauth-title">{title}</h2>
+        <p className="unauth-message">{message}</p>
 
         <div className="unauth-actions">
-          <Link to="/" className="unauth-btn unauth-btn-primary">
-            Return to entrance
+          <Link to={primaryTo} className="unauth-btn unauth-btn-primary">
+            {primaryLabel}
           </Link>
-          <Link to="/login" className="unauth-btn unauth-btn-ghost">
-            Sign in
-          </Link>
+          {!adminBlocked && (
+            <Link to="/login" className="unauth-btn unauth-btn-ghost">
+              Sign in
+            </Link>
+          )}
         </div>
       </div>
     </div>

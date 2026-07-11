@@ -20,6 +20,7 @@ import Unauthorized from "../features/auth/Unauthorized";
 import AdminDashboard from "../features/admin/AdminDashboard";
 import AdminUsers from "../features/admin/AdminUsers";
 import AdminReports from "../features/admin/AdminReports";
+import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
   return (
@@ -138,7 +139,7 @@ function AppRoutes() {
         />
       </Route>
 
-      <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+      <Route path="*" element={<NotFound/>} />
     </Routes>
   );
 }
