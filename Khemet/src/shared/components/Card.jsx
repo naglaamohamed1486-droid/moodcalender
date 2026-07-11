@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./Card.css";
 import { useAuth } from "../../app/providers/AuthContext";
+import "./Card.css";
 
 function StatusIcon({ status }) {
   if (status === "approved") {

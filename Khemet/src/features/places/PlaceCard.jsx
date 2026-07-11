@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../app/providers/AuthContext";
-import "../../shared/components/Card.css";
+import "./PlaceCard.css";
 
 export default function PlaceCard({ place, onSelect }) {
   const navigate = useNavigate();

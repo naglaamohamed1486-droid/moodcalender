@@ -46,7 +46,7 @@ html { scroll-behavior: smooth; }
 
 /* ── Image section (Signup) ── */
 .section-sign {
-  background-image: url("../assets/signup.png");
+  background-image: url("../../assets/signup.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
