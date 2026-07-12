@@ -20,7 +20,8 @@
 }
 .map-page{
     min-height:100vh;
-    background:linear-gradient(to bottom,#f8f2e8,#f5eee3);
+    background: oklch(0.939 0.034 86);
+    font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
 }
 
 .map-container{
