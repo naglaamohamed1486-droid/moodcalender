@@ -103,23 +103,36 @@ export function AuthProvider({ children }) {
 
   const isFavorite = (id) => favorites.some((f) => f.id === id);
 
-  const saveTrip = async (trip) => {
-    if (!user) return;
+ const saveTrip = async (trip) => {
+  if (!user) return;
 
-    const updatedTrips = [...savedTrips, trip];
-    setSavedTrips(updatedTrips);
-
-    const updatedUser = { ...user, savedTrips: updatedTrips };
-    setUser(updatedUser);
-
-    await updateDoc(doc(db, "users", user.uid), {
-      savedTrips: updatedTrips,
-    });
+  const tripToSave = {
+    ...trip,
+    id: trip.id || crypto.randomUUID(),
   };
 
-  const deleteTrip = async (index) => {
-    const updatedTrips = savedTrips.filter((_, i) => i !== index);
-    setSavedTrips(updatedTrips);
+  const updatedTrips = [...savedTrips, tripToSave];
+
+  setSavedTrips(updatedTrips);
+
+  const updatedUser = {
+    ...user,
+    savedTrips: updatedTrips,
+  };
+
+  setUser(updatedUser);
+
+  await updateDoc(doc(db, "users", user.uid), {
+    savedTrips: updatedTrips,
+  });
+};
+
+ const deleteTrip = async (tripId) => {
+  const updatedTrips = savedTrips.filter(
+    trip => trip.id !== tripId
+  );
+
+  setSavedTrips(updatedTrips);
 
     const updatedUser = { ...user, savedTrips: updatedTrips };
     setUser(updatedUser);

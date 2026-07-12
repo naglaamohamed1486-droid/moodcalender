@@ -49,10 +49,13 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
             <button
               className="edit-btn"
               onClick={() =>
+                {setSelectedTrip(null);
+                  onClose();
+
                 navigate("/trip-plan", {
                   state: { trip },
                 })
-              }
+              }}
             >
               <FiEdit2 />
               Edit
@@ -63,9 +66,13 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
                 <FiEye />
               </button>
 
-              <button className="delete" onClick={() => onDelete(index)}>
+              <button
+                className="delete"
+                onClick={() => deleteTrip(trip.id)}
+              >
                 <FiTrash2 />
               </button>
+
             </div>
           </div>
         </div>
@@ -75,6 +82,7 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
           trip={selectedTrip}
           onClose={() => setSelectedTrip(null)}
           onEdit={() => {
+            setSelectedTrip(null);
             navigate("/trip-plan", {
               state: { trip: selectedTrip },
             });
