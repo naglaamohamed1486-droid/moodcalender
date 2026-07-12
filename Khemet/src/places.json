@@ -1645,15 +1645,14 @@
       "photography",
       "romantic"
     ],
-
     "city": "Hurghada",
     "rating": 4.8,
     "reviews": 8123,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/3499bc85-ba70-41cc-8b53-e6727427c73c?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124923Z&X-Goog-Expires=3599&X-Goog-Signature=878df85ca1ba2a9cd99afdf2f714799be1ab88dee03edfab7c518030e7619660281faa5aecaac5684db39d319e292939eddf14d15c1e6afc7022862d6f20828578d4f0f6f8bfd5a934f9cfe04ea33184955f4ce1948935eea7207f8da4883ef0575826c11dc4982aaaefa5d46745cdec7354c74c1cb1f2c3a68e3d9881bd41b6404bfb034b0203e234a5d2bff61473f7d18b3089b0664bd16197ec4eecd673efa5fc25e9590139baa8284dca229bbd66b8e705e3b7194fdc454904876a5300a2bdc6c040a8b2a3301fa1637d89dc427a993d1d68649e93d870c2cf034e1e1dab4e83fc6245cc69b0b7f205a08685bb4916489eca242c66ef5809999e09a708ad&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/3499bc85-ba70-41cc-8b53-e6727427c73c?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124923Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/2e8bf438-16ca-4387-bb47-c4481f5bab05?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124909Z&X-Goog-Expires=3599&X-Goog-Signature=dd6f4609095efd7f875d4517d926ba80deb6860e8de384586566bb1ec55fd09b8beb6059572e332103e82167878056b251a5ad2e74352c8f24728e44a3a7b8e7ff5e29ad490d92c56de9fb5b594ea94aedc9b35d5d162af05d40715d7b4f10d536de675c69776ffd02693ecb24311a6f0f35d2c8e76a2c328067d7b59b8f1af91dd1ccea6c83494a14fd144d2ba49f5d01dcec5eb367534c8b89770b366b0335faa3060f261cb51e6762ee091d4c1ffd7cd77f5e372b1c1357c1466777dde752cf72d3b8370513d714e1525e86036877f4c6efe5227ea52792da6f95ae19a9f19bd241e9943b43694750f606e64740713da740302e3ad06f22fa30ea2aeb3c21&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/6da04ee6-9c94-4bed-8a9d-ca0faa1f849e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124913Z&X-Goog-Expires=3599&X-Goog-Signature=5f0607571cb6eb292c0124887491290a0d137fe697433f2853a45be15ff39a28c4d8b4968d6809e1d1f1efa2c4e6ce3c5488ea5ca137a3903c1f706ee17480320ca514f2b6c1cdce354eb1d837d73eef41838949e3142687456a0483e064c18ddff0833063d6a45c49d2254ad756c3412655999f4375cd6f7e2c0d014194df356378f82f63571b21c11d92a07478007d1dce5ec71a0fb6b66b4d7b599937e350a2060e739b7126690d904efe8abf06ad5b34246ca5b436273fe59edb85966affab48ab3a81d1466bc2b6a5b50bfcca669dead43cc42d723efa0ae14bb17f1bb3a90c42acb54084035039938ae35f0105b8bedc753cc7d1bfb675fa955462509b&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/a1af8dd1-0693-445f-9fc3-6309efa0fea2?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124907Z&X-Goog-Expires=3599&X-Goog-Signature=59e3583ab104f4ceaf8072aa3f49fabd3e887710cf43a136215a9fce686587edd069c3c5d44fc97a9757cfa55ce474102a43d82068ec531d910357b3a6da75373f92d02385aae6eddebad5e4c7284663359dac6f320067a8fda7f5b1348eb7354aa634a8663492c11b0987d7c19c3aaa827db9e07b5d55e05f13b6b156a1d2461879b975f0d736114309ca8a79b2936b3616880db85bf626f8ec5ea5a26b98f3952ca70d3f2daa4406eabc3e3459187223dbf50152ed97fa4ab0c025c7cf9a2cf7823d62bc41ddb944aff472b61162507251933a1cbf3b6833fed29dec7df61f74e026b7324238be8301546b6606214e84cfdff9cc608abee2e289646c8fe9a8&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/2e8bf438-16ca-4387-bb47-c4481f5bab05?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124909Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/6da04ee6-9c94-4bed-8a9d-ca0faa1f849e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124913Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/a1af8dd1-0693-445f-9fc3-6309efa0fea2?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T124907Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1683,11 +1682,11 @@
     "city": "Hurghada",
     "rating": 4.9,
     "reviews": 12750,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/1653d300-ead6-428b-8a48-972df43ca68b?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125532Z&X-Goog-Expires=3599&X-Goog-Signature=43fc26a960d345d0618bd51f58082914d568321df79150bf54776d55f9f5ecfe357d26c0edce2f35ca2fd250e38d0c2c5f4d865a249bad9ef2d8242e6a6b76b3ca5567943db0f21f093cfe36a89af38c8d1148d1643fc0e5bf2e8fc95541b3f0a25282d7e52fc6c2add75de3d3a542e21987195bf4da0b271d5455e9bcce0795aa29394d8a72f937b1658f74cdec0a9aaa4aba55283f390886ae81feef43c7890309e540d2c9378f58450932f7482a29187ea9d154ff9b566ea6ae5226528e00544ff0cd923e7bf1b2f1dbdd71a699c66262b5fdc15856170fd87ad98bb0e3348bcc38bde1d281c02f40af1023863519b02dd04dc74b444c2f6c383ebc4328a9&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/1653d300-ead6-428b-8a48-972df43ca68b?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125532Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/e89ce96b-2e97-4df4-a18e-aa127d534a70?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125547Z&X-Goog-Expires=3599&X-Goog-Signature=31d1e19bdd942d7dc229045594c9e540ede6e7f3feaa06be4ad80bde623e948b91eace5c4b40354f9f2f0c6fcc579d4c45fe6d7542c6a653a17c0ac341b3185aa4122a029669a46210a0afbb0de4c282c47667500b6887eaa414283f6c2aeaefef176777c82245afe66624ccbf31a070bb51264c92d07ed8a11bf4d73ff79e8399ba6c58d4f8f1ef610cf0094d1094ba66d0541731169dec979b84724610d6a80c46fba56195691df7d67dfbf89f6150dd555944add5bc1f129e7363be1d0c33bfef056065a775c9112fc1e56952b47afe37f58262904b424069cce0268fe9115ebd4e382f8b15ad9f0c6d571c61b4b07c49066be535151616dc7ea2423302e9&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/8f2cc7b8-d8e4-4e3c-a0a9-9026e2e832b8?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125602Z&X-Goog-Expires=3599&X-Goog-Signature=bd4a66a378143c1f408963c9eb8783dd012d4d4b475f26ab46f4b168c97a5c61749e8dd192c390ed3cbbd8eaf1a8ece520c97f2b079e5a0403dcbf639e7d3c66f718747095681349b867e9f910ac6a6f6e1c7efd053e0a4884b5bb91d3f09f862b468dd6f278aa5b7c344f260a7733cd7a4e7c4ba045bf005b3d71b0ae0a5d90210ffbd626a477932540244d26bb7b93638211e1149194afaaa83bd8016e45795746ea86bd148cb21be49e678db451cd8bcd0004eb524c949965b9f8b2d26ca9a53563d0bb1ab690a113b7be916bd3143f0277991ae15d4614d40c6a9b02139d04d094f1a4327bea38f277b70b4b7ea7ef47169bd614a42b00210d8163244162&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/98829d32-4452-4744-a17c-0025993f08b7?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125531Z&X-Goog-Expires=3599&X-Goog-Signature=26b194c7da6a4aa89ef256cb1a639f16b0d2bff67d2ce3311c48933330cf6db875deec71911cdaecf177d131e6c81cd5ba6073fb703dd260d94e6301bc6f75d4b6d41146ab4291f7017f0554760d02a0285ee409f10546fe31aefd13da51583bc32fadd31744200c888d271ff521dedee1c5ffd654f901b8d7f4a30b843e5de7c4566a273cc83a86ab5b50fd1fdc4856e3f1c97e784937c70342af7e8e3b337374f195c18a4d33394974e38c06ff3a2fdedc62f5a5c2e2f9a235203717ca4912866790c5ec833e5e322a54ba6112ead436a23d015faa08e48d38680954177bb56f55c0844862e311b922f3b56a25d1567f7ccac84a4db20f6f86880fac704086&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/e89ce96b-2e97-4df4-a18e-aa127d534a70?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125547Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/8f2cc7b8-d8e4-4e3c-a0a9-9026e2e832b8?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125602Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/98829d32-4452-4744-a17c-0025993f08b7?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125531Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1749,11 +1748,11 @@
     "city": "Hurghada",
     "rating": 4.7,
     "reviews": 9320,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/dded0471-7427-4883-bd9d-e9ef695dc1d7?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125810Z&X-Goog-Expires=3599&X-Goog-Signature=3f9e0675d4d6fd882f25c2196818423910f236122193dd4cfbd9404f8a55bc9f1bfe12848661ec1803b84c4a9d2683f62e15be21d1560087eaec1c4e4a694fbed26b2ff54e04e57fb397337f1210b81e6e32ea6c676928d78fe7154e300f2936b47a3663891f36ada556a68ba539e46ab09a5eda0ae195ad8979cd18178b12e52d62576e8534dc0319a950c213253c21a53ca38d3519a2d1700fe15c537badd67563551f1de3a151d76de5ba460f00efd51078b9017d413bb9d4a014c1e273b0381d4257d5507d6280519b82795171502057d607bdcb9bd70a5a28d3708898a6fe8eb219fa25f0a722c6d0b0813652c403451de61d5a5795459a832a7278195b&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/dded0471-7427-4883-bd9d-e9ef695dc1d7?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125810Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/0dff5471-8186-4a04-8671-a3e93ec14fd4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125814Z&X-Goog-Expires=3599&X-Goog-Signature=9d89d31531824c36c0c396fe350bf0097d1331cfde6151533af302f60e76d46dbafd80afc1c45a02202fc9d966a4ec93c780e18f15177e1c10f140f7181aafac3c975d920cb8a86f992a03098e088e10545eb7934db8df677e0465691369c6d2ad2af989623a986e9f2a1d8911faa2e2f1e14273aa9f6230b1c746410efb169498ba2810b7fe1956f341c6007fc2541fd0b669b2edeb0002bed6ee38df75660e26d022732cc073f9a25d5683022f824bb5b8304a6f90a19b4302637693e411cf0c0b5dd338bc2f0ddab49349145c2102e118bf171fb42969e615173499fc6c81aeedbac80d0ec5a3b569b027596c48850a5cebaecff0b281b7dfc05173a7bfd8&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/e725b49d-fb74-49d2-83bd-4da9b7f3e44a?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125814Z&X-Goog-Expires=3599&X-Goog-Signature=8fb831410300759dbc76436be09f9e48e35692829d57d6ccf508ce3e448d72481711c885ef5c7183065e765104b1552a74808a00698c86b4a7b25b3159dbc725943e2b09ee45b124505180240c5c3f396a50cc04e4cb0985ccc5499afa8c83978b62c1283f1709e73cb3b8fe13ebd281831c584f3d05512140872fa3596a197b0cce47f0627032accbac3113746921bcbe5b56b598349c58c89b40d49b194bcca0f8ffeea54cac4e7eb35aa3e9d2c7685c1d7bbdc54a9963e05fad03b3e0bf28677ede9a67726101f279f04a313be741f168e8f71dc47a0b9bdf9215718166e813115621a090b629e9daacf5143ccce26be2e0ce13b5a2567c2cf7ce97d6b497&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/f4f498e1-7a0d-462e-ac97-4b98aaaf6e56?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125826Z&X-Goog-Expires=3599&X-Goog-Signature=9ac8d26b0802d2305a4b31ae58eb128a9770fbbc3feb528afe5cae071e0fe7c883efee1988d353f49d41e8df41217f79804f55f5d3e8a8c6aeb4d0b01bcb4a2c9247820d7ea83fcdfc7ed9e9ba57b3ba46f3025cecd3e1c456e1c4dc5e05668fa4dd4543198d9c60df2b0749ea67acbaeb650f73541c9d8794aa484c90c6413d34cb50d32f3d0dcd94e631636836c97f609e3e7ec732b63cadf02a4b2882b885c5d8f82f9d7cd27f21f8ab46fc5ce60ce989e34dca3171d1b9dd2c93b924730750dfc4b6d9e59d5f3cf4232842b6b4d05de006b671c435adc13765dbc9edbb4ff32528dd3f2219e794c36e6161b44563dfe8d7012870beb37208aeb8dbc2b057&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/0dff5471-8186-4a04-8671-a3e93ec14fd4?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125814Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/e725b49d-fb74-49d2-83bd-4da9b7f3e44a?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125814Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/f4f498e1-7a0d-462e-ac97-4b98aaaf6e56?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T125826Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1782,11 +1781,11 @@
     "city": "El Gouna",
     "rating": 4.8,
     "reviews": 4860,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/a7ee94a8-28f3-4b08-ba8e-aab7aa7ebe71?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130229Z&X-Goog-Expires=3599&X-Goog-Signature=4d1001660e471025f9b4eba803629621d1e11d099afa8aeafbc45f5868cef4d67794dc7bf47cd0b03e1f3797ebfcc6bb7b08188fddf0e85ed5f4bbad629fa10d642375368290278ce54aa01764870e36013c5ce05c27761687f35aba92c420e295012ebce21ee08f518dfdc360b44ea4eabd49e0127d126fb65b2f87b093c64e2bc80174a305582df56b8337fc854707b5e14ca15420e3f092fcefa4e39c1a8943119d078442f9ae92b06cd900e0976c7a80a19767ef0a1008ef310534fd2dd5f658e4952dd4c22c3bbfd48b5df64013099bb33f8760fbf1ed995eec4c1a20e0e9182d46399c771f270db048e09ef452c7ccc451b0ded3287eab33bd96686e7e&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/a7ee94a8-28f3-4b08-ba8e-aab7aa7ebe71?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130229Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/b1bdb485-e5a2-4b51-910e-909f3c7c4b69?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130231Z&X-Goog-Expires=3599&X-Goog-Signature=d0fa3f13b6e298dc0a14906299e4fef1ffe167c769ea44296a5e008dc556bf84e789b99c89be03dddb9cd174fcf3650ad438af989b4689780021df7c5bc891a54a60c8790e657e02d9fbd2cb6a858654d69a3fa8879b8d16f7e56f87f15cd9ede610239fa989459c64b3962c80d36b274895bf6929ef6b6667bc2dcc4938aad513b14b5edfe000ff103c62a04b78147ca0bd6f370a107aad5ddbb25ea15b1f98c0f7efc112173f45894b3865ac00df08dd12d0fbdd79ffebf896fc16663818b1888f45d1e894f3dca90c0a3c45a69c995c7f0af10084c2bc65385594a3e84e813a5e827bd66f703b81cf626c46c54a3a9ca1386d554a1fb59a6c3a19ac964a3c&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/22b8aec2-b1c0-43a7-807c-0d830a04053f?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130233Z&X-Goog-Expires=3599&X-Goog-Signature=cbfe0ba15efc1c904d65bd480eaf35e4cc1ae6ae38f860fbdaad11c93b1a187452cd9dc737e77203fad58d7db4d4625741695851aeb03d4bec80737ddf52474901024b20bfc5d1dc93809c3f99d91e78015672ebc1189c2e4130a64ccf143914d45fad275908a48c3696a5b673215de54627b3c4c51137bb40de74f733622da7fd99391c46d0cb8f479419532e000805e4494c72b17a4d16ec51d7c4ade3bc4a1bcba01832e3ab1b9388512470f5dd07cfbfe59d7d6d04be9fdb47924b1d74060a141698b4f7037143df3fc90e72c199c08521f0b5d31624f16b46e4e79abf42d77ef99bbae9bf249e1882909b070d5fd84b3b028e8b8220490725a67717244f&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/05fa4018-1cf3-4134-9d8c-9942c5f39f73?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130232Z&X-Goog-Expires=3599&X-Goog-Signature=8bc431b9b9bd642e038b360a43cb4641accf888ddcefb126c0738e9a208ba6747c6fdbfcbd1d48555424d695cc173d8f48c0ce527bb47811210d3dd9ba6bbf290cc367e29805477f3ec696ea1ed8fbbe971f049f23580e2db26188a4f6fc3a0ba5c4290214cd137c8ee46d1d250100cc881b1a25a077bf59dc72cfc7a8e484ba074ce6b62e83c2436d92d03ec41d8999d72ad8b5f4d34ef08f05783c57f280f38c6177fa720753eba10960d8773385059d7f2fe99edc43721f282c10f5893bef321be04985947bc75e1a64e931941e0b0ed7a185a1bbacf3eadca8f21ca61ac154fb317baeb5b62e23ceb84f51f39414a5dad37f218fdbdcb0074d81bcf30979&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/b1bdb485-e5a2-4b51-910e-909f3c7c4b69?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130231Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/22b8aec2-b1c0-43a7-807c-0d830a04053f?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130233Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/05fa4018-1cf3-4134-9d8c-9942c5f39f73?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130232Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1814,11 +1813,11 @@
     "city": "El Gouna",
     "rating": 4.7,
     "reviews": 2143,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/5ccf1a51-88af-43c8-a9a6-abcdaaf5c7a9?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130459Z&X-Goog-Expires=3599&X-Goog-Signature=77f05d935f1bb662c057a4153a3835ae2ab703a7cc017f001d2588cef99f54249306636d42e6fc759c278520ed537e88396479c5691fa9518c8adb2f115550dfb6b40b57bdd7201a8fd40600ff43e909732538ff3734446fcf24655d73519348db745c9360f79558437165364ea431309128085617e104110a87c637af996dca4e1f17b731ac63919ca4bbfb01fd6dcd2821064761f44fee14b54dafa5024070abc67b22086e5967da9c8c26c1c786ab83bdc07f1f8e4772605bfd2654ee237bf3fcccc75bfebf54a09ed63c5b2588251a0b4d28c57f992d4c4ed82dde2c94412d38045af84b20ac99ec419bf651a6d976e146a89ae764597f804c20a6a35d19&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/5ccf1a51-88af-43c8-a9a6-abcdaaf5c7a9?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130459Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/c06a3739-95a1-4bd4-bce6-397603d0f7a5?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130504Z&X-Goog-Expires=3599&X-Goog-Signature=06d99dc36badf9e73d24ecd462cb797ee1a7aefb80b80499327c8b0cf1c3dbf30141146918c410a8cd9a821c7740b56767fe9011ca57dc7e0bd8ec892ee9835b1a4fb07e4a9c2a28d83a00b62956be58490be5d5a118f3776ba57a8d92b5070df67183f4f3a601278ffa63bfa0fdb913ae4543d775ee9aaf7d4c4dd28360b66c4cae8b39408004e3f943de008d21f1d5f30e1259d3cd8813d46962a5a8029ac711efc06476a13f7605329dda1ffa249ebc5127019c71164859dbc69c23795d7b934f1501f31d2164db7d009560d72e8fcb55bdbc36672705bd7fe50198ccce531126ca43e8db44801cceacf0c7369e656f8ad79a889ae2c8ee0aab219025eaf5&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/dae4cecc-bd3d-40c7-ac84-6c3773c441ef?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130513Z&X-Goog-Expires=3599&X-Goog-Signature=1aef0bd5e6f69245ac7acafb949aeefd0686326dafacad867e4f15210c6032f760457737c05ac1f8c8f11650b1210585c28aa657143af5e67846b51b43335e5cdb9522afff0889d7cb268cebc042d08fbc99dd2fe505f433f6f229718d8bee254189cd5360c38c285da086179a8f0168dbe53a40a0175fe8d619a5d52ce65fdbd3df17d4e6de80440cee0262cb1e4dc8f3974b6bed6641ebef3c858c358103bb0abe3f60f4f712041f6d401efe55fa09989d30ff4cd878d32b9cafb50fabd019267561fd0745836f768446135d4d7533a62be79f28f27743ef82788c27aa50b693d259fc744f5b2ad07a2f06880db6f2646ccfefdac9a52568dd2c730e0479df&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/2eb46dc2-1058-47d2-bb77-c5e3b0e1ec98?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130537Z&X-Goog-Expires=3599&X-Goog-Signature=ab696537c10f3cde9cfbd6c994498905e6b0c85429249cdf81c03460ca663b32008b906b624a1802c4802228cf619689d85eef6ed57bd62973e772e52ac42a60d9dce0a0fef90a3edab3dc5facefe8d29180653f2690b5adaa8c0552afbfb9bc37a7bf712ca0787862d415a18cf2ca1eb88d4ee465a3dab7bf1783b34d85630975acaa79cf32491ce235d55a01aa8d3793aa98f3913965ff96f345ff7ba713dfd13a45b6fa133a04e73109371c47714c0739556df3baac2ab34f31a8be527f83c1a44b1a78d03ee0ec1d83bbd1334cab793c19882bfd25f1a86296639ed3fedac26055778801f0f9cc4740fece151e1560d397b343605c0008dc9961deb2de2e&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/c06a3739-95a1-4bd4-bce6-397603d0f7a5?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130504Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/dae4cecc-bd3d-40c7-ac84-6c3773c441ef?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130513Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/2eb46dc2-1058-47d2-bb77-c5e3b0e1ec98?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130537Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1847,11 +1846,11 @@
     "city": "Marsa Alam",
     "rating": 4.9,
     "reviews": 5400,
-    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/4786da64-a002-4ea3-a528-cb3e25836c37?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130746Z&X-Goog-Expires=3599&X-Goog-Signature=78bb5395ce784a56a8765d927cffe689b32c2f46d043695bcb1d3fcbff5e9ba52083589e30bda3c6236218e2becf71b4d5b577856fd9cd848ca3c1ebd72c32c4213ad12e167d03934713eeeb20933ecf3bc8c228a19c80ac83a17bfb070a9316e720c281893eea738d6f15079cc6564efd92fb6cdf09a024820ac7ee9689c46e3f7808a5cf6ee2c3ed87449c58a14908c065f29114afbdbb48e00fa2bb4027814dd8815baa69ac41fbd8ac03798b0a3923ec696bca4963fb8bc960f19d2bfa3d81d4822048472f0ee5a97362b8333ceb3e5919b0a6ee765f26f3b06f38123a36429535271d795d04b0ec5e75961f850182577ff85abe16cd63441dd3bdda9c1a&X-Goog-SignedHeaders=host",
+    "coverImage": "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/4786da64-a002-4ea3-a528-cb3e25836c37?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130746Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
     "gallery": [
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/5e295002-74b6-4cee-9802-936ef56bac62?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130731Z&X-Goog-Expires=3599&X-Goog-Signature=96eeedcc5f0a562c9d2e6702be9f2528019391f1581e62859a7220188f067d382aa41cee2d09690d6ab9f5717f1939953c45b8a6fe694c7128ac23c5b6acfadd96918c9571e342fa4fab19d8931d3d6280fcb1ba87f8f09113cc9a4f7775022100dcc3ba475bfe1442fd3b17900adc4e9d3f7daa3ee0c597b164cfb7c0e292e4ff58e0673c39246ad4416161d964488cd90d03c97839f52913f21c914abf5105230224185ef2d6b62de9d076f0d731758c64d4a836a38cb3513f11594a451df022786029c73953aaf316f424a3d8c08ada7b179ee8821f38e05f865240adc6c878ff13e24a9185aad707d6e2becec06e672e6b7efba73de485ba3551ae531e5d&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/375e9ee7-3ab5-4141-afdd-d6188709363e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130730Z&X-Goog-Expires=3599&X-Goog-Signature=66186597b248ce7fc8c7a8a691af71c3edf3b77cd63323b8f0f2766fa98b5cffc42c6559f35026c7fa40d52c78d95b820d6c2e77e6266fb31ece24e6d7b4198181592dbedf945351c044319553a5533be393d11644d6201e2f61ebee599c0756b7446a45c8f1d707b202295c8bbaad8d00eed3614160ae9caf8e41effe54ea3df2ceaa4b94264b4378dc60570943f84d0c589d697cf5458f22ce4d02120de690440bc153c30d13b4abbb04e78d9cb11c39ea1c0a7905be5ba904aee74ac236640f2fd8ff39a9d6671d2e3e8fb8996b4b87295707e5cb41dac7d289e3061dedab510a8dbc3b1c24118b5487b171d7a639f781cc121d3a89aaa28f485b8a55bfff&X-Goog-SignedHeaders=host",
-      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/6d8ea7b0-1daa-4917-98ca-a4d021e95c9a?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130729Z&X-Goog-Expires=3599&X-Goog-Signature=40407acef0b753f5c6a0254b7d5ac4e1d39f8b04abc708c0d5e0c3358575c5d2c8397f9c6cfc44dbd007a1b8c19d248c563c55654118c38c1f66590fde88c0d9081b9f28f306ec1e20c8c54e49a594818bf1b1be3e8af83cd5979857d0b1209151b538f86726b892f241451cce70fcf97ea40e85c606868731884ed9a9e81d23400a63821f95c045860eed4fe5f54026690d95e763b4150c20cb24a4ffc88cab56cb42746f22e9d554cf4cde3e5db0fa9e85813e0c4a631cbffc7dddb57a5a4ac7b11324f16ce90c4cf237a8fdda2d496d5cfb126373940e7a0ec77700483906183ad41c366dbb16bbfb2c2591ab0c051e3d029f3defe81c620bdef364eb5287&X-Goog-SignedHeaders=host"
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/5e295002-74b6-4cee-9802-936ef56bac62?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130731Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/375e9ee7-3ab5-4141-afdd-d6188709363e?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130730Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host",
+      "https://storage.googleapis.com/gpt-engineer-file-uploads/ed246a04-cd56-4eed-b2d3-a380cbf88e12/image-gen/6d8ea7b0-1daa-4917-98ca-a4d021e95c9a?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=go-api%40lovable-core-prod.iam.gserviceaccount.com%2F20260706%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260706T130729Z&X-Goog-Expires=3599&X-Goog-Signature=@secret:GCS_SIGNED_URL_SIGNATURE&X-Goog-SignedHeaders=host"
     ],
     "nearbyRestaurants": [
       {
@@ -1880,11 +1879,11 @@
     "city": "Marsa Alam",
     "rating": 4.9,
     "reviews": 7325,
-    "coverImage": "/images/marsaalam/sataya.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d95fa754-d8b8-4a72-8d38-5480831ce5c2/58-1.jpg",
     "gallery": [
-      "/images/marsaalam/sataya1.jpg",
-      "/images/marsaalam/sataya2.jpg",
-      "/images/marsaalam/sataya3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/759a0042-c771-48b5-906a-0c295650fece/58-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d30b21c5-7406-4e32-b21d-ab08e4c3f0d5/58-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/159a315e-50dd-408d-b2f8-f4e3272a9b1a/58-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -1913,11 +1912,11 @@
     "city": "Marsa Alam",
     "rating": 4.8,
     "reviews": 2190,
-    "coverImage": "/images/marsaalam/wadi.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/3a26a101-5ae0-4e2d-bf5b-e71ca4013bed/59-1.jpg",
     "gallery": [
-      "/images/marsaalam/wadi1.jpg",
-      "/images/marsaalam/wadi2.jpg",
-      "/images/marsaalam/wadi3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d008c654-328f-40d0-a108-dfce252d6f24/59-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/bfa9c54b-5d13-4c79-b230-29346501723e/59-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/98e70170-7cd0-41d6-a2ae-ffdbc3140c2d/59-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -1947,11 +1946,11 @@
     "city": "Marsa Alam",
     "rating": 4.8,
     "reviews": 1735,
-    "coverImage": "/images/marsaalam/qulaan.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/b0362474-ddec-4608-8b60-17718e2931ce/60-1.jpg",
     "gallery": [
-      "/images/marsaalam/qulaan1.jpg",
-      "/images/marsaalam/qulaan2.jpg",
-      "/images/marsaalam/qulaan3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/84c2e5c8-0d71-4984-abb2-8ddbcd52769d/60-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/fd6df7d8-2d41-4fe4-9bbe-ce459bc8cae7/60-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e62d26da-8743-45b7-b11e-2924b1b786a3/60-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -1980,11 +1979,11 @@
     "city": "Siwa",
     "rating": 4.9,
     "reviews": 4870,
-    "coverImage": "/images/siwa/salt-lake.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/849f1430-ec49-4e80-9c7e-48c2ecf7c5ab/61-1.jpg",
     "gallery": [
-      "/images/siwa/salt1.jpg",
-      "/images/siwa/salt2.jpg",
-      "/images/siwa/salt3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ef1e11d3-4db3-4d3f-9736-1aa532fe81c9/61-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ca002637-ada6-4e6b-bf08-c5a2dc1f6d7d/61-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/edb6b61a-71c8-49c0-80c3-c8c31b2a5dbf/61-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2013,11 +2012,11 @@
     "city": "Siwa",
     "rating": 4.7,
     "reviews": 3925,
-    "coverImage": "/images/siwa/cleopatra.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/5424d84f-c6ec-41d0-b2da-5f2862f9b659/62-1.jpg",
     "gallery": [
-      "/images/siwa/cleo1.jpg",
-      "/images/siwa/cleo2.jpg",
-      "/images/siwa/cleo3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/abb00cd9-d13c-4343-b6b9-7e74c81682d0/62-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a84b7c8f-9045-4003-87e0-8265ca7ae5f5/62-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1df8d65d-c792-48a7-b01f-8c4a80ce1564/62-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2046,11 +2045,11 @@
     "city": "Siwa",
     "rating": 4.8,
     "reviews": 3410,
-    "coverImage": "/images/siwa/shali.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/50e82ff2-8d8e-4193-85f9-6a409358c7d2/63-1.jpg",
     "gallery": [
-      "/images/siwa/shali1.jpg",
-      "/images/siwa/shali2.jpg",
-      "/images/siwa/shali3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/3721d055-de8b-4743-8954-96d9746f5ca8/63-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/4cb62339-8aa2-4080-ba2d-bd77448aa244/63-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/b6130740-f65f-4bdb-8c90-a58c7e26d969/63-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2078,11 +2077,11 @@
     "city": "Siwa",
     "rating": 4.7,
     "reviews": 2358,
-    "coverImage": "/images/siwa/deadmountain.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/6908e845-2030-485a-8209-7f1825f358a1/64-1.jpg",
     "gallery": [
-      "/images/siwa/dead1.jpg",
-      "/images/siwa/dead2.jpg",
-      "/images/siwa/dead3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/564e0a05-e104-4a24-bc68-80ed3a9a960c/64-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f7c970ab-106c-42cd-8181-e9dd9f3b3256/64-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a0d6534c-2426-47ac-8ebb-4171f2e6a91f/64-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2111,11 +2110,11 @@
     "city": "Siwa",
     "rating": 4.8,
     "reviews": 2945,
-    "coverImage": "/images/siwa/oracle.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/9c097aa1-1ef1-4320-a19f-1f29c7819927/65-1.jpg",
     "gallery": [
-      "/images/siwa/oracle1.jpg",
-      "/images/siwa/oracle2.jpg",
-      "/images/siwa/oracle3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d10adb8d-bf4c-4537-80b3-49b9e92e51f6/65-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1871ca37-ce2d-4fbb-ad1f-a75d1912643d/65-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/b13e1840-085d-4aeb-a485-c704d78363fe/65-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2144,11 +2143,11 @@
     "city": "Fayoum",
     "rating": 4.8,
     "reviews": 5320,
-    "coverImage": "/images/fayoum/magiclake.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/9d81586e-8d32-41d9-b60f-5a935b1be269/66-1.jpg",
     "gallery": [
-      "/images/fayoum/magic1.jpg",
-      "/images/fayoum/magic2.jpg",
-      "/images/fayoum/magic3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/87058e2c-43ce-4798-8622-ee9a627efbe9/66-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f77ef783-8c87-426f-ad26-c7fe7b65069c/66-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/96af3bb7-42f1-471f-ae0f-04af1883197b/66-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2176,11 +2175,11 @@
     "city": "Fayoum",
     "rating": 4.9,
     "reviews": 8354,
-    "coverImage": "/images/fayoum/rayan.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/58f10c41-2b4c-4f36-b162-567f1ebb6004/67-1.jpg",
     "gallery": [
-      "/images/fayoum/rayan1.jpg",
-      "/images/fayoum/rayan2.jpg",
-      "/images/fayoum/rayan3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/73849be3-f74a-4d11-be3d-9abfb93c05d7/67-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/2f265895-ac5f-4939-9f1b-eb8064d8ddb8/67-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1f2a5c16-32b6-495c-8c9f-c1114115dbef/67-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2209,11 +2208,11 @@
     "city": "Fayoum",
     "rating": 4.9,
     "reviews": 6182,
-    "coverImage": "/images/fayoum/whales.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/6906c76d-6b59-4b58-9afe-4a2915ac6099/68-1.jpg",
     "gallery": [
-      "/images/fayoum/whales1.jpg",
-      "/images/fayoum/whales2.jpg",
-      "/images/fayoum/whales3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a1a0815c-a8aa-40aa-a5e3-af34cf1d52ea/68-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/7664894e-9e81-4baa-9373-aa10b162cfd3/68-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f8a0233d-d6f8-4d6a-9f17-ebebde553c19/68-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2240,15 +2239,14 @@
       "romantic",
       "hidden"
     ],
-
     "city": "Fayoum",
     "rating": 4.8,
     "reviews": 4700,
-    "coverImage": "/images/fayoum/tunis.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f7f2954e-8192-4fb8-a7c0-5dd57f545383/69-1.jpg",
     "gallery": [
-      "/images/fayoum/tunis1.jpg",
-      "/images/fayoum/tunis2.jpg",
-      "/images/fayoum/tunis3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/b74e2633-9b71-4c6c-97c2-88d91c869686/69-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ca7e8525-81d6-47c9-854d-925c820a946c/69-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1b61c865-6ad6-4bf8-b9b8-54238fc76c8f/69-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2276,11 +2274,11 @@
     "city": "Fayoum",
     "rating": 4.7,
     "reviews": 5241,
-    "coverImage": "/images/fayoum/qarun.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/806ab445-98c4-4479-8ab6-bb3f4670788e/70-1.jpg",
     "gallery": [
-      "/images/fayoum/qarun1.jpg",
-      "/images/fayoum/qarun2.jpg",
-      "/images/fayoum/qarun3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/92d62c90-ace2-4a4f-be09-16861e5ad64e/70-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/b1eb1ede-97b6-4472-9bb3-1aa2c1f34c99/70-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/05145b8d-7adc-4992-a80c-d6969a7f06e8/70-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2310,11 +2308,11 @@
     "city": "Saint Catherine",
     "rating": 4.9,
     "reviews": 11240,
-    "coverImage": "/images/saintcatherine/mount-sinai.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ff865345-50ea-474d-9843-d10e2ebe38c2/71-1.jpg",
     "gallery": [
-      "/images/saintcatherine/mount1.jpg",
-      "/images/saintcatherine/mount2.jpg",
-      "/images/saintcatherine/mount3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/4398494c-4885-4f33-a6eb-39793c10f289/71-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/6519f974-4bc8-49dd-8800-119badfb52f2/71-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/0956176c-cef8-4982-a5cb-36a884c19bfa/71-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2343,11 +2341,11 @@
     "city": "Saint Catherine",
     "rating": 4.9,
     "reviews": 9450,
-    "coverImage": "/images/saintcatherine/monastery.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/13a358e8-f631-4733-844a-c03823bde7fd/72-1.jpg",
     "gallery": [
-      "/images/saintcatherine/monastery1.jpg",
-      "/images/saintcatherine/monastery2.jpg",
-      "/images/saintcatherine/monastery3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a62072cb-54c7-43ad-8b3b-62ba375928c1/72-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/4d540b66-e7e1-48ae-a7a4-239fa40e25e0/72-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/da9a01be-8865-478a-a597-a685639ddcf9/72-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2376,11 +2374,11 @@
     "city": "Dahab",
     "rating": 4.9,
     "reviews": 15620,
-    "coverImage": "/images/dahab/bluehole.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a006e9b6-6138-44eb-a4fc-38bf248fb6d9/73-1.jpg",
     "gallery": [
-      "/images/dahab/bluehole1.jpg",
-      "/images/dahab/bluehole2.jpg",
-      "/images/dahab/bluehole3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d5102dbf-48cc-42ab-a87e-25cba5555e2e/73-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e399e980-a1eb-4d9b-bb72-5bf0b007f252/73-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/cf0f0b06-6021-438f-8a59-dafcf49863bb/73-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2410,11 +2408,11 @@
     "city": "Dahab",
     "rating": 4.8,
     "reviews": 5170,
-    "coverImage": "/images/dahab/bluelagoon.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e96efce3-29c9-40ff-9042-e52c697df642/74-1.jpg",
     "gallery": [
-      "/images/dahab/lagoon1.jpg",
-      "/images/dahab/lagoon2.jpg",
-      "/images/dahab/lagoon3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ab8cea70-e53b-4248-a5e7-93188220f706/74-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/7144295a-e9ab-428a-8d64-190fd730aa18/74-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/79b13beb-0b71-4fc8-9c8c-e7995f8aae90/74-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2443,11 +2441,11 @@
     "city": "Dahab",
     "rating": 4.8,
     "reviews": 4230,
-    "coverImage": "/images/dahab/threepools.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/2ca94d31-406d-4821-ae2a-65f0e207b6e3/75-1.jpg",
     "gallery": [
-      "/images/dahab/three1.jpg",
-      "/images/dahab/three2.jpg",
-      "/images/dahab/three3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/219d23b4-fe72-4459-b490-8082f5e9f87f/75-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/61c5f250-487f-4c2b-ab6a-783044bb29f4/75-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/21a390c4-3dba-4575-acd4-8fba89a62d90/75-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2476,11 +2474,11 @@
     "city": "Nuweiba",
     "rating": 4.8,
     "reviews": 3380,
-    "coverImage": "/images/nuweiba/coloredcanyon.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/95b1578b-7d46-4e54-a0ff-d2ea0d473860/76-1.jpg",
     "gallery": [
-      "/images/nuweiba/canyon1.jpg",
-      "/images/nuweiba/canyon2.jpg",
-      "/images/nuweiba/canyon3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d9f5f440-729a-40e3-9861-d4f83ad42746/76-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/34e9c310-5c31-4af9-aee9-a00778ab9bc9/76-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/8c3066f1-d9aa-40c0-8a66-83dca1f58b91/76-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2509,11 +2507,11 @@
     "city": "Nuweiba",
     "rating": 4.8,
     "reviews": 2850,
-    "coverImage": "/images/nuweiba/rasshaitan.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/88985966-bbc5-4e45-9bfa-cf0238ff402f/77-1.jpg",
     "gallery": [
-      "/images/nuweiba/ras1.jpg",
-      "/images/nuweiba/ras2.jpg",
-      "/images/nuweiba/ras3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e7e9cd2a-f48c-4820-bb2c-a454f0e4453c/77-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a99329d9-8d01-4e7e-9a37-dc8cd71bd208/77-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f62ac778-7c5d-4022-bcef-44fc348a35ac/77-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2539,15 +2537,14 @@
       "photography",
       "modern"
     ],
-    
     "city": "Taba",
     "rating": 4.8,
     "reviews": 3725,
-    "coverImage": "/images/taba/castlezaman.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/405a6c99-33e6-4251-bf33-6c33fe97d554/78-1.jpg",
     "gallery": [
-      "/images/taba/zaman1.jpg",
-      "/images/taba/zaman2.jpg",
-      "/images/taba/zaman3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/7cac7d69-caa3-4a8f-a9f4-8262476c0427/78-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/dd702632-8a0b-4817-b603-4ec7f364a2e6/78-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a43d28fd-6f60-44d9-a3a7-4a889dbb9048/78-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2576,11 +2573,11 @@
     "city": "Taba",
     "rating": 4.8,
     "reviews": 5980,
-    "coverImage": "/images/taba/heights.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ba64534a-f8a9-49e7-b6aa-ec664463c91e/79-1.jpg",
     "gallery": [
-      "/images/taba/heights1.jpg",
-      "/images/taba/heights2.jpg",
-      "/images/taba/heights3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/09d2b2a0-2630-469c-bf3d-138f848a3d00/79-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/93163904-e18d-43aa-9ccc-d80f227214e2/79-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/8a90f58f-05d1-4be1-a80c-27083fa9cddd/79-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2608,13 +2605,13 @@
       "beach"
     ],
     "city": "Sharm El Sheikh",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 18450,
-    "coverImage": "/images/sharm/rasmohammed.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/8d9473cc-3ba3-484e-87c8-378c24fd128a/80-1.jpg",
     "gallery": [
-      "/images/sharm/ras1.jpg",
-      "/images/sharm/ras2.jpg",
-      "/images/sharm/ras3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/3a42cd28-8adf-483c-aeb7-6b2f363faa9f/80-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/6858028a-ee2d-4e25-9ea5-f667ba4c48bc/80-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e1f38056-a002-4277-b91c-78ff7f8848ee/80-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2643,11 +2640,11 @@
     "city": "Qena",
     "rating": 4.9,
     "reviews": 5421,
-    "coverImage": "/images/qena/dendera.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/2534b8ad-bc9a-488f-b018-e1b19669957b/81-1.jpg",
     "gallery": [
-      "/images/qena/dendera1.jpg",
-      "/images/qena/dendera2.jpg",
-      "/images/qena/dendera3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/c08119d7-c35b-4ab7-b6b1-4f6349e1c4b7/81-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/18884b51-b501-4106-aade-5110ad58c3dc/81-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/89cb2c5f-68ed-4743-8d4c-03aa2e402fb7/81-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2675,11 +2672,11 @@
     "city": "Sohag",
     "rating": 4.9,
     "reviews": 4178,
-    "coverImage": "/images/sohag/abydos.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/d5b3079d-fd9e-4317-a1cd-0bf10856a001/82-1.jpg",
     "gallery": [
-      "/images/sohag/abydos1.jpg",
-      "/images/sohag/abydos2.jpg",
-      "/images/sohag/abydos3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/a683734b-d069-4d72-9465-42453bd9ad0d/82-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/c8fb5f48-622e-4670-b8ba-56d9452fc025/82-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/0fcc7c4c-dcbb-44ad-bf26-e4ac7e686fbe/82-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2707,11 +2704,11 @@
     "city": "Sohag",
     "rating": 4.7,
     "reviews": 1982,
-    "coverImage": "/images/sohag/white-monastery.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f4004c3d-5d9c-4924-b49a-7af7db71bf4d/83-1.jpg",
     "gallery": [
-      "/images/sohag/white1.jpg",
-      "/images/sohag/white2.jpg",
-      "/images/sohag/white3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1ab2c4a0-c42c-4fec-b920-234f01028998/83-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f7026755-049c-47d1-a0b6-7cf750e0392c/83-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e5f0628d-98ea-4947-be22-e5a664fadb6f/83-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2739,11 +2736,11 @@
     "city": "Sohag",
     "rating": 4.7,
     "reviews": 1625,
-    "coverImage": "/images/sohag/red-monastery.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/9ae92831-a75c-4c45-8041-d2cc97d8a124/84-1.jpg",
     "gallery": [
-      "/images/sohag/red1.jpg",
-      "/images/sohag/red2.jpg",
-      "/images/sohag/red3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/83988785-aa80-4c94-997a-49beecc1a249/84-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/e1d6ef9c-56b5-4cd2-85e5-efc799be8e12/84-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f1845325-4baf-4ec8-858a-32ec053d2a87/84-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2771,11 +2768,11 @@
     "city": "Edfu",
     "rating": 4.9,
     "reviews": 8235,
-    "coverImage": "/images/edfu/horus.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/ccefe946-a803-406d-aa60-2585cfb0774c/85-1.jpg",
     "gallery": [
-      "/images/edfu/horus1.jpg",
-      "/images/edfu/horus2.jpg",
-      "/images/edfu/horus3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/bceac3b9-bbbf-4dec-8314-dad194c38377/85-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/2db5ff7b-5b25-42e9-94b7-72f232df7384/85-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/cd6f2a19-14e1-4c74-af61-ba95c338793d/85-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2804,11 +2801,11 @@
     "city": "Aswan",
     "rating": 4.8,
     "reviews": 7118,
-    "coverImage": "/images/aswan/komombo.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/50792c79-7d4b-4dd8-880f-74d6a05b43c1/86-1.jpg",
     "gallery": [
-      "/images/aswan/komombo1.jpg",
-      "/images/aswan/komombo2.jpg",
-      "/images/aswan/komombo3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/600400a9-129d-45f4-8ecb-93fb9eded81d/86-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/91b888e8-faca-4efc-85e0-1c3bd648264d/86-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/24c69589-21d9-4c82-a954-21535769063c/86-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2836,11 +2833,11 @@
     "city": "Esna",
     "rating": 4.7,
     "reviews": 2748,
-    "coverImage": "/images/esna/khnum.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/4cbd49c9-632d-40ee-925e-c5e0bb8b30c8/87-1.jpg",
     "gallery": [
-      "/images/esna/khnum1.jpg",
-      "/images/esna/khnum2.jpg",
-      "/images/esna/khnum3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/bb3adebc-5b15-4b14-9e00-e2fa4b0cfed9/87-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/8629f636-55a4-4bd2-8c55-f8f14de855f0/87-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/21236548-4f03-4e58-ae93-5e8af9cfe40f/87-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2868,11 +2865,11 @@
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 1392,
-    "coverImage": "/images/luxor/elkab.jpg",
+    "coverImage": "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/f7abd4e6-cc0e-4464-b5a8-afed4c2f448d/88-1.jpg",
     "gallery": [
-      "/images/luxor/elkab1.jpg",
-      "/images/luxor/elkab2.jpg",
-      "/images/luxor/elkab3.jpg"
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/bef76fa2-2a54-48ee-82da-2594a6a8a7cb/88-2.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/69223c3f-12f3-4863-be01-abafa8179fcb/88-3.jpg",
+      "https://id-preview--dc7379d5-0576-45b3-af5d-eebc7d8a8841.lovable.app/__l5e/assets-v1/1a7b7b7a-6102-4807-82b3-da2fa45e95ef/88-4.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2898,7 +2895,6 @@
       "nature",
       "photography"
     ],
-    
     "city": "Qena",
     "rating": 4.5,
     "reviews": 2581,
@@ -3064,7 +3060,6 @@
       "romantic",
       "photography"
     ],
-    
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 19342,
@@ -3097,7 +3092,6 @@
       "food",
       "photography"
     ],
-    
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 11027,
@@ -3131,7 +3125,6 @@
       "shopping",
       "photography"
     ],
-    
     "city": "Sharm El Sheikh",
     "rating": 4.7,
     "reviews": 8934,
@@ -3519,7 +3512,6 @@
       "romantic",
       "photography"
     ],
-    
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 3312,
@@ -3554,7 +3546,7 @@
       "nature"
     ],
     "city": "Luxor",
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 14562,
     "coverImage": "/images/luxor/balloon.jpg",
     "gallery": [
@@ -3586,7 +3578,6 @@
       "nature",
       "photography"
     ],
-    
     "city": "Luxor",
     "rating": 4.7,
     "reviews": 7024,
@@ -3891,7 +3882,6 @@
       "cultural",
       "local"
     ],
-    
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 340,
@@ -3925,7 +3915,6 @@
       "romantic",
       "viewpoint"
     ],
-    
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 2100,
@@ -3960,7 +3949,6 @@
       "cultural",
       "food"
     ],
-    
     "city": "Alexandria",
     "rating": 4.5,
     "reviews": 420,
@@ -3994,7 +3982,6 @@
       "food",
       "busy"
     ],
-    
     "city": "Alexandria",
     "rating": 4.3,
     "reviews": 2800,
@@ -4468,7 +4455,6 @@
       "food",
       "diving"
     ],
-    
     "city": "Marsa Alam",
     "rating": 4.5,
     "reviews": 980,
@@ -5804,7 +5790,6 @@
       "food",
       "local"
     ],
-    
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 5600,
@@ -5973,7 +5958,6 @@
       "mysterious",
       "hidden"
     ],
-    
     "city": "Cairo",
     "rating": 4.8,
     "reviews": 3100,
@@ -6173,7 +6157,6 @@
       "cultural",
       "hidden"
     ],
-    
     "city": "Hurghada",
     "rating": 4.4,
     "reviews": 1560,
@@ -6509,7 +6492,6 @@
       "photography",
       "local"
     ],
-    
     "city": "Aswan",
     "rating": 4.6,
     "reviews": 2100,
