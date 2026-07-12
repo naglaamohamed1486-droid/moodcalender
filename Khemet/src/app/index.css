@@ -17,19 +17,14 @@ html { scroll-behavior: smooth; }
     margin: 0px;
 }
 
-/* =============================================
-   KHEMET — Hero large-screen fix
-   Replace / merge into your existing hero block
-   ============================================= */
-
 .hero {
   position: relative;
-  height: clamp(520px, 58vw, 820px);
+  height: clamp(520px, 58vw, 620px);
   background: url('../assets/home.png') no-repeat center center / cover;
   width: 100%;
   display: flex;
   align-items: flex-start;
-  overflow: hidden; /* prevents any bleed-out */
+  overflow: hidden; 
 }
  
 .hero-content {
@@ -37,10 +32,10 @@ html { scroll-behavior: smooth; }
   padding-right: 5%;
   padding-top: clamp(80px, 10vw, 160px);
   padding-bottom: 40px;
-  width: clamp(320px, 42%, 620px);
+  width: 60%;
   max-width: 50%;
   flex-shrink: 0;
-  /* remove the old fixed width: 700px */
+ 
 }
  
 .hero-tit-prim {
@@ -462,7 +457,7 @@ font-weight: 405;
   .hero-content {
     padding-left: 6%;
     padding-top: 100px;
-    width: 540px;
+    width: 640px;
   }
 
   .hero-tit-prim {
@@ -542,7 +537,7 @@ font-weight: 405;
 
   .hero-content {
     padding: 80px 24px 40px;
-    width: 100%;
+    width: 90%;
     max-width: 100%;
   }
 
@@ -567,8 +562,9 @@ font-weight: 405;
   }
 
   .home-btn {
-    width: 145px;
+    width:80%;
     font-size: 15px;
+    justify-self:center ;
   }
 
   /* Stats bar */
@@ -778,7 +774,7 @@ font-weight: 405;
 
   .tripsec-btn {
     margin-top: 28px;
-    max-width: 100%;
+    max-width: 70%;
     width: 100%;
   }
 }
@@ -799,19 +795,6 @@ font-weight: 405;
 }
 
 /* ── Existing breakpoints adjusted ── */
-
-@media (max-width: 1024px) {
-  .hero {
-    height: clamp(440px, 52vw, 600px);
-  }
-
-  .hero-content {
-    padding-top: clamp(80px, 10vw, 130px);
-    width: clamp(320px, 50%, 520px);
-    max-width: 55%;
-  }
-}
-
 @media (max-width: 768px) {
   .hero {
     height: auto;
@@ -822,7 +805,7 @@ font-weight: 405;
 
   .hero-content {
     padding: 80px 24px 40px;
-    width: 100%;
+    width: 65%;
     max-width: 100%;
   }
 
