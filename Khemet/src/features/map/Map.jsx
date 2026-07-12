@@ -14,6 +14,7 @@ export default function Map() {
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchParams] = useSearchParams();
   const [selectedPlace, setSelectedPlace] = useState(null);
+  
 
   useEffect(() => {
     const tagFromUrl = searchParams.get("tag");
@@ -30,7 +31,12 @@ export default function Map() {
     setSelectedTags([]);
     setSelectedPlace(null);
   };
-
+ useEffect(() => {
+   window.scrollTo({
+     top: 0,
+     behavior: "smooth",
+   });
+ }, []);
   const places = Array.isArray(placesData) ? placesData : [];
 
   const filteredPlaces = useMemo(() => {

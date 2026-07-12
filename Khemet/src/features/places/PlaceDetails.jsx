@@ -119,17 +119,18 @@ function PlaceDetails() {
 
           <div className="right-col">
             <div className="location-block">
-              <div className="actions">
-                <button className="btn-primary">+ Add to trip</button>
-                <button
-                  className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
-                  onClick={() => user && toggleFavorite(place)}
-                >
-                  {saved ? "♥ Saved" : "♡ Save"}
-                </button>
-              </div>
+              {user && user?.role !== "admin" && (
+                <div className="actions">
+                  <button className="btn-primary">+ Add to trip</button>
+                  <button
+                    className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
+                    onClick={() => toggleFavorite(place)}
+                  >
+                    {saved ? "♥ Saved" : "♡ Save"}
+                  </button>
+                </div>
+              )}
               <br />
-
               <h3>LOCATION</h3>
               <p className="location-name">{place.city}</p>
               <div className="location-map">
