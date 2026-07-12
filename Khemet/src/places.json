@@ -2882,7 +2882,7 @@
       }
     ]
   },
-  {
+   {
     "id": 89,
     "title": "Qena Corniche",
     "description": "A scenic Nile promenade perfect for evening walks.",
@@ -2898,11 +2898,11 @@
     "city": "Qena",
     "rating": 4.5,
     "reviews": 2581,
-    "coverImage": "/images/qena/corniche.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Qena_mosque.jpg/1920px-Qena_mosque.jpg",
     "gallery": [
-      "/images/qena/corniche1.jpg",
-      "/images/qena/corniche2.jpg",
-      "/images/qena/corniche3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/%D9%82%D9%86%D8%A7_2013.jpg/1920px-%D9%82%D9%86%D8%A7_2013.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg/1920px-Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Giza-Nile.JPG/1920px-Giza-Nile.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -2930,11 +2930,11 @@
     "city": "Sohag",
     "rating": 4.6,
     "reviews": 1164,
-    "coverImage": "/images/sohag/akhmim.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Akhmim3.jpg/1920px-Akhmim3.jpg",
     "gallery": [
-      "/images/sohag/akhmim1.jpg",
-      "/images/sohag/akhmim2.jpg",
-      "/images/sohag/akhmim3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/1/1f/AkhmimSeifeinOldInside.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/7b/New_Akhmim_City_3.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Bischoy_Kloster_BW_10.jpg/1920px-Bischoy_Kloster_BW_10.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2963,11 +2963,11 @@
     "city": "Hurghada",
     "rating": 4.9,
     "reviews": 13241,
-    "coverImage": "/images/hurghada/orangebay.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/2009-08-13Hurghada.jpg/1920px-2009-08-13Hurghada.jpg",
     "gallery": [
-      "/images/hurghada/orangebay1.jpg",
-      "/images/hurghada/orangebay2.jpg",
-      "/images/hurghada/orangebay3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/El_Gouna_R13.jpg/1920px-El_Gouna_R13.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/21/Clownfish_at_Sharm_El_Naga_beach.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f0/Chaetodon_semilarvatus%2C_mar_Rojo.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -2996,11 +2996,11 @@
     "city": "Marsa Alam",
     "rating": 4.9,
     "reviews": 8215,
-    "coverImage": "/images/marsaalam/abudabbab.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Marsa_Murena_Beach1.JPG/1920px-Marsa_Murena_Beach1.JPG",
     "gallery": [
-      "/images/marsaalam/abudabbab1.jpg",
-      "/images/marsaalam/abudabbab2.jpg",
-      "/images/marsaalam/abudabbab3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Marsa_Murena_Beach2.JPG/1920px-Marsa_Murena_Beach2.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Marsa_Murena_Fisch.JPG/1920px-Marsa_Murena_Fisch.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Marsa_Murena_Halfterfische.JPG/1920px-Marsa_Murena_Halfterfische.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -3029,11 +3029,11 @@
     "city": "Marsa Alam",
     "rating": 4.9,
     "reviews": 6748,
-    "coverImage": "/images/marsaalam/dolphinhouse.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Hawksbill_turtle_at_Elphinstone_Reef%2C_Red_Sea%2C_Egypt_%2835150034493%29.jpg/1920px-Hawksbill_turtle_at_Elphinstone_Reef%2C_Red_Sea%2C_Egypt_%2835150034493%29.jpg",
     "gallery": [
-      "/images/marsaalam/dolphin1.jpg",
-      "/images/marsaalam/dolphin2.jpg",
-      "/images/marsaalam/dolphin3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Platax_Orbicularis_in_the_Egyptian_Red_Sea.jpg/1920px-Platax_Orbicularis_in_the_Egyptian_Red_Sea.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Red_Sea_Egypt.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e0/Red_Sea_near_Hurghada%2C_Egypt.png"
     ],
     "nearbyRestaurants": [
       {
@@ -3063,11 +3063,11 @@
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 19342,
-    "coverImage": "/images/sharm/naamabay.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Naama_Bay_Beach_R01.jpg/1920px-Naama_Bay_Beach_R01.jpg",
     "gallery": [
-      "/images/sharm/naama1.jpg",
-      "/images/sharm/naama2.jpg",
-      "/images/sharm/naama3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Naama_Bay_R01.jpg/1920px-Naama_Bay_R01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Naama_Bay_Promenade_R02.jpg/1920px-Naama_Bay_Promenade_R02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Naama_Bay_Promenade_R03.jpg/1920px-Naama_Bay_Promenade_R03.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3095,11 +3095,11 @@
     "city": "Sharm El Sheikh",
     "rating": 4.8,
     "reviews": 11027,
-    "coverImage": "/images/sharm/soho.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/03_SOHO_Square.jpg/1920px-03_SOHO_Square.jpg",
     "gallery": [
-      "/images/sharm/soho1.jpg",
-      "/images/sharm/soho2.jpg",
-      "/images/sharm/soho3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Naama_Bay_R01.jpg/1920px-Naama_Bay_R01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Naama_Bay_Promenade_R02.jpg/1920px-Naama_Bay_Promenade_R02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Naama_Bay_Promenade_R03.jpg/1920px-Naama_Bay_Promenade_R03.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3128,11 +3128,11 @@
     "city": "Sharm El Sheikh",
     "rating": 4.7,
     "reviews": 8934,
-    "coverImage": "/images/sharm/oldmarket.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Naama_Bay_Beach_R01.jpg/1920px-Naama_Bay_Beach_R01.jpg",
     "gallery": [
-      "/images/sharm/market1.jpg",
-      "/images/sharm/market2.jpg",
-      "/images/sharm/market3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/d/db/Sharm_el-Sheikh_-_Naama_bay.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Naama_Bay_Promenade_R03.jpg/1920px-Naama_Bay_Promenade_R03.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/03_SOHO_Square.jpg/1920px-03_SOHO_Square.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3161,11 +3161,11 @@
     "city": "Marsa Matrouh",
     "rating": 4.9,
     "reviews": 6238,
-    "coverImage": "/images/matrouh/agiba.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/AgibaBeach.jpg/1920px-AgibaBeach.jpg",
     "gallery": [
-      "/images/matrouh/agiba1.jpg",
-      "/images/matrouh/agiba2.jpg",
-      "/images/matrouh/agiba3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Agiba_Beach_-_Marsa_Matrouh_-_Egypt.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/2/23/Agiba_beach-North_west_coast_of_Egypt.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Agiba_beach_in_Egypt_2024.jpg/1920px-Agiba_beach_in_Egypt_2024.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3194,11 +3194,11 @@
     "city": "Marsa Matrouh",
     "rating": 4.8,
     "reviews": 5412,
-    "coverImage": "/images/matrouh/cleopatra.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg/1920px-Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg",
     "gallery": [
-      "/images/matrouh/cleo1.jpg",
-      "/images/matrouh/cleo2.jpg",
-      "/images/matrouh/cleo3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/El_Gharam_beach_1.jpg/1920px-El_Gharam_beach_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/El_Gharam_beach_2.jpg/1920px-El_Gharam_beach_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/20191112_165747jpg.jpg/1920px-20191112_165747jpg.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3226,11 +3226,11 @@
     "city": "Marsa Matrouh",
     "rating": 4.6,
     "reviews": 2187,
-    "coverImage": "/images/matrouh/rommel.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/20191112_165747jpg.jpg/1920px-20191112_165747jpg.jpg",
     "gallery": [
-      "/images/matrouh/rommel1.jpg",
-      "/images/matrouh/rommel2.jpg",
-      "/images/matrouh/rommel3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/El_Awwam_Mosque_2.jpg/1920px-El_Awwam_Mosque_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg/1920px-Cleopatra_Bath%2C_Marsa_Matrouh_%2822%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/El_Gharam_beach_1.jpg/1920px-El_Gharam_beach_1.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3258,11 +3258,11 @@
     "city": "El Alamein",
     "rating": 4.7,
     "reviews": 3529,
-    "coverImage": "/images/elalamein/museum.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/f/f3/AlameinWarMuseum.jpg",
     "gallery": [
-      "/images/elalamein/museum1.jpg",
-      "/images/elalamein/museum2.jpg",
-      "/images/elalamein/museum3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/American_General_Grant_Tank%27_El_Alamein_Military_Museum%2C_Egypt.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b6/El_Alamein_Military_Museum%2C_A_German_Howitzer.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/48/El_Alamein_Military_Museum_13.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3290,11 +3290,11 @@
     "city": "Luxor",
     "rating": 4.8,
     "reviews": 3841,
-    "coverImage": "/images/luxor/ramesseum.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Luxor%2C_West_Bank%2C_Ramesseum%2C_first_pylon%2C_Egypt%2C_Oct_2004.jpg",
     "gallery": [
-      "/images/luxor/ramesseum1.jpg",
-      "/images/luxor/ramesseum2.jpg",
-      "/images/luxor/ramesseum3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/7/7d/Colossus_of_Ramesses_II_restored.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/John_Beasly_Greene_%28American%2C_born_France_-_%28Ramesseum%2C_Thebes%29_-_Google_Art_Project.jpg/1920px-John_Beasly_Greene_%28American%2C_born_France_-_%28Ramesseum%2C_Thebes%29_-_Google_Art_Project.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Luxor%2C_West_Bank%2C_Valley_of_Kings%2C_overview%2C_Egypt%2C_Oct_2004.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3323,11 +3323,11 @@
     "city": "Luxor",
     "rating": 4.9,
     "reviews": 5294,
-    "coverImage": "/images/luxor/medinethabu.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/2nd_Courtyard_Medinet_Habu_R01.jpg/1920px-2nd_Courtyard_Medinet_Habu_R01.jpg",
     "gallery": [
-      "/images/luxor/habu1.jpg",
-      "/images/luxor/habu2.jpg",
-      "/images/luxor/habu3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Ch_Chep_II_Med_Habou_082005.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0b/Egypt.MedinetHabu.01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bf/Egypt.MedinetHabu.02.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3355,11 +3355,11 @@
     "city": "Luxor",
     "rating": 4.8,
     "reviews": 4688,
-    "coverImage": "/images/luxor/queens.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Valley_of_the_Queens_2022_03_annotated.jpg/1920px-Valley_of_the_Queens_2022_03_annotated.jpg",
     "gallery": [
-      "/images/luxor/queens1.jpg",
-      "/images/luxor/queens2.jpg",
-      "/images/luxor/queens3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Maler_der_Grabkammer_der_Nefertari_003.jpg/1920px-Maler_der_Grabkammer_der_Nefertari_003.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Luxor%2C_West_Bank%2C_Valley_of_Kings%2C_overview%2C_Egypt%2C_Oct_2004.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pylons_and_obelisk_Luxor_temple.JPG/1920px-Pylons_and_obelisk_Luxor_temple.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -3387,11 +3387,11 @@
     "city": "Luxor",
     "rating": 4.7,
     "reviews": 2012,
-    "coverImage": "/images/luxor/nobles.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Abd_el-Qurna_necropolis1.JPG/1920px-Abd_el-Qurna_necropolis1.JPG",
     "gallery": [
-      "/images/luxor/nobles1.jpg",
-      "/images/luxor/nobles2.jpg",
-      "/images/luxor/nobles3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Egypten_1999_%28348%29_Sheikh_Abd_el-Qurna%2C_Theben-West_%2829053831572%29.jpg/1920px-Egypten_1999_%28348%29_Sheikh_Abd_el-Qurna%2C_Theben-West_%2829053831572%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Tomb_TT3_of_Pashedu_%28Kairoinfo4u%29.jpg/1920px-Tomb_TT3_of_Pashedu_%28Kairoinfo4u%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Proyecto_Amenmose._Tumba_TT318_%28Sheikh_Abd_el-Qurna%2C_Egipto%29._%C3%81rea_de_trabajo%2C_2024.jpeg"
     ],
     "nearbyRestaurants": [
       {
@@ -3418,11 +3418,11 @@
     "city": "Luxor",
     "rating": 4.7,
     "reviews": 9180,
-    "coverImage": "/images/luxor/memnon.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Colossi_of_Memnon.jpg/1920px-Colossi_of_Memnon.jpg",
     "gallery": [
-      "/images/luxor/memnon1.jpg",
-      "/images/luxor/memnon2.jpg",
-      "/images/luxor/memnon3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/AmenhotepIII_South_Colossus.jpg/1920px-AmenhotepIII_South_Colossus.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/00/Colossi_of_Memnon_10M.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ee/Antonio_Beato%2C_Colosses_de_Memnon%2C_19th_century.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3450,11 +3450,11 @@
     "city": "Luxor",
     "rating": 4.8,
     "reviews": 5760,
-    "coverImage": "/images/luxor/museum.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/7/76/Luxor_Museum_1.JPG",
     "gallery": [
-      "/images/luxor/museum1.jpg",
-      "/images/luxor/museum2.jpg",
-      "/images/luxor/museum3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/By_ovedc_-_Luxor_Museum_-_09.jpg/1920px-By_ovedc_-_Luxor_Museum_-_09.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Kamose_Siegesstele_Luxor_Museum_02.jpg/1920px-Kamose_Siegesstele_Luxor_Museum_02.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Luxor_Museum_Amenophis_III._Statue_05.jpg/1920px-Luxor_Museum_Amenophis_III._Statue_05.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3482,11 +3482,11 @@
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 2475,
-    "coverImage": "/images/luxor/mummification.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Mummification_museum_Luxor.jpg/1920px-Mummification_museum_Luxor.jpg",
     "gallery": [
-      "/images/luxor/mummy1.jpg",
-      "/images/luxor/mummy2.jpg",
-      "/images/luxor/mummy3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mus%C3%A9e_Momification_-_Louxor_%28EG%29_-_2025-12-10_-_1.jpg/1920px-Mus%C3%A9e_Momification_-_Louxor_%28EG%29_-_2025-12-10_-_1.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Mus%C3%A9e_Momification_-_Louxor_%28EG%29_-_2025-12-10_-_21.jpg/1920px-Mus%C3%A9e_Momification_-_Louxor_%28EG%29_-_2025-12-10_-_21.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mummification_Tool%2C_Luxor_Governate%2C_Egypt.jpg/1920px-Mummification_Tool%2C_Luxor_Governate%2C_Egypt.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3515,11 +3515,11 @@
     "city": "Luxor",
     "rating": 4.6,
     "reviews": 3312,
-    "coverImage": "/images/luxor/banana.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aerial_Views_of_Luxor_No_24..JPG/1920px-Aerial_Views_of_Luxor_No_24..JPG",
     "gallery": [
-      "/images/luxor/banana1.jpg",
-      "/images/luxor/banana2.jpg",
-      "/images/luxor/banana3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Abu_el-Haggag_R01.jpg/1920px-Abu_el-Haggag_R01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Avenue_towards_Karnak.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Balloon_over_Luxor_-_Egypt_denoised.jpg/1920px-Balloon_over_Luxor_-_Egypt_denoised.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3548,11 +3548,11 @@
     "city": "Luxor",
     "rating": 5,
     "reviews": 14562,
-    "coverImage": "/images/luxor/balloon.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Balloon_over_Luxor_-_Egypt_denoised.jpg/1920px-Balloon_over_Luxor_-_Egypt_denoised.jpg",
     "gallery": [
-      "/images/luxor/balloon1.jpg",
-      "/images/luxor/balloon2.jpg",
-      "/images/luxor/balloon3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aerial_Views_of_Luxor_No_24..JPG/1920px-Aerial_Views_of_Luxor_No_24..JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Luxor%2C_West_Bank%2C_Valley_of_Kings%2C_overview%2C_Egypt%2C_Oct_2004.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pylons_and_obelisk_Luxor_temple.JPG/1920px-Pylons_and_obelisk_Luxor_temple.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -3581,11 +3581,11 @@
     "city": "Luxor",
     "rating": 4.7,
     "reviews": 7024,
-    "coverImage": "/images/luxor/corniche.jpg",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Aerial_Views_of_Luxor_No_24..JPG/1920px-Aerial_Views_of_Luxor_No_24..JPG",
     "gallery": [
-      "/images/luxor/corniche1.jpg",
-      "/images/luxor/corniche2.jpg",
-      "/images/luxor/corniche3.jpg"
+      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Avenue_towards_Karnak.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Abu_el-Haggag_R01.jpg/1920px-Abu_el-Haggag_R01.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Pylons_and_obelisk_Luxor_temple.JPG/1920px-Pylons_and_obelisk_Luxor_temple.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -3616,11 +3616,11 @@
     "city": "Cairo",
     "rating": 4.8,
     "reviews": 6400,
-    "coverImage": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Egyptian_food_Koshary.jpg/1920px-Egyptian_food_Koshary.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
-      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Koshary.jpg/1920px-Koshary.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Koshary_in_Khan_el_Khalili.jpg/1920px-Koshary_in_Khan_el_Khalili.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/Foodonia.com-koshary.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3651,11 +3651,11 @@
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 3200,
-    "coverImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Al-Fishawi_Caf%C3%A9_%2817771173263%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Koshary_in_Khan_el_Khalili.jpg/1920px-Koshary_in_Khan_el_Khalili.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Om_Ali_in_Khal_el_Khalili.jpg/1920px-Om_Ali_in_Khal_el_Khalili.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Al-Moez_interface.jpg/1920px-Al-Moez_interface.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3686,11 +3686,11 @@
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 5100,
-    "coverImage": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Mixed_Shawarma_%282843435528%29.jpg/1920px-Mixed_Shawarma_%282843435528%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/2019.07.09_DC_Shawarma_People_and_Places%2C_Washington%2C_DC_USA_190_60018.jpg/1920px-2019.07.09_DC_Shawarma_People_and_Places%2C_Washington%2C_DC_USA_190_60018.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chicken_Shawarma_preparation_in_Thiruvananthapuram_21_37_03_246000.jpeg/1920px-Chicken_Shawarma_preparation_in_Thiruvananthapuram_21_37_03_246000.jpeg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Restauranthouder_bij_zijn_shoarma_spit%2C_Bestanddeelnr_255-6509.jpg/1920px-Restauranthouder_bij_zijn_shoarma_spit%2C_Bestanddeelnr_255-6509.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3718,11 +3718,11 @@
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 480,
-    "coverImage": "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Al-Fishawi_Caf%C3%A9_%2817771173263%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
-      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/4/47/Naguib_Mahfouz_in_1960s.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/Nagib_Mahfouz.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Al-Moez_interface.jpg/1920px-Al-Moez_interface.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3751,11 +3751,11 @@
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 1870,
-    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/St._No.8-Mokattam.JPG/1920px-St._No.8-Mokattam.JPG",
     "gallery": [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Beauty_Of_Egypt.JPG/1920px-Beauty_Of_Egypt.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Spelterini_Cairo_Necropolis.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8b/Referendum_in_the_desert.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3785,11 +3785,11 @@
     "city": "Cairo",
     "rating": 4.7,
     "reviews": 2340,
-    "coverImage": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg/1920px-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800",
-      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
-      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/DSC01482-1-6_3_-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg/1920px-DSC01482-1-6_3_-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/DSC01535-1-4_EE_2_-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg/1920px-DSC01535-1-4_EE_2_-Deer_Samaan_El_kharaz_-_Mokattam_-_Sherif_Louis.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/e/e8/St._Simon_the_Tanner%27s_Hall.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -3818,11 +3818,11 @@
     "city": "Cairo",
     "rating": 4.4,
     "reviews": 1120,
-    "coverImage": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/1/17/Abdeen_Palace.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=800",
-      "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?w=800",
-      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Abdeen_Palace_Cairo_%2852886181378%29.jpg/1920px-Abdeen_Palace_Cairo_%2852886181378%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Abdeen_Palace_Cairo_%2852891275732%29.jpg/1920px-Abdeen_Palace_Cairo_%2852891275732%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Abdeen_Palace_Cairo_%2852892014274%29.jpg/1920px-Abdeen_Palace_Cairo_%2852892014274%29.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3851,11 +3851,11 @@
     "city": "Cairo",
     "rating": 4.4,
     "reviews": 560,
-    "coverImage": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/1/10/CairoFustatLandscape.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800",
-      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/a/a3/Fostat-329.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Fustat_Indian.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Egyptian_-_Lusterware_Plate_with_Bird_Motif_-_Walters_482036.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3885,11 +3885,11 @@
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 340,
-    "coverImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Al-Moez_interface.jpg/1920px-Al-Moez_interface.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
-      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/Al-Azhar_%28inside%29_2006.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Al_Azhar_Mosque_%28cropped%29.jpg/1920px-Al_Azhar_Mosque_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Al_Azhar_park.jpg/1920px-Al_Azhar_park.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3918,11 +3918,11 @@
     "city": "Cairo",
     "rating": 4.6,
     "reviews": 2100,
-    "coverImage": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Giza-Nile.JPG/1920px-Giza-Nile.JPG",
     "gallery": [
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Al-Moez_interface.jpg/1920px-Al-Moez_interface.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Beauty_Of_Egypt.JPG/1920px-Beauty_Of_Egypt.JPG",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/Cairo%2C_late_afternoon_view_from_the_Tower_of_Cairo%2C_Egypt%2C_Oct_2004.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3952,11 +3952,11 @@
     "city": "Alexandria",
     "rating": 4.5,
     "reviews": 420,
-    "coverImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/El_Max_%2C_Alexandria.jpg/1920px-El_Max_%2C_Alexandria.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800",
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/El_max_Alexandria.jpg/1920px-El_max_Alexandria.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%281_of_2%29.jpg/1920px-144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%281_of_2%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%282_of_2%29.jpg/1920px-144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%282_of_2%29.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -3985,11 +3985,11 @@
     "city": "Alexandria",
     "rating": 4.3,
     "reviews": 2800,
-    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%281_of_2%29.jpg/1920px-144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%281_of_2%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-      "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800",
-      "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%282_of_2%29.jpg/1920px-144_-_Alexandria_-_Sidi-Bish_Beach_-_btv1b10112763d_%282_of_2%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Alexandrie._Place_Sidi-Bishr_-_btv1b101012683_%281_of_2%29.jpg/1920px-Alexandrie._Place_Sidi-Bishr_-_btv1b101012683_%281_of_2%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Alexandrie._Place_Sidi-Bishr_-_btv1b101012683_%282_of_2%29.jpg/1920px-Alexandrie._Place_Sidi-Bishr_-_btv1b101012683_%282_of_2%29.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -4019,11 +4019,11 @@
     "city": "Cairo",
     "rating": 4.5,
     "reviews": 720,
-    "coverImage": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mezquita_Muhammad_Ali-Cairo_%281%29.JPG/1920px-Mezquita_Muhammad_Ali-Cairo_%281%29.JPG",
     "gallery": [
-      "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800",
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=800",
-      "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Al-Moez_interface.jpg/1920px-Al-Moez_interface.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Al_Azhar_Mosque_%28cropped%29.jpg/1920px-Al_Azhar_Mosque_%28cropped%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Beauty_Of_Egypt.JPG/1920px-Beauty_Of_Egypt.JPG"
     ],
     "nearbyRestaurants": [
       {
@@ -4052,11 +4052,11 @@
     "city": "Cairo",
     "rating": 4.4,
     "reviews": 1100,
-    "coverImage": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Gezira_Sporting_Club_on_Zamalek_island_%2814792851861%29.jpg/1920px-Gezira_Sporting_Club_on_Zamalek_island_%2814792851861%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800",
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800",
-      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Egypt._Cairo._Gezira_Gardens_%26_sports._Cricket_LOC_matpc.17932.jpg/1920px-Egypt._Cairo._Gezira_Gardens_%26_sports._Cricket_LOC_matpc.17932.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Egypt._Cairo._Gezira_Gardens_%26_sports_LOC_matpc.17913.jpg/1920px-Egypt._Cairo._Gezira_Gardens_%26_sports_LOC_matpc.17913.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Egypt%2C_Night_Cairo_and_river_Nile%2C_Zamalek_city_lights.jpg/1920px-Egypt%2C_Night_Cairo_and_river_Nile%2C_Zamalek_city_lights.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -4087,11 +4087,11 @@
     "city": "Dahab",
     "rating": 4.9,
     "reviews": 870,
-    "coverImage": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Dahab%2C_Sinai%2C_Egypt_%282055366045%29.jpg/1920px-Dahab%2C_Sinai%2C_Egypt_%282055366045%29.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Dahab%2C_Sinai%2C_Egypt_%282056149762%29.jpg/1920px-Dahab%2C_Sinai%2C_Egypt_%282056149762%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Dahab%2C_Sinai%2C_Egypt_%282056153184%29.jpg/1920px-Dahab%2C_Sinai%2C_Egypt_%282056153184%29.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Dahab%2C_Sinai%2C_Egypt_%282056154252%29.jpg/1920px-Dahab%2C_Sinai%2C_Egypt_%282056154252%29.jpg"
     ],
     "nearbyRestaurants": [
       {
@@ -4121,11 +4121,11 @@
     "city": "Saint Catherine",
     "rating": 4.8,
     "reviews": 1340,
-    "coverImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/A_full_view_of_Saint_Catherine%27s_Monastery.jpg/1920px-A_full_view_of_Saint_Catherine%27s_Monastery.jpg",
     "gallery": [
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Katharinenkloster_Sinai_BW_2.jpg/1920px-Katharinenkloster_Sinai_BW_2.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Katharinenkloster_Sinai_BW_4.jpg/1920px-Katharinenkloster_Sinai_BW_4.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Saint_Catherine%27s_Monastery%2C_Mount_Sinai_morning.jpg/1920px-Saint_Catherine%27s_Monastery%2C_Mount_Sinai_morning.jpg"
     ],
     "nearbyRestaurants": [
       {
