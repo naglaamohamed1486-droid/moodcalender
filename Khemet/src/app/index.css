@@ -68,14 +68,14 @@ html { scroll-behavior: smooth; }
  
 .linkat {
   display: inline-flex;
-  gap: 12px;
+  gap: 35px;
   margin-top: 8px;
   position: relative;
-  top: clamp(-6px, -0.5vw, 0px);
+  top: 15px;
 }
 .home-btn{
   width: 160px;
-  padding:3px 6px 3px 6px;
+  padding:7px 12px 7px 12px;
   margin: 1px;
    font-family: "Cormorant Garamond";
    border-radius: 12px;
