@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Toast from "../../../shared/components/Toast";
+
 import {
   FaPlaneDeparture,
   FaLocationDot,
@@ -50,6 +52,27 @@ function BookingSummary({
   const [confirmed, setConfirmed] =
     useState(false);
 
+  const [toast, setToast] = useState({
+  visible: false,
+  message: "",
+  type: "success",
+});
+
+const showToast = (message, type = "success") => {
+  setToast({
+    visible: true,
+    message,
+    type,
+  });
+
+  setTimeout(() => {
+    setToast((prev) => ({
+      ...prev,
+      visible: false,
+    }));
+  }, 3000);
+};  
+
   const bookingNumber = useMemo(() => {
 
     return (
@@ -98,21 +121,24 @@ function BookingSummary({
       )
     ) {
 
-      alert(
-        "Please complete your payment information."
-      );
+      showToast(
+  "Please complete your payment information.",
+  "error"
+);
 
-      return;
+return;
+      
 
     }
 
     if (!acceptedTerms) {
 
-      alert(
-        "Please accept the booking terms."
-      );
+      showToast(
+  "Please accept the booking terms.",
+  "error"
+);
 
-      return;
+return;
 
     }
 
@@ -132,6 +158,11 @@ function BookingSummary({
 
     setConfirmed(true);
 
+    showToast(
+  "Booking confirmed successfully!",
+  "success"
+);
+
   };
 
   if (confirmed) {
@@ -142,17 +173,24 @@ function BookingSummary({
 
         <div className="booking-success">
 
-          <div className="success-icon">
+          <div>
 
-            <FaCircleCheck />
+    <span className="papyrus-title">
+        KHEMET
+    </span>
 
-          </div>
+    <span className="papyrus-subtitle">
+        Official Travel Seal
+    </span>
 
-          <h2>
+    <div className="papyrus-divider"></div>
 
-            Booking Confirmed
+    <div className="papyrus-approved">
+        <FaCircleCheck />
+        Journey Approved
+    </div>
 
-          </h2>
+</div>
 
           <p>
 
@@ -222,14 +260,11 @@ function BookingSummary({
 
           <div className="confirmation-actions">
 
-            <button className="summary-confirm">
-              <FaFileInvoice />
-              Download Receipt
-            </button>
+            
 
             <button
               className="summary-secondary"
-              onClick={() => navigate("/bookings")}
+              onClick={() => navigate("/Bookings")}
             >
               My Bookings
             </button>
@@ -244,6 +279,7 @@ function BookingSummary({
           </div>
 
         </div>
+
 
       </div>
 
@@ -1210,8 +1246,6 @@ function BookingSummary({
 
           <p>
 
-            <FaCircleCheck />
-
             Free cancellation up to
             <strong> 48 hours </strong>
             before departure.
@@ -1220,7 +1254,6 @@ function BookingSummary({
 
           <p>
 
-            <FaCircleXmark />
 
             After that,
             <strong> 30% </strong>
@@ -1309,7 +1342,7 @@ function BookingSummary({
 
             <strong>
 
-              support@khemet.com
+              khemet2026@gmail.com
 
             </strong>
 
@@ -1352,6 +1385,11 @@ function BookingSummary({
         </button>
 
       </div>
+      <Toast
+  message={toast.message}
+  visible={toast.visible}
+  type={toast.type}
+/>
 
     </div>
 
