@@ -286,6 +286,7 @@ export default function Profile() {
               </p>
             </div>
           </div>
+
           {isOwnProfile && (
             <div className="profile-hero-btns">
               <Link className="profile-hero-btns-gen" to="/trip-plan">
@@ -443,7 +444,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* ─── Tabs, filtered by availableTabs ─── */}
+     
       <div className="pf-btn-sec">
         <div className="pf-btn-cont">
           {availableTabs.includes("info") && (
