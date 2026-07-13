@@ -406,6 +406,10 @@ function PlaceDetails() {
                     <div key={comment.commentId} className="comment-item">
                       <div className="comment-header">
                         <div className="comment-user">
+                         <Link
+                          to={`/profile/${comment.userId}`}
+                          className="comment-avatar-link"
+                        >
                           {comment.userPic ? (
                             <img
                               src={comment.userPic}
@@ -417,6 +421,7 @@ function PlaceDetails() {
                               {comment.userName?.charAt(0) || "U"}
                             </div>
                           )}
+                        </Link>
                           <Link
                             to={`/profile/${comment.userId}`}
                             className="comment-username"
