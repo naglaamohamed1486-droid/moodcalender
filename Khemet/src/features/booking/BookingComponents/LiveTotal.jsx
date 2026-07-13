@@ -83,7 +83,7 @@ function LiveTotal({ booking }) {
 
         <strong>
 
-          {booking.plan?.name}
+          {booking.plan?.title}
 
         </strong>
 
