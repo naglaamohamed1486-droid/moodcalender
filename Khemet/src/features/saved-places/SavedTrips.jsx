@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function SavedTrips() {
   useScrollToTop();
   const { savedTrips, deleteTrip } = useAuth();
+  
 
   return (
       <section className="saved-page">

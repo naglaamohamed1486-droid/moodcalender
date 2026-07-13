@@ -430,31 +430,24 @@ function TripPlanner() {
   const [pace, setPace] = useState("Balanced");
   const [plans, setPlans] = useState([]);
   const [showPreview, setShowPreview] = useState(false);
-  const [editingTrip, setEditingTrip] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const {
+    activeTrip,
+    setActiveTrip,
+    savedTrips,
+} = useAuth();
+
+
 
   const organizerRef = useRef(null);
   const plansRef = useRef(null);
-  // const [savedTrips, setSavedTrips] = useState([]);
-
-  // const saveTrip = () => {
-  //   if (!editingTrip) return;
-
-  //   setSavedTrips(prev => [...prev, editingTrip]);
-
-  //   setEditingTrip(null);
-  // };
-  //   const deleteTrip = (index) => {
-  //   setSavedTrips((prev) =>
-  //     prev.filter((_, i) => i !== index)
-  //   );
-  // };
 
   const handleSelect = (plan) => {
     const built = buildItinerary(plan.places, selectedInterests, days, pace);
-    setEditingTrip({
+    setActiveTrip({
       ...plan,
-      itinerary: built.map((d) => d.places),
+      itinerary: built,
     });
 
     setTimeout(() => {
@@ -465,7 +458,7 @@ function TripPlanner() {
     }, 100);
   };
   const createBlankTrip = () => {
-  setEditingTrip({
+  setActiveTrip({
     name: "My Custom Trip",
     itinerary: [[]],
   });
@@ -539,27 +532,27 @@ function TripPlanner() {
   };
 
   const generate = () => {
-    setEditingTrip(null); // اقفلي الـ Organizer
+    setActiveTrip(null); // اقفلي الـ Organizer
     setShowPreview(false); // لو الـ Preview مفتوح
     const generated = generatePlans(places, selectedInterests, days, pace);
     setPlans(generated);
   };
 
   const closeTrip = () => {
-    setEditingTrip(null);
+    setActiveTrip(null);
   };
 
   const deleteTrip = () => {
-    setSavedTrips((prev) => prev.filter((t) => t.name !== editingTrip.name));
+    setSavedTrips((prev) => prev.filter((t) => t.name !== activeTrip.name));
 
-    setEditingTrip(null);
+    setActiveTrip(null);
   };
 
   const duplicateTrip = () => {
     const copy = {
-      ...editingTrip,
-      name: editingTrip.name + " Copy",
-      itinerary: editingTrip.itinerary.map((day) => [...day]),
+      ...ActiveTrip,
+      name: activeTrip.name + " Copy",
+      itinerary: activeTrip.itinerary.map((day) => [...day]),
     };
 
     setSavedTrips((prev) => [...prev, copy]);
@@ -569,7 +562,7 @@ function TripPlanner() {
 
   useEffect(() => {
     if (location.state?.trip) {
-      setEditingTrip(location.state.trip);
+      setActiveTrip(location.state.trip);
 
       navigate(location.pathname, {
         replace: true,
@@ -594,7 +587,6 @@ function TripPlanner() {
     }
   }, [plans]);
 
-  const { savedTrips } = useAuth();
   return (
     <div className="trip-page">
       <div className="trip-header">
@@ -617,7 +609,7 @@ function TripPlanner() {
         onGenerate={generate}
       />
 
-      {plans.length > 0 && !editingTrip && (
+      {plans.length > 0 && !activeTrip && (
         <div ref={plansRef}>
           <div className="plans-header">
             <div className="plans-step">
@@ -667,10 +659,10 @@ function TripPlanner() {
       )}
 
       <div ref={organizerRef}>
-        {editingTrip && (
+        {activeTrip && (
           <TripOrganizer
-            trip={editingTrip}
-            setTrip={setEditingTrip}
+            trip={activeTrip}
+            setTrip={setActiveTrip}
             closeTrip={closeTrip}
             deleteTrip={deleteTrip}
             duplicateTrip={duplicateTrip}

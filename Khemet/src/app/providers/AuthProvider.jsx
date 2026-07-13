@@ -55,6 +55,17 @@ export function AuthProvider({ children }) {
     setSavedTrips(userData.savedTrips || []);
   };
 
+const [activeTrip, setActiveTrip] = useState(() => {
+    const saved = localStorage.getItem("activeTrip");
+    return saved ? JSON.parse(saved) : null;
+});
+useEffect(() => {
+    localStorage.setItem(
+        "activeTrip",
+        JSON.stringify(activeTrip)
+    );
+}, [activeTrip]);
+
   const logout = async () => {
     await auth.signOut();
     setUser(null);
@@ -75,6 +86,7 @@ export function AuthProvider({ children }) {
       ...safeData,
       contributions: safeData.contributions || [],
     });
+    console.log("Saved to Firestore", updatedTrips);
 
     syncUserInStorage({
       ...safeData,
@@ -127,6 +139,48 @@ export function AuthProvider({ children }) {
   });
 };
 
+const addPlaceToActiveTrip = (place) => {
+  setActiveTrip((prev) => {
+    // مفيش Trip مفتوحة
+    if (!prev) {
+      return {
+        name: "My Custom Trip",
+        itinerary: [[place]],
+      };
+    }
+
+    const itinerary = [...prev.itinerary];
+
+    // آخر يوم
+    const lastDay = itinerary[itinerary.length - 1];
+
+    // نفس المكان موجود؟
+    const exists = itinerary.some((day) =>
+      day.some((p) => p.id === place.id)
+    );
+
+    if (exists) return prev;
+
+    // لو اليوم فاضي
+    if (lastDay.length === 0) {
+      lastDay.push(place);
+    }
+    // نفس المحافظة
+    else if (lastDay[0].city === place.city) {
+      lastDay.push(place);
+    }
+    // محافظة مختلفة
+    else {
+      itinerary.push([place]);
+    }
+
+    return {
+      ...prev,
+      itinerary,
+    };
+  });
+};
+
  const deleteTrip = async (tripId) => {
   const updatedTrips = savedTrips.filter(
     trip => trip.id !== tripId
@@ -175,6 +229,9 @@ export function AuthProvider({ children }) {
         saveTrip,
         deleteTrip,
         duplicateTrip,
+        activeTrip,
+        setActiveTrip,
+        addPlaceToActiveTrip,
       }}
     >
       {children}
