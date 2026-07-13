@@ -24,11 +24,18 @@ function TripOrganizer({
   const [savedMessage, setSavedMessage] = useState(false);
 
   const addDay = () => {
-    setTrip({
-      ...trip,
-      itinerary: [...trip.itinerary, []],
-    });
-  };
+  setTrip({
+    ...trip,
+    itinerary: [
+      ...trip.itinerary,
+      {
+        day: trip.itinerary.length + 1,
+        city: null,
+        places: [],
+      },
+    ],
+  });
+};
 
   // ===========================
   // Delete Day
@@ -55,7 +62,11 @@ function TripOrganizer({
 
     const updated = [...trip.itinerary];
 
-    updated[dayIndex].push(place);
+    updated[dayIndex].places.push(place);
+
+    if (!updated[dayIndex].city) {
+      updated[dayIndex].city = place.city;
+    }
 
     setTrip({
       ...trip,
@@ -70,7 +81,11 @@ function TripOrganizer({
   const removePlace = (dayIndex, placeIndex) => {
     const updated = [...trip.itinerary];
 
-    updated[dayIndex].splice(placeIndex, 1);
+    updated[dayIndex].places.splice(placeIndex, 1);
+
+    if (updated[dayIndex].places.length === 0) {
+      updated[dayIndex].city = null;
+    }
 
     setTrip({
       ...trip,
@@ -105,7 +120,7 @@ function TripOrganizer({
   const moveDown = (dayIndex, placeIndex) => {
     const updated = [...trip.itinerary];
 
-    if (placeIndex === updated[dayIndex].length - 1) return;
+    if (placeIndex === updated[dayIndex].places.length - 1) return;
 
     [updated[dayIndex][placeIndex + 1], updated[dayIndex][placeIndex]] = [
       updated[dayIndex][placeIndex],
@@ -225,14 +240,14 @@ function TripOrganizer({
         <div className="generator-body">
           <div className="organizer-days">
             {trip.itinerary.map((day, dayIndex) => {
-            const currentCity = day.length > 0 ? day[0].city : null;
+            const currentCity = day.city;
 
             const availablePlaces = places.filter((place) => {
               // لو اليوم فيه أماكن، اعرض نفس المحافظة فقط
               if (currentCity && place.city !== currentCity) return false;
 
               // امنع تكرار نفس المكان في نفس اليوم
-              return !day.some((p) => p.id === place.id);
+              return !day.places.some((p) => p.id === place.id);
             });
 
             return (
@@ -247,7 +262,7 @@ function TripOrganizer({
                     <div>
                       <div className="day-title">Day {dayIndex + 1}</div>
 
-                      <span className="places-count">{day.length} places</span>
+                      <span className="places-count">{day.places.length} places</span>
                     </div>
                   </div>
 
@@ -292,7 +307,7 @@ function TripOrganizer({
                 {/* PLACES */}
 
                 <div className="organizer-places">
-                  {day.map((place, placeIndex) => (
+                  {day.places.map((place, placeIndex) => (
                     <div
                       className="organizer-place"
                       key={place.id + "-" + placeIndex}

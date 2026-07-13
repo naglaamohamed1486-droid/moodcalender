@@ -7,6 +7,7 @@ import {
   FaLocationDot,
   FaCalendarDays,
   FaUsers,
+  FaRoute,
   FaHotel,
   FaUtensils,
   FaTicket,
@@ -102,7 +103,9 @@ const showToast = (message, type = "success") => {
     booking.flight?.price || 0;
 
   const reservationPrice =
-    booking.reservationPrice || 120;
+    booking.totalPrice - flightPrice > 0
+      ? booking.totalPrice - flightPrice
+      : 0;
 
   const total =
     tripPrice +
@@ -353,7 +356,7 @@ return;
 
             <strong>
 
-              {booking.plan?.name}
+              {booking.flight?.arrival?.city}
 
             </strong>
 
@@ -462,6 +465,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaRoute />
 
                 Route
 
@@ -473,7 +477,7 @@ return;
 
                 {" → "}
 
-                {booking.flight.arrival}
+                {booking.flight.arrival?.code}
 
               </strong>
 
@@ -482,6 +486,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaTicket />
 
                 Class
 
@@ -516,6 +521,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaMoneyBillWave />
 
                 Price
 

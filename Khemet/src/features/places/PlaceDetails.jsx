@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import placesData from "../../places.json";
 import Card from "../../shared/components/Card";
@@ -7,8 +7,17 @@ import { useAuth } from "../../app/providers/AuthContext";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
+
 function PlaceDetails() {
   const { id } = useParams();
+  const { addPlaceToActiveTrip } = useAuth();
+  const navigate = useNavigate();
+
+  const handleAddToTrip = () => {
+    addPlaceToActiveTrip(place);
+
+    navigate("/trip-planner");
+  };
 
   const { user, toggleFavorite, isFavorite } = useAuth();
 
@@ -125,7 +134,9 @@ function PlaceDetails() {
             <div className="location-block">
               {user && user?.role !== "admin" && (
                 <div className="actions">
-                  <button className="btn-primary">+ Add to trip</button>
+                  <button className="btn-primary" onClick={handleAddToTrip}>
+                    + Add to trip
+                  </button>
                   <button
                     className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
                     onClick={() => toggleFavorite(place)}
