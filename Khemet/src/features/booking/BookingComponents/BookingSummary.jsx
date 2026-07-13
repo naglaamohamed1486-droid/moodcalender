@@ -7,6 +7,7 @@ import {
   FaLocationDot,
   FaCalendarDays,
   FaUsers,
+  FaRoute,
   FaHotel,
   FaUtensils,
   FaTicket,
@@ -353,7 +354,7 @@ return;
 
             <strong>
 
-              {booking.plan?.name}
+              {booking.flight?.arrival || booking.plan?.name}
 
             </strong>
 
@@ -462,6 +463,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaRoute />
 
                 Route
 
@@ -482,6 +484,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaTicket />
 
                 Class
 
@@ -516,6 +519,7 @@ return;
             <div className="info-row">
 
               <span>
+                <FaMoneyBillWave />
 
                 Price
 

@@ -7,6 +7,69 @@ const classMultiplier = {
   "First Class": 2.2,
 };
 
+const egyptAirports = [
+  {
+    city: "Cairo",
+    airport: "Cairo International Airport",
+    code: "CAI",
+  },
+  {
+    city: "Alexandria",
+    airport: "Borg El Arab International Airport",
+    code: "HBE",
+  },
+  {
+    city: "Luxor",
+    airport: "Luxor International Airport",
+    code: "LXR",
+  },
+  {
+    city: "Aswan",
+    airport: "Aswan International Airport",
+    code: "ASW",
+  },
+  {
+    city: "Hurghada",
+    airport: "Hurghada International Airport",
+    code: "HRG",
+  },
+  {
+    city: "Sharm El Sheikh",
+    airport: "Sharm El Sheikh International Airport",
+    code: "SSH",
+  },
+  {
+    city: "Marsa Alam",
+    airport: "Marsa Alam International Airport",
+    code: "RMF",
+  },
+  {
+    city: "Taba",
+    airport: "Taba International Airport",
+    code: "TCP",
+  },
+  {
+    city: "Sohag",
+    airport: "Sohag International Airport",
+    code: "HMB",
+  },
+  {
+    city: "Assiut",
+    airport: "Assiut International Airport",
+    code: "ATZ",
+  },
+  {
+    city: "Abu Simbel",
+    airport: "Abu Simbel Airport",
+    code: "ABS",
+  },
+  {
+    city: "El Alamein",
+    airport: "El Alamein International Airport",
+    code: "DBB",
+  },
+];
+
 const airlines = [
   {
     name: "EgyptAir",
@@ -38,7 +101,7 @@ function FlightForm({ booking, setBooking, nextStep, back }) {
 
   const [flight, setFlight] = useState({
     departure: "",
-    arrival: "Cairo",
+    arrival: "",
     departureDate: "",
     travelers: 1,
     class: "Economy",
@@ -113,7 +176,7 @@ function FlightForm({ booking, setBooking, nextStep, back }) {
 
             <input
               type="text"
-              placeholder="Alexandria"
+              placeholder="Enter Departure Airport"
               value={flight.departure}
               onChange={(e) =>
                 setFlight({
@@ -125,10 +188,29 @@ function FlightForm({ booking, setBooking, nextStep, back }) {
           </div>
 
           <div>
-            <label>Arrival</label>
+  <label>Arrival</label>
 
-            <input value="Cairo" disabled />
-          </div>
+  <select
+    value={flight.arrival}
+    onChange={(e) =>
+      setFlight({
+        ...flight,
+        arrival: e.target.value,
+      })
+    }
+  >
+    <option value="">Select Airport</option>
+
+    {egyptAirports.map((airport) => (
+      <option
+        key={airport.code}
+        value={airport.airport}
+      >
+        {airport.airport} ({airport.code})
+      </option>
+    ))}
+  </select>
+</div>
 
           <div>
             <label>Departure Date</label>
