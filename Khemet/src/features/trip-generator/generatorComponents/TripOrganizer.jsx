@@ -3,6 +3,7 @@ import { useAuth } from "../../../app/providers/AuthContext";
 import { useState } from "react";
 import { savePlan } from "../../booking/BookingComponents/bookingDB";
 import { useNavigate } from "react-router-dom";
+import Toast from "../../../shared/components/Toast";
 
 function TripOrganizer({
   trip,
@@ -343,11 +344,9 @@ function TripOrganizer({
                   setSavedMessage(true);
                   setTimeout(() => {
                     setSavedMessage(false);
-                  }, 1500);
+                  }, 2000);
 
                   setShowBookingPopup(true);
-
-                  setShowBookingPopup(true); // <-- دي أهم سطر
                 } catch (err) {
                   console.error(err);
                 }
@@ -355,11 +354,11 @@ function TripOrganizer({
             >
               Save Trip
             </button>
-            {savedMessage && (
-              <div className="saved-message">
-                ✓ Trip saved to your Saved Trips!
-              </div>
-            )}
+            <Toast
+             visible={savedMessage}
+             type="success"
+             message="Trip saved successfully!"
+            />
           </div>
         </div>
       </div>
