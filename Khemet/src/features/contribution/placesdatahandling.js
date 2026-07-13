@@ -1,5 +1,6 @@
 import placesData from "../../places.json";
-import { collection, getDocs } from "firebase/firestore";
+import {
+  collection,getDocs,doc,getDoc,setDoc,runTransaction,} from "firebase/firestore";
 import { db } from "../../firebase";
 
 export const CATEGORIES = [
@@ -449,7 +450,8 @@ cityCoords: {
   },
 ];
 
-// ── Derived place data (replaces the standalone "places" localStorage key) ──
+
+
 export async function getAllContributedPlaces() {
   const snap = await getDocs(collection(db, "users"));
   const places = [];
@@ -475,13 +477,32 @@ export async function getApprovedPlaces() {
 }
 
 const FALLBACK_LAST_ID = 200;
+const COUNTER_DOC = doc(db, "meta", "placeIdCounter");
 
-export async function getNextId() {
+async function ensureCounterInitialized() {
+  const snap = await getDoc(COUNTER_DOC);
+  if (snap.exists()) return;
+
   const contributed = await getAllContributedPlaces();
   const ids = [
     FALLBACK_LAST_ID,
     ...placesData.map((p) => p.id),
     ...contributed.map((p) => p.id),
   ];
-  return Math.max(...ids) + 1;
+
+  await setDoc(COUNTER_DOC, { lastId: Math.max(...ids) });
+}
+
+export async function getNextId() {
+  await ensureCounterInitialized();
+
+  const newId = await runTransaction(db, async (transaction) => {
+    const snap = await transaction.get(COUNTER_DOC);
+    const currentLastId = snap.data().lastId;
+    const nextId = currentLastId + 1;
+    transaction.update(COUNTER_DOC, { lastId: nextId });
+    return nextId;
+  });
+
+  return newId;
 }
