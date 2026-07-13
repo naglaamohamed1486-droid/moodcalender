@@ -103,7 +103,9 @@ const showToast = (message, type = "success") => {
     booking.flight?.price || 0;
 
   const reservationPrice =
-    booking.reservationPrice || 120;
+    booking.totalPrice - flightPrice > 0
+      ? booking.totalPrice - flightPrice
+      : 0;
 
   const total =
     tripPrice +
