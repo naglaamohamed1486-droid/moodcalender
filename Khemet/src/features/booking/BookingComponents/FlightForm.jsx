@@ -191,24 +191,28 @@ function FlightForm({ booking, setBooking, nextStep, back }) {
   <label>Arrival</label>
 
   <select
-    value={flight.arrival}
-    onChange={(e) =>
-      setFlight({
-        ...flight,
-        arrival: e.target.value,
-      })
-    }
-  >
+  value={flight.arrival?.code || ""}
+  onChange={(e) => {
+    const selectedAirport = egyptAirports.find(
+      (airport) => airport.code === e.target.value
+    );
+
+    setFlight({
+      ...flight,
+      arrival: selectedAirport,
+    });
+  }}
+>
     <option value="">Select Airport</option>
 
-    {egyptAirports.map((airport) => (
-      <option
-        key={airport.code}
-        value={airport.airport}
-      >
-        {airport.airport} ({airport.code})
-      </option>
-    ))}
+{egyptAirports.map((airport) => (
+  <option
+    key={airport.code}
+    value={airport.code}
+  >
+    {airport.airport} ({airport.code})
+  </option>
+))}
   </select>
 </div>
 

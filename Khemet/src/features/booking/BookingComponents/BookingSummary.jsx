@@ -354,7 +354,7 @@ return;
 
             <strong>
 
-              {booking.flight?.arrival || booking.plan?.name}
+              {booking.flight?.arrival?.city}
 
             </strong>
 
@@ -475,7 +475,7 @@ return;
 
                 {" → "}
 
-                {booking.flight.arrival}
+                {booking.flight.arrival?.code}
 
               </strong>
 
