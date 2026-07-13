@@ -4,6 +4,8 @@ import placesData from "../../places.json";
 import Card from "../../shared/components/Card";
 import "./PlaceDetails.css";
 import { useAuth } from "../../app/providers/AuthContext";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 function PlaceDetails() {
   const { id } = useParams();
@@ -20,24 +22,23 @@ function PlaceDetails() {
       top: 0,
       behavior: "smooth",
     });
-    const allPlaces = [
-      ...placesData,
-      ...(user?.contributions || []).filter(
-        (p) => p.status === "approved" || p.status === "pending",
-      ),
-    ];
+     const fetchPlace = async () => {
+    const snapshot = await getDocs(collection(db, "places"));
+    const firestorePlaces = snapshot.docs.map((doc) => ({
+      ...doc.data(),
+      firestoreId: doc.id,
+    }));
 
-    const found = allPlaces.find((p) => p.id === parseInt(id));
+    const allPlaces = [...placesData, ...firestorePlaces];
 
+    const found = allPlaces.find((p) => String(p.id) === String(id));
     setPlace(found);
 
     if (found) {
       const similar = allPlaces.filter((p) => {
-        if (p.id === found.id) return false;
-
+        if (String(p.id) === String(found.id)) return false;
         const sameCity = p.city === found.city;
         const commonTags = p.tags?.some((tag) => found.tags?.includes(tag));
-
         return sameCity || commonTags;
       });
 
@@ -49,7 +50,10 @@ function PlaceDetails() {
 
       setRelatedPlaces(sorted.slice(0, 3));
     }
-  }, [id]);
+  };
+
+  fetchPlace();
+}, [id]);
 
   if (!place) {
     return (
