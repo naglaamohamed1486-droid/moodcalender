@@ -137,7 +137,17 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/trip-planner"
+          element={
+            <protectedRoute>
+              <TripPlanner />
+            </protectedRoute>
+          
+        }
+      />
       </Route>
+      
 
       <Route path="*" element={<NotFound/>} />
     </Routes>

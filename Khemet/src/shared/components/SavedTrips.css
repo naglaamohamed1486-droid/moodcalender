@@ -294,9 +294,47 @@
 
     color:#777;
 }
-/* .title{
+.saved-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
 
-    font-size:28px;
+.title-area {
+  text-align: left;
+}
 
-    font-family:Georgia,serif;
-} */
+.saved-step {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.saved-header h1 {
+  margin: 8px 0 0;
+  font-size: 38px;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.new-trip-btn {
+  padding: 8px 18px;
+  border-radius: 22px;
+
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold-dark);
+
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.new-trip-btn:hover {
+  background: var(--gold);
+  color: white;
+}

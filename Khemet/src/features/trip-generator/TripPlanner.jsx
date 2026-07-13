@@ -482,6 +482,14 @@ function TripPlanner() {
     setSelectedPlan(plan);
     setShowPreview(true);
   };
+  const handleGenerateClick = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  
+};
 
   const interests = [
     {
@@ -687,7 +695,18 @@ function TripPlanner() {
         {savedTrips.length > 0 ? (
           <SavedTripsList trips={savedTrips.slice(-3).reverse()} previewMode />
         ) : (
-          <p className="no-trips">No saved trips yet.</p>
+          <div className="saved-preview-empty">
+
+                <h3>No Saved Trips</h3>
+                <button className="new-trip-btn" onClick={handleGenerateClick}>
+                  Generate a trip,
+                </button>
+
+                <p>
+                     customize it, then save it here.
+                </p>
+
+          </div>
         )}
       </section>
 

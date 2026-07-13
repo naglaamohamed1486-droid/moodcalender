@@ -223,7 +223,19 @@ function TripOrganizer({
 
         <div className="generator-body">
           <div className="organizer-days">
-            {trip.itinerary.map((day, dayIndex) => (
+            {trip.itinerary.map((day, dayIndex) => {
+            const currentCity = day.length > 0 ? day[0].city : null;
+
+            const availablePlaces = places.filter((place) => {
+              // لو اليوم فيه أماكن، اعرض نفس المحافظة فقط
+              if (currentCity && place.city !== currentCity) return false;
+
+              // امنع تكرار نفس المكان في نفس اليوم
+              return !day.some((p) => p.id === place.id);
+            });
+
+            return (
+              
               <div className="organizer-day" key={dayIndex}>
                 {/* HEADER */}
 
@@ -260,7 +272,7 @@ function TripOrganizer({
                     >
                       <option value="">Add a place...</option>
 
-                      {places.map((place) => (
+                      {availablePlaces.map((place) => (
                         <option key={place.id} value={place.id}>
                           {place.title}
                         </option>
@@ -322,7 +334,8 @@ function TripOrganizer({
                   ))}
                 </div>
               </div>
-            ))}
+                        );
+          })}
           </div>
 
           {/* FOOTER */}
@@ -374,8 +387,9 @@ function TripOrganizer({
             <div className="popup-buttons">
               <button
                 onClick={() => {
-                  setShowBookingPopup(false);
-                }}
+                    setShowBookingPopup(false);
+                    closeTrip();
+                  }}
               >
                 Not Now
               </button>
@@ -383,6 +397,7 @@ function TripOrganizer({
               <button
                 onClick={() => {
                   setShowBookingPopup(false);
+                  closeTrip();
 
                   navigate("/booking", {
                     state: {

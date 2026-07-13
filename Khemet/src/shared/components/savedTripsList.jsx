@@ -49,13 +49,12 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
             <button
               className="edit-btn"
               onClick={() =>
-                {setSelectedTrip(null);
-                  onClose();
+                
 
                 navigate("/trip-plan", {
                   state: { trip },
                 })
-              }}
+              }
             >
               <FiEdit2 />
               Edit

@@ -987,3 +987,55 @@ cursor:pointer;
 .popup-buttons button:last-child:hover{
   background:var(--gold-dark);
 }
+.saved-preview-empty{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    padding:35px 25px;
+    margin:20px 0;
+
+    background:var(--card-bg);
+    border:1px dashed var(--card-border);
+    border-radius:14px;
+}
+
+.saved-preview-empty h3{
+    margin:0 0 8px;
+    font-family:var(--font-heading);
+    font-size:22px;
+    color:var(--teal-dark);
+}
+
+.saved-preview-empty p{
+    margin:0;
+    margin-top:10px;
+    color:var(--text-muted);
+    font-size:15px;
+    line-height:1.5;
+}
+
+.saved-preview-empty .new-trip-btn{
+    margin-top:16px;
+
+    padding:10px 22px;
+
+    background:var(--gold);
+    color:#fff;
+
+    border:none;
+    border-radius:10px;
+
+    font-family:var(--font-heading);
+    font-size:14px;
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.saved-preview-empty .new-trip-btn:hover{
+    background:var(--gold-dark);
+    transform:translateY(-2px);
+}
