@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../../app/providers/AuthContext";
+import { useState, useEffect } from "react";
+import { db } from "../../firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import "./Card.css";
 
 function StatusIcon({ status }) {
@@ -44,6 +52,45 @@ function StatusIcon({ status }) {
 function Card({ place, showStatus = false }) {
   const { user, toggleFavorite, isFavorite } = useAuth();
   const saved = isFavorite(place.id);
+
+  const [avgRating, setAvgRating] = useState(place.rating || 0);
+  const [totalReviews, setTotalReviews] = useState(place.reviews || 0);
+
+  useEffect(() => {
+    const fetchRatings = async () => {
+      try {
+        const q = query(
+          collection(db, "comments"),
+          where("placeId", "==", String(place.id))
+        );
+        const snap = await getDocs(q);
+        const firebaseRatings = snap.docs
+          .map((doc) => doc.data().rating)
+          .filter((r) => r !== null && r !== undefined);
+
+        const jsonRating = place.rating || 0;
+        const jsonReviews = place.reviews || 0;
+
+        const allRatings = [...firebaseRatings];
+
+        if (allRatings.length === 0) {
+          setAvgRating(jsonRating);
+          setTotalReviews(jsonReviews);
+        } else {
+          allRatings.push(jsonRating);
+          const sum = allRatings.reduce((a, b) => a + b, 0);
+          setAvgRating(sum / allRatings.length);
+          setTotalReviews(jsonReviews + firebaseRatings.length);
+        }
+      } catch (err) {
+        console.error("Error fetching ratings:", err);
+        setAvgRating(place.rating || 0);
+        setTotalReviews(place.reviews || 0);
+      }
+    };
+
+    fetchRatings();
+  }, [place.id]);
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -109,8 +156,8 @@ function Card({ place, showStatus = false }) {
         <div className="card-footer">
           <div className="card-rating">
             <span className="stars">★</span>
-            <span>{place.rating || 4.5}</span>
-            <span className="reviews">({place.reviews || 0})</span>
+            <span>{avgRating.toFixed(1)}</span>
+            <span className="reviews">({totalReviews} reviews)</span>
           </div>
           <div className="contrib-card-actions-right">
             <Link to={`/place/${place.id}`} className="card-btn">

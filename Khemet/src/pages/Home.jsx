@@ -10,6 +10,13 @@ import st from "../assets/hieroglyph-pattern.png";
 import Toast from "../shared/components/Toast";
 import "../app/index.css";
 import { useNavigate } from "react-router-dom";
+import { db } from "../firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 export default function Home() {
   const { user } = useAuth();
@@ -28,20 +35,74 @@ export default function Home() {
       setToast((t) => ({ ...t, visible: false }));
     }, 3000);
   };
+
   const goToTag = (tag) => {
     navigate(`/map?tag=${encodeURIComponent(tag)}`);
   };
+
   const [places, setPlaces] = useState([]);
   const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
-    const sortedPlaces = [...placesData].sort((a, b) => {
-      if (b.rating !== a.rating) {
-        return b.rating - a.rating;
+    const fetchAllPlacesWithRatings = async () => {
+      try {
+        const commentsSnap = await getDocs(collection(db, "comments"));
+        const allComments = commentsSnap.docs.map((doc) => doc.data());
+        const ratingMap = {};
+        allComments.forEach((comment) => {
+          const placeId = comment.placeId;
+          if (!ratingMap[placeId]) {
+            ratingMap[placeId] = { ratings: [], count: 0 };
+          }
+          if (comment.rating !== null && comment.rating !== undefined) {
+            ratingMap[placeId].ratings.push(comment.rating);
+          }
+          if (comment.text) {
+            ratingMap[placeId].count++;
+          }
+        });
+        const mergedPlaces = placesData.map((place) => {
+          const firebaseData = ratingMap[String(place.id)];
+          const jsonRating = place.rating || 0;
+          const jsonReviews = place.reviews || 0;
+
+          let avgRating = jsonRating;
+          let totalReviews = jsonReviews;
+
+          if (firebaseData && firebaseData.ratings.length > 0) {
+            const allRatings = [jsonRating, ...firebaseData.ratings];
+            const sum = allRatings.reduce((a, b) => a + b, 0);
+            avgRating = sum / allRatings.length;
+            totalReviews = jsonReviews + firebaseData.ratings.length;
+          }
+
+          return {
+            ...place,
+            rating: avgRating,
+            reviews: totalReviews,
+          };
+        });
+        const sortedPlaces = mergedPlaces.sort((a, b) => {
+          if (b.rating !== a.rating) {
+            return b.rating - a.rating;
+          }
+          return b.reviews - a.reviews;
+        });
+
+        setPlaces(sortedPlaces);
+      } catch (err) {
+        console.error("Error fetching ratings:", err);
+        const sortedPlaces = [...placesData].sort((a, b) => {
+          if (b.rating !== a.rating) {
+            return b.rating - a.rating;
+          }
+          return b.reviews - a.reviews;
+        });
+        setPlaces(sortedPlaces);
       }
-      return b.reviews - a.reviews;
-    });
-    setPlaces(sortedPlaces);
+    };
+
+    fetchAllPlacesWithRatings();
   }, []);
 
   useEffect(() => {
