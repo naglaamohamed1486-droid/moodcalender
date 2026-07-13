@@ -464,6 +464,19 @@ function TripPlanner() {
       });
     }, 100);
   };
+  const createBlankTrip = () => {
+  setEditingTrip({
+    name: "My Custom Trip",
+    itinerary: [[]],
+  });
+
+  setTimeout(() => {
+    organizerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 100);
+};
 
   const handlePreview = (plan) => {
     setSelectedPlan(plan);
@@ -685,17 +698,12 @@ function TripPlanner() {
 
         <p>Start with an empty itinerary and build your own adventure.</p>
 
-        <button
-          className="blank-trip-btn"
-          onClick={() =>
-            setEditingTrip({
-              name: "My Custom Trip",
-              itinerary: [[]],
-            })
-          }
-        >
-          + Blank Trip
-        </button>
+      <button
+        className="blank-trip-btn"
+        onClick={createBlankTrip}
+      >
+        + Blank Trip
+      </button>
       </div>
     </div>
   );

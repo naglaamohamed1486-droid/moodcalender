@@ -1,31 +1,75 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  FaPlaneDeparture,
+  FaLocationDot,
+  FaCalendarDays,
+  FaUsers,
+  FaHotel,
+  FaUtensils,
+  FaTicket,
+  FaCreditCard,
+  FaMoneyBillWave,
+  FaShieldHalved,
+  FaCircleCheck,
+  FaCircleXmark,
+  FaFileInvoice,
+  FaRegCircleCheck,
+  FaPhoneVolume,
+  FaEnvelope,
+} from "react-icons/fa6";
 
 function BookingSummary({
   booking,
   setBooking,
   prevStep,
 }) {
+  const navigate = useNavigate();
 
   const [paymentMethod, setPaymentMethod] =
     useState("Credit Card");
+
+  const [cardName, setCardName] =
+    useState("");
+
+  const [cardNumber, setCardNumber] =
+    useState("");
+
+  const [expiry, setExpiry] =
+    useState("");
+
+  const [cvv, setCVV] =
+    useState("");
+
+  const [country, setCountry] =
+    useState("Egypt");
+
+  const [acceptedTerms, setAcceptedTerms] =
+    useState(false);
 
   const [confirmed, setConfirmed] =
     useState(false);
 
   const bookingNumber = useMemo(() => {
+
     return (
       "KH-" +
       Math.floor(
         100000 + Math.random() * 900000
       )
     );
+
   }, []);
 
   const totalAttractions =
     booking.plan?.itinerary?.reduce(
+
       (sum, day) =>
-        sum + (day.places?.length || 0),
+        sum +
+        (day.places?.length || 0),
+
       0
+
     ) || 0;
 
   const tripPrice =
@@ -44,20 +88,54 @@ function BookingSummary({
 
   const confirmBooking = () => {
 
-    setBooking((prev) => ({
+    if (
+      paymentMethod !== "Cash on Arrival" &&
+      (
+        !cardName ||
+        !cardNumber ||
+        !expiry ||
+        !cvv
+      )
+    ) {
+
+      alert(
+        "Please complete your payment information."
+      );
+
+      return;
+
+    }
+
+    if (!acceptedTerms) {
+
+      alert(
+        "Please accept the booking terms."
+      );
+
+      return;
+
+    }
+
+    setBooking(prev => ({
+
       ...prev,
-      totalPrice: total,
+
       paymentStatus: "Confirmed",
+
       paymentMethod,
+
       bookingNumber,
+
+      totalPrice: total,
+
     }));
 
     setConfirmed(true);
+
   };
-console.log(booking);
-console.log(booking.flight);
-console.log(booking.reservations);
+
   if (confirmed) {
+
     return (
 
       <div className="booking-card">
@@ -65,50 +143,103 @@ console.log(booking.reservations);
         <div className="booking-success">
 
           <div className="success-icon">
-            ✓
+
+            <FaCircleCheck />
+
           </div>
 
           <h2>
-            Booking Confirmed!
+
+            Booking Confirmed
+
           </h2>
 
           <p>
 
-            Your reservation has been
-            successfully confirmed.
+            Your journey has been successfully booked.
 
           </p>
 
           <div className="summary-box">
 
-            <p>
+            <div className="info-row">
+
+              <span>
+
+                Booking Number
+
+              </span>
 
               <strong>
-                Booking ID:
+
+                {bookingNumber}
+
               </strong>
 
-              {" "}
-              {bookingNumber}
+            </div>
 
-            </p>
+            <div className="info-row">
 
-            <p>
+              <span>
+
+                Payment
+
+              </span>
+
+              <strong className="success">
+
+                Confirmed
+
+              </strong>
+
+            </div>
+
+            <div className="info-row">
+
+              <span>
+
+                Total Paid 
+
+              </span>
 
               <strong>
-                Payment Status:
+
+                ${total}
+
               </strong>
 
-              {" "}
-              Confirmed
+            </div>
 
-            </p>
+          </div>
 
-            <p>
+          <div className="confirmation-extra">
 
-              A confirmation email
-              will be sent shortly.
+            <FaEnvelope />
 
-            </p>
+            Confirmation has been sent to your email.
+
+          </div>
+
+          <div className="confirmation-actions">
+
+            <button className="summary-confirm">
+              <FaFileInvoice />
+              Download Receipt
+            </button>
+
+            <button
+              className="summary-secondary"
+              onClick={() => navigate("/bookings")}
+            >
+              My Bookings
+            </button>
+
+            <button
+              className="summary-back"
+              onClick={() => navigate("/")}
+            >
+              Back to Home
+            </button>
 
           </div>
 
@@ -116,445 +247,1116 @@ console.log(booking.reservations);
 
       </div>
 
+
     );
+
   }
 
   return (
 
-    <div className="booking-card">
+    <div className="booking-summary">
 
       <h2>
+
         Booking Summary
+
       </h2>
 
       <p>
 
-        Review every part of your
-        reservation before confirming.
+        Review every detail before completing your reservation.
 
       </p>
 
-      {/* ================= TRIP ================= */}
+      <div className="summary-progress">
 
-        <div className="summary-section">
+        <div className="progress-bar">
 
-          <h3>Trip Information</h3>
+          <div
+            className="progress-fill"
+            style={{
+              width: "100%",
+            }}
+          />
 
-          <div className="summary-box">
+        </div>
 
-            <h4>
-              {booking.plan.name}
-            </h4>
+        {/* <span>
 
-            <p>
+          Booking Completion
 
-              📅 {booking.plan.itinerary.length}
+        </span> */}
+
+      </div>
+
+      {/* ===================== */}
+
+      {/* TRIP INFORMATION */}
+
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Trip Overview
+
+        </h3>
+
+        <div className="summary-box">
+
+          <div className="info-row">
+
+            <span>
+
+              <FaLocationDot />
+
+              Destination
+
+            </span>
+
+            <strong>
+
+              {booking.plan?.name}
+
+            </strong>
+
+          </div>
+
+          <div className="info-row">
+
+            <span>
+
+              <FaCalendarDays />
+
+              Duration
+
+            </span>
+
+            <strong>
+
+              {booking.plan.itinerary.length}
               {" "}
               Days
 
-            </p>
+            </strong>
 
-            <p>
+          </div>
 
-              🗓️ {booking.startDate || "--"}
-              {" "}
-              →
-              {" "}
+          <div className="info-row">
+
+            <span>
+
+              <FaCalendarDays />
+
+              Travel Dates
+
+            </span>
+
+            <strong>
+
+              {booking.startDate || "--"}
+
+              {" → "}
+
               {booking.endDate || "--"}
 
-            </p>
+            </strong>
 
-            <p>
+          </div>
 
-              📍
-              {" "}
-              {totalAttractions}
-              {" "}
+          <div className="info-row">
+
+            <span>
+
+              <FaLocationDot />
+
               Attractions
 
-            </p>
+            </span>
 
-            <p>
+            <strong>
 
-              🚩
-              {" "}
-              {booking.plan.itinerary.length}
-              {" "}
-              Planned Days
+              {totalAttractions}
 
-            </p>
+            </strong>
 
           </div>
 
         </div>
 
+      </div>
 
+      {/* ===================== */}
 
-        {/* ================= FLIGHT ================= */}
+      {/* FLIGHT */}
 
-        <div className="summary-section">
+      {/* ===================== */}
+
+      <div className="summary-section">
 
         <h3>
 
-        Flight Information
+          Flight Details
 
         </h3>
 
         {booking.flight ? (
 
-        <div className="summary-box">
-
-        <p>
-
-        <strong>
-
-        ✈ Airline
-
-        </strong>
-
-        {" : "}
-
-        {booking.flight.airline}
-
-        </p>
-
-        <p>
-
-        <strong>
-
-        Route
-
-        </strong>
-
-        {" : "}
-
-        {booking.flight.departure}
-
-        →
-
-        {booking.flight.arrival}
-
-        </p>
-
-        <p>
-
-        <strong>
-
-        Class
-
-        </strong>
-
-        {" : "}
-
-        {booking.flight.class}
-
-        </p>
-
-        <p>
-
-        <strong>
-
-        Passengers
-
-        </strong>
-
-        {" : "}
-
-        {booking.flight.travelers}
-
-        </p>
-
-        <p>
-
-        <strong>
-
-        Price
-
-        </strong>
-
-        {" : "}
-
-        ${booking.flight.price}
-
-        </p>
-
-        </div>
-
-        ) : (
-
-        <div className="summary-box">
-
-        No Flight Selected
-
-        </div>
-
-        )}
-
-        </div>
-
-
-
-        {/* ================= RESERVATIONS ================= */}
-
-        <div className="summary-section">
-
-        <h3>
-
-        Reservations
-
-        </h3>
-
-        {booking.reservations.length > 0 ? (
-
-        booking.reservations.map((reservation,index)=>(
-
-        <div
-        key={index}
-        className="summary-reservation"
-        >
-
-        <h4>
-
-        Day {reservation.dayIndex + 1}
-
-        </h4>
-
-        <p>
-
-        🚗 Transportation
-
-        {" : "}
-
-        {reservation.transportation|| "Not Selected"}
-
-        </p>
-
-        <p>
-
-        🍽 Restaurant
-
-        {" : "}
-
-        {reservation.restaurant?.name || "None"}
-
-        </p>
-
-        <p>
-
-        🎫 Attraction
-
-        {" : "}
-
-        {reservation.ticket ? "Booked" : "Not Booked"}
-
-        </p>
-
-        </div>
-
-        ))
-
-        ) : (
-
-        <div className="summary-box">
-
-        No reservations selected yet.
-
-        </div>
-
-        )}
-        {/* ================= PRICE BREAKDOWN ================= */}
-
-        <div className="summary-section">
-
-          <h3>Price Breakdown</h3>
-
           <div className="summary-box">
 
-            <div className="price-row">
+            <div className="info-row">
 
-              <span>Trip Package</span>
+              <span>
 
-              <span>${tripPrice}</span>
+                <FaPlaneDeparture />
 
-            </div>
-
-            <div className="price-row">
-
-              <span>Flight</span>
-
-              <span>${flightPrice}</span>
-
-            </div>
-
-            <div className="price-row">
-
-              <span>Reservations</span>
-
-              <span>${reservationPrice}</span>
-
-            </div>
-
-            <hr />
-
-            <div className="price-row total-row">
-
-              <strong>Total</strong>
-
-              <strong>${total}</strong>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        {/* ================= PAYMENT ================= */}
-
-        <div className="summary-section">
-
-          <h3>Payment Method</h3>
-
-          <div className="summary-box">
-
-            <select
-
-              className="payment-select"
-
-              value={paymentMethod}
-
-              onChange={(e) =>
-                setPaymentMethod(e.target.value)
-              }
-
-            >
-
-              <option>
-                Credit Card
-              </option>
-
-              <option>
-                Visa
-              </option>
-
-              <option>
-                Mastercard
-              </option>
-
-              <option>
-                PayPal
-              </option>
-
-              <option>
-                Cash on Arrival
-              </option>
-
-            </select>
-
-          </div>
-
-        </div>
-
-
-
-        {/* ================= BOOKING INFO ================= */}
-
-        <div className="summary-section">
-
-          <h3>Booking Details</h3>
-
-          <div className="summary-box">
-
-            <p>
-
-              <strong>Booking ID:</strong>
-
-              {" "}
-
-              {bookingNumber}
-
-            </p>
-
-            <p>
-
-              <strong>Status:</strong>
-
-              {" "}
-
-              <span className="status pending">
-
-                Pending
+                Airline
 
               </span>
 
-            </p>
+              <strong>
+
+                {booking.flight.airline}
+
+              </strong>
+
+            </div>
+
+            <div className="info-row">
+
+              <span>
+
+                Route
+
+              </span>
+
+              <strong>
+
+                {booking.flight.departure}
+
+                {" → "}
+
+                {booking.flight.arrival}
+
+              </strong>
+
+            </div>
+
+            <div className="info-row">
+
+              <span>
+
+                Class
+
+              </span>
+
+              <strong>
+
+                {booking.flight.class}
+
+              </strong>
+
+            </div>
+
+            <div className="info-row">
+
+              <span>
+
+                <FaUsers />
+
+                Travelers
+
+              </span>
+
+              <strong>
+
+                {booking.flight.travelers}
+
+              </strong>
+
+            </div>
+
+            <div className="info-row">
+
+              <span>
+
+                Price
+
+              </span>
+
+              <strong>
+
+                ${booking.flight.price}
+
+              </strong>
+
+            </div>
+
+          </div>
+
+        ) : (
+
+          <div className="summary-box">
+
+            No Flight Selected
+
+          </div>
+
+        )}
+
+      </div>
+
+            {/* ===================== */}
+      {/* RESERVATIONS */}
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Reservations
+
+        </h3>
+
+        {
+
+          booking.plan.itinerary.map(
+
+            (day, dayIndex) => {
+
+              const dayReservations =
+
+                booking.reservations.filter(
+
+                  (reservation) =>
+
+                    reservation.dayIndex === dayIndex
+
+                );
+
+              return (
+
+                <div
+                  key={dayIndex}
+                  className="summary-day-card"
+                >
+
+                  <div className="summary-day-header">
+
+                    <div className="summary-day-circle">
+
+                      {dayIndex + 1}
+
+                    </div>
+
+                    <div>
+
+                      <h4>
+
+                        Day {dayIndex + 1}
+
+                      </h4>
+
+                      <small>
+
+                        {day.places.length} Planned Stops
+
+                      </small>
+
+                    </div>
+
+                  </div>
+
+                  {
+
+                    day.places.map(
+
+                      (place, placeIndex) => {
+
+                        const reservation =
+
+                          dayReservations.find(
+
+                            r =>
+
+                              r.placeIndex === placeIndex
+
+                          );
+
+                        return (
+
+                          <div
+
+                            key={place.id}
+
+                            className="summary-place-card"
+
+                          >
+
+                            <div className="summary-place-left">
+
+                              <div>
+
+                                <h5>
+
+                                  {place.title}
+
+                                </h5>
+
+                                <small>
+
+                                  {place.city}
+
+                                </small>
+
+                              </div>
+
+                            </div>
+
+                            <div className="summary-place-right">
+
+                              <div className="reservation-item">
+
+                                <FaPlaneDeparture />
+
+                                <span>
+
+                                  {
+
+                                    reservation?.transportation ||
+
+                                    "No Transportation"
+
+                                  }
+
+                                </span>
+
+                              </div>
+
+                              <div className="reservation-item">
+
+                                <FaUtensils />
+
+                                <span>
+
+                                  {
+
+                                    reservation?.restaurant?.name ||
+
+                                    "No Restaurant"
+
+                                  }
+
+                                </span>
+
+                              </div>
+
+                              <div className="reservation-item">
+
+                                <FaTicket />
+
+                                <span>
+
+                                  {
+
+                                    reservation?.ticket
+
+                                      ? "Ticket Reserved"
+
+                                      : "No Ticket"
+
+                                  }
+
+                                </span>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        );
+
+                      }
+
+                    )
+
+                  }
+
+                </div>
+
+              );
+
+            }
+
+          )
+
+        }
+
+      </div>
+
+      {/* ===================== */}
+      {/* PRICE */}
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Price Breakdown
+
+        </h3>
+
+        <div className="summary-box">
+
+          <div className="price-row">
+
+            <span>
+
+              Trip Package
+
+            </span>
+
+            <strong>
+
+              ${tripPrice}
+
+            </strong>
+
+          </div>
+
+          <div className="price-row">
+
+            <span>
+
+              Flight
+
+            </span>
+
+            <strong>
+
+              ${flightPrice}
+
+            </strong>
+
+          </div>
+
+          <div className="price-row">
+
+            <span>
+
+              Reservations
+
+            </span>
+
+            <strong>
+
+              ${reservationPrice}
+
+            </strong>
+
+          </div>
+
+          <hr />
+
+          <div className="price-row total-row">
+
+            <span>
+
+              Total
+
+            </span>
+
+            <strong>
+
+              ${total}
+
+            </strong>
 
           </div>
 
         </div>
 
+      </div>
 
+      {/* ===================== */}
+      {/* PAYMENT */}
+      {/* ===================== */}
 
-        {/* ================= CANCELLATION ================= */}
+      <div className="summary-section">
 
-        <div className="summary-section">
+        <h3>
 
-          <h3>Cancellation Policy</h3>
+          Payment
 
-          <div className="policy-box">
+        </h3>
 
-            ✅ Free cancellation up to
+        <div className="payment-card">
+
+          <div className="payment-top">
+
+            <div>
+
+              <FaShieldHalved />
+
+              Secure Payment
+
+            </div>
+
+            <span>
+
+              SSL Protected
+
+            </span>
+
+          </div>
+
+          <div className="payment-methods">
+
+            {
+
+              [
+
+                "Credit Card",
+
+                "Visa",
+
+                "Mastercard",
+
+                "PayPal",
+
+                "Cash on Arrival",
+
+              ].map(
+
+                method => (
+
+                  <button
+
+                    key={method}
+
+                    type="button"
+
+                    onClick={()=>
+
+                      setPaymentMethod(method)
+
+                    }
+
+                    className={
+
+                      paymentMethod===method
+
+                      ?
+
+                      "payment-option active"
+
+                      :
+
+                      "payment-option"
+
+                    }
+
+                  >
+
+                    <FaCreditCard />
+
+                    {method}
+
+                  </button>
+
+                )
+
+              )
+
+            }
+
+          </div>
+
+                    {
+
+            paymentMethod !== "Cash on Arrival" && (
+              <>
+
+              <div className="credit-card-preview">
+
+              <div className="card-top">
+                <div>
+                  <span className="brand-small">EXPLORE EGYPT</span>
+                  <small>Debit / Credit</small>
+                </div>
+
+                <div className="card-brand">
+                  {paymentMethod}
+                </div>
+              </div>
+
+              <div className="card-number-preview">
+                {cardNumber || "•••• •••• •••• ••••"}
+              </div>
+
+              <div className="card-bottom">
+
+                <div>
+                  <small>Card holder</small>
+                  <strong>
+                    {cardName || "YOUR NAME"}
+                  </strong>
+                </div>
+
+                <div>
+                  <small>Expires</small>
+                  <strong>
+                    {expiry || "MM/YY"}
+                  </strong>
+                </div>
+
+              </div>
+
+            </div>
+
+              <div className="payment-form">
+
+                <div className="form-group">
+
+                  <label>
+
+                    Card Holder
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    value={cardName}
+
+                    onChange={(e)=>
+
+                      setCardName(
+
+                        e.target.value
+
+                      )
+
+                    }
+
+                    placeholder="John Smith"
+
+                  />
+
+                </div>
+
+                <div className="form-group">
+
+                  <label>
+
+                    Card Number
+
+                  </label>
+
+                  <input
+
+                    type="text"
+
+                    maxLength={19}
+
+                    value={cardNumber}
+
+                    onChange={(e)=>
+
+                      setCardNumber(
+
+                        e.target.value
+
+                      )
+
+                    }
+
+                    placeholder="1234 5678 9012 3456"
+
+                  />
+
+                </div>
+
+                <div className="payment-grid">
+
+                  <div className="form-group">
+
+                    <label>
+
+                      Expiry
+
+                    </label>
+
+                    <input
+
+                      type="text"
+
+                      value={expiry}
+
+                      onChange={(e)=>
+
+                        setExpiry(
+
+                          e.target.value
+
+                        )
+
+                      }
+
+                      placeholder="MM/YY"
+
+                    />
+
+                  </div>
+
+                  <div className="form-group">
+
+                    <label>
+
+                      CVV
+
+                    </label>
+
+                    <input
+
+                      type="password"
+
+                      maxLength={4}
+
+                      value={cvv}
+
+                      onChange={(e)=>
+
+                        setCVV(
+
+                          e.target.value
+
+                        )
+
+                      }
+
+                      placeholder="***"
+
+                    />
+
+                  </div>
+
+                </div>
+
+                <div className="form-group">
+
+                  <label>
+
+                    Billing Country
+
+                  </label>
+
+                  <select
+
+                    value={country}
+
+                    onChange={(e)=>
+
+                      setCountry(
+
+                        e.target.value
+
+                      )
+
+                    }
+
+                  >
+
+                    <option>
+
+                      Egypt
+
+                    </option>
+
+                    <option>
+
+                      Saudi Arabia
+
+                    </option>
+
+                    <option>
+
+                      UAE
+
+                    </option>
+
+                    <option>
+
+                      Qatar
+
+                    </option>
+
+                    <option>
+
+                      Kuwait
+
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+              </>
+
+            )
+
+          }
+
+          <div className="payment-security">
+
+            <FaShieldHalved />
+
+            <span>
+
+              Your payment is encrypted using
+              256-bit SSL security.
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* ===================== */}
+      {/* BOOKING DETAILS */}
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Booking Details
+
+        </h3>
+
+        <div className="summary-box">
+
+          <div className="info-row">
+
+            <span>
+
+              Booking ID
+
+            </span>
+
+            <strong>
+
+              {bookingNumber}
+
+            </strong>
+
+          </div>
+
+          <div className="info-row">
+
+            <span>
+
+              Payment Status
+
+            </span>
+
+            <strong>
+
+              Pending
+
+            </strong>
+
+          </div>
+
+          <div className="info-row">
+
+            <span>
+
+              Payment Method
+
+            </span>
+
+            <strong>
+
+              {paymentMethod}
+
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* ===================== */}
+      {/* POLICY */}
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Cancellation Policy
+
+        </h3>
+
+        <div className="policy-box">
+
+          <p>
+
+            <FaCircleCheck />
+
+            Free cancellation up to
             <strong> 48 hours </strong>
-            before your trip.
+            before departure.
 
-            <br /><br />
+          </p>
 
-            After that, a
-            <strong> 30% cancellation fee </strong>
-            will apply.
+          <p>
+
+            <FaCircleXmark />
+
+            After that,
+            <strong> 30% </strong>
+            cancellation fees apply.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* ===================== */}
+      {/* TERMS */}
+      {/* ===================== */}
+
+      <div className="terms-box">
+
+        <label>
+
+          <input
+
+            type="checkbox"
+
+            checked={acceptedTerms}
+
+            onChange={(e)=>
+
+              setAcceptedTerms(
+
+                e.target.checked
+
+              )
+
+            }
+
+          />
+
+          I agree to the booking terms,
+          cancellation policy and privacy policy.
+
+        </label>
+
+      </div>
+
+      {/* ===================== */}
+      {/* SUPPORT */}
+      {/* ===================== */}
+
+      <div className="summary-section">
+
+        <h3>
+
+          Need Help?
+
+        </h3>
+
+        <div className="summary-box">
+
+          <div className="info-row">
+
+            <span>
+
+              <FaPhoneVolume />
+
+              Hotline
+
+            </span>
+
+            <strong>
+
+              +20 100 123 4567
+
+            </strong>
+
+          </div>
+
+          <div className="info-row">
+
+            <span>
+
+              <FaEnvelope />
+
+              Email
+
+            </span>
+
+            <strong>
+
+              support@khemet.com
+
+            </strong>
 
           </div>
 
         </div>
 
+      </div>
 
+      {/* ===================== */}
+      {/* ACTIONS */}
+      {/* ===================== */}
 
-        {/* ================= ACTIONS ================= */}
+      <div className="summary-actions">
 
-        <div className="summary-actions">
+        <button
 
-          <button
+          className="summary-back"
 
-            className="summary-back"
+          onClick={prevStep}
 
-            onClick={prevStep}
+        >
 
-          >
+          ← Back
 
-            ← Back
+        </button>
 
-          </button>
+        <button
 
-          <button
+          className="summary-confirm"
 
-            className="summary-confirm"
+          onClick={confirmBooking}
 
-            onClick={confirmBooking}
+        >
 
-          >
+          <FaRegCircleCheck />
 
-            Confirm Booking
+          Confirm Booking
 
-          </button>
+        </button>
 
-        </div>
+      </div>
 
-        </div>
-        </div>
+    </div>
 
-);
+  );
+
 }
-
 
 export default BookingSummary;
