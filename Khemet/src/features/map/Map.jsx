@@ -8,12 +8,13 @@ import PlacesList from "../places/PlacesList";
 import PlaceCard from "../places/PlaceCard";
 
 import placesData from "../../places.json";
-
+import { getApprovedPlaces } from "../contribution/placesdatahandling";
 export default function Map() {
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchParams] = useSearchParams();
   const [selectedPlace, setSelectedPlace] = useState(null);
+  const [approvedPlaces, setApprovedPlaces] = useState([]);
   
 
   useEffect(() => {
@@ -25,6 +26,18 @@ export default function Map() {
       setSelectedTags([]);
     }
   }, [searchParams]);
+  useEffect(() => {
+  async function loadApprovedPlaces() {
+    try {
+      const approved = await getApprovedPlaces();
+      setApprovedPlaces(approved);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  loadApprovedPlaces();
+}, []);
 
   const clearFilters = () => {
     setSearch("");
@@ -37,7 +50,12 @@ export default function Map() {
      behavior: "smooth",
    });
  }, []);
-  const places = Array.isArray(placesData) ? placesData : [];
+  const places = useMemo(() => {
+  return [
+    ...(Array.isArray(placesData) ? placesData : []),
+    ...approvedPlaces,
+  ];
+}, [approvedPlaces]);
 
   const filteredPlaces = useMemo(() => {
     return places.filter((place) => {
