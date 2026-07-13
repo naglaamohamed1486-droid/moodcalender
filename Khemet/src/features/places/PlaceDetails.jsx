@@ -6,10 +6,19 @@ import Toast from "../../shared/components/Toast";
 import "./PlaceDetails.css";
 import { useAuth } from "../../app/providers/AuthContext";
 import { db } from "../../firebase";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  where,
+  orderBy,
+  serverTimestamp,
+} from "firebase/firestore";
 
 function PlaceDetails() {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const { user, toggleFavorite, isFavorite } = useAuth();
 
   const [place, setPlace] = useState(null);
@@ -290,9 +299,7 @@ function PlaceDetails() {
             <div className="location-block">
               {user && user?.role !== "admin" && (
                 <div className="actions">
-                  <button className="btn-primary" onClick={handleAddToTrip}>
-                    + Add to trip
-                  </button>
+                  <button className="btn-primary">+ Add to trip</button>
                   <button
                     className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
                     onClick={() => toggleFavorite(place)}
@@ -394,17 +401,11 @@ function PlaceDetails() {
               <p className="no-comments">No comments yet. Be the first!</p>
             ) : (
               <>
-                {(showAllComments
-                  ? comments
-                  : comments.slice(0, COMMENTS_PER_PAGE)
-                ).map((comment) => (
-                  <div key={comment.commentId} className="comment-item">
-                    <div className="comment-header">
-                      <div className="comment-user">
-                        <Link
-                          to={`/profile/${comment.userId}`}
-                          className="comment-avatar-link"
-                        >
+                {(showAllComments ? comments : comments.slice(0, COMMENTS_PER_PAGE)).map(
+                  (comment) => (
+                    <div key={comment.commentId} className="comment-item">
+                      <div className="comment-header">
+                        <div className="comment-user">
                           {comment.userPic ? (
                             <img
                               src={comment.userPic}
@@ -416,34 +417,34 @@ function PlaceDetails() {
                               {comment.userName?.charAt(0) || "U"}
                             </div>
                           )}
-                        </Link>
-                        <Link
-                          to={`/profile/${comment.userId}`}
-                          className="comment-username"
-                        >
-                          {comment.userName || "Anonymous"}
-                        </Link>
+                          <Link
+                            to={`/profile/${comment.userId}`}
+                            className="comment-username"
+                          >
+                            {comment.userName || "Anonymous"}
+                          </Link>
+                        </div>
+                        <span className="comment-date">
+                          {comment.createdAt?.toDate?.()?.toLocaleDateString() ||
+                            new Date(comment.createdAt).toLocaleDateString()}
+                        </span>
                       </div>
-                      <span className="comment-date">
-                        {comment.createdAt?.toDate?.()?.toLocaleDateString() ||
-                          new Date(comment.createdAt).toLocaleDateString()}
-                      </span>
+                      {comment.rating && (
+                        <div className="comment-rating-display">
+                          <span className="comment-rating-stars">
+                            {renderStars(comment.rating)}
+                          </span>
+                          <span className="comment-rating-value">
+                            {comment.rating.toFixed(1)}
+                          </span>
+                        </div>
+                      )}
+                      {comment.text && (
+                        <p className="comment-text">{comment.text}</p>
+                      )}
                     </div>
-                    {comment.rating && (
-                      <div className="comment-rating-display">
-                        <span className="comment-rating-stars">
-                          {renderStars(comment.rating)}
-                        </span>
-                        <span className="comment-rating-value">
-                          {comment.rating.toFixed(1)}
-                        </span>
-                      </div>
-                    )}
-                    {comment.text && (
-                      <p className="comment-text">{comment.text}</p>
-                    )}
-                  </div>
-                ))}
+                  )
+                )}
 
                 {comments.length > COMMENTS_PER_PAGE && (
                   <button className="load-more-btn" onClick={toggleComments}>
