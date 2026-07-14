@@ -12,8 +12,9 @@ import {
   getUserProfilePic,
 } from "../../shared/utils/PicCache";
 import "./profile.css";
-
+import useScrollToTop from "../../shared/utils/UseScrollToTop";
 export default function Profile() {
+  useScrollToTop();
   const { id } = useParams();
   const { user: authUser, logout, updateUser } = useAuth();
   const isOwnProfile = !id || (authUser && id === authUser.uid);
@@ -21,14 +22,6 @@ export default function Profile() {
   const [viewedUser, setViewedUser] = useState(null);
   const [loadingViewed, setLoadingViewed] = useState(!isOwnProfile);
   const [viewError, setViewError] = useState("");
-
- useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}, []);
-
 useEffect(() => {
   if (isOwnProfile) return;
 
