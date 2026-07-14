@@ -1,0 +1,239 @@
+.admin-reports-main {
+  padding: 150px;
+  padding-top: 130px;
+}
+
+.admin-reports-main .sub-intro {
+  color: #C9A84C;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.admin-reports-main .sub-title {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 40px;
+  margin-top: 4px;
+}
+
+.admin-reports-main .sub-det {
+  color: #7A6040;
+  font-size: 14px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.reports-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 1.5rem;
+}
+
+.report-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 20px 22px;
+  background-color: #FDF8EE;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-left: 3px solid transparent;
+  border-radius: 16px;
+  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.report-card:hover {
+  border-color: #C9A84C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.12);
+}
+
+.report-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+  grid-column: 1 / -1;
+}
+
+.report-card-title {
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.report-card-sub {
+  color: #7A6040;
+  font-size: 12.5px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin-bottom: 2px;
+}
+
+.report-card-sub a {
+  color: #C9A84C;
+  text-decoration: none;
+}
+
+.report-card-sub a:hover {
+  text-decoration: underline;
+}
+
+.report-card-comment {
+  background: rgba(201, 168, 76, 0.08);
+  border-left: 3px solid #C9A84C;
+  padding: 0.6rem 1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: #5a4a3a;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  grid-column: 1 / -1;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+}
+
+.report-card-reason {
+  font-size: 13px;
+  color: #7A6040;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin-bottom: 1rem;
+  grid-column: 1 / -1;
+}
+
+.report-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+}
+
+.report-status-badge {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  padding: 3px 9px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+.report-status-pending {
+  background-color: rgba(201, 168, 76, 0.15);
+  color: #7A6040;
+}
+
+.report-status-banned {
+  background-color: rgba(168, 64, 47, 0.1);
+  color: #A8402F;
+}
+
+.report-status-dismissed {
+  background-color: rgba(21, 65, 89, 0.08);
+  color: #666;
+}
+
+.report-action-view {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  color: #1B4F6B;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.report-action-view:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1280px) {
+  .admin-reports-main {
+    padding: 100px 80px;
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-reports-main {
+    padding: 70px 24px;
+    padding-top: 90px;
+  }
+
+  .admin-reports-main .sub-title {
+    font-size: 30px;
+  }
+
+  .report-card {
+    grid-template-columns: 1fr;
+  }
+
+  .report-card-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-reports-main {
+    padding: 60px 16px;
+    padding-top: 80px;
+  }
+
+  .admin-reports-main .sub-title {
+    font-size: 26px;
+  }
+}
+.admin-reports-main .sub-tabs {
+  margin-bottom: 1.5rem;
+}
+
+.admin-reports-main .sub-tabs-cont {
+  display: flex;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.5);
+  gap: 0;
+}
+
+.admin-reports-main .sub-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0 15px 11px;
+  color: #7A6040;
+  font-size: 13px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+
+.admin-reports-main .sub-tab-btn:hover {
+  color: #1B4F6B;
+}
+
+.admin-reports-main .sub-tab-btn.active {
+  color: #1B4F6B;
+  border-bottom-color: #C9A84C;
+}
+
+.admin-reports-main .sub-tab-num {
+  width: 20px;
+  height: 20px;
+  margin-left: 7px;
+  background-color: rgba(122, 96, 64, 0.1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 11px;
+  color: inherit;
+}
