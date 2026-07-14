@@ -1,36 +1,74 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../app/providers/AuthContext";
+import { useState, useEffect } from "react";
+import { db } from "../../firebase";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import "./PlaceCard.css";
 
 export default function PlaceCard({ place, onSelect }) {
   const navigate = useNavigate();
-
   const { user, toggleFavorite, isFavorite } = useAuth();
 
   const saved = isFavorite(place.id);
-
   const category = place.category || place.tags?.[0] || "Historical";
+
+  const [avgRating, setAvgRating] = useState(place.rating || 0);
+  const [totalReviews, setTotalReviews] = useState(place.reviews || 0);
+
+  useEffect(() => {
+    const fetchRatings = async () => {
+      try {
+        const q = query(
+          collection(db, "comments"),
+          where("placeId", "==", String(place.id))
+        );
+        const snap = await getDocs(q);
+        const firebaseRatings = snap.docs
+          .map((doc) => doc.data().rating)
+          .filter((r) => r !== null && r !== undefined);
+
+        const jsonRating = place.rating || 0;
+        const jsonReviews = place.reviews || 0;
+
+        const allRatings = [...firebaseRatings];
+        if (allRatings.length === 0) {
+          setAvgRating(jsonRating);
+          setTotalReviews(jsonReviews);
+        } else {
+          allRatings.push(jsonRating);
+          const sum = allRatings.reduce((a, b) => a + b, 0);
+          setAvgRating(sum / allRatings.length);
+          setTotalReviews(jsonReviews + firebaseRatings.length);
+        }
+      } catch (err) {
+        console.error("Error fetching ratings:", err)
+        setAvgRating(place.rating || 0);
+        setTotalReviews(place.reviews || 0);
+      }
+    };
+
+    fetchRatings();
+  }, [place.id]);
 
   return (
     <div className="place-card">
       {/* IMAGE */}
-
       <div className="place-card-image">
         <img src={place.coverImage} alt={place.title} />
-
         <div className="place-card-overlay"></div>
-
         <span className="place-category">{category.toUpperCase()}</span>
-
         {user?.role == "user" && (
           <button
             className={`favorite-btn ${saved ? "favorite-btn--active" : ""}`}
             aria-label="Save"
             onClick={(e) => {
               e.stopPropagation();
-
               if (!user) return;
-
               toggleFavorite(place);
             }}
           >
@@ -49,30 +87,24 @@ export default function PlaceCard({ place, onSelect }) {
       </div>
 
       {/* BODY */}
-
       <div className="place-card-body">
         <h2>{place.title}</h2>
-
         <p className="place-city">📍 {place.city}</p>
-
         <p className="place-description">{place.description}</p>
 
         {/* TAGS */}
-
         <div className="place-tags">
           {place.tags?.slice(0, 4).map((tag) => (
             <span key={tag}>#{tag}</span>
           ))}
-
           {place.tags?.length > 4 && <small>+{place.tags.length - 4}</small>}
         </div>
 
         {/* FOOTER */}
-
         <div className="place-footer">
           <div className="place-rating">
-            ★ {place.rating}
-            <span>({place.reviews})</span>
+            ★ {avgRating.toFixed(1)}
+            <span>({totalReviews} reviews)</span>
           </div>
 
           <div className="place-actions">
@@ -90,9 +122,7 @@ export default function PlaceCard({ place, onSelect }) {
               className="map-btn"
               onClick={(e) => {
                 e.stopPropagation();
-
                 if (!place.lat || !place.lng) return;
-
                 onSelect((prev) => (prev?.id === place.id ? null : place));
               }}
             >

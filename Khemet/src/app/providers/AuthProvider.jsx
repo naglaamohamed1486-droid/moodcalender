@@ -23,32 +23,34 @@ export function AuthProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
   const [savedTrips, setSavedTrips] = useState([]);
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
-        const userData = userDoc.data();
-
-        const fullUser = {
-          ...userData,
-          uid: firebaseUser.uid,
-        };
-
-        setUser(fullUser);
-        setFavorites(userData?.favorites || []);
-        setSavedTrips(userData?.savedTrips || []);
-      } else {
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+    if (firebaseUser) {
+      const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
+      const userData = userDoc.data();
+      if (userData?.banned) {
+        await auth.signOut();
         setUser(null);
         setFavorites([]);
         setSavedTrips([]);
+        setLoading(false);
+        return;
       }
 
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
+      const pic = await getUserProfilePic(firebaseUser.uid);
+      const fullUser = { ...userData, uid: firebaseUser.uid, profilePic: pic || null };
+      setUser(fullUser);
+      setFavorites(userData?.favorites || []);
+      setSavedTrips(userData?.savedTrips || []);
+    } else {
+      setUser(null);
+      setFavorites([]);
+      setSavedTrips([]);
+    }
+    setLoading(false);
+  });
+  return () => unsubscribe();
+}, []);
   const login = (userData) => {
     setUser(userData);
     setFavorites(userData.favorites || []);

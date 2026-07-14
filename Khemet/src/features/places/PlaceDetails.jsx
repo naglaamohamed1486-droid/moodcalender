@@ -30,6 +30,10 @@ function PlaceDetails() {
   const [loadingComments, setLoadingComments] = useState(false);
   const [avgRating, setAvgRating] = useState(0);
   const [totalRatings, setTotalRatings] = useState(0);
+  const [submittingReport, setSubmittingReport] = useState(false);
+  const [reportTarget, setReportTarget] = useState(null);
+  const [reportReason, setReportReason] = useState("");
+
   const [toast, setToast] = useState({
     visible: false,
     type: "success",
@@ -236,6 +240,32 @@ function PlaceDetails() {
   const uniqueImages = [
     ...new Set([place.coverImage, ...(place.gallery || [])]),
   ];
+const handleSubmitReport = async () => {
+  if (!reportReason.trim()) return;
+  setSubmittingReport(true);
+  try {
+    await addDoc(collection(db, "reports"), {
+      commentId: reportTarget.commentId,
+      commentText: reportTarget.text || null,
+      reportedUserId: reportTarget.userId,
+      reportedUserName: reportTarget.userName,
+      reportedBy: user.uid,
+      reportedByName: user.name,
+      placeId: String(id),
+      placeTitle: place.title,
+      reason: reportReason.trim(),
+      status: "pending",
+      createdAt: serverTimestamp(),
+    });
+    setReportTarget(null);
+    setReportReason("");
+    showToast("success", "Report submitted successfully");
+  } catch (err) {
+    showToast("error", "Failed to submit report");
+  } finally {
+    setSubmittingReport(false);
+  }
+};
 
   return (
     <div className="details-page">
@@ -401,11 +431,17 @@ function PlaceDetails() {
               <p className="no-comments">No comments yet. Be the first!</p>
             ) : (
               <>
-                {(showAllComments ? comments : comments.slice(0, COMMENTS_PER_PAGE)).map(
-                  (comment) => (
-                    <div key={comment.commentId} className="comment-item">
-                      <div className="comment-header">
-                        <div className="comment-user">
+                {(showAllComments
+                  ? comments
+                  : comments.slice(0, COMMENTS_PER_PAGE)
+                ).map((comment) => (
+                  <div key={comment.commentId} className="comment-item">
+                    <div className="comment-header">
+                      <div className="comment-header-left">
+                        <Link
+                          to={`/profile/${comment.userId}`}
+                          className="comment-avatar-link"
+                        >
                           {comment.userPic ? (
                             <img
                               src={comment.userPic}
@@ -417,34 +453,48 @@ function PlaceDetails() {
                               {comment.userName?.charAt(0) || "U"}
                             </div>
                           )}
-                          <Link
-                            to={`/profile/${comment.userId}`}
-                            className="comment-username"
-                          >
-                            {comment.userName || "Anonymous"}
-                          </Link>
-                        </div>
+                        </Link>
+                        <Link
+                          to={`/profile/${comment.userId}`}
+                          className="comment-username"
+                        >
+                          {comment.userName || "Anonymous"}
+                        </Link>
+                      </div>
+                      <div className="comment-header-right">
                         <span className="comment-date">
-                          {comment.createdAt?.toDate?.()?.toLocaleDateString() ||
+                          {comment.createdAt
+                            ?.toDate?.()
+                            ?.toLocaleDateString() ||
                             new Date(comment.createdAt).toLocaleDateString()}
                         </span>
+                        {user &&
+                          user.uid !== comment.userId &&
+                          user.role !== "admin" && (
+                            <button
+                              className="report-btn"
+                              onClick={() => setReportTarget(comment)}
+                            >
+                              ⚑ Report
+                            </button>
+                          )}
                       </div>
-                      {comment.rating && (
-                        <div className="comment-rating-display">
-                          <span className="comment-rating-stars">
-                            {renderStars(comment.rating)}
-                          </span>
-                          <span className="comment-rating-value">
-                            {comment.rating.toFixed(1)}
-                          </span>
-                        </div>
-                      )}
-                      {comment.text && (
-                        <p className="comment-text">{comment.text}</p>
-                      )}
                     </div>
-                  )
-                )}
+                    {comment.rating && (
+                      <div className="comment-rating-display">
+                        <span className="comment-rating-stars">
+                          {renderStars(comment.rating)}
+                        </span>
+                        <span className="comment-rating-value">
+                          {comment.rating.toFixed(1)}
+                        </span>
+                      </div>
+                    )}
+                    {comment.text && (
+                      <p className="comment-text">{comment.text}</p>
+                      )}
+                  </div>
+                ))}
 
                 {comments.length > COMMENTS_PER_PAGE && (
                   <button className="load-more-btn" onClick={toggleComments}>
@@ -467,6 +517,55 @@ function PlaceDetails() {
           </div>
         )}
       </div>
+      {reportTarget && (
+        <div
+          className="report-overlay"
+          onClick={(e) => e.target === e.currentTarget && setReportTarget(null)}
+        >
+          <div className="report-modal">
+            <div className="report-modal-header">
+              <h3>Report Comment</h3>
+              <button
+                className="report-close"
+                onClick={() => setReportTarget(null)}
+              >
+                ×
+              </button>
+            </div>
+            <div className="report-modal-body">
+              <p className="report-modal-sub">
+                Reporting comment by <strong>{reportTarget.userName}</strong>
+              </p>
+              {reportTarget.text && (
+                <p className="report-comment-preview">"{reportTarget.text}"</p>
+              )}
+              <label className="report-label">Reason</label>
+              <textarea
+                className="report-textarea"
+                placeholder="Why are you reporting this comment?"
+                value={reportReason}
+                onChange={(e) => setReportReason(e.target.value)}
+                rows={4}
+              />
+            </div>
+            <div className="report-modal-footer">
+              <button
+                className="report-cancel-btn"
+                onClick={() => setReportTarget(null)}
+              >
+                Cancel
+              </button>
+              <button
+                className="report-submit-btn"
+                onClick={handleSubmitReport}
+                disabled={submittingReport || !reportReason.trim()}
+              >
+                {submittingReport ? "Submitting..." : "Submit Report"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

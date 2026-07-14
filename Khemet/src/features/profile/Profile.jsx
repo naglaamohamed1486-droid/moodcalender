@@ -22,36 +22,51 @@ export default function Profile() {
   const [loadingViewed, setLoadingViewed] = useState(!isOwnProfile);
   const [viewError, setViewError] = useState("");
 
-  useEffect(() => {
-    if (isOwnProfile) return;
-    let cancelled = false;
-    setLoadingViewed(true);
-    setViewError("");
+ useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, []);
 
-    getDoc(doc(db, "users", id))
-      .then((snap) => {
-        if (cancelled) return;
-        if (!snap.exists()) {
-          setViewError("This user doesn't exist.");
-          setViewedUser(null);
-        } else {
-          setViewedUser({ ...snap.data(), uid: id });
-        }
-      })
-      .catch((err) => {
-        if (!cancelled) {
-          console.error("Failed to load profile:", err);
-          setViewError("Couldn't load this profile.");
-        }
-      })
-      .finally(() => {
-        if (!cancelled) setLoadingViewed(false);
-      });
+useEffect(() => {
+  if (isOwnProfile) return;
 
-    return () => {
-      cancelled = true;
-    };
-  }, [id, isOwnProfile]);
+  let cancelled = false;
+
+  setLoadingViewed(true);
+  setViewError("");
+
+  getDoc(doc(db, "users", id))
+    .then((snap) => {
+      if (cancelled) return;
+
+      if (!snap.exists()) {
+        setViewError("This user doesn't exist.");
+        setViewedUser(null);
+      } else {
+        setViewedUser({
+          ...snap.data(),
+          uid: id,
+        });
+      }
+    })
+    .catch((err) => {
+      if (!cancelled) {
+        console.error("Failed to load profile:", err);
+        setViewError("Couldn't load this profile.");
+      }
+    })
+    .finally(() => {
+      if (!cancelled) {
+        setLoadingViewed(false);
+      }
+    });
+
+  return () => {
+    cancelled = true;
+  };
+}, [id, isOwnProfile]);
 
   const user = isOwnProfile ? authUser : viewedUser;
 
@@ -170,6 +185,7 @@ export default function Profile() {
     viewerRole === "peer"
       ? (user.contributions || []).filter((p) => p.status === "approved")
       : user.contributions || [];
+      
 
   return (
     <main className="profile-main">
@@ -755,3 +771,4 @@ export default function Profile() {
     </main>
   );
 }
+  
