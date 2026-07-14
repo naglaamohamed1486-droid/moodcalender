@@ -3,7 +3,7 @@ import { AuthContext } from "./AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
-
+import { getUserProfilePic } from "../../shared/utils/PicCache";
 // function stripImages(place) {
 //   const { coverImage, gallery, ...rest } = place;
 //   return rest;
@@ -88,7 +88,7 @@ useEffect(() => {
       ...safeData,
       contributions: safeData.contributions || [],
     });
-    console.log("Saved to Firestore", updatedTrips);
+    
 
     syncUserInStorage({
       ...safeData,
