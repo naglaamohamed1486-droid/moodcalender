@@ -17,7 +17,7 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
       {trips.map((trip, index) => (
         <div key={index} className="trip-card">
           <div className="trip-cover">
-            <img src={trip.itinerary?.[0]?.[0]?.coverImage} alt={trip.title} />
+            <img src={trip.itinerary?.[0]?.places?.[0]?.coverImage} alt={trip.title} />
 
             <span className="saved-badge">{trip.itinerary.length} Days</span>
 
