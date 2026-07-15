@@ -20,30 +20,41 @@ function SavedTripsList({ trips, onDelete, previewMode = false }) {
             <img src={trip.itinerary?.[0]?.places?.[0]?.coverImage} alt={trip.title} />
 
             <span className="saved-badge">{trip.itinerary.length} Days</span>
+            <div
+              className={`trip-status ${
+                trip.booked ? "booked" : "ready"
+              }`}
+            >
+              {trip.booked ? "Booked" : "Ready to Book"}
+            </div>
 
             <div className="overlay">
               <h3 className="title">{trip.title}</h3>
 
               <p>
-                {trip.itinerary.reduce((sum, day) => sum + day.length, 0)}{" "}
+                {trip.itinerary.reduce((sum, day) => sum + day.places.length, 0)}{" "}
                 Places
               </p>
             </div>
           </div>
 
           <button
-            className="book-btn"
-            onClick={() =>
-              navigate("/booking", {
-                state: {
-                  plan: trip,
-                },
-              })
-            }
-          >
-            <PiTicketBold />
-            Book This Trip
-          </button>
+  className={`book-btn ${trip.booked ? "booked" : ""}`}
+  onClick={() => {
+    if (trip.booked) {
+      navigate("/bookings");
+    } else {
+      navigate("/booking", {
+        state: {
+          plan: trip,
+        },
+      });
+    }
+  }}
+>
+  <PiTicketBold />
+  {trip.booked ? "View Booking" : "Book This Trip"}
+</button>
 
           <div className="card-footer">
             <button

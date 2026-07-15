@@ -21,6 +21,7 @@ import AdminDashboard from "../features/admin/AdminDashboard";
 import AdminUsers from "../features/admin/AdminUsers";
 import AdminReports from "../features/admin/AdminReports";
 import NotFound from "../pages/NotFound";
+import MyBookings from "../features/booking/MyBookings";
 
 function AppRoutes() {
   return (
@@ -126,6 +127,14 @@ function AppRoutes() {
           element={
             <ProtectedRoute>
               <PlaceDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/bookings"
+          element={
+            <ProtectedRoute>
+              <MyBookings />
             </ProtectedRoute>
           }
         />

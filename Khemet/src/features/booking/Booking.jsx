@@ -19,6 +19,7 @@ function Booking() {
 
   const [step, setStep] = useState(1);
   const [showFlightForm, setShowFlightForm] = useState(false);
+  const bookingMode = location.state?.mode || "create";
 
   useEffect(() => {
     window.scrollTo({

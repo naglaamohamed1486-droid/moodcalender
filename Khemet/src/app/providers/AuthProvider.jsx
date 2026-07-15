@@ -22,6 +22,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
   const [savedTrips, setSavedTrips] = useState([]);
+  const [bookings, setBookings] = useState([]);
 
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
@@ -33,6 +34,7 @@ useEffect(() => {
         setUser(null);
         setFavorites([]);
         setSavedTrips([]);
+        setBookings([]);
         setLoading(false);
         return;
       }
@@ -42,6 +44,7 @@ useEffect(() => {
       setUser(fullUser);
       setFavorites(userData?.favorites || []);
       setSavedTrips(userData?.savedTrips || []);
+      setBookings(userData?.bookings || []);
     } else {
       setUser(null);
       setFavorites([]);
@@ -55,6 +58,7 @@ useEffect(() => {
     setUser(userData);
     setFavorites(userData.favorites || []);
     setSavedTrips(userData.savedTrips || []);
+    setBookings(userData.bookings || []);
   };
 
 const [activeTrip, setActiveTrip] = useState(() => {
@@ -73,6 +77,7 @@ useEffect(() => {
     setUser(null);
     setFavorites([]);
     setSavedTrips([]);
+    setBookings([]);
     localStorage.removeItem("user");
   };
 
@@ -117,12 +122,37 @@ useEffect(() => {
 
   const isFavorite = (id) => favorites.some((f) => f.id === id);
 
+
+const markTripAsBooked = async (tripId) => {
+  if (!user) return;
+
+  const updatedTrips = savedTrips.map((trip) =>
+    trip.id === tripId
+      ? { ...trip, booked: true }
+      : trip
+  );
+
+  setSavedTrips(updatedTrips);
+
+  const updatedUser = {
+    ...user,
+    savedTrips: updatedTrips,
+  };
+
+  setUser(updatedUser);
+
+  await updateDoc(doc(db, "users", user.uid), {
+    savedTrips: updatedTrips,
+  });
+};
+
  const saveTrip = async (trip) => {
   if (!user) return;
 
   const tripToSave = {
     ...trip,
     id: trip.id || crypto.randomUUID(),
+    booked: trip.booked ?? false,
   };
 
   const updatedTrips = [...savedTrips, tripToSave];
@@ -141,7 +171,56 @@ useEffect(() => {
   });
 };
 
-      const addPlaceToActiveTrip = (place) => {
+
+
+const addBooking = async (booking) => {
+  if (!user) return;
+
+  const bookingToSave = {
+    ...booking,
+    id: booking.id || crypto.randomUUID(),
+    bookedAt: booking.bookedAt || new Date().toISOString(),
+  };
+
+  const updatedBookings = [...bookings, bookingToSave];
+
+  setBookings(updatedBookings);
+
+  const updatedUser = {
+    ...user,
+    bookings: updatedBookings,
+  };
+
+  setUser(updatedUser);
+
+  await updateDoc(doc(db, "users", user.uid), {
+    bookings: updatedBookings,
+  });
+};
+
+
+const deleteBooking = async (bookingId) => {
+  if (!user) return;
+
+  const updatedBookings = bookings.filter(
+    (booking) => booking.id !== bookingId
+  );
+
+  setBookings(updatedBookings);
+
+  const updatedUser = {
+    ...user,
+    bookings: updatedBookings,
+  };
+
+  setUser(updatedUser);
+
+  await updateDoc(doc(db, "users", user.uid), {
+    bookings: updatedBookings,
+  });
+};
+
+  const addPlaceToActiveTrip = (place) => {
   setActiveTrip((prev) => {
     if (!prev) {
       return {
@@ -240,6 +319,10 @@ useEffect(() => {
         activeTrip,
         setActiveTrip,
         addPlaceToActiveTrip,
+        markTripAsBooked,
+        bookings,
+        addBooking,
+        deleteBooking,
       }}
     >
       {children}

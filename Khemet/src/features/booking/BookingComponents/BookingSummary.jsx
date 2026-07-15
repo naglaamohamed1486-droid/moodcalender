@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Toast from "../../../shared/components/Toast";
+import { useAuth } from "../../../app/providers/AuthContext";
+
 
 import {
   FaPlaneDeparture,
@@ -28,6 +30,7 @@ function BookingSummary({
   prevStep,
 }) {
   const navigate = useNavigate();
+  const { addBooking, markTripAsBooked } = useAuth();
 
   const [paymentMethod, setPaymentMethod] =
     useState("Credit Card");
@@ -74,6 +77,8 @@ const showToast = (message, type = "success") => {
   }, 3000);
 };  
 
+  
+
   const bookingNumber = useMemo(() => {
 
     return (
@@ -112,7 +117,7 @@ const showToast = (message, type = "success") => {
     flightPrice +
     reservationPrice;
 
-  const confirmBooking = () => {
+  const confirmBooking = async () => {
 
     if (
       paymentMethod !== "Cash on Arrival" &&
@@ -128,6 +133,7 @@ const showToast = (message, type = "success") => {
   "Please complete your payment information.",
   "error"
 );
+
 
 return;
       
@@ -158,6 +164,24 @@ return;
       totalPrice: total,
 
     }));
+
+    await addBooking({
+    bookingNumber,
+    paymentStatus: "Confirmed",
+    paymentMethod,
+    totalPrice: total,
+    bookedAt: new Date().toISOString(),
+
+    plan: booking.plan,
+    flight: booking.flight,
+    reservations: booking.reservations,
+    startDate: booking.startDate,
+    endDate: booking.endDate,
+  });
+
+    if (booking.plan?.id) {
+        await markTripAsBooked(booking.plan.id);
+      }
 
     setConfirmed(true);
 
@@ -267,7 +291,7 @@ return;
 
             <button
               className="summary-secondary"
-              onClick={() => navigate("/Bookings")}
+              onClick={() => navigate("/bookings")}
             >
               My Bookings
             </button>

@@ -338,3 +338,41 @@
   background: var(--gold);
   color: white;
 }
+.trip-cover{
+    position:relative;
+}
+
+.trip-status{
+    position:absolute;
+    top:12px;
+    left:12px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.04em;
+
+    backdrop-filter:blur(8px);
+}
+
+.trip-status.booked{
+    background:rgba(41,167,69,.92);
+    color:#fff;
+}
+
+.trip-status.ready{
+    background:rgba(255,255,255,.92);
+    color:#234d67;
+}
+/* .book-btn.booked{
+    background:#2e9b59;
+    cursor:default;
+}
+
+.book-btn.booked:hover{
+    transform:none;
+    filter:none;
+} */
