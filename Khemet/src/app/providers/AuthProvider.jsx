@@ -141,39 +141,45 @@ useEffect(() => {
   });
 };
 
-const addPlaceToActiveTrip = (place) => {
+      const addPlaceToActiveTrip = (place) => {
   setActiveTrip((prev) => {
-    // مفيش Trip مفتوحة
     if (!prev) {
       return {
         name: "My Custom Trip",
-        itinerary: [[place]],
+        title: "My Custom Trip",
+        itinerary: [
+          {
+            day: 1,
+            city: place.city,
+            places: [place],
+          },
+        ],
       };
     }
 
-    const itinerary = [...prev.itinerary];
-
-    // آخر يوم
-    const lastDay = itinerary[itinerary.length - 1];
-
-    // نفس المكان موجود؟
-    const exists = itinerary.some((day) =>
-      day.some((p) => p.id === place.id)
+    // duplicate check
+    const exists = prev.itinerary.some((day) =>
+      day.places.some((p) => p.id === place.id)
     );
 
     if (exists) return prev;
 
-    // لو اليوم فاضي
-    if (lastDay.length === 0) {
-      lastDay.push(place);
-    }
-    // نفس المحافظة
-    else if (lastDay[0].city === place.city) {
-      lastDay.push(place);
-    }
-    // محافظة مختلفة
-    else {
-      itinerary.push([place]);
+    const itinerary = prev.itinerary.map((day) => ({
+      ...day,
+      places: [...day.places],
+    }));
+
+    const lastDay = itinerary[itinerary.length - 1];
+
+    if (lastDay.city === place.city || !lastDay.city) {
+      lastDay.city = place.city;
+      lastDay.places.push(place);
+    } else {
+      itinerary.push({
+        day: itinerary.length + 1,
+        city: place.city,
+        places: [place],
+      });
     }
 
     return {
