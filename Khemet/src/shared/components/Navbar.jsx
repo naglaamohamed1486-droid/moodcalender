@@ -178,6 +178,12 @@ function Navbar() {
                     My Contributions
                   </Link>
                 )}
+                {user.role === "user" && (
+                  <Link to="/bookings" onClick={closeAll}>
+                    My Bookings
+                  </Link>
+
+                )}
                 {user.role === "admin" && (
                   <Link to="/adminUsers" onClick={closeAll}>
                     Manage Users
