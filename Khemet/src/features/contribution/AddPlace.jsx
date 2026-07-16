@@ -386,18 +386,20 @@ export default function AddPlace() {
       delete placeFields.gallery;
 
       let newPlace = {
-        ...placeFields,
-        id: nextId,
-        lat: parseFloat(submittedForm.lat),
-        lng: parseFloat(submittedForm.lng),
-        rating: 0,
-        reviews: 0,
-        reviewsList: [],
-        addedByname: user.name,
-        addedByemail: user.email,
-        createdAt: Date.now(),
-        status: "pending",
-      };
+  ...placeFields,
+  id: nextId,
+  lat: parseFloat(submittedForm.lat),
+  lng: parseFloat(submittedForm.lng),
+  rating: 0,
+  reviews: 0,
+  reviewsList: [],
+  addedByname: user.name,
+  addedByemail: user.email,
+  addedByUid: user.uid,
+  addedByPic: user.profilePic || null,
+  createdAt: Date.now(),
+  status: "pending",
+};
 
       newPlace = addReviewToPlace(newPlace, {
         rating: submittedForm.rating,

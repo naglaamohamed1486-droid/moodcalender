@@ -3,6 +3,7 @@ import { useAuth } from "../../app/providers/AuthContext";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { db } from "../../firebase";
+import logo from "../../assets/logo.png"; 
 import {
   collection,
   getDocs,
@@ -139,6 +140,35 @@ export default function FeedCard({ place }) {
         <div className="feed-card-body">
           <div className="feed-card-info">
             <h3 className="feed-card-title">{place.title}</h3>
+            <Link
+              to={
+                place.addedByname && place.addedByUid
+                  ? `/profile/${place.addedByUid}`
+                  : "/"
+              }
+              className="feed-card-addedby-inline"
+            >
+              {place.addedByPic ? (
+                <img
+                  src={place.addedByPic}
+                  alt={place.addedByname}
+                  className="feed-card-addedby-avatar"
+                />
+              ) : place.addedByname === "Khemet" || !place.addedByname ? (
+                <img
+                  src={logo}
+                  alt="Khemet"
+                  className="feed-card-addedby-avatar"
+                />
+              ) : (
+                <span className="feed-card-addedby-avatar feed-card-addedby-initial">
+                  {place.addedByname.charAt(0).toUpperCase()}
+                </span>
+              )}
+              <span>
+                Added by <strong>{place.addedByname || "Khemet"}</strong>
+              </span>
+            </Link>
             <p className="feed-card-city">📍 {place.city}</p>
             <p className="feed-card-desc">{place.description}</p>
 
@@ -149,6 +179,7 @@ export default function FeedCard({ place }) {
                 </span>
               ))}
             </div>
+
             {}
             <div className="feed-card-footer">
               <span className="feed-card-rating">
