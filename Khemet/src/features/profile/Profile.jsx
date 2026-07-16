@@ -84,7 +84,7 @@ useEffect(() => {
     bio: authUser?.bio || "",
   });
   const fileInputRef = useRef(null);
-  const { savedTrips } = useAuth();
+  const { savedTrips, deleteTrip } = useAuth();
   const [activeTab, setActiveTab] = useState("info");
   const [toast, setToast] = useState({
     visible: false,
@@ -452,7 +452,6 @@ useEffect(() => {
         </div>
       </div>
 
-     
       <div className="pf-btn-sec">
         <div className="pf-btn-cont">
           {availableTabs.includes("info") && (
@@ -686,7 +685,10 @@ useEffect(() => {
                   </div>
                   <div className="pf-trips-grid">
                     {isOwnProfile ? (
-                      <SavedTripsList />
+                      <SavedTripsList
+                        trips={savedTrips}
+                        onDelete={deleteTrip}
+                      />
                     ) : (
                       <p className="pf-empty-sub">
                         Trip details aren't available in read-only view.
