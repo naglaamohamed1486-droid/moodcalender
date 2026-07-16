@@ -5,7 +5,10 @@ import { PiTicketBold } from "react-icons/pi";
 function TripDetailsModal({ trip, onClose, onEdit, onBook }) {
   if (!trip) return null;
 
-  const totalPlaces = trip.itinerary.reduce((sum, day) => sum + day.length, 0);
+  const totalPlaces = trip.itinerary.reduce(
+  (sum, day) => sum + day.places.length,
+  0
+);
 
   return (
     <div className="details-overlay">
@@ -17,7 +20,10 @@ function TripDetailsModal({ trip, onClose, onEdit, onBook }) {
         {/* Hero Image */}
 
         <div className="details-cover">
-          <img src={trip.itinerary?.[0]?.[0]?.coverImage} alt={trip.name} />
+          <img
+              src={trip.itinerary?.[0]?.places?.[0]?.coverImage}
+              alt={trip.name}
+            />
 
           <div className="details-cover-overlay">
             <span className="details-badge">{trip.itinerary.length} Days</span>
@@ -32,28 +38,26 @@ function TripDetailsModal({ trip, onClose, onEdit, onBook }) {
 
         <div className="details-body">
           {trip.itinerary.map((day, index) => (
-            <div key={index} className="details-day">
-              <div className="details-day-header">
-                <div className="day-number">{index + 1}</div>
+  <div key={index} className="details-day">
+    <div className="details-day-header">
+      <div className="day-number">{index + 1}</div>
+      <h3>Day {index + 1}</h3>
+    </div>
 
-                <h3>Day {index + 1}</h3>
-              </div>
+    <div className="details-places">
+      {day.places.map((place) => (
+        <div key={place.id} className="details-place">
+          <img src={place.coverImage} alt={place.title} />
 
-              <div className="details-places">
-                {day.map((place) => (
-                  <div key={place.id} className="details-place">
-                    <img src={place.coverImage} alt={place.title} />
-
-                    <div>
-                      <h4>{place.title}</h4>
-
-                      <p>{place.city}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div>
+            <h4>{place.title}</h4>
+            <p>{place.city}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+))}
         </div>
 
         {/* Footer */}

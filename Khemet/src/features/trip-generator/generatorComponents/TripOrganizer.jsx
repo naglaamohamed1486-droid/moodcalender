@@ -15,7 +15,9 @@ function TripOrganizer({
   // ===========================
   // Add New Day
   // ===========================
-
+console.log("Trip:", trip);
+console.log("Itinerary:", trip.itinerary);
+console.log("First Day:", trip.itinerary[0]);
   const navigate = useNavigate();
 
   const [showBookingPopup, setShowBookingPopup] = useState(false);
@@ -102,11 +104,13 @@ function TripOrganizer({
 
     const updated = [...trip.itinerary];
 
-    [updated[dayIndex][placeIndex - 1], updated[dayIndex][placeIndex]] = [
-      updated[dayIndex][placeIndex],
-      updated[dayIndex][placeIndex - 1],
-    ];
-
+    [
+  updated[dayIndex].places[placeIndex - 1],
+  updated[dayIndex].places[placeIndex],
+] = [
+  updated[dayIndex].places[placeIndex],
+  updated[dayIndex].places[placeIndex - 1],
+];
     setTrip({
       ...trip,
       itinerary: updated,
@@ -122,10 +126,13 @@ function TripOrganizer({
 
     if (placeIndex === updated[dayIndex].places.length - 1) return;
 
-    [updated[dayIndex][placeIndex + 1], updated[dayIndex][placeIndex]] = [
-      updated[dayIndex][placeIndex],
-      updated[dayIndex][placeIndex + 1],
-    ];
+    [
+  updated[dayIndex].places[placeIndex + 1],
+  updated[dayIndex].places[placeIndex],
+] = [
+  updated[dayIndex].places[placeIndex],
+  updated[dayIndex].places[placeIndex + 1],
+];
 
     setTrip({
       ...trip,
@@ -163,7 +170,7 @@ function TripOrganizer({
       itinerary: updated,
     });
   };
-
+console.log(trip);
   return (
     <section className="organizer-section">
       <div className="generator-card">
@@ -211,7 +218,7 @@ function TripOrganizer({
           <div className="editing-info">
             <span className="editing-label">EDITING TRIP</span>
 
-            <h3>{trip.name}</h3>
+            <h3>{trip.title}</h3>
 
             <p>{trip.itinerary.length} days</p>
           </div>
@@ -245,6 +252,8 @@ function TripOrganizer({
             const availablePlaces = places.filter((place) => {
               // لو اليوم فيه أماكن، اعرض نفس المحافظة فقط
               if (currentCity && place.city !== currentCity) return false;
+              console.log("day =", day);
+              console.log("day.places =", day.places);
 
               // امنع تكرار نفس المكان في نفس اليوم
               return !day.places.some((p) => p.id === place.id);

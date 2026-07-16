@@ -459,9 +459,15 @@ function TripPlanner() {
   };
   const createBlankTrip = () => {
   setActiveTrip({
-    name: "My Custom Trip",
-    itinerary: [[]],
-  });
+  name: "My Custom Trip",
+  itinerary: [
+    {
+      day: 1,
+      city: null,
+      places: [],
+    },
+  ],
+});
 
   setTimeout(() => {
     organizerRef.current?.scrollIntoView({
@@ -577,6 +583,17 @@ function TripPlanner() {
       }, 100);
     }
   }, [location, navigate]);
+  
+  useEffect(() => {
+  if (activeTrip) {
+    setTimeout(() => {
+      organizerRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 200);
+  }
+}, [activeTrip]);
 
   useEffect(() => {
     if (plans.length > 0) {

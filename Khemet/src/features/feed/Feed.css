@@ -1,0 +1,794 @@
+/* ===========================
+   Feed Page
+=========================== */
+
+.feed-page{
+    background:#f8f0de;
+    min-height:100vh;
+}
+
+
+/* ===========================
+   Hero
+=========================== */
+
+.feed-hero{
+    position:relative;
+    height:82vh;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background-image:url("https://images.unsplash.com/photo-1572252009286-268acec5ca0a");
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+.feed-hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:220px;
+    background:linear-gradient(to bottom,rgba(245,237,215,0),#F5EDD7 95%);
+    z-index:2;
+}
+
+.feed-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(9,32,49,.72),rgba(9,32,49,.45),rgba(9,32,49,.18));
+    z-index:1;
+}
+
+.feed-hero-content{
+    position:relative;
+    z-index:3;
+    width:min(1200px,90%);
+    margin:auto;
+    color:white;
+}
+
+.feed-subtitle{
+    color:#D9B562;
+    letter-spacing:5px;
+    font-size:.85rem;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+.feed-hero h1{
+    margin-top:20px;
+    font-family:"Cinzel",serif;
+    font-size:4.4rem;
+    line-height:1.05;
+    max-width:650px;
+}
+
+.feed-hero p{
+    margin-top:22px;
+    max-width:560px;
+    font-size:1.15rem;
+    line-height:1.9;
+    color:rgba(255,255,255,.9);
+}
+
+.feed-share-btn{
+    margin-top:40px;
+    height:54px;
+    padding:0 34px;
+    border:none;
+    border-radius:999px;
+    background:#154159;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.feed-share-btn:hover{
+    background:#1D5675;
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(21,65,89,.35);
+}
+
+.feed-hero button{
+    margin-top:35px;
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    background:#143e5d;
+    color:white;
+    cursor:pointer;
+}
+
+
+/* ===========================
+   Discover
+=========================== */
+
+.feed-discover{
+    max-width:1200px;
+    width:92%;
+    margin:auto;
+    padding:80px 20px 30px;
+}
+
+.feed-small-title,
+.discover-subtitle{
+    color:#b48b3d;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:13px;
+    display:block;
+    margin-bottom:12px;
+}
+
+.feed-discover h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:52px;
+    color:#234D67;
+    margin-bottom:18px;
+}
+
+.feed-discover p{
+    color:#5d554c;
+    font-size:19px;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.feed-search-box{
+    background:white;
+    border-radius:24px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.feed-counter{
+    margin-top:20px;
+    color:#8c6a38;
+    font-weight:600;
+}
+/* ===== Filter Box ===== */
+.feed-filter-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid #ebe5dc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 30;
+}
+
+.feed-places-counter {
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: #2A1A08;
+  color: #FDF8EE;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ===== Tabs ===== */
+.feed-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.feed-tabs button {
+  padding: 10px 22px;
+  border: 1px solid rgba(42, 26, 8, 0.12);
+  border-radius: 50px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7A6040;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.feed-tabs button:hover {
+  border-color: #C9A84C;
+  color: #2A1A08;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.feed-tabs button.active {
+  background: #1B4F6B;
+  color: #FDF8EE;
+  border-color: #1B4F6B;
+}
+/* ===========================
+   Feed Cards
+=========================== */
+
+/* .feed-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(420px,1fr));
+    gap:30px;
+    margin-top:50px;
+    padding-bottom:80px;
+} */
+
+.feed-card-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+
+/* ===========================
+   Community Card
+=========================== */
+
+.community-card{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.community-card:hover{
+    transform:translateY(-6px);
+}
+
+.community-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.community-content{
+    padding:25px;
+}
+
+.community-city{
+    font-size:13px;
+    letter-spacing:2px;
+    color:#c0953b;
+    text-transform:uppercase;
+}
+
+.community-content h3{
+    margin:12px 0;
+    font-size:28px;
+    font-family:"Cormorant Garamond",serif;
+}
+
+.community-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.community-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.community-footer button{
+    background:#143d5a;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+
+/* ===========================
+   Feed Post
+=========================== */
+
+/* .feed-post{
+    background:#fffdf8;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.feed-post:hover{
+    transform:translateY(-6px);
+} */
+
+.feed-post-cover{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.feed-post-body{
+    padding:25px;
+}
+
+.feed-post h2{
+    font-size:34px;
+    font-family:"Cormorant Garamond",serif;
+    margin:18px 0 12px;
+}
+
+.feed-post p{
+    line-height:1.8;
+    color:#666;
+    margin-bottom:22px;
+}
+
+
+/* ===========================
+   User
+=========================== */
+
+.feed-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.feed-avatar{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#c8a96a;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.feed-user h4{
+    margin:0;
+    font-size:17px;
+}
+
+.feed-user span{
+    font-size:13px;
+    color:#888;
+}
+
+
+/* ===========================
+   Rating
+=========================== */
+
+.feed-rating{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:25px;
+    color:#d5a12f;
+}
+
+
+/* ===========================
+   Actions
+=========================== */
+
+/* .feed-actions{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:18px 24px;
+    border-bottom:1px solid #ece3d3;
+}
+
+.feed-actions button{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.25s;
+} */
+
+/* .feed-actions button:hover{
+    color:#b8860b;
+} */
+
+
+.feed-like-btn{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ===========================
+   Save Button
+=========================== */
+
+.community-save-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:0 16px;
+    height:42px;
+    background:white;
+    border:none;
+    border-radius:999px;
+    color:#2A1A08;
+    font-weight:600;
+    font-size:.95rem;
+    cursor:pointer;
+    transition:.3s ease;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.community-save-btn:hover{
+    color:#D9A632;
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+.community-save-btn svg{
+    width:18px;
+    height:18px;
+    transition:.3s ease;
+}
+.community-save-btn:hover svg{
+    transform:scale(1.15);
+}
+.community-save-btn.active{
+    color:#D9A632;
+}
+.community-save-btn.active svg{
+    fill:currentColor;
+}
+/* ===========================
+   Review Section
+=========================== */
+
+/* .feed-review-section{
+    background:#fffaf2;
+    border:1px solid #eadcc5;
+    border-top:none;
+    border-radius:0 0 22px 22px;
+    overflow:hidden;
+} */
+
+.feed-review-box{
+    padding:20px 24px;
+}
+
+.feed-review-box textarea{
+    width:100%;
+    min-height:90px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    resize:none;
+    padding:15px;
+    font-family:inherit;
+    outline:none;
+}
+
+.feed-review-footer{
+    margin-top:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.feed-review-footer button{
+    background:#1f6f8b;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+
+/* ===========================
+   Stars
+=========================== */
+
+.feed-stars,
+.community-stars{
+    color:#d7a327;
+    font-size:20px;
+    letter-spacing:2px;
+}
+
+
+/* ===========================
+   Latest Review
+=========================== */
+
+.latest-review{
+    padding:22px;
+}
+
+.latest-review-title{
+    font-size:13px;
+    letter-spacing:4px;
+    color:#8b6a37;
+    margin-bottom:18px;
+}
+
+.latest-review-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.latest-review-left{
+    display:flex;
+    gap:15px;
+}
+
+.latest-review-avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#ece5d5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:#234e70;
+    flex-shrink:0;
+}
+
+.latest-review-info h4{
+    margin:0;
+    font-size:22px;
+}
+
+.latest-review-meta{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin:4px 0 10px;
+    color:#777;
+    font-size:14px;
+}
+
+.latest-review-stars{
+    color:#D4A017;
+}
+
+.latest-review-text{
+    margin:0;
+    color:#444;
+    line-height:1.6;
+}
+
+.latest-review-link{
+    display:inline-block;
+    margin-top:16px;
+    color:#0f4c81;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.latest-review-link:hover{
+    text-decoration:underline;
+}
+
+.latest-review-flag{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:22px;
+    color:#8d6b39;
+}
+
+
+/* ===========================
+   Trending
+=========================== */
+
+.community-trending{
+    position:absolute;
+    left:18px;
+    top:18px;
+    background:#ff7a00;
+    color:white;
+    padding:7px 14px;
+    border-radius:40px;
+    font-size:13px;
+    font-weight:600;
+    box-shadow:0 8px 20px rgba(255,122,0,.35);
+}
+
+.community-like{
+    position:absolute;
+    right:18px;
+    top:18px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:white;
+    border:none;
+    cursor:pointer;
+    font-size:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.25s;
+}
+
+.community-like:hover{
+    transform:scale(1.1);
+}
+
+
+/* ===========================
+   Category Dropdown
+=========================== */
+
+.category-filter{
+    position:relative;
+    width:260px;
+    z-index:50;
+}
+
+.category-select{
+    width:100%;
+    height:52px;
+    padding:0 18px;
+    border:1px solid #e2d6c2;
+    border-radius:16px;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+.arrow{
+    transition:.3s;
+}
+
+.arrow.rotate{
+    transform:rotate(180deg);
+}
+
+.category-dropdown{
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    max-height:260px;
+    overflow-y:auto;
+    background:white;
+    border-radius:18px;
+    padding:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.category-option{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.category-option:hover{
+    background:#f5edd7;
+}
+
+.category-option input{
+    width:18px;
+    height:18px;
+}
+
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+    .feed-hero h1{
+        font-size:3rem;
+    }
+
+    .feed-discover h2{
+        font-size:40px;
+    }
+
+    .feed-cards{
+        grid-template-columns:1fr;
+    }
+
+    .feed-actions{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .feed-hero{
+        min-height:550px;
+    }
+
+    .feed-hero h1{
+        font-size:2.3rem;
+    }
+
+    .feed-discover h2{
+        font-size:34px;
+    }
+
+    .feed-filter-box{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .category-filter{
+        width:100%;
+    }
+
+    .latest-review-card{
+        flex-direction:column;
+        gap:20px;
+    }
+}
+.feed-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  width: 92%;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+/* .feed-post {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  background: #fffdf8;
+}
+
+.feed-post:hover {
+  transform: translateY(-6px);
+}
+
+.feed-post .card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.feed-post .card-image img {
+  border-radius: 0 !important;
+} */

@@ -10,7 +10,11 @@ import {
 } from "firebase/firestore";
 import "./PlaceCard.css";
 
-export default function PlaceCard({ place, onSelect }) {
+export default function PlaceCard({
+  place,
+  onSelect,
+  hideActions = false,
+}) {
   const navigate = useNavigate();
   const { user, toggleFavorite, isFavorite } = useAuth();
 
@@ -62,13 +66,12 @@ export default function PlaceCard({ place, onSelect }) {
         <img src={place.coverImage} alt={place.title} />
         <div className="place-card-overlay"></div>
         <span className="place-category">{category.toUpperCase()}</span>
-        {user?.role == "user" && (
+        {!hideActions && user?.role === "user" && (
           <button
             className={`favorite-btn ${saved ? "favorite-btn--active" : ""}`}
             aria-label="Save"
             onClick={(e) => {
               e.stopPropagation();
-              if (!user) return;
               toggleFavorite(place);
             }}
           >
@@ -107,7 +110,9 @@ export default function PlaceCard({ place, onSelect }) {
             <span>({totalReviews} reviews)</span>
           </div>
 
+          {!hideActions && (
           <div className="place-actions">
+
             <button
               className="details-btn"
               onClick={(e) => {
@@ -123,12 +128,19 @@ export default function PlaceCard({ place, onSelect }) {
               onClick={(e) => {
                 e.stopPropagation();
                 if (!place.lat || !place.lng) return;
-                onSelect((prev) => (prev?.id === place.id ? null : place));
+
+                if (onSelect) {
+                  onSelect((prev) =>
+                    prev?.id === place.id ? null : place
+                  );
+                }
               }}
             >
               📍 Show on Map
             </button>
+
           </div>
+        )}
         </div>
       </div>
     </div>

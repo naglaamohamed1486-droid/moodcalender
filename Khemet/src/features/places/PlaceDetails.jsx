@@ -19,6 +19,7 @@ import {
 function PlaceDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { activeTrip, addPlaceToActiveTrip } = useAuth();
   const { user, toggleFavorite, isFavorite } = useAuth();
 
   const [place, setPlace] = useState(null);
@@ -329,7 +330,14 @@ const handleSubmitReport = async () => {
             <div className="location-block">
               {user && user?.role !== "admin" && (
                 <div className="actions">
-                  <button className="btn-primary">+ Add to trip</button>
+                  <button className="btn-primary"
+                  
+                       onClick={() => {
+                      addPlaceToActiveTrip(place);
+                      navigate("/trip-planner");
+                    }}>
+                    + Add to trip
+                  </button>
                   <button
                     className={`btn-secondary ${saved ? "btn-secondary--saved" : ""}`}
                     onClick={() => toggleFavorite(place)}
