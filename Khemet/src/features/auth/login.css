@@ -158,9 +158,10 @@ main, .page-content {
   flex-direction: column;
   flex: 1;
   justify-content: center;
+  margin-top: 10% ;
 }
 
-.LogIn .form-body { margin-top: 0; }
+
 
 /* ── Floating label fields ── */
 .field {
@@ -252,9 +253,7 @@ main, .page-content {
 
 .form-body > p a:hover { border-bottom-color: var(--terra); }
 
-/* ── Structural breakpoint: image hides, single column ──
-   (Sizing above this point is already fluid via clamp()/vw/vh,
-   so this block only handles LAYOUT changes, not dimensions.) */
+
 @media (max-width: 680px) {
   .LogIn.container  { grid-template-columns: 1fr; }
   .section-log      { display: none; }
@@ -271,5 +270,115 @@ main, .page-content {
 /* ── Very small phones: tighten label/input spacing ── */
 @media (max-width: 360px) {
   .field label { left: 12px; }
+  .field input { padding: 0 12px; }
+}
+
+/* ── Large desktops / wide screens ── */
+@media (min-width: 1400px) {
+  .container.LogIn {
+    max-width: 1000px;
+    height: 600px;
+  }
+
+  .section-log h1 a { font-size: 46px; }
+  .section-log h2   { font-size: 22px; }
+}
+
+/* ── Small laptops / tablets landscape ── */
+@media (max-width: 1024px) {
+  .main-login {
+    padding: 50px;
+    padding-top: 100px;
+  }
+
+  .container.LogIn {
+    max-width: 760px;
+    height: 520px;
+  }
+
+  .section-log h1 a { font-size: 34px; }
+  .Log h2 { font-size: 26px; }
+}
+
+/* ── Tablets portrait ── */
+@media (max-width: 900px) {
+  .main-login {
+    padding: 30px;
+    padding-top: 80px;
+  }
+
+  .container.LogIn {
+    max-width: 620px;
+    height: 500px;
+  }
+
+  .section-log h1 a { top: -200px; font-size: 30px; }
+  .section-log h2   { font-size: 17px; }
+  .section-log h3   { font-size: 12px; }
+  .Log h2           { font-size: 24px; padding: 20px 24px; }
+  .form-body        { padding: 22px 24px 26px; }
+}
+
+/* ── Existing breakpoint: image hides, single column ── */
+@media (max-width: 680px) {
+  .LogIn.container  { grid-template-columns: 1fr; }
+  .section-log      { display: none; }
+  .LogIn .Log       { border-radius: var(--radius-lg); }
+  .LogIn .Log h2    { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+
+  .main-login {
+    padding: 20px;
+    padding-top: 60px;
+    align-items: flex-start;
+  }
+
+  .container.LogIn {
+    max-width: 100%;
+    height: auto;
+    min-height: 480px;
+  }
+
+  .LogIn .form-body { margin-top: 20px; }
+}
+
+/* ── Small phones ── */
+@media (max-width: 480px) {
+  .main-login {
+    padding: 14px;
+    padding-top: 40px;
+  }
+
+  .Log h2 {
+    font-size: 20px;
+    padding: 18px 20px;
+  }
+
+  .form-body {
+    padding: 18px 20px 22px;
+  }
+
+  .field input {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .form-body button[type="submit"] {
+    height: 46px;
+    font-size: 13px;
+  }
+}
+
+/* ── Very small phones ── */
+@media (max-width: 360px) {
+  .main-login { padding: 10px; padding-top: 30px; }
+
+  .Log h2 { font-size: 18px; padding: 16px; }
+
+  .form-body { padding: 14px 16px 18px; }
+
+  .field { margin-bottom: 16px; }
+
+  .field label { font-size: 12px; left: 12px; }
+
   .field input { padding: 0 12px; }
 }
