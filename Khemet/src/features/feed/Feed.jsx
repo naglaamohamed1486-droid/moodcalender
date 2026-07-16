@@ -4,15 +4,12 @@ import "./Feed.css";
 import { useAuth } from "../../app/providers/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-import {
-  collection,
-  getDocs,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import placesData from "../../places.json";
 
-import PlaceCard from "../places/PlaceCard";
+import FeedCard from "../feed/feedcard";
 import SearchBar from "../../shared/components/SearchBar";
 import CategoryFilter from "../places/CategoryFilter";
 import LatestReview from "./LatestReview";
@@ -28,27 +25,20 @@ export default function Feed() {
 
   const [comments, setComments] = useState([]);
   const [approvedPlaces, setApprovedPlaces] = useState([]);
-  const jsonPlaces = Array.isArray(placesData)
-    ? placesData
-    : [];
+  const jsonPlaces = Array.isArray(placesData) ? placesData : [];
 
-  const places =
-    activeTab === "new"
-      ? approvedPlaces
-      : jsonPlaces;
+  const places = activeTab === "new" ? approvedPlaces : jsonPlaces;
 
   useEffect(() => {
     async function loadComments() {
       try {
-        const snap = await getDocs(
-          collection(db, "comments")
-        );
+        const snap = await getDocs(collection(db, "comments"));
 
         setComments(
           snap.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
-          }))
+          })),
         );
       } catch (err) {
         console.error(err);
@@ -58,33 +48,30 @@ export default function Feed() {
     loadComments();
   }, []);
   useEffect(() => {
-  async function loadApprovedPlaces() {
-    try {
-      const approved = await getApprovedPlaces();
-      setApprovedPlaces(approved);
-    } catch (err) {
-      console.error(err);
+    async function loadApprovedPlaces() {
+      try {
+        const approved = await getApprovedPlaces();
+        setApprovedPlaces(approved);
+      } catch (err) {
+        console.error(err);
+      }
     }
-  }
 
-  loadApprovedPlaces();
-}, []);
+    loadApprovedPlaces();
+  }, []);
 
   const placesWithReviews = useMemo(() => {
-    return (
-    activeTab === "new"
-    ? places
-    : places.filter((place) => {
-      const jsonReviews = place.reviews || 0;
+    return activeTab === "new"
+      ? places
+      : places.filter((place) => {
+          const jsonReviews = place.reviews || 0;
 
-      const firebaseReviews = comments.filter(
-        (comment) =>
-          comment.placeId === String(place.id)
-      ).length;
+          const firebaseReviews = comments.filter(
+            (comment) => comment.placeId === String(place.id),
+          ).length;
 
-      return jsonReviews + firebaseReviews > 0;
-    })
-    );
+          return jsonReviews + firebaseReviews > 0;
+        });
   }, [places, comments]);
 
   const filteredPlaces = useMemo(() => {
@@ -94,105 +81,76 @@ export default function Feed() {
 
     result = result.filter((place) => {
       const matchesSearch =
-        place.title
-          ?.toLowerCase()
-          .includes(searchText) ||
-        place.city
-          ?.toLowerCase()
-          .includes(searchText);
+        place.title?.toLowerCase().includes(searchText) ||
+        place.city?.toLowerCase().includes(searchText);
 
       const normalize = (value) =>
-        (value || "")
-          .toString()
-          .trim()
-          .toLowerCase();
+        (value || "").toString().trim().toLowerCase();
 
       const matchesTag =
         selectedTags.length === 0 ||
         place.tags?.some((tag) =>
           selectedTags.some(
-            (selected) =>
-              normalize(tag) ===
-              normalize(selected)
-          )
+            (selected) => normalize(tag) === normalize(selected),
+          ),
         );
 
       return matchesSearch && matchesTag;
     });
 
-if (activeTab === "popular") {
-  result.sort((a, b) => {
-    const aFirebase = comments.filter(
-      (c) => c.placeId === String(a.id)
-    );
+    if (activeTab === "popular") {
+      result.sort((a, b) => {
+        const aFirebase = comments.filter((c) => c.placeId === String(a.id));
 
-    const bFirebase = comments.filter(
-      (c) => c.placeId === String(b.id)
-    );
+        const bFirebase = comments.filter((c) => c.placeId === String(b.id));
 
-    const aRatings = [
-      ...(a.rating ? [a.rating] : []),
-      ...aFirebase
-        .map((c) => c.rating)
-        .filter((r) => r != null),
-    ];
+        const aRatings = [
+          ...(a.rating ? [a.rating] : []),
+          ...aFirebase.map((c) => c.rating).filter((r) => r != null),
+        ];
 
-    const bRatings = [
-      ...(b.rating ? [b.rating] : []),
-      ...bFirebase
-        .map((c) => c.rating)
-        .filter((r) => r != null),
-    ];
+        const bRatings = [
+          ...(b.rating ? [b.rating] : []),
+          ...bFirebase.map((c) => c.rating).filter((r) => r != null),
+        ];
 
-    const aAvg =
-      aRatings.length > 0
-        ? aRatings.reduce((x, y) => x + y, 0) /
-          aRatings.length
-        : 0;
+        const aAvg =
+          aRatings.length > 0
+            ? aRatings.reduce((x, y) => x + y, 0) / aRatings.length
+            : 0;
 
-    const bAvg =
-      bRatings.length > 0
-        ? bRatings.reduce((x, y) => x + y, 0) /
-          bRatings.length
-        : 0;
+        const bAvg =
+          bRatings.length > 0
+            ? bRatings.reduce((x, y) => x + y, 0) / bRatings.length
+            : 0;
 
-    const aReviews =
-      (a.reviews || 0) + aFirebase.length;
+        const aReviews = (a.reviews || 0) + aFirebase.length;
 
-    const bReviews =
-      (b.reviews || 0) + bFirebase.length;
+        const bReviews = (b.reviews || 0) + bFirebase.length;
 
-    if (bAvg !== aAvg) {
-      return bAvg - aAvg;
+        if (bAvg !== aAvg) {
+          return bAvg - aAvg;
+        }
+        return bReviews - aReviews;
+      });
     }
-    return bReviews - aReviews;
-  });
-}
 
     if (activeTab === "reviewed") {
       result.sort((a, b) => {
         const aLast =
           comments
-            .filter(
-              (c) =>
-                c.placeId === String(a.id)
-            )
+            .filter((c) => c.placeId === String(a.id))
             .sort(
               (x, y) =>
-                (y.createdAt?.seconds || 0) -
-                (x.createdAt?.seconds || 0)
+                (y.createdAt?.seconds || 0) - (x.createdAt?.seconds || 0),
             )[0]?.createdAt?.seconds || 0;
 
         const bLast =
           comments
-            .filter(
-              (c) =>
-                c.placeId === String(b.id)
-            )
+            .filter((c) => c.placeId === String(b.id))
             .sort(
               (x, y) =>
-                (y.createdAt?.seconds || 0) -
-                (x.createdAt?.seconds || 0)
+                (y.createdAt?.seconds || 0) - (x.createdAt?.seconds || 0),
             )[0]?.createdAt?.seconds || 0;
 
         return bLast - aLast;
@@ -201,199 +159,94 @@ if (activeTab === "popular") {
 
     if (activeTab === "new") {
       result.sort((a, b) => {
-        const aCreated =
-          a.createdAt?.seconds || 0;
+        const aCreated = a.createdAt?.seconds || 0;
 
-        const bCreated =
-          b.createdAt?.seconds || 0;
+        const bCreated = b.createdAt?.seconds || 0;
 
         return bCreated - aCreated;
       });
     }
 
     return result;
-  }, [
-    placesWithReviews,
-    comments,
-    search,
-    selectedTags,
-    activeTab,
-  ]);
+  }, [placesWithReviews, comments, search, selectedTags, activeTab]);
 
   return (
     <main className="feed-page">
-
       <section className="feed-hero">
+        <div className="feed-overlay"></div>
 
-    <div className="feed-overlay"></div>
+        <div className="feed-hero-content">
+          <span className="feed-subtitle">SHARED BY EXPLORERS</span>
 
-    <div className="feed-hero-content">
-
-        <span className="feed-subtitle">
-            SHARED BY EXPLORERS
-        </span>
-
-        <h1>
+          <h1>
             Hidden gems from
             <br />
             the community
-        </h1>
+          </h1>
 
-        <p>
-            Places submitted by real travelers,
-            hidden cafés, quiet streets,
+          <p>
+            Places submitted by real travelers, hidden cafés, quiet streets,
             unforgettable sunsets and authentic experiences.
-        </p>
-
-      <button
-        className="feed-share-btn"
-        onClick={() => navigate("/addplace")}
-      >
-        Share a Place
-      </button>
-
-    </div>
-
-</section>
-
-      <section className="feed-discover">
-
-        <span className="feed-small-title">
-          FROM THE COMMUNITY
-        </span>
-
-        <h2>
-          Discoveries from travelers
-        </h2>
-
-        <p>
-          Every place here was submitted by a
-          real explorer.
-        </p>
-
-        <div className="feed-filter-box">
-
-          <SearchBar
-            search={search}
-            setSearch={setSearch}
-          />
-
-          <CategoryFilter
-            places={places}
-            selectedTags={selectedTags}
-            setSelectedTags={
-              setSelectedTags
-            }
-          />
-
-        </div>
-
-        <div className="feed-tabs">
+          </p>
 
           <button
-            className={
-              activeTab === "new"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setActiveTab("new")
-            }
+            className="feed-share-btn"
+            onClick={() => navigate("/addplace")}
+          >
+            Share a Place
+          </button>
+        </div>
+      </section>
+
+      <section className="feed-discover">
+        <span className="feed-small-title">FROM THE COMMUNITY</span>
+
+        <h2>Discoveries from travelers</h2>
+
+        <p>Every place here was submitted by a real explorer.</p>
+
+       <div className="feed-filter-box">
+  <SearchBar search={search} setSearch={setSearch} />
+  <CategoryFilter
+    places={places}
+    selectedTags={selectedTags}
+    setSelectedTags={setSelectedTags}
+  />
+  <div className="feed-places-counter">
+    {filteredPlaces.length} Places
+  </div>
+</div>
+
+        <div className="feed-tabs">
+          <button
+            className={activeTab === "new" ? "active" : ""}
+            onClick={() => setActiveTab("new")}
           >
             New
           </button>
 
           <button
-            className={
-              activeTab === "popular"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setActiveTab("popular")
-            }
+            className={activeTab === "popular" ? "active" : ""}
+            onClick={() => setActiveTab("popular")}
           >
             Popular
           </button>
 
           <button
-            className={
-              activeTab === "reviewed"
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setActiveTab("reviewed")
-            }
+            className={activeTab === "reviewed" ? "active" : ""}
+            onClick={() => setActiveTab("reviewed")}
           >
             Recently Reviewed
           </button>
-
         </div>
-
       </section>
-            {/* ================= POSTS ================= */}
+      {/* ================= POSTS ================= */}
 
       <section className="feed-cards">
         {filteredPlaces.map((place) => (
-          <div
-            className="feed-post"
-            key={place.id}
-          >
-            <PlaceCard
-              place={place}
-              hideActions
-            />
-
-            <div className="feed-review-section">
-
-              <div className="feed-actions">
-
-                <button
-                  className={`community-save-btn ${
-                    isFavorite(place.id)
-                      ? "active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    toggleFavorite(place)
-                  }
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill={
-                      isFavorite(place.id)
-                        ? "currentColor"
-                        : "none"
-                    }
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg>
-
-                  <span>Save</span>
-                </button>
-                <button
-                  onClick={() =>
-                    navigate(`/place/${place.id}`)
-                  }
-                >
-                  👁 View Details
-                </button>
-
-              </div>
-
-              <LatestReview
-                placeId={place.id}
-              />
-
-            </div>
-
-          </div>
+          <FeedCard key={place.id} place={place} />
         ))}
       </section>
-
     </main>
   );
 }

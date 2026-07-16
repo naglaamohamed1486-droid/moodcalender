@@ -139,13 +139,12 @@ useEffect(() => {
   };
 
   const handlePicChange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    if (file.size > 2 * 1024 * 1024) {
-      alert("Image must be under 2MB");
-      return;
-    }
+  const file = e.target.files[0];
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) {
+    alert("Image must be under 2MB");
+    return;
+  }
 
     const reader = new FileReader();
     reader.onloadend = async () => {

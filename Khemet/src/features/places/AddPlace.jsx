@@ -399,6 +399,8 @@ export default function AddPlace() {
         reviewsList: [],
         addedByname: user.name,
         addedByemail: user.email,
+        addedByUid: user.uid,
+        addedByPic: user.profilePic || null,
         createdAt: Date.now(),
         status: "pending",
       };
@@ -407,6 +409,7 @@ export default function AddPlace() {
         rating: submittedForm.rating,
         text: submittedForm.reviewText,
         author: user.email,
+        
       });
 
       const images = await setPlaceImages(newPlace.id, {

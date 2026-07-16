@@ -154,59 +154,81 @@
     color:#8c6a38;
     font-weight:600;
 }
-
-
-/* ===========================
-   Filters
-=========================== */
-
-.feed-filter-box{
-    margin-top:40px;
-    background:white;
-    border-radius:22px;
-    padding:20px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:18px;
-    align-items:center;
-    position:relative;
-    z-index:30;
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
+/* ===== Filter Box ===== */
+.feed-filter-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 22px;
+  border: 1px solid #ebe5dc;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 30;
 }
 
-.feed-tabs{
-    display:flex;
-    gap:15px;
-    margin-top:35px;
-    margin-bottom:40px;
+.feed-places-counter {
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: #2A1A08;
+  color: #FDF8EE;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.feed-tabs button{
-    padding:12px 24px;
-    border:none;
-    border-radius:40px;
-    background:#ece4d3;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:600;
-    transition:.25s;
+/* ===== Tabs ===== */
+.feed-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+  margin-bottom: 32px;
 }
 
-.feed-tabs button.active{
-    background:#123a58;
-    color:white;
+.feed-tabs button {
+  padding: 10px 22px;
+  border: 1px solid rgba(42, 26, 8, 0.12);
+  border-radius: 50px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7A6040;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.feed-tabs button:hover {
+  border-color: #C9A84C;
+  color: #2A1A08;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.feed-tabs button.active {
+  background: #1B4F6B;
+  color: #FDF8EE;
+  border-color: #1B4F6B;
 }
 /* ===========================
    Feed Cards
 =========================== */
 
-.feed-cards{
+/* .feed-cards{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(420px,1fr));
     gap:30px;
     margin-top:50px;
     padding-bottom:80px;
-}
+} */
 
 .feed-card-wrapper{
     display:flex;
@@ -280,7 +302,7 @@
    Feed Post
 =========================== */
 
-.feed-post{
+/* .feed-post{
     background:#fffdf8;
     border-radius:24px;
     overflow:hidden;
@@ -290,7 +312,7 @@
 
 .feed-post:hover{
     transform:translateY(-6px);
-}
+} */
 
 .feed-post-cover{
     width:100%;
@@ -366,7 +388,7 @@
    Actions
 =========================== */
 
-.feed-actions{
+/* .feed-actions{
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -385,11 +407,11 @@
     align-items:center;
     gap:8px;
     transition:.25s;
-}
+} */
 
-.feed-actions button:hover{
+/* .feed-actions button:hover{
     color:#b8860b;
-}
+} */
 
 
 .feed-like-btn{
@@ -443,13 +465,13 @@
    Review Section
 =========================== */
 
-.feed-review-section{
+/* .feed-review-section{
     background:#fffaf2;
     border:1px solid #eadcc5;
     border-top:none;
     border-radius:0 0 22px 22px;
     overflow:hidden;
-}
+} */
 
 .feed-review-box{
     padding:20px 24px;
@@ -737,3 +759,36 @@
         gap:20px;
     }
 }
+.feed-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  width: 92%;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+/* .feed-post {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  background: #fffdf8;
+}
+
+.feed-post:hover {
+  transform: translateY(-6px);
+}
+
+.feed-post .card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.feed-post .card-image img {
+  border-radius: 0 !important;
+} */
