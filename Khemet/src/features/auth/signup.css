@@ -17,19 +17,23 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-.signup-main{
-  padding: 80px;
-  padding-top: 130px;
+
+/* ── Centering wrapper — always centers container, any viewport ── */
+.signup-main {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
+  padding: clamp(16px, 5vw, 80px);
 }
+
 /* ── Container card ── */
 .container {
   display: none;
+  width: 100%;
   max-width: 900px;
-  height: 550px;
+  min-height: 550px;
   border: 1px solid hsl(44, 54%, 54%, 0.5);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -37,7 +41,7 @@ html { scroll-behavior: smooth; }
   animation: fadeUp 0.4s cubic-bezier(0.4,0,0.2,1) both;
 }
 
-.Signup.container   { display: grid; grid-template-columns: 1fr 1fr; }
+.Signup.container { display: grid; grid-template-columns: 1fr 1fr; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -78,13 +82,13 @@ html { scroll-behavior: smooth; }
   display: block;
   position: relative;
   top: -250px;
-  width:100%;
+  width: 100%;
   height: 80px;
   text-decoration: none;
   text-align: center;
   color: #e3bc4f;
   font-family: 'Cinzel', serif;
-  font-size: 40px;
+  font-size: clamp(26px, 3vw, 40px);
 }
 
 .section-sign a:hover { text-shadow: #E8D5A3 2px 3px 10px; }
@@ -123,7 +127,7 @@ html { scroll-behavior: smooth; }
 
 .sign h2 {
   font-family: 'Cinzel', serif;
-  font-size: 26px;
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 500;
   color: var(--sand);
   background-color: var(--nile-deep);
@@ -146,7 +150,6 @@ html { scroll-behavior: smooth; }
 .signup-field {
   position: relative;
   margin-bottom: 20px;
-  
 }
 
 .signup-field label {
@@ -165,7 +168,7 @@ html { scroll-behavior: smooth; }
 
 .signup-field input {
   width: 100%;
-  color: #0A2A3A;
+  color: #1B4F6B;
   background: hsl(196, 61%, 79%, 0.2);
   border: 1px solid rgba(27,79,107,0.2);
   border-radius: var(--radius-md);
@@ -175,7 +178,6 @@ html { scroll-behavior: smooth; }
   font-size: 14px;
   outline: none;
   transition: var(--transition);
-   color: #1B4F6B;
 }
 
 .signup-field input::placeholder { color: transparent; }
@@ -191,8 +193,6 @@ html { scroll-behavior: smooth; }
   font-weight: 500;
   letter-spacing: 0.06em;
 }
-
-
 
 /* ── Submit button ── */
 .form-body button {
@@ -234,10 +234,44 @@ html { scroll-behavior: smooth; }
 
 .form-body > p a:hover { border-bottom-color: var(--terra); }
 
-/* ── Responsive ── */
+/* ══════════════════ RESPONSIVE ══════════════════ */
+
+/* Large desktops / wide screens */
+@media (min-width: 1440px) {
+  .container { max-width: 960px; min-height: 580px; }
+}
+
+/* Standard desktop / laptop */
+@media (max-width: 1024px) {
+  .container { max-width: 760px; }
+  .section-sign { min-height: 420px; }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .signup-main { padding: 24px; }
+  .container { max-width: 600px; min-height: auto; }
+  .section-sign { min-height: 320px; padding: 24px; }
+  .section-sign h1 a { top: -180px; font-size: 32px; }
+  .form-body { padding: 24px; }
+}
+
+/* Mobile — stack, hide hero image */
 @media (max-width: 680px) {
-  .Signup.container { grid-template-columns: 1fr; }
+  .signup-main { padding: 16px; align-items: flex-start; padding-top: 40px; }
+  .Signup.container { grid-template-columns: 1fr; max-width: 420px; }
   .section-sign     { display: none; }
   .Signup .sign     { border-radius: var(--radius-lg); }
   .Signup .sign h2  { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .signup-main { padding: 10px; padding-top: 24px; }
+  .Signup.container { max-width: 100%; border-radius: 20px; }
+  .Signup .sign, .Signup .sign h2 { border-radius: 20px 20px 0 0; }
+  .sign h2 { padding: 20px; font-size: 20px; }
+  .form-body { padding: 18px; }
+  .signup-field input { height: 46px; }
+  .form-body button { height: 46px; }
 }
