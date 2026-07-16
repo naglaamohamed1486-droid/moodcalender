@@ -252,6 +252,13 @@ function Navbar() {
                 <Link to="/contributions" onClick={closeAll}>
                   My Contributions
                 </Link>
+
+              )}
+               {user.role === "user" && (
+                <Link to="/bookings" onClick={closeAll}>
+                  My Bookings
+                </Link>
+
               )}
               {user.role === "admin" && (
                 <Link to="/adminUsers" onClick={closeAll}>
