@@ -24,134 +24,92 @@ function BookingCard({
     );
 
   return (
-    <div className="trip-card booking-card">
-      <div className="trip-cover">
+<div className="booking-cardd">
 
-        <img
-          src={cover}
-          alt={tripName}
-        />
+  <div className="booking-image">
+    <img src={cover} alt={tripName} />
+  </div>
 
-        <span className="booking-status">
-          ✓ Confirmed
-        </span>
+  <div className="booking-info">
 
-        <div className="overlay">
+    <div className="booking-top">
 
-          <h3>{tripName}</h3>
+      <div className="booking-title">
 
-          <p>
-            {days} Days • {places} Places
-          </p>
+        <h3>{tripName}</h3>
 
-        </div>
+        <p>
+          <FaCalendarDays />
+          {booking.startDate} — {booking.endDate}
+        </p>
 
       </div>
 
-      <div className="booking-info">
+      
 
-        <div className="booking-row">
-
-          <span>
-            Booking ID
-          </span>
-
-          <strong>
-            {booking.bookingNumber}
-          </strong>
-
-        </div>
-
-        <div className="booking-row">
-
-          <span>
-            Travel Dates
-          </span>
-
-          <strong>
-            {booking.startDate}
-            {" → "}
-            {booking.endDate}
-          </strong>
-
-        </div>
-
-        <div className="booking-row">
-
-          <span>
-            Payment
-          </span>
-
-          <strong className="payment-confirmed">
-            {booking.paymentStatus}
-          </strong>
-
-        </div>
-
-        <div className="booking-row">
-
-          <span>
-
-            <FaCreditCard />
-
-            {" "}
-            Method
-
-          </span>
-
-          <strong>
-            {booking.paymentMethod}
-          </strong>
-
-        </div>
-
-        <div className="booking-row">
-
-          <span>
-            Flight
-          </span>
-
-          <strong>
-            {booking.flight
-              ? booking.flight.airline
-              : "No Flight"}
-          </strong>
-
-        </div>
-
-        <div className="booking-row total">
-
-          <span>
-            Total Paid
-          </span>
-
-          <strong>
-            ${booking.totalPrice}
-          </strong>
-
-        </div>
-
-      </div>
-
-      <div className="card-footer">
-
-        <button
-          className="edit-btn"
-          onClick={() => onView(booking)}
-        >
-          <FiEye />
-          View
-        </button>
-
-        <button
-          className="delete"
-          onClick={() => onCancel(booking.id)}
-        >
-          <FiTrash2 />
-        </button>
-
-      </div>
     </div>
+
+    <div className="booking-middle">
+
+      <span>{days} Days</span>
+
+      <span>•</span>
+
+      <span>{places} Places</span>
+
+      <span>•</span>
+
+      <span>
+        {booking.flight
+          ? booking.flight.airline
+          : "No Flight"}
+      </span>
+
+      <span>•</span>
+
+      <span>{booking.paymentMethod}</span>
+
+    </div>
+
+    <div className="booking-bottom">
+
+      <small>
+        Booking #{booking.bookingNumber}
+      </small>
+
+
+    </div>
+
+  </div>
+
+  <div className="booking-side">
+
+    <span className="booking-status">
+        ✓ Confirmed
+      </span>
+
+    <div className="booking-price">
+
+      {/* <span>Total</span> */}
+
+      <h2>
+        ${booking.totalPrice}
+      </h2>
+
+    </div>
+
+    <button
+    className="delete-btn"
+    onClick={() => onCancel(booking.id)}
+    title="Cancel Booking"
+>
+    <FiTrash2 />
+    
+</button>
+
+  </div>
+
+</div>
   );
 }
 

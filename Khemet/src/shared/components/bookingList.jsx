@@ -10,7 +10,7 @@ function BookingList({ bookings }) {
 
   return (
     <>
-      <div className="saved-grid">
+      <div className="booking-list">
         {bookings.map((booking) => (
           <BookingCard
             key={booking.id}

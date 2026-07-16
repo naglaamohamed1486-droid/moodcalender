@@ -174,9 +174,11 @@ export function AuthProvider({ children }) {
           itinerary: [{ day: 1, city: place.city, places: [place] }],
         };
       }
-      const exists = prev.itinerary.some((day) =>
-        day.places.some((p) => p.id === place.id)
-      );
+      const exists = prev.itinerary.some((day) => {
+        if (!day || !Array.isArray(day.places)) return false;
+
+        return day.places.some((p) => p.id === place.id);
+      });
       if (exists) return prev;
       const itinerary = prev.itinerary.map((day) => ({
         ...day,

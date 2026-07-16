@@ -16,8 +16,9 @@ export default function MyBookings() {
       <div className="saved-header">
 
         <div className="title-area">
+
           <span className="saved-step">
-            BOOKINGS
+            MY BOOKINGS
           </span>
 
           <h1>
@@ -25,13 +26,17 @@ export default function MyBookings() {
           </h1>
 
           <p>
-            View and manage all your confirmed trips.
+            {bookings.length === 0
+              ? "No confirmed trips yet."
+              : `${bookings.length} confirmed ${
+                  bookings.length === 1 ? "trip" : "trips"
+                }`}
           </p>
 
         </div>
 
         <Link
-          to="/trip-planner"
+          to="/savedtrips"
           className="new-trip-btn"
         >
           + Book Another Trip
@@ -43,7 +48,7 @@ export default function MyBookings() {
         <div className="saved-empty">
 
           <div className="empty-icon">
-            ✈️
+            🧳
           </div>
 
           <h2>
@@ -51,9 +56,16 @@ export default function MyBookings() {
           </h2>
 
           <p>
-            Once you confirm a booking,
+            Book your first adventure and
             it will appear here.
           </p>
+
+          <Link
+            to="/trip-planner"
+            className="new-trip-btn empty-btn"
+          >
+            Explore Trips
+          </Link>
 
         </div>
       ) : (
