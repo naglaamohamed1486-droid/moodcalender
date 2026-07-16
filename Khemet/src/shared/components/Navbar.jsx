@@ -90,7 +90,7 @@ function Navbar() {
             </NavLink>
           </li>
         )}
-        {user && (
+        {user?.role === "user" && (
           <li>
             <NavLink
               to="/feed"
@@ -182,7 +182,6 @@ function Navbar() {
                   <Link to="/bookings" onClick={closeAll}>
                     My Bookings
                   </Link>
-
                 )}
                 {user.role === "admin" && (
                   <Link to="/adminUsers" onClick={closeAll}>
@@ -252,13 +251,11 @@ function Navbar() {
                 <Link to="/contributions" onClick={closeAll}>
                   My Contributions
                 </Link>
-
               )}
-               {user.role === "user" && (
+              {user.role === "user" && (
                 <Link to="/bookings" onClick={closeAll}>
                   My Bookings
                 </Link>
-
               )}
               {user.role === "admin" && (
                 <Link to="/adminUsers" onClick={closeAll}>
@@ -309,14 +306,15 @@ function Navbar() {
               </NavLink>
             </li>
           )}
-          <li>
-            <NavLink
-              to="/feed"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Community
-            </NavLink>
-          </li>
+          {user?.role === "user" &&
+            <li>
+              <NavLink
+                to="/feed"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Community
+              </NavLink>
+            </li>}
           {user?.role === "user" && (
             <li>
               <NavLink
